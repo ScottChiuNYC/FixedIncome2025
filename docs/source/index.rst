@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Analysis of Fixed Income -- 2025 Fall
+Analysis of Fixed Income -- Fall 2025
 =====================================
 
 .. Add your content using ``reStructuredText`` syntax. See the
@@ -11,7 +11,6 @@ Analysis of Fixed Income -- 2025 Fall
 .. documentation for details.
 
 `Download pdf version <https://fixedincome2025.readthedocs.io/_/downloads/en/latest/pdf/>`_
-
 
 .. toctree::
    :maxdepth: 1
