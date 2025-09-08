@@ -38,6 +38,10 @@ html_theme = "sphinx_rtd_theme"
 # html_theme = 'alabaster'
 html_static_path = ['_static']
 
+html_theme_options = {
+    "show_downloads": True
+}
+
 master_doc = 'index'
 nbsphinx_allow_errors = True
 nbsphinx_execute = 'never'
