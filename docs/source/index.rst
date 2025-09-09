@@ -10,8 +10,6 @@ Analysis of Fixed Income -- Fall 2025
 .. `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
 .. documentation for details.
 
-`Download pdf version <https://fixedincome2025.readthedocs.io/_/downloads/en/latest/pdf/>`_
-
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
