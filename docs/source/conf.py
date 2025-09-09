@@ -8,7 +8,7 @@
 
 project = 'FixedIncome2025'
 copyright = '2025, Prof. Scott Chiu, Rutgers Business School'
-author = 'Scott Chiu, Rutgers Business School'
+author = 'Prof. Scott Chiu, Rutgers Business School'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
