@@ -14,5 +14,7 @@ Analysis of Fixed Income -- Fall 2025
    :maxdepth: 1
    :caption: Contents:
 
-   yc6
+   01_yc6
+   02_overview
+
 
