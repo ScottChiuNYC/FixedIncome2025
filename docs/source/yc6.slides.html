@@ -7612,10 +7612,11 @@ $$</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li>Cash flow at $t$ is cash flow at $T$ discounted
-$$
-(\text{Cash flow at }t) = (\text{Cash flow at }T)\times P(t, T)
-$$</li>
+<li>Cash flow at $t$ is cash flow at $T$ discounted (recall that $P(t, T) &lt; 1$)
+\begin{align*}
+&amp;(\text{Cash flow at }t) = (\text{Cash flow at }T)\times P(t, T)\\
+&amp;(\text{Cash flow at }T) = (\text{Cash flow at }t)/P(t, T)\\
+\end{align*}</li>
 </ul>
 </div>
 </div>
@@ -7627,12 +7628,9 @@ $$</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
+<li>This will be useful in the no arbitrage argument deriving forward bond price</li>
 <li>This is why $P(t, T)$ is sometimes referred to as the discount factor<ul>
 <li>Not to be confused with the discounting process $D_t = e^{-\int_0^t r_s\,ds}$</li>
-</ul>
-</li>
-<li>Equivalently, cash flow at $T$ is cash flow at $t$ divided by $P(t, T)$<ul>
-<li>This will be useful in the no arbitrage argument deriving forward bond price</li>
 </ul>
 </li>
 </ul>
