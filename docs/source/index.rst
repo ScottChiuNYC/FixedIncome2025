@@ -6,9 +6,13 @@
 Analysis of Fixed Income -- Fall 2025
 =====================================
 
+**Package Status**
+
 .. image:: https://readthedocs.org/projects/fixedincome2025/badge/?version=latest
    :target: https://fixedincome2025.readthedocs.io/
    :alt: Documentation Status
+
+----
 
 .. Add your content using ``reStructuredText`` syntax. See the
 .. `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
