@@ -1,6 +1,3 @@
-# FixedIncome2025
+# Analysis of Fixed Income -- Fall 2025
 
-```
-jupyter nbconvert --to slides docs/source/yc6.ipynb  
-jupyter nbconvert --to slides --no-input docs/source/yc6.ipynb
-```
+[![Documentation Status](https://readthedocs.org/projects/fixedincome2025/badge/?version=latest)](https://fixedincome2025.readthedocs.io/)
