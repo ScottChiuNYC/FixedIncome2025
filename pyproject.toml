@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "fixedincome2025"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+jupyterlab = "^4.4.7"
+notebook = "^7.4.5"
+jupyterlab-rise = "^0.43.1"
+pandas = "^2.3.2"
+matplotlib = "^3.10.6"
+jupyterlab-spreadsheet-editor = "^0.7.2"
+
+[tool.poetry.group.dev.dependencies]
+docutils = "^0.21.2"
+sphinx = "8.1.3"
+sphinx-copybutton = "^0.5.2"
+ipykernel = "^6.29.5"
+nbsphinx = "^0.9.7"
+sphinx-rtd-theme = "^3.0.2"
+sphinx-rtd-dark-mode = "^1.3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
