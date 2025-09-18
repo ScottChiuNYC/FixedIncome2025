@@ -52,9 +52,6 @@ Analysis of Fixed Income -- Fall 2025
 +--------+------------+-------------------------------------------------------------+
 
 
-Let me know if you want to highlight exam weeks, add readings, or convert this into Markdown or LaTeX for other formats. Happy to help polish your syllabus!
-
-
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
