@@ -7444,6 +7444,7 @@ main {
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=6ed2b98a-71dc-4a39-bd81-2ea2a9ce1bca">
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ccbd6c0d-6bfe-4e28-a3ef-6233ba2a82ae">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7559,11 +7560,121 @@ $$</li>
 <ul>
 <li>Right hand side: Percent change of the ZCB price</li>
 <li>Left hand side: Term times yield change in the opposite direction</li>
+<li>In the case of ZCB, the term $T$ is the sensitivivity and is called the duration of this ZCB</li>
 </ul>
 </div>
 </div>
 </div>
-</div></div></section></section>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=98e5ba2b-e902-4e50-ac0a-e163f248dbc9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Duration-of-ZCB">Duration of ZCB<a class="anchor-link" href="#Duration-of-ZCB">¶</a></h2><p>$$
+-T\Delta \approx \frac{B(\Delta) - B(0)}{B(0)}
+$$</p>
+<ul>
+<li>On a day when the yield drops $0.06\% = 6\text{ bps}$ across the entire curve, we have<ul>
+<li>1Y ZCB price up $0.06\%$</li>
+<li>5Y ZCB price up $0.3\%$</li>
+<li>10Y ZCB price up $0.6\%$</li>
+<li>30Y ZCB price up $1.8\%$</li>
+</ul>
+</li>
+<li>The longer the bond is, the more sensitive it is to the yield change, true for nonzero coupon bonds too as we will see next</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=4b500d0a-d8a3-49ac-9715-3ad76706b246">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div style="display: flex; justify-content: center;">
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th>Date</th>
+<th>1 Mo</th>
+<th>1.5 Mo</th>
+<th>2 Mo</th>
+<th>3 Mo</th>
+<th>4 Mo</th>
+<th>6 Mo</th>
+<th>1 Yr</th>
+<th>2 Yr</th>
+<th>3 Yr</th>
+<th>5 Yr</th>
+<th>7 Yr</th>
+<th>10 Yr</th>
+<th>20 Yr</th>
+<th>30 Yr</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>09/15/2025</td>
+<td>4.22%</td>
+<td>4.21%</td>
+<td>4.17%</td>
+<td>4.06%</td>
+<td>4.00%</td>
+<td>3.81%</td>
+<td>3.64%</td>
+<td>3.54%</td>
+<td>3.50%</td>
+<td>3.61%</td>
+<td>3.79%</td>
+<td>4.05%</td>
+<td>4.63%</td>
+<td>4.66%</td>
+</tr>
+<tr>
+<td>09/16/2025</td>
+<td>4.20%</td>
+<td>4.19%</td>
+<td>4.15%</td>
+<td>4.04%</td>
+<td>4.00%</td>
+<td>3.81%</td>
+<td>3.62%</td>
+<td>3.51%</td>
+<td>3.47%</td>
+<td>3.59%</td>
+<td>3.78%</td>
+<td>4.04%</td>
+<td>4.61%</td>
+<td>4.65%</td>
+</tr>
+<tr>
+<td>yield change (bps)</td>
+<td>-2</td>
+<td>-2</td>
+<td>-2</td>
+<td>-2</td>
+<td>0</td>
+<td>0</td>
+<td>-2</td>
+<td>-3</td>
+<td>-3</td>
+<td>-2</td>
+<td>-1</td>
+<td>-1</td>
+<td>-2</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></section></section>
 </div>
 </div>
 </main>
