@@ -7486,7 +7486,7 @@ $$
 B = N e^{-T_NR_N} + \sum_{j=1}^N c~e^{-T_j R_j}, 
 $$
 where $R_j = R(0, T_j)$</li>
-<li>Despite the rather involved notations, it's simply sum of discounted future cash flows</li>
+<li>Despite the seemingly involved notations, it's simply sum of discounted future cash flows</li>
 </ul>
 </div>
 </div>
@@ -7524,22 +7524,22 @@ $$</li>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Sensitivity-of-Bond-Price-to-Its-Yield-Change">Sensitivity of Bond Price to Its Yield Change<a class="anchor-link" href="#Sensitivity-of-Bond-Price-to-Its-Yield-Change">¶</a></h2><ul>
-<li>First consider the zero coupon bond case</li>
-<li>Imagine, in a small period of time, the yield changes from $R$ to $R+\Delta R$. The bond price would become
+<h2 id="Sensitivity-of-ZCB-Price-to-Its-Yield-Change">Sensitivity of ZCB Price to Its Yield Change<a class="anchor-link" href="#Sensitivity-of-ZCB-Price-to-Its-Yield-Change">¶</a></h2><ul>
+<li>Imagine, in a small period of time, the yield changes from $R$ to $R+\Delta$ for some small $\Delta$. The bond price would become
 $$
-B(\Delta R) = e^{-T(R+\Delta R)}
+B(\Delta) = e^{-T(R+\Delta)}
 $$</li>
-<li>In comparison the original bond price is
+<li>In comparison, the original bond price is
 $$
 B(0) = e^{-TR}
 $$</li>
-<li>We are treating the bond price $B$ as a function of the yield change $\Delta R$</li>
-<li>Now find first derivative of $B$ at $\Delta R = 0$:
-$$
-B'(0) = -Te^{-TR} \approx e^{-T(R+\Delta R)}
-$$</li>
-<li></li>
+<li>We are treating the bond price $B$ as a function of the yield change $\Delta$</li>
+<li>Now find first derivative of $B$ at $\Delta = 0$:
+\begin{align*}
+&amp;B'(0) = -Te^{-TR} \approx \frac{e^{-T(R+\Delta)} - e^{-TR}}{\Delta}, \\
+\iff&amp; -TB(0) \approx \frac{B(\Delta) - B(0)}{\Delta}, \\
+\iff&amp; -T\Delta \approx \frac{B(\Delta) - B(0)}{B(0)}
+\end{align*}</li>
 </ul>
 </div>
 </div>
