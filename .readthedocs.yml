@@ -7,8 +7,9 @@ build:
   jobs:
     pre_install:
       # Export from Poetry to a requirements file including dev (docs) deps
-      - pip install poetry
-      - poetry export --with dev -f requirements.txt -o rtd-requirements.txt
+      - pip install "poetry>=1.2" poetry-plugin-export
+      - poetry --version
+      - poetry export --with dev -f requirements.txt --output rtd-requirements.txt
 
 python:
   install:
