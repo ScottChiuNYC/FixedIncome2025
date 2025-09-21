@@ -7631,7 +7631,7 @@ B(\Delta) &amp;= N e^{-T_N(R_N + \Delta)} + \sum_{j=1}^N c~e^{-T_j (R_j + \Delta
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e7537148-bffc-488d-97bc-cc74548b1177">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=71b8ffba-5319-40ae-ad88-4ca65d721010">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7641,10 +7641,21 @@ B(0) &amp;= c~e^{-T_1 R_1} + c~e^{-T_2 R_2} + \cdots + c~e^{-T_N R_N} + N e^{-T_
 B(\Delta) &amp;= c~e^{-T_1 (R_1 + \Delta)} + c~e^{-T_2 (R_2 + \Delta)} + \cdots + c~e^{-T_N (R_N + \Delta)} + N e^{-T_N(R_N + \Delta)}, 
 \end{align*}</p>
 <ul>
-<li>Next we find the first derivative of $B(\Delta)$ at $\Delta = 0$ to be
+<li>We find the first derivative of $B(\Delta)$ at $\Delta = 0$ to be
 \begin{align*}
 B'(0) &amp;= {\color{red}-\color{red}T_1}c~e^{-T_1 R_1} {\color{red}-\color{red}T_2} c~e^{-T_2 R_2} - \cdots {\color{red}-\color{red}T_N} c~e^{-T_N R_N} {\color{red}-\color{red}T_N} N e^{-T_N R_N} \approx \frac{B(\Delta) - B(0)}{\Delta}
 \end{align*}</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e7537148-bffc-488d-97bc-cc74548b1177">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
 <li>To obtain the percent change of bond price, multiply by $\Delta/B(0)$ on both sides:
 \begin{align*}
 {\color{red}-}\left(\frac{{\color{red}T_1}c~e^{-T_1 R_1} + {\color{red}T_2} c~e^{-T_2 R_2} + \cdots + {\color{red}T_N} c~e^{-T_N R_N} + {\color{red}T_N} N e^{-T_N R_N}}{B(0)}\right)\Delta \approx \frac{B(\Delta) - B(0)}{B(0)}
@@ -7654,7 +7665,7 @@ B'(0) &amp;= {\color{red}-\color{red}T_1}c~e^{-T_1 R_1} {\color{red}-\color{red}
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b990bb6c-ce61-4bf0-bfa7-3310649a398c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7757,7 +7768,7 @@ which satisfy $w_1 + w_2 + \cdots + w_N + w_N^* = 1$</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li>Previous conclusion that "the longer the bond is, the more sensitive it is to yield change" is still valid</li>
+<li>Previous conclusion "the longer the bond is, the more sensitive it is to yield change" is still valid</li>
 </ul>
 </div>
 </div>
