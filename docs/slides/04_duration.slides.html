@@ -7499,8 +7499,8 @@ where $R_j = R(0, T_j)$</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Bond-Pricing-Review-(Cont.)">Bond Pricing Review (Cont.)<a class="anchor-link" href="#Bond-Pricing-Review-(Cont.)">¶</a></h2><p>\begin{align*}
-B &amp;= N e^{-T_NR_N} + \sum_{j=1}^N c e^{-T_j R_j}, \\
-&amp;= c~e^{-T_1 R_1} + c~e^{-T_1 R_1} + \cdots + c~e^{-T_N R_N} + N e^{-T_NR_N}
+B &amp;= N e^{-T_NR_N} + \sum_{j=1}^N c~e^{-T_j R_j} \\
+&amp;= c~e^{-T_1 R_1} + c~e^{-T_2 R_2} + \cdots + c~e^{-T_N R_N} + N e^{-T_NR_N}
 \end{align*}</p>
 <ul>
 <li>Example from previous set's Bond Pricing: Exercise I:
@@ -7543,8 +7543,8 @@ $$</li>
 <ul>
 <li>We are treating $B$ as a function of the yield change $\Delta$. Now find its first derivative at $\Delta = 0$:
 \begin{align*}
-&amp;B'(0) = -Te^{-TR} \approx \frac{e^{-T(R+\Delta)} - e^{-TR}}{\Delta}, \\
-\iff&amp; -TB(0) \approx \frac{B(\Delta) - B(0)}{\Delta}, \\
+&amp;B'(0) = -Te^{-TR} \approx \frac{B(\Delta) - B(0)}{\Delta} \\
+\iff&amp; -TB(0) \approx \frac{B(\Delta) - B(0)}{\Delta} \\
 \iff&amp; -T\Delta \approx \frac{B(\Delta) - B(0)}{B(0)}
 \end{align*}</li>
 </ul>
@@ -7577,10 +7577,10 @@ $$</p>
 <ul>
 <li>Duration of a ZCB is its term $T$</li>
 <li>On a day when the yield drops $0.06\% = 6\text{ bps}$ across the entire curve, we have<ul>
-<li>1Y ZCB price up $0.06\%$</li>
-<li>5Y ZCB price up $0.3\%$</li>
-<li>10Y ZCB price up $0.6\%$</li>
-<li>30Y ZCB price up $1.8\%$</li>
+<li>1Y ZCB price up $0.06\% = 0.06\% \times 1$</li>
+<li>5Y ZCB price up $0.3\% = 0.06\% \times 5$</li>
+<li>10Y ZCB price up $0.6\% = 0.06\% \times 10$</li>
+<li>30Y ZCB price up $1.8\% = 0.06\% \times 30$</li>
 </ul>
 </li>
 <li>The longer-term the bond is, the more sensitive it is to the yield change<ul>
@@ -7603,6 +7603,107 @@ $$</p>
 <li>Yes, more or less, most of the time, as we will see when we get to Principal Component Analysis (PCA)</li>
 </ul>
 </li>
+</ul>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b88dda87-b7bf-4f6f-93de-f3e562eb10f5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Sensitivity-of-Coupon-Bond-Price-to-Yield-Change">Sensitivity of Coupon Bond Price to Yield Change<a class="anchor-link" href="#Sensitivity-of-Coupon-Bond-Price-to-Yield-Change">¶</a></h2><ul>
+<li>We repeat the same exercise but for coupon bonds</li>
+<li>Imagine, in a small period of time, the yields at all tenors change from $R_j$ to $R_j+\Delta$ for the same small amount $\Delta$. The bond price before and after the yield change are respectively
+\begin{align*}
+B(0) &amp;= N e^{-T_NR_N} + \sum_{j=1}^N c~e^{-T_j R_j} \\
+&amp;= c~e^{-T_1 R_1} + c~e^{-T_2 R_2} + \cdots + c~e^{-T_N R_N} + N e^{-T_NR_N}
+\end{align*}
+and
+\begin{align*}
+B(\Delta) &amp;= N e^{-T_N(R_N + \Delta)} + \sum_{j=1}^N c~e^{-T_j (R_j + \Delta)} \\
+&amp;= c~e^{-T_1 (R_1 + \Delta)} + c~e^{-T_2 (R_2 + \Delta)} + \cdots + c~e^{-T_N (R_N + \Delta)} + N e^{-T_N(R_N + \Delta)}
+\end{align*}</li>
+<li>Next we find the first derivative of $B(\Delta)$ at $\Delta = 0$</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e7537148-bffc-488d-97bc-cc74548b1177">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Sensitivity-of-Coupon-Bond-Price-to-Yield-Change-(Cont.)">Sensitivity of Coupon Bond Price to Yield Change (Cont.)<a class="anchor-link" href="#Sensitivity-of-Coupon-Bond-Price-to-Yield-Change-(Cont.)">¶</a></h2><p>\begin{align*}
+B(0) &amp;= c~e^{-T_1 R_1} + c~e^{-T_2 R_2} + \cdots + c~e^{-T_N R_N} + N e^{-T_NR_N}, \\
+B(\Delta) &amp;= c~e^{-T_1 (R_1 + \Delta)} + c~e^{-T_2 (R_2 + \Delta)} + \cdots + c~e^{-T_N (R_N + \Delta)} + N e^{-T_N(R_N + \Delta)}, 
+\end{align*}</p>
+<ul>
+<li>Next we find the first derivative of $B(\Delta)$ at $\Delta = 0$ to be
+\begin{align*}
+B'(0) &amp;= {\color{red}-T_1}c~e^{-T_1 R_1} {\color{red}-T_2} c~e^{-T_2 R_2} - \cdots {\color{red}-T_N} c~e^{-T_N R_N} {\color{red}-T_N} N e^{-T_N R_N} \approx \frac{B(\Delta) - B(0)}{\Delta}
+\end{align*}</li>
+<li>To obtain the percent change of bond price, multiply by $\Delta/B(0)$ on both sides:
+\begin{align*}
+{\color{red}-}\left(\frac{{\color{red}T_1}c~e^{-T_1 R_1} + {\color{red}T_2} c~e^{-T_2 R_2} + \cdots + {\color{red}T_N} c~e^{-T_N R_N} + {\color{red}T_N} N e^{-T_N R_N}}{B(0)}\right)\Delta \approx \frac{B(\Delta) - B(0)}{B(0)}
+\end{align*}</li>
+<li>The quantity in the parentheses is the duration, denoted by $D$ hereafter, but it can be further simplified</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b990bb6c-ce61-4bf0-bfa7-3310649a398c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Duration-of-Coupon-Bond">Duration of Coupon Bond<a class="anchor-link" href="#Duration-of-Coupon-Bond">¶</a></h2><p>\begin{align*}
+B(0) = c~e^{-T_1 R_1} + c~e^{-T_1 R_1} + \cdots + c~e^{-T_N R_N} + N e^{-T_NR_N}
+\end{align*}</p>
+<ul>
+<li>Yield change $\Delta$ and percent change of the bond price has the relation
+\begin{align*}
+-D\Delta \approx \frac{B(\Delta) - B(0)}{B(0)}, 
+\end{align*}
+where the duration $D$ is
+$$
+D = \frac{{\color{red}T_1}c~e^{-T_1 R_1} + {\color{red}T_2} c~e^{-T_2 R_2} + \cdots + {\color{red}T_N} c~e^{-T_N R_N} + {\color{red}T_N} N e^{-T_N R_N}}{B(0)}
+$$</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4b9cbe07-8072-44ec-8c9c-4dff9dd9be7d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>$$
+= T_1 w_1 + T_2 w_2 + \cdots + T_N w_N + T_N w_N^*, 
+$$
+where
+\begin{align*}
+w_j = \frac{c~e^{-T_jR_j}}{B(0)}, \qquad w_N^* = \frac{c~e^{-T_NR_N}}{B(0)}, 
+\end{align*}
+which satisfy $w_1 + w_2 + \cdots + w_N + w_N^* = 1$.</p>
+<ul>
+<li>Duration is a weighted average of all coupon payment dates (the terms)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b7aefc62-d495-423e-aa2b-211dcf391a41">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Duration-of-Coupon-Bond-(Cont.)">Duration of Coupon Bond (Cont.)<a class="anchor-link" href="#Duration-of-Coupon-Bond-(Cont.)">¶</a></h2><ul>
+<li>Duration is a weighted average of all coupon payment dates (the terms)</li>
 </ul>
 </div>
 </div>
