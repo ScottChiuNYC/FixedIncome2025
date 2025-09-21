@@ -7687,23 +7687,80 @@ $$</li>
 $$
 where
 \begin{align*}
-w_j = \frac{c~e^{-T_jR_j}}{B(0)}, \qquad w_N^* = \frac{c~e^{-T_NR_N}}{B(0)}, 
+w_j = \frac{c~e^{-T_jR_j}}{B(0)}, \quad\forall j=1, 2, \ldots, N, \quad\text{ and }\quad w_N^* = \frac{Ne^{-T_NR_N}}{B(0)}, 
 \end{align*}
-which satisfy $w_1 + w_2 + \cdots + w_N + w_N^* = 1$.</p>
+which satisfy $w_1 + w_2 + \cdots + w_N + w_N^* = 1$</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a9ea292b-ef4e-4af2-834e-783e25e30635">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Duration-of-Coupon-Bond-(Cont.)">Duration of Coupon Bond (Cont.)<a class="anchor-link" href="#Duration-of-Coupon-Bond-(Cont.)">¶</a></h2><p>\begin{align*}
+-D\Delta \approx \frac{B(\Delta) - B(0)}{B(0)}, 
+\end{align*}</p>
 <ul>
+<li>The duration $D = T_1 w_1 + T_2 w_2 + \cdots + T_N w_N + T_N w_N^*,$ where
+\begin{align*}
+w_j = \frac{c~e^{-T_jR_j}}{B(0)}, \quad\forall j=1, 2, \ldots, N, \quad\text{ and }\quad w_N^* = \frac{Ne^{-T_NR_N}}{B(0)}, 
+\end{align*}
+which satisfy $w_1 + w_2 + \cdots + w_N + w_N^* = 1$</li>
 <li>Duration is a weighted average of all coupon payment dates (the terms)</li>
 </ul>
 </div>
 </div>
 </div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=89ddf320-2b1e-4bd4-b22f-722c0c23cc8f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>In the case of zero coupon $(c = 0)$, this formula reduces to $D=T_N$, consistent with previous result</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c0af98f7-a85a-4db6-a549-f3d8671235ac">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>Since $w_N^* \gg w_j,$ the duration is still somewhat close to the bond's term $T_N$</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d25f5cd7-e2ac-4088-a9da-71e86756426d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>Previous conclusion that "the longer the bond is, the more sensitive it is to yield change" is still valid</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b7aefc62-d495-423e-aa2b-211dcf391a41">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Duration-of-Coupon-Bond-(Cont.)">Duration of Coupon Bond (Cont.)<a class="anchor-link" href="#Duration-of-Coupon-Bond-(Cont.)">¶</a></h2><ul>
-<li>Duration is a weighted average of all coupon payment dates (the terms)</li>
+<ul>
+<li>Since $T_1 &lt; T_2 &lt; \cdots &lt; T_N$, we know $D$ being a weighted average means $D \le T_N$<ul>
+<li>Coupons makes the duration of a bond lower</li>
+<li>The higher the coupon rate is, the lower the duration</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
