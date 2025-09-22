@@ -7809,7 +7809,79 @@ which satisfy $w_1 + w_2 + \cdots + w_N + w_N^* = 1$</li>
 </div>
 </div>
 </div>
-</div></div></section></section>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b7aa49ad-4594-46e1-abb5-b5b3d8758e97">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Duration-of-Coupon-Bond:-Example">Duration of Coupon Bond: Example<a class="anchor-link" href="#Duration-of-Coupon-Bond:-Example">¶</a></h2><ul>
+<li>Example from previous set's Bond Pricing: Exercise I:
+\begin{align*}
+B &amp;= c~e^{-T_1 R_1} + c~e^{-T_2 R_2} + \cdots + c~e^{-T_N R_N} + N e^{-T_NR_N}\\\\
+\$102.78 &amp;= 2.5 e^{-0.5\times 0.0385} + 2.5 e^{-1\times 0.0365} + 2.5 e^{-1.5\times 0.0358} + 102.5 e^{-2\times 0.0351}
+\end{align*}</li>
+<li>Duration is
+\begin{align*}
+D &amp;= \left(T_1 c~e^{-T_1 R_1} + T_2 c~e^{-T_2 R_2} + \cdots + T_N c~e^{-T_N R_N} + T_N N e^{-T_NR_N}\right)/B\\\\
+ &amp;= \left(0.5\times 2.5 e^{-0.5\times 0.0385} + 1\times 2.5 e^{-1\times 0.0365} + 1.5\times 2.5 e^{-1.5\times 0.0358} + 2\times 102.5 e^{-2\times 0.0351}\right)/102.78 = 1.9293 \text{ (years)}
+\end{align*}</li>
+<li>Somewhat close to its term 2y</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a9a45757-9e45-414d-829d-2f8e5b85ec04">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>The weights are
+\begin{align*}
+w_1 &amp;= 2.5 e^{-0.5\times 0.0385}/102.78 = 0.02386,\\
+w_2 &amp;= 2.5 e^{-1\times 0.0365}/102.78 = 0.02345,\\
+w_3 &amp;= 2.5 e^{-1.5\times 0.0358}/102.78 = 0.02305,\\
+w_4 &amp;= 2.5 e^{-2\times 0.0351}/102.78 = 0.02267,\\
+w_4^* &amp;= 100 e^{-2\times 0.0351}/102.78 = 0.90699
+\end{align*}</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8895b093-a67e-4306-9333-6d92bb654ce3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>If, today, the treasury yield is down 2 bps across the entire yield curve, the price of this bond will be up approximately $0.02\%\times 1.9293 = 0.039\%$</li>
+<li>If, today, the treasury yield is down 2 bps only for all tenors $\le$ 2y, the bond price will still be up $0.039\%$. (Why?)</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5e2b48a4-43cb-4182-a4a6-325138e12f92">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Duration-of-Coupon-Bond:-Exercise">Duration of Coupon Bond: Exercise<a class="anchor-link" href="#Duration-of-Coupon-Bond:-Exercise">¶</a></h2><ul>
+<li>Example from previous set's Bond Pricing: Exercise II:
+\begin{align*}
+B &amp;= c~e^{-T_1 R_1} + c~e^{-T_2 R_2} + \cdots + c~e^{-T_N R_N} + N e^{-T_NR_N}\\\\
+\$100.56 &amp;= 2 e^{-0.5\times 0.0385} + 2 e^{-1\times 0.0365} + 102 e^{-1.5\times 0.0358}
+\end{align*}</li>
+<li>What's its duration?</li>
+<li>If, today, the treasury yield is up 5 bps across the entire yield curve, what's the percent change of the bond price?</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section>
 </div>
 </div>
 </main>
