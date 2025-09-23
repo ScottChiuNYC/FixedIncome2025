@@ -8221,9 +8221,9 @@ B'(0) &amp;= \mathcal N \left(1+\frac{R}{m}\right)^{-mT_N}\left(-\frac{T_N}{1+\f
 \end{align*}</li>
 <li>Multiply by $\Delta/B(0)$ on both sides to obtain
 \begin{align*}
--\Delta\underbrace{\left[\frac{{\color{red}T_N}\mathcal N \left(1+\frac{R}{m}\right)^{-mT_N} + \sum_{j=1}^N {\color{red}T_j} c\left(1+\frac{R}{m}\right)^{-mT_j}}{\mathcal N \left(1+\frac{R}{m}\right)^{-mT_N} + \sum_{j=1}^N c\left(1+\frac{R}{m}\right)^{-mT_j}}\right]}_{D}/\left(1+\frac{R}{m}\right) \approx\frac{B(\Delta) - B(0)}{B(0)}, 
+-\Delta\left[\frac{{\color{red}T_N}\mathcal N \left(1+\frac{R}{m}\right)^{-mT_N} + \sum_{j=1}^N {\color{red}T_j} c\left(1+\frac{R}{m}\right)^{-mT_j}}{\mathcal N \left(1+\frac{R}{m}\right)^{-mT_N} + \sum_{j=1}^N c\left(1+\frac{R}{m}\right)^{-mT_j}}\right]/\left(1+\frac{R}{m}\right) \approx\frac{B(\Delta) - B(0)}{B(0)}, 
 \end{align*}
-where we've used the fact
+where quantity in the square brackets is $D$ and we've used the fact
 \begin{align*}
 B(0) = \mathcal N \left(1+\frac{R}{m}\right)^{-mT_N} + \sum_{j=1}^N c\left(1+\frac{R}{m}\right)^{-mT_j}
 \end{align*}</li>
@@ -8269,11 +8269,8 @@ $$
 is only accurate when $\Delta$ is small. For large yield curve movement, we need 2nd order approximation</li>
 <li>Consider the ZCB case
 \begin{align*}
-B(\Delta) &amp;= e^{-(R+\Delta)T} \approx B(0) + \Delta B'(0) + \frac{\Delta^2}{2} B''(0),
-\end{align*}
-but $B(\Delta)$ is an exponential function and $B'(0) = -TB(0)$, $B''(0) = T^2B(0)$, so we have
-\begin{align*}
-B(\Delta) \approx B(0) - T\Delta B(0) + T^2\frac{\Delta^2}{2} B(0)\\
+B(\Delta) &amp;= e^{-(R+\Delta)T} \approx B(0) + \Delta B'(0) + \frac{\Delta^2}{2} B''(0)\\
+&amp;= B(0) - T\Delta B(0) + T^2\frac{\Delta^2}{2} B(0)
 \end{align*}</li>
 <li>Divide through by $B(0)$ to obtain
 \begin{align*}
