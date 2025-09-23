@@ -8294,14 +8294,37 @@ B(\Delta) \approx B(0) + \Delta B'(0) + \frac{\Delta^2}{2} B''(0),
 $$
 so
 $$
-\frac{B(\Delta) - B(0)}{B(0)} \approx \Delta \frac{B'(0)}{B(0)} + \frac{\Delta^2}{2} \frac{B''(0)}{B(0)}, 
+\frac{B(\Delta) - B(0)}{B(0)} \approx \Delta \frac{B'(0)}{B(0)} + \frac{\Delta^2}{2} \frac{B''(0)}{B(0)}
+$$</li>
+<li>We will define
 $$
-but
+\frac{B'(0)}{B(0)} = -D, \qquad\frac{B''(0)}{B(0)} = C
+$$
+and write
+$$
+\frac{B(\Delta) - B(0)}{B(0)} \approx -D \Delta + \frac{1}{2}C\Delta^2
+$$</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2b9b1464-60e9-4fc8-99e0-5ce54661568b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Convexity-of-Coupon-Bond-(Cont.)">Convexity of Coupon Bond (Cont.)<a class="anchor-link" href="#Convexity-of-Coupon-Bond-(Cont.)">¶</a></h2><p>$$
+$$</p>
+<p>$$
+\frac{B(\Delta) - B(0)}{B(0)} \approx \Delta \frac{B'(0)}{B(0)} + \frac{\Delta^2}{2} \frac{B''(0)}{B(0)}
+$$</p>
+<ul>
+<li>We have
 \begin{align*}
 B(\Delta) &amp;= \mathcal N e^{-T_N(R_N+\Delta)} + \sum_{j=1}^N c~e^{-T_j (R_j+\Delta)}, \\
-B(0) &amp;= \mathcal N e^{-T_NR_N} + \sum_{j=1}^N c~e^{-T_j R_j}, \\
-B'(0) &amp;= -T_N\mathcal N e^{-T_NR_N} - \sum_{j=1}^N T_jc~e^{-T_j R_j},  \\
-B''(0) &amp;= T_N^2\mathcal N e^{-T_NR_N} + \sum_{j=1}^N T_j^2c~e^{-T_j R_j}
+\frac{B'(0)}{B(0)} &amp;= -\frac{{\color{red}T_N}\mathcal N e^{-T_NR_N} + \sum_{j=1}^N {\color{red}T_j}c~e^{-T_j R_j}}{\mathcal N e^{-T_NR_N} + \sum_{j=1}^N c~e^{-T_j R_j}} = -D,  \\
+\frac{B''(0)}{B(0)} &amp;= \frac{{\color{red}T_N^2}\mathcal N e^{-T_NR_N} + \sum_{j=1}^N {\color{red}T_j^2}c~e^{-T_j R_j}}{\mathcal N e^{-T_NR_N} + \sum_{j=1}^N c~e^{-T_j R_j}} = C
 \end{align*}</li>
 </ul>
 </div>
