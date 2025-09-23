@@ -48,8 +48,8 @@ poetry run python -m ipykernel install --user --name=fixedincome2025
 - Sphinx config: `docs/source/conf.py`
 - Windows build script: `docs/make.bat`
 
-Scrap notebook:
-- `docs/source/scrap.ipynb` is a scratchpad for quick drafts and ideas (often from AI assistants). Keep it lightweight and runnable; if content graduates to the course, move it into a properly named notebook and update the toctree.
+Scratchpad notebook:
+- `docs/source/scratchpad.ipynb` is a scratchpad for quick drafts and ideas (often from AI assistants). Keep it lightweight and runnable; if content graduates to the course, move it into a properly named notebook and update the toctree.
 
 Guidance for edits:
 - Place new notebooks in `docs/source/` and add to the toctree in `index.rst`.

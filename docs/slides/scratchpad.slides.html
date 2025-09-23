@@ -5,7 +5,7 @@
 <meta content="chrome=1" http-equiv="X-UA-Compatible"/>
 <meta content="yes" name="apple-mobile-web-app-capable"/>
 <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-<title>scrap slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
+<title>scratchpad slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
   import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
 </script>
@@ -7435,88 +7435,36 @@ main {
 <main>
 <div class="reveal">
 <div class="slides"><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d20df374">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d60d0801-0ee7-4d8d-b1d6-26836f778ef8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Duration-of-Coupon-Bonds">Duration of Coupon Bonds<a class="anchor-link" href="#Duration-of-Coupon-Bonds">¶</a></h1><p>We generalize ZCB duration to bonds that pay coupons. With continuously compounded spot rates and a parallel yield shift, the first-order price change can still be summarized by a single number: duration.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a28138fa">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Price-and-Cash-Flows">Price and Cash Flows<a class="anchor-link" href="#Price-and-Cash-Flows">¶</a></h2><ul>
-<li>Price with notional <code>N</code> and level coupons <code>c</code> at times <code>T_j</code> with spot rates <code>R_j</code>:
-$$
-B = N e^{-T_N R_N} + \sum_{j=1}^{N_c} c\, e^{-T_j R_j}, \quad R_j = R(0,T_j)
-$$</li>
-<li>Under a small parallel shift of the curve $\Delta$ (i.e., $R_j \to R_j + \Delta$ for all $j$),
-$$
-B(\Delta) = N e^{-T_N (R_N+\Delta)} + \sum_{j=1}^{N_c} c\, e^{-T_j (R_j+\Delta)}
-$$</li>
+<h1 id="Bond-Math-Topics">Bond Math Topics<a class="anchor-link" href="#Bond-Math-Topics">¶</a></h1><ul>
+<li>Pricing/Discounting: present value of cash flows with spot/forward rates.<ul>
+<li>Clean/Dirty Price: accrued interest, day-count conventions, settlement.</li>
+<li>Yield Measures: YTM, spot/par yields, equivalent compounding, money vs bond basis.</li>
+<li>Term Structure: bootstrapping, forward rates, no‑arbitrage relationships.</li>
+<li>Cash Flows: coupons, amortizing/annuity bonds, sinkers, TIPS indexation.</li>
 </ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=46da0765">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="First-Order-Sensitivity-(Duration)">First-Order Sensitivity (Duration)<a class="anchor-link" href="#First-Order-Sensitivity-(Duration)">¶</a></h2><p>Treat $B(\Delta)$ as a function of the parallel shift $\Delta$ and differentiate at $\Delta=0$:
-$$
-\frac{\partial B}{\partial \Delta}\Big|_{\Delta=0} = -\sum_{j=1}^{N_c} T_j c\, e^{-T_j R_j} - T_N N e^{-T_N R_N} = -\sum_{k} T_k \cdot CF_k\, e^{-T_k R_k}
-$$</p>
-<ul>
-<li>Price at $\Delta=0$: $B(0) = \sum_k CF_k\, e^{-T_k R_k}$</li>
-<li>Define (Macaulay) duration under continuous compounding:
-$$
-D = \frac{\sum_k T_k\, CF_k\, e^{-T_k R_k}}{\sum_k CF_k\, e^{-T_k R_k}} = \frac{\sum_k T_k PV(CF_k)}{B}
-$$</li>
-<li>First-order approximation (parallel move):
-$$
-\frac{B(\Delta) - B(0)}{B(0)} \approx - D\, \Delta
-$$</li>
-<li>For a ZCB, $D=T$ (matches your earlier result).</li>
+</li>
+<li>Risk &amp; Sensitivities<ul>
+<li>Duration: Macaulay, modified, effective; DV01/PV01.</li>
+<li>Key‑Rate Duration: curve‑bucket exposures (2y, 5y, 10y, etc.).</li>
+<li>Convexity: second‑order price effects, duration‑convexity approximation.</li>
+<li>Carry &amp; Roll‑Down: expected P&amp;L from time/curve shape.</li>
+<li>Hedging/Immunization: barbell vs bullet, liability matching.</li>
 </ul>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=088f2d37">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Intuition-and-Comparisons">Intuition and Comparisons<a class="anchor-link" href="#Intuition-and-Comparisons">¶</a></h2><ul>
-<li>Coupon bonds have $D &lt; T_N$ because some cash flows arrive earlier and get more weight in the PV sum.</li>
-<li>Higher coupon → lower duration (more weight on earlier coupons).</li>
-<li>Longer maturity → higher duration, but bounded below the final maturity.</li>
-<li>At the same yield, a 10Y 5% coupon bond has lower duration than a 10Y ZCB.</li>
+</li>
+<li>Instruments &amp; Modeling<ul>
+<li>Credit &amp; Spreads: z‑spread, OAS (option‑adjusted spread), hazard/default intensity.</li>
+<li>Embedded Options: callable/putable/MBS prepayment modeling; lattice/Monte Carlo.</li>
+<li>Curve Fitting: Nelson–Siegel/Svensson, splines, smoothing constraints.</li>
+<li>Funding/Repo: discounting curves, collateral/CSA effects, multi‑curve setups.</li>
+<li>Performance/Attribution: return decomposition (income, price, curve, spread).</li>
 </ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=ff4a3b39">
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7c6cfe6f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Slide-Notes-/-Talking-Points">Slide Notes / Talking Points<a class="anchor-link" href="#Slide-Notes-/-Talking-Points">¶</a></h2><ul>
-<li>Duration summarizes first-order price sensitivity to a parallel curve move.</li>
-<li>Coupon bond duration is the PV-weighted average time of cash flows.</li>
-<li>Higher coupons pull duration lower relative to maturity.</li>
-<li>Use duration to compare interest-rate risk across bonds and to construct hedges.</li>
+</li>
 </ul>
-<p>Next: convexity refines this approximation for larger moves.</p>
 </div>
 </div>
 </div>
