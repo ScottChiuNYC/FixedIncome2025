@@ -7602,6 +7602,7 @@ $$</p>
 <li>$1\text{ bp}$ (basis point) is $0.01\%$, a common unit of measurement in the rates market</li>
 <li>Does the yield change by the same amount across the entire curve?<ul>
 <li>Yes, more or less, most of the time, as we will see when we get to Principal Component Analysis (PCA)</li>
+<li>Yield changing by the same amount across the entire curve is so common it has a name "parallel shift of the curve"</li>
 </ul>
 </li>
 </ul>
@@ -7728,7 +7729,7 @@ which satisfy $w_1 + w_2 + \cdots + w_N + w_N^* = 1$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Duration-of-Coupon-Bond-(Cont..)">Duration of Coupon Bond (Cont..)<a class="anchor-link" href="#Duration-of-Coupon-Bond-(Cont..)">¶</a></h2><p>\begin{align*}
+<h2 id="Duration:-Properties-&amp;-Implications">Duration: Properties &amp; Implications<a class="anchor-link" href="#Duration:-Properties-&amp;-Implications">¶</a></h2><p>\begin{align*}
 -D\Delta \approx \frac{B(\Delta) - B(0)}{B(0)}, 
 \end{align*}</p>
 <ul>
@@ -7773,7 +7774,7 @@ which satisfy $w_1 + w_2 + \cdots + w_N + w_N^* = 1$</li>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Duration-of-Coupon-Bond-(Cont...)">Duration of Coupon Bond (Cont...)<a class="anchor-link" href="#Duration-of-Coupon-Bond-(Cont...)">¶</a></h2><p>\begin{align*}
+<h2 id="Duration:-Properties-&amp;-Implications-(Cont.)">Duration: Properties &amp; Implications (Cont.)<a class="anchor-link" href="#Duration:-Properties-&amp;-Implications-(Cont.)">¶</a></h2><p>\begin{align*}
 -D\Delta \approx \frac{B(\Delta) - B(0)}{B(0)}, 
 \end{align*}</p>
 <ul>
@@ -7819,7 +7820,7 @@ which satisfy $w_1 + w_2 + \cdots + w_N + w_N^* = 1$</li>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>Since $T_1 &lt; T_2 &lt; \cdots &lt; T_N$, we know $D$ being a weighted average means $D \le T_N$<ul>
-<li>Coupons makes the duration of a bond lower</li>
+<li>Coupons pulls the duration of a bond lower</li>
 <li>The higher the coupon rate is, the lower the duration ($w_j$'s larger)</li>
 </ul>
 </li>
@@ -7892,20 +7893,26 @@ B &amp;= c~e^{-T_1 R_1} + c~e^{-T_2 R_2} + \cdots + c~e^{-T_N R_N} + \mathcal N 
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7ce2e9d9-72fa-479e-befb-e0dec278bf5f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8d77feab-ae4a-48a2-a524-d26602137e4e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Sensitivity-of-Coupon-Bond-Price-to-Yield-Change-(Cont.)">Sensitivity of Coupon Bond Price to Yield Change (Cont.)<a class="anchor-link" href="#Sensitivity-of-Coupon-Bond-Price-to-Yield-Change-(Cont.)">¶</a></h2><p>\begin{align*}
-B(0) &amp;= c~e^{-T_1 R_1} + c~e^{-T_2 R_2} + \cdots + c~e^{-T_N R_N} + \mathcal N e^{-T_NR_N}, \\
-B(\Delta) &amp;= c~e^{-T_1 (R_1 + \Delta)} + c~e^{-T_2 (R_2 + \Delta)} + \cdots + c~e^{-T_N (R_N + \Delta)} + \mathcal N e^{-T_N(R_N + \Delta)}, 
-\end{align*}</p>
-<ul>
-<li>We find the first derivative of $B(\Delta)$ at $\Delta = 0$ to be
-\begin{align*}
-B'(0) &amp;= {\color{red}-\color{red}T_1}c~e^{-T_1 R_1} {\color{red}-\color{red}T_2} c~e^{-T_2 R_2} - \cdots {\color{red}-\color{red}T_N} c~e^{-T_N R_N} {\color{red}-\color{red}T_N} \mathcal N e^{-T_N R_N} \approx \frac{B(\Delta) - B(0)}{\Delta}
-\end{align*}</li>
+<h2 id="Dollar-Duration">Dollar Duration<a class="anchor-link" href="#Dollar-Duration">¶</a></h2><ul>
+<li>Recall that, with the Macaulay duration $D$, we have
+$$
+-D \Delta \approx \frac{B(\Delta) - B(0)}{B(0)}
+$$</li>
+<li>The $\Delta$ on the left hand side is the <strong>absolute change</strong> of the yield, while the right hand side is the <strong>percentage change</strong> of the bond price</li>
+<li>To make the right hand side absolute change of the price too, multiply through by $B(0)$ and define the dollar duration
+$$
+D^{\$} = DB(0)
+$$</li>
+<li>We then obtain
+$$
+-D^{\$} \Delta \approx B(\Delta) - B(0)
+$$</li>
+<li>It will be clear just a bit later why sometimes absolute changes are preferred</li>
 </ul>
 </div>
 </div>
@@ -7982,7 +7989,7 @@ P'(0) =&amp; \sum_{j=0}^M B_j'(0)\approx\frac{P(\Delta) - P(0)}{\Delta}\\
 \begin{align*}
 -\Delta D\approx \frac{P(\Delta) - P(0)}{P(0)}
 \end{align*}</li>
-<li>Since, all $c_i e^{-T_jR_j}$ and $\mathcal N_i e^{-T_{N_i}R_{N_i}}$ terms sum up to be the portfolio value $P(0)$, the duration $D$ is again a weighted average of payment dates (terms) of future cash flows, with weights the corresponding cash flows discounted</li>
+<li>Since, all $c_i e^{-T_jR_j}$ and $\mathcal N_i e^{-T_{N_i}R_{N_i}}$ terms sum up to be the portfolio value $P(0)$, the duration $D$ is again a weighted average of all payment dates (terms) of future cash flows, with weights the corresponding discounted cash flows</li>
 </ul>
 </div>
 </div>
@@ -7993,8 +8000,87 @@ P'(0) =&amp; \sum_{j=0}^M B_j'(0)\approx\frac{P(\Delta) - P(0)}{\Delta}\\
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Duration-of-a-Bond-Portfolio-(Cont...)">Duration of a Bond Portfolio (Cont...)<a class="anchor-link" href="#Duration-of-a-Bond-Portfolio-(Cont...)">¶</a></h2><ul>
-<li>In general, the duration of a portfolio of future cash flows is the weighted average of all payment dates, with weights the corresponding cash flows discounted</li>
+<h2 id="Portfolio-Duration:-Properties-&amp;-Implications">Portfolio Duration: Properties &amp; Implications<a class="anchor-link" href="#Portfolio-Duration:-Properties-&amp;-Implications">¶</a></h2><ul>
+<li>In general, the duration of a portfolio of future cash flows is the weighted average of all payment dates, with weights the corresponding discounted cash flows</li>
+<li>Like the coupon bond case, since $\mathcal N_i e^{-T_{N_i}R_{N_i}} \gg c_i e^{-T_jR_j}$, portfolio duration is somewhat close to a weighted average of the terms of the bonds in the portfolio</li>
+<li>But coupon pulls the duration lower, and again the higher the coupon rate is, the lower the duration</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c540d089-b35a-47b3-9984-fc6e61d265b3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Portfolio-Dollar-Duration">Portfolio Dollar Duration<a class="anchor-link" href="#Portfolio-Dollar-Duration">¶</a></h2><ul>
+<li>The portfolio version of dollar duration is defined as
+$$
+D^{\$} = DP(0)
+$$
+and we have
+$$
+-D^{\$} \Delta \approx P(\Delta) - P(0)
+$$</li>
+<li>This is saying, for small parallel shift of the curve, the value change of a portfolio is approximately equal to its dollar duration times the yield change, but in the opposite direction</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9ca935c4-fde8-46f9-bb20-52bd103cb554">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Hedging-by-Duration">Hedging by Duration<a class="anchor-link" href="#Hedging-by-Duration">¶</a></h2><ul>
+<li>You can hedge a portfolio of bonds by making its dollar duration 0</li>
+<li>If you want to hedge a portfolio of bonds with dollar duration $D^{\$}$, add (buy or short sell) one more bond to it with dollar duration $-D^{\$}$</li>
+<li>Adding this one trade to the book, the entire portfolio will now have zero dollar duration and hence
+$$
+P(\Delta) - P(0) \approx -D^{\$}\Delta = 0
+$$</li>
+<li>Why are we matching the dollar duration, not the duration?</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0d5a2fad-7520-41f8-a2b1-bd930f9477d4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Cost-of-Hedging">Cost of Hedging<a class="anchor-link" href="#Cost-of-Hedging">¶</a></h2><p>$$
+$$</p>
+<p>$$
+D^{\$} = DB(0)
+$$</p>
+<p>$$
+$$</p>
+<ul>
+<li>We have a set amount for $-D^{\$}$, but should we go high on $D$ or $B(0)$?</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ff452860-86bd-42ce-8950-9bfb135d19fa">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Hedging-by-Duration-(Cont.)">Hedging by Duration (Cont.)<a class="anchor-link" href="#Hedging-by-Duration-(Cont.)">¶</a></h2><ul>
+<li>Adding one trade to the book, your portfolio now has zero dollar duration and is immune to small parallel shifts in the yield curve:
+$$
+P(\Delta) - P(0) \approx -D^{\$}\Delta = 0
+$$</li>
+<li>It is still exposed to shifts that are either large or nonparallel. How to hedge those?<ul>
+<li>Large parallel shift: By convexity</li>
+<li>Nonparallel shift: By PCA</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -8232,30 +8318,6 @@ B(0) = \mathcal N \left(1+\frac{R}{m}\right)^{-mT_N} + \sum_{j=1}^N c\left(1+\fr
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e7c7b569-161f-44d2-9615-2a82c7946a58">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Dollar-Duration">Dollar Duration<a class="anchor-link" href="#Dollar-Duration">¶</a></h2><ul>
-<li>Recall that, with the Macaulay duration $D$, we have
-$$
--D \Delta \approx \frac{B(\Delta) - B(0)}{B(0)}
-$$</li>
-<li>The $\Delta$ on the left hand side is the <strong>absolute change</strong> of the yield, while the right hand side is the <strong>percentage change</strong> of the bond price</li>
-<li>To make the right hand side absolute change of the price too, multiply through by $B(0)$ and define the dollar duration
-$$
-D_{\$} = DB(0)
-$$</li>
-<li>We then obtain
-$$
--D_{\$} \Delta \approx B(\Delta) - B(0)
-$$</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3f47c0e1-2efc-4476-835d-4be26cdd11d8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8331,20 +8393,182 @@ B(\Delta) &amp;= \mathcal N e^{-T_N(R_N+\Delta)} + \sum_{j=1}^N c~e^{-T_j (R_j+\
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9a541918-bdad-415d-bb41-c32d70906b7d">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ddf88679-95cb-49b6-a2e4-f51b2d6cfa93">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Porperties-of-Convexity">Porperties of Convexity<a class="anchor-link" href="#Porperties-of-Convexity">¶</a></h2><p>$$
+<h2 id="Convexity:-Properties-&amp;-Implications">Convexity: Properties &amp; Implications<a class="anchor-link" href="#Convexity:-Properties-&amp;-Implications">¶</a></h2><p>$$
 $$</p>
 <p>\begin{align*}
 D &amp;= \frac{{\color{red}T_N}\mathcal N e^{-T_NR_N} + \sum_{j=1}^N {\color{red}T_j}c~e^{-T_j R_j}}{\mathcal N e^{-T_NR_N} + \sum_{j=1}^N c~e^{-T_j R_j}},  \\
 C &amp;= \frac{{\color{red}T_N^2}\mathcal N e^{-T_NR_N} + \sum_{j=1}^N {\color{red}T_j^2}c~e^{-T_j R_j}}{\mathcal N e^{-T_NR_N} + \sum_{j=1}^N c~e^{-T_j R_j}}
 \end{align*}</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1f71b58f-6689-43ba-960c-8d49fea8208c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li>Weighted average</li>
-<li>High coupon pulls convexity lower</li>
+<li>Duration is a weighted average of all payment date terms</li>
+<li>Convexity is the weighted average of all payment date terms squared</li>
+<li>Same weights as duration</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6ebd07d4-2fcb-457d-90ed-074d634e77c4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>Since $w_N^* \gg w_j,$ the duration is close to the bond's term squared: $T_N^2$</li>
+<li>For ZCB $(c=0)$, the convexity is equal to the term squared $T^2$</li>
+<li>Like duration, high coupon rate pulls convexity lower</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=78a68e5a-633e-49ec-a884-35c23e7364fa">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Dollar-Convexity">Dollar Convexity<a class="anchor-link" href="#Dollar-Convexity">¶</a></h2><ul>
+<li>Recall that
+$$
+\frac{B(\Delta) - B(0)}{B(0)} \approx -D \Delta + \frac{1}{2}C\Delta^2
+$$</li>
+<li>One side is absolute change but the other is the percentage change</li>
+<li>Define the dollar duration and dollar convexity as
+$$
+D^{\$} = DB(0), \qquad C^{\$} = CB(0), 
+$$
+respectively. We then obtain
+$$
+B(\Delta) - B(0) \approx -D^{\$} \Delta + \frac{1}{2}C^{\$}\Delta^2
+$$</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b0b05ea0-ce00-4416-8a0d-ec26b41ef18b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Portfolio-Convexity-and-Portfolio-Dollar-Convexity">Portfolio Convexity and Portfolio Dollar Convexity<a class="anchor-link" href="#Portfolio-Convexity-and-Portfolio-Dollar-Convexity">¶</a></h2><ul>
+<li>The duration and convexity of a portfolio of $M$ bonds are
+\begin{align*}
+D &amp;= \frac{\sum_{i=1}^M{\color{red}T_{N_M}}\mathcal N_M e^{-T_{N_M}R_{N_M}} + \sum_{i=1}^M\sum_{j=1}^N {\color{red}T_j}c_i~e^{-T_j R_j}}{\sum_{i=1}^M\mathcal N_M e^{-T_{N_M}R_{N_M}} + \sum_{i=1}^M\sum_{j=1}^N c_i~e^{-T_j R_j}},  \\
+C &amp;= \frac{\sum_{i=1}^M{\color{red}T_{N_M}^2}\mathcal N_M e^{-T_{N_M}R_{N_M}} + \sum_{i=1}^M\sum_{j=1}^N {\color{red}T_j^2}c_i~e^{-T_j R_j}}{\sum_{i=1}^M\mathcal N_M e^{-T_{N_M}R_{N_M}} + \sum_{i=1}^M\sum_{j=1}^N c_i~e^{-T_j R_j}},  
+\end{align*}
+respectively</li>
+<li>And its dollar duration and dollar convexity are defined as
+$$
+D^{\$} = DP(0), \qquad C^{\$} = CP(0), 
+$$
+respectively</li>
+<li>We have
+$$
+P(\Delta) - P(0) \approx -D^{\$} \Delta + \frac{1}{2}C^{\$}\Delta^2
+$$</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ab31af68-f32b-439f-822c-85135c6f455c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Hedging-by-Duration-and-Convexity">Hedging by Duration and Convexity<a class="anchor-link" href="#Hedging-by-Duration-and-Convexity">¶</a></h2><ul>
+<li>We have shown that, if you make a portfolio's dollar duration zero, it's immune to small parallel shifts in the yield curve</li>
+<li>To make it immune to large parallel shift, you need to make dollar convexity zero too, so that
+$$
+P(\Delta) - P(0) \approx -D^{\$} \Delta + \frac{1}{2}C^{\$}\Delta^2 = 0
+$$</li>
+<li>Suppose you are hedging a portfolio with dollar duration $D^{\$}_P$ and dollar convexity $C^{\$}_P$. If you could add a bond with dollar duration $-D^{\$}_P$ and dollar convexity $-C^{\$}_P$, you are done</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ae27375d-369a-4fd6-bf71-1c35a9d66b1b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>But in general this cannot be achieved by one single bond</li>
+<li>With two equations ($-D^{\$} = 0$ and $-C^{\$} = 0$) we need two variables</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ab424e8c-e4e6-41de-86f3-27849f8b8921">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Hedging-by-Duration-and-Convexity-(Cont.)">Hedging by Duration and Convexity (Cont.)<a class="anchor-link" href="#Hedging-by-Duration-and-Convexity-(Cont.)">¶</a></h2><ul>
+<li>Suppose we have two bonds $B_1$ and $B_2$:<ul>
+<li>$B_1$ has dollar duration $D^{\$}_1$ and dollar convexity $C^{\$}_1$</li>
+<li>$B_2$ has dollar duration $D^{\$}_2$ and dollar convexity $C^{\$}_2$</li>
+</ul>
+</li>
+<li>Buy $h_1$ units of $B_1$ and $h_2$ units of $B_2$ so that
+\begin{align*}
+&amp;h_1 D^{\$}_1 + h_2 D^{\$}_2 = -D^{\$}_P\\
+&amp;h_1 C^{\$}_1 + h_2 C^{\$}_2 = -C^{\$}_P
+\end{align*}</li>
+<li>Solve the system to obtain hedge ratio</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4f366e2d-4ea1-45c6-9b8c-f5425da08abc">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Linear-Systems-for-Hedging">Linear Systems for Hedging<a class="anchor-link" href="#Linear-Systems-for-Hedging">¶</a></h2><ul>
+<li>It's not uncommon we need so solve a linear system to figure out the hedge ratio</li>
+<li>Steps to hedge<ol>
+<li>Characterize factors (reasons) of the portfolio value change, in our example the parallel shifts of yield curve</li>
+<li>Write portfolio value change in terms of the factor changes</li>
+<li>Find hedge (trades, in our example, bonds) and hedge ratio to make coefficients zero</li>
+</ol>
+</li>
+<li>We will see linear system for hedging again in PCA</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fdb61684-f12c-46a7-8be8-cdcf410eef2e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Hedging-by-Duration-and-Convexity-(Cont..)">Hedging by Duration and Convexity (Cont..)<a class="anchor-link" href="#Hedging-by-Duration-and-Convexity-(Cont..)">¶</a></h2><ul>
+<li>After all the hard work we have
+$$
+P(\Delta) - P(0) \approx -D^{\$} \Delta + \frac{1}{2}C^{\$}\Delta^2 = 0
+$$</li>
+<li>The portfolio is now immune to large parallel shifts in the yield curve</li>
+<li>But still exposed to nonparallel shifts, which can be hedged by PCA</li>
 </ul>
 </div>
 </div>
