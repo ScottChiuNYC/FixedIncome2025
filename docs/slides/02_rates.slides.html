@@ -5,7 +5,7 @@
 <meta content="chrome=1" http-equiv="X-UA-Compatible"/>
 <meta content="yes" name="apple-mobile-web-app-capable"/>
 <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-<title>04_duration slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
+<title>02_rates slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
   import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
 </script>
@@ -7435,83 +7435,77 @@ main {
 <main>
 <div class="reveal">
 <div class="slides"><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cffd957e-9dfb-483f-bda4-4341272916ff">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d8167358-e0a2-4205-9c6c-85dca658b674">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="4.-Duration-and-Convexity">4. Duration and Convexity<a class="anchor-link" href="#4.-Duration-and-Convexity">¶</a></h1>
+<h1 id="2.-Overview-of-Rates">2. Overview of Rates<a class="anchor-link" href="#2.-Overview-of-Rates">¶</a></h1>
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=b882bc5a-d0de-485c-879c-cb50e32f2a45">
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ccbd6c0d-6bfe-4e28-a3ef-6233ba2a82ae">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0c377ca1-305d-4973-90a4-0d9e4cbc15ae">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Overview">Overview<a class="anchor-link" href="#Overview">¶</a></h2><ul>
-<li>Duration is an important concept that helps us to compute, quickly and approximately, how much the price of a bond should change in response to the yield change<ul>
-<li>Expressed in years, but it’s not the same as time to maturity</li>
-<li>A sensitivity measure<ul>
-<li>High duration: bond price sensitive to interest rate changes</li>
-<li>Low duration: insensitive, bond price stable</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Duration also summarizes a portfolio of bonds to one number, making it easy to hedge</li>
+<li>We have only seen US Treasury yield. There are many more different rates in the market</li>
+<li><strong>Assignment:</strong> Please read through Sections 4.1 - 4.3 of Options, Futures, and Other Derivatives 11th Edition by John Hull, Sankarshan Basu.</li>
 </ul>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8dfd6e8d-b948-4c32-85b8-9d17eedaa7f8">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bcd60045-84ca-46c7-bad0-401a7d6c87aa">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Bond-Pricing-Review">Bond Pricing Review<a class="anchor-link" href="#Bond-Pricing-Review">¶</a></h2><ul>
-<li>(Time $t=0$ price of) zero coupon bond: $P(0, T) = e^{-T\times R(0, T)}$</li>
-<li>Write in a simplified notation:
-$$
-B = e^{-TR}
-$$</li>
-<li>Zero coupon bond with notional $\mathcal N$:
-$$
-B = \mathcal N e^{-TR}
-$$</li>
-<li>Non-zero coupon bond that pays a fixed coupon $c$ at times $\{T_1, T_2, \ldots, T_N\}$ and notional $\mathcal N$ at maturity $T_N$:
-$$
-B = \mathcal N e^{-T_NR_N} + \sum_{j=1}^N c~e^{-T_j R_j}, 
-$$
-where $R_j = R(0, T_j)$</li>
-<li>Despite the seemingly involved notations, it's simply sum of discounted future cash flows</li>
+<h2 id="Fed-Funds-Rates">Fed Funds Rates<a class="anchor-link" href="#Fed-Funds-Rates">¶</a></h2><ul>
+<li>At end of date each day, US banks are required by the regulator to maintain certain cash level (the reserve) depending on the business</li>
+<li>A bank can have more/less than they are required</li>
+<li>This leads to an interbank overnight lending market and the interest rate, determined by supply and demand, is the federal funds rate</li>
+<li>Central bank is in the market and can control the target rate by buying US treasuries from participating banks</li>
+<li>Fed funds rates are unsecured</li>
 </ul>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4c49c483-ae08-4b59-94c8-ebe60adaa67c">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0cd1d100-5adb-415a-abdb-3a1c221d8548">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Bond-Pricing-Review-(Cont.)">Bond Pricing Review (Cont.)<a class="anchor-link" href="#Bond-Pricing-Review-(Cont.)">¶</a></h2><p>\begin{align*}
-B &amp;= \mathcal N e^{-T_NR_N} + \sum_{j=1}^N c~e^{-T_j R_j} \\
-&amp;= c~e^{-T_1 R_1} + c~e^{-T_2 R_2} + \cdots + c~e^{-T_N R_N} + \mathcal N e^{-T_NR_N}
-\end{align*}</p>
-<ul>
-<li>Example from previous set's Bond Pricing: Exercise I:
-$$
-2.5 e^{-0.5\times 0.0385} + 2.5 e^{-1\times 0.0365} + 2.5 e^{-1.5\times 0.0358} + 102.5 e^{-2\times 0.0351} = \$102.78
-$$</li>
-<li>Here we have notional $\mathcal N = 100$ and<ul>
-<li>$c = 2.5$,</li>
-<li>$T_1 = 0.5$, $R_1 = 3.85\%$,</li>
-<li>$T_2 = 1.0$, $R_2 = 3.65\%$,</li>
-<li>$T_3 = 1.5$, $R_3 = 3.58\%$</li>
-<li>$B = 102.78$</li>
+<h2 id="SONIA-and-ESTER">SONIA and ESTER<a class="anchor-link" href="#SONIA-and-ESTER">¶</a></h2><ul>
+<li>Other countries have similar systems and unsecured overnight rates</li>
+<li>In UK, it's the sterling overnight index average (SONIA)</li>
+<li>In eurozone, it's the euro short-term rate (ESTER)</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=53ad8488-e0d0-46ef-bd4a-4b156d948e83">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Repo-Rates">Repo Rates<a class="anchor-link" href="#Repo-Rates">¶</a></h2><ul>
+<li>A repurchase agreement (repo) is a contract for bank A to sell a security to bank B and promise to buy it back next day at a slightly higher price</li>
+<li>It is a secured lending transaction<ul>
+<li>slightly lower than fed funds rates</li>
+</ul>
+</li>
+<li>There are overnight repos (the most common) and longer "term repos"</li>
+<li>The underlying securities can be<ul>
+<li>U.S. Treasury securities (most frequently used) due to their safety and market liquidity</li>
+<li>Corporate bonds</li>
+<li>Municipal bonds</li>
+<li>Mortgage-backed securities (MBS), often used in term repo</li>
 </ul>
 </li>
 </ul>
@@ -7519,89 +7513,42 @@ $$</li>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=69dd8a76-2044-4d70-a279-8413e970295a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c4123e9d-8592-4a26-8943-23ee0e4f4f1b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Sensitivity-of-ZCB-Price-to-Its-Yield-Change">Sensitivity of ZCB Price to Its Yield Change<a class="anchor-link" href="#Sensitivity-of-ZCB-Price-to-Its-Yield-Change">¶</a></h2><ul>
-<li>Imagine, in a small period of time, the yield changes from $R$ to $R+\Delta$ for some small $\Delta$. The ZCB price before and after the yield change are respectively
-$$
-B(0) = e^{-TR} \quad\text{and}\quad B(\Delta) = e^{-T(R+\Delta)}
-$$</li>
+<h2 id="SOFR-(Daily)">SOFR (Daily)<a class="anchor-link" href="#SOFR-(Daily)">¶</a></h2><ul>
+<li>The secured overnight financing rate</li>
+<li>Volume-weighted median average of the overnight repo rates in the US</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a272cef0-563a-4641-a8c3-819f91f5848c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="The-Risk-Free-Rate">The Risk-Free Rate<a class="anchor-link" href="#The-Risk-Free-Rate">¶</a></h2><ul>
+<li>In financial modeling, when a risk-free rate is needed, SOFR is usually used</li>
+<li>Why not US treasury?</li>
 </ul>
 </div>
 </div>
 </div>
 </div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3ca56dbb-b59e-42f1-a02b-51764bf1df87">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1d9b07d8-10ca-48a8-a4fe-cbeb0f5a3bf3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li>We are treating $B$ as a function of the yield change $\Delta$. Now find its first derivative at $\Delta = 0$:
-\begin{align*}
-&amp;B'(0) = -Te^{-TR} \approx \frac{B(\Delta) - B(0)}{\Delta} \\
-\iff&amp; -TB(0) \approx \frac{B(\Delta) - B(0)}{\Delta} \\
-\iff&amp; -T\Delta \approx \frac{B(\Delta) - B(0)}{B(0)}
-\end{align*}</li>
-</ul>
-</div>
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c84ec35d-19e8-4e0a-8257-063fe435dcf5">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ul>
-<li>Right hand side: percentage change of the ZCB price</li>
-<li>Left hand side: Term times yield change in the opposite direction</li>
-<li>Hence the negative sign</li>
-<li>In the case of ZCB, the term $T$ is the sensitivivity and is called the (Macaulay) duration of this ZCB</li>
-</ul>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=67eefa21-c5c6-4c20-9569-7d6e88427ca1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="ZCB-Duration-Example">ZCB Duration Example<a class="anchor-link" href="#ZCB-Duration-Example">¶</a></h2><p>$$
--T\Delta \approx \frac{B(\Delta) - B(0)}{B(0)}
-$$</p>
-<ul>
-<li>Duration of a ZCB is its term $T$</li>
-<li>On a day when the yield drops $0.06\% = 6\text{ bps}$ across the entire curve, we have<ul>
-<li>1Y ZCB price up $0.06\% = 0.06\% \times 1$</li>
-<li>5Y ZCB price up $0.3\% = 0.06\% \times 5$</li>
-<li>10Y ZCB price up $0.6\% = 0.06\% \times 10$</li>
-<li>30Y ZCB price up $1.8\% = 0.06\% \times 30$</li>
-</ul>
-</li>
-<li>The longer-term the bond is, the more sensitive it is to the yield change<ul>
-<li>This is true for nonzero coupon bonds too, as we will see soon</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=98e5ba2b-e902-4e50-ac0a-e163f248dbc9">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ul>
-<li>$1\text{ bp}$ (basis point) is $0.01\%$, a common unit of measurement in the rates market</li>
-<li>Does the yield change by the same amount across the entire curve?<ul>
-<li>Yes, more or less, most of the time, as we will see when we get to Principal Component Analysis (PCA)</li>
-<li>Yield changing by the same amount across the entire curve is so common it has a name "parallel shift of the curve"</li>
+<li>Traders think US Treasury yield is too low to be used as the risk-free rate as<ul>
+<li>Treasuries must be purchased by financial instritutions to fulfill regulatory requirements, which increases the demand of the Treasuries, driving the yield down</li>
+<li>The amount of capital a bank is required to hold to support an investment in the Treasuries is much smaller than other low-risk investments</li>
+<li>Tax advantages: Coupons from the Treasuries are exempt from state and local income taxes</li>
 </ul>
 </li>
 </ul>
@@ -7609,492 +7556,63 @@ $$</p>
 </div>
 </div>
 </div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b88dda87-b7bf-4f6f-93de-f3e562eb10f5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cd298675-7e76-44c7-b314-598c03534989">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Sensitivity-of-Coupon-Bond-Price-to-Yield-Change">Sensitivity of Coupon Bond Price to Yield Change<a class="anchor-link" href="#Sensitivity-of-Coupon-Bond-Price-to-Yield-Change">¶</a></h2><ul>
-<li>We repeat the same exercise but for coupon bonds</li>
-<li>Imagine, in a small period of time, the yields at all tenors change from $R_j$ to $R_j+\Delta$ for the same small amount $\Delta$. The bond price before and after the yield change are respectively
-\begin{align*}
-B(0) &amp;= \mathcal N e^{-T_NR_N} + \sum_{j=1}^N c~e^{-T_j R_j} \\
-&amp;= c~e^{-T_1 R_1} + c~e^{-T_2 R_2} + \cdots + c~e^{-T_N R_N} + \mathcal N e^{-T_NR_N}
-\end{align*}
-and
-\begin{align*}
-B(\Delta) &amp;= \mathcal N e^{-T_N(R_N + \Delta)} + \sum_{j=1}^N c~e^{-T_j (R_j + \Delta)} \\
-&amp;= c~e^{-T_1 (R_1 + \Delta)} + c~e^{-T_2 (R_2 + \Delta)} + \cdots + c~e^{-T_N (R_N + \Delta)} + \mathcal N e^{-T_N(R_N + \Delta)}
-\end{align*}</li>
-<li>Next we find the first derivative of $B(\Delta)$ at $\Delta = 0$</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=71b8ffba-5319-40ae-ad88-4ca65d721010">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Sensitivity-of-Coupon-Bond-Price-to-Yield-Change-(Cont.)">Sensitivity of Coupon Bond Price to Yield Change (Cont.)<a class="anchor-link" href="#Sensitivity-of-Coupon-Bond-Price-to-Yield-Change-(Cont.)">¶</a></h2><p>\begin{align*}
-B(0) &amp;= c~e^{-T_1 R_1} + c~e^{-T_2 R_2} + \cdots + c~e^{-T_N R_N} + \mathcal N e^{-T_NR_N}, \\
-B(\Delta) &amp;= c~e^{-T_1 (R_1 + \Delta)} + c~e^{-T_2 (R_2 + \Delta)} + \cdots + c~e^{-T_N (R_N + \Delta)} + \mathcal N e^{-T_N(R_N + \Delta)}, 
-\end{align*}</p>
-<ul>
-<li>We find the first derivative of $B(\Delta)$ at $\Delta = 0$ to be
-\begin{align*}
-B'(0) &amp;= {\color{red}-\color{red}T_1}c~e^{-T_1 R_1} {\color{red}-\color{red}T_2} c~e^{-T_2 R_2} - \cdots {\color{red}-\color{red}T_N} c~e^{-T_N R_N} {\color{red}-\color{red}T_N} \mathcal N e^{-T_N R_N} \approx \frac{B(\Delta) - B(0)}{\Delta}
-\end{align*}</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e7537148-bffc-488d-97bc-cc74548b1177">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ul>
-<li>To obtain the percentage change of bond price, multiply by $\Delta/B(0)$ on both sides:
-\begin{align*}
-{\color{red}-}\left(\frac{{\color{red}T_1}c~e^{-T_1 R_1} + {\color{red}T_2} c~e^{-T_2 R_2} + \cdots + {\color{red}T_N} c~e^{-T_N R_N} + {\color{red}T_N} \mathcal N e^{-T_N R_N}}{B(0)}\right)\Delta \approx \frac{B(\Delta) - B(0)}{B(0)}
-\end{align*}</li>
-<li>The quantity in the parentheses is the duration, denoted by $D$ hereafter, but it can be further simplified</li>
-</ul>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b990bb6c-ce61-4bf0-bfa7-3310649a398c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Duration-of-Coupon-Bond">Duration of Coupon Bond<a class="anchor-link" href="#Duration-of-Coupon-Bond">¶</a></h2><ul>
-<li>Yield change $\Delta$ and percentage change of the bond price has the relation
-\begin{align*}
--D\Delta \approx \frac{B(\Delta) - B(0)}{B(0)}
-\end{align*}
-where $D$ is the duration</li>
-<li>Again a negative sign because left hand side is yield change which right hand side is bond price change</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=aa86abbe-8001-48bb-9d44-04da91892827">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Duration-of-Coupon-Bond-(Cont.)">Duration of Coupon Bond (Cont.)<a class="anchor-link" href="#Duration-of-Coupon-Bond-(Cont.)">¶</a></h2><p>\begin{align*}
-B(0) = c~e^{-T_1 R_1} + c~e^{-T_1 R_1} + \cdots + c~e^{-T_N R_N} + \mathcal N e^{-T_NR_N}
-\end{align*}</p>
-<ul>
-<li>Yield change $\Delta$ and percentage change of the bond price has the relation
-\begin{align*}
--D\Delta \approx \frac{B(\Delta) - B(0)}{B(0)}, 
-\end{align*}
-where the duration $D$ is
-$$
-D = \frac{{\color{red}T_1}c~e^{-T_1 R_1} + {\color{red}T_2} c~e^{-T_2 R_2} + \cdots + {\color{red}T_N} c~e^{-T_N R_N} + {\color{red}T_N} \mathcal N e^{-T_N R_N}}{B(0)}
-$$</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4b9cbe07-8072-44ec-8c9c-4dff9dd9be7d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>$$
-= T_1 w_1 + T_2 w_2 + \cdots + T_N w_N + T_N w_N^*, 
-$$
-where
-\begin{align*}
-w_j = \frac{c~e^{-T_jR_j}}{B(0)}, \quad\forall j=1, 2, \ldots, N, \quad\text{ and }\quad w_N^* = \frac{\mathcal Ne^{-T_NR_N}}{B(0)}, 
-\end{align*}
-which satisfy $w_1 + w_2 + \cdots + w_N + w_N^* = 1$</p>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a9ea292b-ef4e-4af2-834e-783e25e30635">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Duration:-Properties-&amp;-Implications">Duration: Properties &amp; Implications<a class="anchor-link" href="#Duration:-Properties-&amp;-Implications">¶</a></h2><p>\begin{align*}
--D\Delta \approx \frac{B(\Delta) - B(0)}{B(0)}, 
-\end{align*}</p>
-<ul>
-<li>The duration $D = T_1 w_1 + T_2 w_2 + \cdots + T_N w_N + T_N w_N^*,$ where
-\begin{align*}
-w_j = \frac{c~e^{-T_jR_j}}{B(0)}, \quad\forall j=1, 2, \ldots, N, \quad\text{ and }\quad w_N^* = \frac{\mathcal Ne^{-T_NR_N}}{B(0)}, 
-\end{align*}
-which satisfy $w_1 + w_2 + \cdots + w_N + w_N^* = 1$</li>
-<li>Duration is a weighted average of all payment dates (the terms)</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d01e2169-decc-4c81-b35d-2f4e6f3f4b86">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ul>
-<li>Recall that fair price of a bond is sum of all cash flows discounted</li>
-<li>Weights of duration are percentages of each discounted cash flow in the bond price</li>
-</ul>
-</div>
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=89ddf320-2b1e-4bd4-b22f-722c0c23cc8f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ul>
-<li>In the case of ZCB $(c = 0)$, this formula reduces to $D=T_N$, consistent with previous result</li>
-</ul>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c14e3099-c923-40de-bf38-07d375fecf35">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Duration:-Properties-&amp;-Implications-(Cont.)">Duration: Properties &amp; Implications (Cont.)<a class="anchor-link" href="#Duration:-Properties-&amp;-Implications-(Cont.)">¶</a></h2><p>\begin{align*}
--D\Delta \approx \frac{B(\Delta) - B(0)}{B(0)}, 
-\end{align*}</p>
-<ul>
-<li>The duration $D = T_1 w_1 + T_2 w_2 + \cdots + T_N w_N + T_N w_N^*,$ where
-\begin{align*}
-w_j = \frac{c~e^{-T_jR_j}}{B(0)}, \quad\forall j=1, 2, \ldots, N, \quad\text{ and }\quad w_N^* = \frac{\mathcal Ne^{-T_NR_N}}{B(0)}, 
-\end{align*}
-which satisfy $w_1 + w_2 + \cdots + w_N + w_N^* = 1$</li>
-<li>Duration is a weighted average of all payment dates (the terms)</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c0af98f7-a85a-4db6-a549-f3d8671235ac">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ul>
-<li>Since $w_N^* \gg w_j,$ the duration is still somewhat close to the bond's term $T_N$</li>
-</ul>
-</div>
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d25f5cd7-e2ac-4088-a9da-71e86756426d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ul>
-<li>Previous conclusion "the longer the bond is, the more sensitive it is to yield change" is still valid</li>
-</ul>
-</div>
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b7aefc62-d495-423e-aa2b-211dcf391a41">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ul>
-<li>Since $T_1 &lt; T_2 &lt; \cdots &lt; T_N$, we know $D$ being a weighted average means $D \le T_N$<ul>
-<li>Coupons pulls the duration of a bond lower</li>
-<li>The higher the coupon rate is, the lower the duration ($w_j$'s larger)</li>
+<h2 id="Referencing-Rates-(Index-Rates)">Referencing Rates (Index Rates)<a class="anchor-link" href="#Referencing-Rates-(Index-Rates)">¶</a></h2><ul>
+<li>Many interest rate products need an index rate</li>
+<li>5/1 ARM mortgage:<ul>
+<li>Rates are fixed to be $5.37\%$ for 5 years and floating after (meaning mortgate rates are different every month after 5 years)</li>
+<li>The floating rate is SOFR plus a fixed margin</li>
+<li>If your margin is $2.5\%$ and the SOFR then is $3.75\%$, then you'll be charged $3.75\% + 2.5\% = 6.25\%$</li>
 </ul>
 </li>
-</ul>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b7aa49ad-4594-46e1-abb5-b5b3d8758e97">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Duration-of-Coupon-Bond:-Example">Duration of Coupon Bond: Example<a class="anchor-link" href="#Duration-of-Coupon-Bond:-Example">¶</a></h2><ul>
-<li>Example from previous set's Bond Pricing: Exercise I:
-\begin{align*}
-B &amp;= c~e^{-T_1 R_1} + c~e^{-T_2 R_2} + \cdots + c~e^{-T_N R_N} + \mathcal N e^{-T_NR_N}\\\\
-\$102.78 &amp;= 2.5 e^{-0.5\times 0.0385} + 2.5 e^{-1\times 0.0365} + 2.5 e^{-1.5\times 0.0358} + 102.5 e^{-2\times 0.0351}
-\end{align*}</li>
-<li>Duration is
-\begin{align*}
-D &amp;= \left(T_1 c~e^{-T_1 R_1} + T_2 c~e^{-T_2 R_2} + \cdots + T_N c~e^{-T_N R_N} + T_N \mathcal N e^{-T_NR_N}\right)/B
-\end{align*}
-\begin{align*}
-&amp;= \left(0.5\times 2.5 e^{-0.5\times 0.0385} + 1\times 2.5 e^{-1\times 0.0365} + 1.5\times 2.5 e^{-1.5\times 0.0358} + 2\times 102.5 e^{-2\times 0.0351}\right)/102.78 = 1.9293 \text{ (years)}
-\end{align*}</li>
-<li>If, today, the treasury yield is down 2 bps across the entire yield curve, the price of this bond will be up approximately $0.02\%\times 1.9293 = 0.039\%$</li>
-<li>If, today, the treasury yield is down 2 bps only for all tenors $\le$ 2y, the bond price will still be up $0.039\%$. (Why?)</li>
+<li>The SOFR in this story is the index rate</li>
 </ul>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a9a45757-9e45-414d-829d-2f8e5b85ec04">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=18722249-9225-49c0-a4ae-049954915ebd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Duration-of-Coupon-Bond:-Example-(Cont.)">Duration of Coupon Bond: Example (Cont.)<a class="anchor-link" href="#Duration-of-Coupon-Bond:-Example-(Cont.)">¶</a></h2><ul>
-<li>$D = 1.9293$ is close to but shorter than the term 2y</li>
-<li>The weights are
-\begin{align*}
-w_1 &amp;= 2.5 e^{-0.5\times 0.0385}/102.78 = 0.02386,\\
-w_2 &amp;= 2.5 e^{-1\times 0.0365}/102.78 = 0.02345,\\
-w_3 &amp;= 2.5 e^{-1.5\times 0.0358}/102.78 = 0.02305,\\
-w_4 &amp;= 2.5 e^{-2\times 0.0351}/102.78 = 0.02267,\\
-w_4^* &amp;= 100 e^{-2\times 0.0351}/102.78 = 0.90699
-\end{align*}</li>
-<li>$w_4^* \gg w_1 &gt; w_2 &gt; w_3 &gt; w_4$</li>
+<h2 id="LIBOR">LIBOR<a class="anchor-link" href="#LIBOR">¶</a></h2><ul>
+<li>Retired since 2021 but still an important concept in rates modeling</li>
+<li>A daily survey published at 11:00 am LON time</li>
+<li>The participating banks answer this question: What's the rate you want to charge today on a 3M lending?</li>
+<li>The median average of the answer is today's 3M LIBOR rate</li>
+<li>There were other tenors, like 1M LIBOR, 6M LIBOR rates surveyed and published daily</li>
+<li>Unsecured</li>
+<li>No lending actually happened</li>
 </ul>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5e2b48a4-43cb-4182-a4a6-325138e12f92">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=103dad26-f072-413f-9369-fb42e79b797d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Duration-of-Coupon-Bond:-Exercise">Duration of Coupon Bond: Exercise<a class="anchor-link" href="#Duration-of-Coupon-Bond:-Exercise">¶</a></h2><ul>
-<li>Example from previous set's Bond Pricing: Exercise II:
-\begin{align*}
-B &amp;= c~e^{-T_1 R_1} + c~e^{-T_2 R_2} + \cdots + c~e^{-T_N R_N} + \mathcal N e^{-T_NR_N}\\\\
-\$100.56 &amp;= 2 e^{-0.5\times 0.0385} + 2 e^{-1\times 0.0365} + 102 e^{-1.5\times 0.0358}
-\end{align*}</li>
-<li>What's its duration?</li>
-<li>If, today, the treasury yield is up 5 bps across the entire yield curve, what's the percentage change of the bond price?</li>
+<h2 id="LIBOR-Scandal"><a href="https://en.wikipedia.org/wiki/Libor_scandal">LIBOR Scandal</a><a class="anchor-link" href="#LIBOR-Scandal">¶</a></h2><ul>
+<li>The LIBOR scandal is a series of fraudulent practices related to LIBOR that came in light in 2012</li>
+<li>Manipulation<ul>
+<li>Some banks engaged in fraudulent and collusive practices in submitting LIBOR rates, intentionally raising or lowering their bids to influence borrowing costs and profit</li>
 </ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8d77feab-ae4a-48a2-a524-d26602137e4e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Dollar-Duration">Dollar Duration<a class="anchor-link" href="#Dollar-Duration">¶</a></h2><ul>
-<li>Recall that, with the Macaulay duration $D$, we have
-$$
--D \Delta \approx \frac{B(\Delta) - B(0)}{B(0)}
-$$</li>
-<li>The $\Delta$ on the left hand side is the <strong>absolute change</strong> of the yield, while the right hand side is the <strong>percentage change</strong> of the bond price</li>
-<li>To make the right hand side absolute change of the price too, multiply through by $B(0)$ and define the dollar duration
-$$
-D^{\$} = DB(0)
-$$</li>
-<li>We then obtain
-$$
--D^{\$} \Delta \approx B(\Delta) - B(0)
-$$</li>
-<li>It will be clear just a bit later why sometimes absolute changes are preferred</li>
+</li>
+<li>Impact<ul>
+<li>LIBOR was widely used as a reference rate for many financial products, including mortgages and derivatives. Bank manipulation of LIBOR has a direct impact on consumers and financial markets worldwide</li>
+<li>Statistics show that between 2000 and 2009, LIBOR rates rose on the first day of each month, increasing the burden on homeowners' monthly payments</li>
 </ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0c8dfa8c-59d3-4118-b4dd-3dccff9e9731">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="DV01">DV01<a class="anchor-link" href="#DV01">¶</a></h2><ul>
-<li>A related sensitivity measure is DV01, the dollar value of 1 bp, also known as PV01, the present value of 1 bp</li>
-<li>DV01 is the price change from a +1 bp paralle yield curve shift</li>
-<li>For a bond, plugging $\Delta = 1 \text{bp} = 10^{-4}$ into $-D^{\$} \Delta \approx B(\Delta) - B(0)$, we have
-$$
-\text{DV01} = -D^{\$}\times 10^{-4} \approx B(\Delta) - B(0)
-$$</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a37737fa-d167-4c86-bfb5-8eee776525dc">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Duration-of-a-Bond-Portfolio">Duration of a Bond Portfolio<a class="anchor-link" href="#Duration-of-a-Bond-Portfolio">¶</a></h2><ul>
-<li>We repeat the same exercise for a portfolio of bonds</li>
-<li>If I hold $M$ bonds whose prices are
-\begin{align*}
-B_1 &amp;= c_1e^{-T_1 R_1} + c_1e^{-T_2 R_2} + \cdots + c_1e^{-T_N R_N} + \mathcal N_1 e^{-T_{N_1}R_{N_1}}, \\
-B_2 &amp;= c_2e^{-T_1 R_1} + c_2e^{-T_2 R_2} + \cdots + c_2e^{-T_N R_N} + \mathcal N_2 e^{-T_{N_2}R_{N_2}}, \\
-% B_3 &amp;= c_3e^{-T_1 R_1} + c_3e^{-T_2 R_2} + \cdots + c_3e^{-T_N R_N} + \mathcal N_3 e^{-T_{N_3}R_{N_3}}, \\
-&amp;\qquad\qquad\qquad\qquad\qquad\qquad\vdots\\
-B_M &amp;= c_Me^{-T_1 R_1} + c_Me^{-T_2 R_2} + \cdots + c_Me^{-T_N R_N} + \mathcal N_M e^{-T_{N_M}R_{N_M}}, \\
-\end{align*}
-which sum up to be the portfolio value $P = \sum_{j=0}^M B_j$</li>
-<li>If, in a small period of time, the yields at all tenors change from $R_j$ to $R_j+\Delta$ for the same small amount $\Delta$. The bond prices become
-\begin{align*}
-B_1(\Delta) &amp;= c_1e^{-T_1 (R_1 + \Delta)} + c_1e^{-T_2 (R_2 + \Delta)} + \cdots + c_1e^{-T_{N_1} (R_{N_1} + \Delta)} + \mathcal N_1 e^{-T_{N_1}(R_{N_1} + \Delta)},\\
-B_2(\Delta) &amp;= c_2e^{-T_1 (R_1 + \Delta)} + c_2e^{-T_2 (R_2 + \Delta)} + \cdots + c_2e^{-T_{N_2} (R_{N_2} + \Delta)} + \mathcal N_2 e^{-T_{N_2}(R_{N_2} + \Delta)}, \\
-&amp;\qquad\qquad\qquad\qquad\qquad\qquad\vdots\\
-B_M(\Delta) &amp;= c_Me^{-T_1 (R_1 + \Delta)} + c_Me^{-T_2 (R_2 + \Delta)} + \cdots + c_Me^{-T_{N_M} (R_{N_M} + \Delta)} + \mathcal N_M e^{-T_{N_M}(R_{N_M} + \Delta)},
-\end{align*}
-which sum up to be the portfolio value $P(\Delta) = \sum_{j=0}^M B_j(\Delta)$</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=80bb9c5b-99fa-44d8-ae00-d50d3aaa1196">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Duration-of-a-Bond-Portfolio-(Cont.)">Duration of a Bond Portfolio (Cont.)<a class="anchor-link" href="#Duration-of-a-Bond-Portfolio-(Cont.)">¶</a></h2><ul>
-<li>Find the first derivative of $P(\Delta)$ at $\Delta=0$:
-\begin{align*}
-P'(0) =&amp; \sum_{j=0}^M B_j'(0)\approx\frac{P(\Delta) - P(0)}{\Delta}\\
-=&amp; -T_1c_1e^{-T_1 R_1} -T_2 c_1e^{-T_2 R_2} - \cdots -T_{N_1} c_1e^{-T_{N_1} R_{N_1}} -T_{N_1} \mathcal N_1 e^{-T_{N_1}R_{N_1}} \\
-&amp;-T_1 c_2e^{-T_1 R_1} -T_2 c_2e^{-T_2 R_2} - \cdots -T_{N_2} c_2e^{-T_{N_2} R_{N_2}} -T_{N_2} \mathcal N_2 e^{-T_{N_2}R_{N_2}} \\
-&amp;\qquad\qquad\qquad\qquad\qquad\qquad\vdots\\
-&amp;- T_1 c_Me^{-T_1 R_1} -T_2 c_Me^{-T_2 R_2} - \cdots -T_N c_Me^{-T_N R_N} -T_{N_M} \mathcal N_M e^{-T_{N_M}R_{N_M}}
-\end{align*}</li>
-<li>Multiply by $\Delta/P(0)$ on both side to get
-\begin{align*}
--\Delta&amp;\left[\left(T_1c_1e^{-T_1 R_1} + T_2 c_1e^{-T_2 R_2} + \cdots + T_{N_1} c_1e^{-T_{N_1} R_{N_1}} + T_{N_1} \mathcal N_1 e^{-T_{N_1}R_{N_1}} \right.\right.\\
-&amp;+T_1 c_2e^{-T_1 R_1} + T_2 c_2e^{-T_2 R_2} + \cdots + T_{N_2} c_2e^{-T_{N_2} R_{N_2}} + T_{N_2} \mathcal N_2 e^{-T_{N_2}R_{N_2}} \\
-&amp;\qquad\qquad\qquad\qquad\qquad\qquad\vdots\\
-&amp;\left.\left. +T_1 c_Me^{-T_1 R_1} + T_2 c_Me^{-T_2 R_2} + \cdots + T_N c_Me^{-T_N R_N} +T_{N_M} \mathcal N_M e^{-T_{N_M}R_{N_M}}\right)/P(0)\right] \approx \frac{P(\Delta) - P(0)}{P(0)}
-\end{align*}</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2f78a440-53de-4922-b329-fcd3f4ccd18b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Duration-of-a-Bond-Portfolio-(Cont..)">Duration of a Bond Portfolio (Cont..)<a class="anchor-link" href="#Duration-of-a-Bond-Portfolio-(Cont..)">¶</a></h2><p>\begin{align*}
--\Delta&amp;\left[\left(T_1c_1e^{-T_1 R_1} + T_2 c_1e^{-T_2 R_2} + \cdots + T_{N_1} c_1e^{-T_{N_1} R_{N_1}} + T_{N_1} \mathcal N_1 e^{-T_{N_1}R_{N_1}} \right.\right.\\
-&amp;+T_1 c_2e^{-T_1 R_1} + T_2 c_2e^{-T_2 R_2} + \cdots + T_{N_2} c_2e^{-T_{N_2} R_{N_2}} + T_{N_2} \mathcal N_2 e^{-T_{N_2}R_{N_2}} \\
-&amp;\qquad\qquad\qquad\qquad\qquad\qquad\vdots\\
-&amp;\left.\left. +T_1 c_Me^{-T_1 R_1} + T_2 c_Me^{-T_2 R_2} + \cdots + T_N c_Me^{-T_N R_N} +T_{N_M} \mathcal N_M e^{-T_{N_M}R_{N_M}}\right)/P(0)\right] \\&amp;\approx \frac{P(\Delta) - P(0)}{P(0)}
-\end{align*}</p>
-<ul>
-<li>The quantity in the square brackets is the duration $D$ of the portfolio, and again we write
-\begin{align*}
--\Delta D\approx \frac{P(\Delta) - P(0)}{P(0)}
-\end{align*}</li>
-<li>Since, all $c_i e^{-T_jR_j}$ and $\mathcal N_i e^{-T_{N_i}R_{N_i}}$ terms sum up to be the portfolio value $P(0)$, the duration $D$ is again a weighted average of all payment dates (terms) of future cash flows, with weights the corresponding discounted cash flows</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=07c4ee1e-9067-4fa3-83ab-88c1c212da0c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Portfolio-Duration:-Properties-&amp;-Implications">Portfolio Duration: Properties &amp; Implications<a class="anchor-link" href="#Portfolio-Duration:-Properties-&amp;-Implications">¶</a></h2><ul>
-<li>In general, the duration of a portfolio of future cash flows is the weighted average of all payment dates, with weights the corresponding discounted cash flows</li>
-<li>Like the coupon bond case, since $\mathcal N_i e^{-T_{N_i}R_{N_i}} \gg c_i e^{-T_jR_j}$, portfolio duration is somewhat close to a weighted average of the terms of the bonds in the portfolio</li>
-<li>But coupon pulls the duration lower, and again the higher the coupon rate is, the lower the duration</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c540d089-b35a-47b3-9984-fc6e61d265b3">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Portfolio-Dollar-Duration">Portfolio Dollar Duration<a class="anchor-link" href="#Portfolio-Dollar-Duration">¶</a></h2><ul>
-<li>The portfolio version of dollar duration is defined as
-$$
-D^{\$} = DP(0)
-$$
-and we have
-$$
--D^{\$} \Delta \approx P(\Delta) - P(0)
-$$</li>
-<li>This is saying, for small parallel shift of the curve, the value change of a portfolio is approximately equal to its dollar duration times the yield change, but in the opposite direction</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9ca935c4-fde8-46f9-bb20-52bd103cb554">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Hedging-by-Duration">Hedging by Duration<a class="anchor-link" href="#Hedging-by-Duration">¶</a></h2><ul>
-<li>You can hedge a portfolio of bonds by making its dollar duration 0</li>
-<li>If you want to hedge a portfolio of bonds with dollar duration $D^{\$}$, add (buy or short sell) one more bond to it with dollar duration $-D^{\$}$</li>
-<li>Adding this one trade to the book, the entire portfolio will now have zero dollar duration and hence
-$$
-P(\Delta) - P(0) \approx -D^{\$}\Delta = 0
-$$</li>
-<li>Why are we matching the dollar duration, not the duration?</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0d5a2fad-7520-41f8-a2b1-bd930f9477d4">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Cost-of-Hedging">Cost of Hedging<a class="anchor-link" href="#Cost-of-Hedging">¶</a></h2><p>$$
-$$</p>
-<p>$$
-D^{\$} = DB(0)
-$$</p>
-<p>$$
-$$</p>
-<ul>
-<li>We have a set amount for $-D^{\$}$, but should we go high on $D$ or $B(0)$?</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ff452860-86bd-42ce-8950-9bfb135d19fa">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Hedging-by-Duration-(Cont.)">Hedging by Duration (Cont.)<a class="anchor-link" href="#Hedging-by-Duration-(Cont.)">¶</a></h2><ul>
-<li>Adding one trade to the book, your portfolio now has zero dollar duration and is immune to small parallel shifts in the yield curve:
-$$
-P(\Delta) - P(0) \approx -D^{\$}\Delta = 0
-$$</li>
-<li>It is still exposed to shifts that are either large or nonparallel. How to hedge those?<ul>
-<li>Large parallel shift: By convexity</li>
-<li>Nonparallel shift: By PCA</li>
+</li>
+<li>Subsequent Developments<ul>
+<li>In June 2012, Barclays was fined $\$453$ million, and UBS fined $\$1.5$ billion, for manipulating LIBOR</li>
+<li>The UK authorities' investigation lasted 7 years and concluded in Oct 2019</li>
+<li>The scandal paved the way for the LIBOR cessation</li>
 </ul>
 </li>
 </ul>
@@ -8102,491 +7620,148 @@ $$</li>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6fb4d1c0-1f4a-419d-8289-f86131f58212">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8bae5278-bd93-4b3e-a58d-d0c62c1f64e6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Treasury-ETFs">Treasury ETFs<a class="anchor-link" href="#Treasury-ETFs">¶</a></h2><ul>
-<li><a href="https://etfdb.com/">etfdb.com</a>'s screener is a convenient tool to look up exchange-traded funds (ETFs)</li>
-<li>Treasury ETFs can be found in: <a href="https://etfdb.com/">etfdb.com</a> &gt; ETF Screener &gt; Asset Class &gt; Bonds &gt; Treasuries</li>
+<h2 id="SOFR-(Compounded-Daily-Rate;-Term-Rate)">SOFR (Compounded Daily Rate; Term Rate)<a class="anchor-link" href="#SOFR-(Compounded-Daily-Rate;-Term-Rate)">¶</a></h2><ul>
+<li>If you keep borrowing at the overnight SOFR, and roll it to 3M, what's interest rate charge?</li>
+<li>It's approximately
+$$
+\frac{1}{\tau}\left(\prod_j (1+\Delta t_j r_j) - 1\right), 
+$$</li>
+<li>$r_j$: overnight SOFR</li>
+<li>$\Delta t_j$: one day's year fraction, for example $1/360$ for week days and $3/360$ for a regular weekend</li>
+<li>$\tau$: year fraction of the term, for example $0.25$ for 3M</li>
+<li>SOFR term rate is currently the most common and important index rate by far</li>
+<li>Unlike LIBOR, SOFR is backward looking, which makes rates models different now</li>
 </ul>
-<p>$$
-$$</p>
-<table>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d71168fb-7ea8-45ee-ae75-b371ba8f8adf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="SOFR">SOFR<a class="anchor-link" href="#SOFR">¶</a></h2><p>In the compounding formula
+$$
+\frac{1}{\tau}\left(\prod_j (1+\Delta t_j r_j) - 1\right), 
+$$
+The term
+$$
+\prod_j (1+\Delta t_j r_j)
+$$
+is a more general version of
+$$
+\left(1+ \frac{r}{365}\right)^{365}, 
+$$
+which is close to $e^r$, a quantity slightly larger than one, as it's the terminal account value after rolling daily CD 365 times in a year. See the discussion on simple and continuous compounding in the previous set. The $-1$ is to compute the rate and $1/\tau$ is to annualize it.</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=87f7c51f-5bd0-43fc-8753-67e914c89c2c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="CME-Term-SOFR">CME Term SOFR<a class="anchor-link" href="#CME-Term-SOFR">¶</a></h2><ul>
+<li>Term SOFR is a forward looking index rate different from SOFR</li>
+<li>Sometimes client wants a forward looking rate so that they can prepare funds ahead of time</li>
+<li>Quote implied from the SOFR futures, published daily by CME (more on SOFR futures later, which is also a CME product)</li>
+<li>When market anticipate a rate cut, longer terms can have lower rates, like the data below</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=e7e69c11-0654-4708-92a1-4dd12df44176">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div style="display: flex; justify-content: center;">
+<table border="1" class="dataframe">
 <thead>
-<tr>
-<th>Ticker</th>
-<th>Fund</th>
-<th>Duration (yrs)</th>
+<tr style="text-align: right;">
+<th></th>
+<th>Term SOFR 1M</th>
+<th>Term SOFR 3M</th>
+<th>Term SOFR 6M</th>
+<th>Term SOFR 12M</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>SGOV</td>
-<td>iShares 0-3 Month Treasury Bond ETF</td>
-<td>0.10</td>
+<td>09-17-2025</td>
+<td>4.13359 %</td>
+<td>4.02304 %</td>
+<td>3.85385 %</td>
+<td>3.59516 %</td>
 </tr>
 <tr>
-<td>SHY</td>
-<td>iShares 1-3 Year Treasury Bond ETF</td>
-<td>1.85</td>
+<td>09-16-2025</td>
+<td>4.13584 %</td>
+<td>4.02570 %</td>
+<td>3.85447 %</td>
+<td>3.60384 %</td>
 </tr>
 <tr>
-<td>IEI</td>
-<td>iShares 3-7 Year Treasury Bond ETF</td>
-<td>4.28</td>
+<td>09-15-2025</td>
+<td>4.14288 %</td>
+<td>4.02330 %</td>
+<td>3.84833 %</td>
+<td>3.60702 %</td>
 </tr>
 <tr>
-<td>IEF</td>
-<td>iShares 7-10 Year Treasury Bond ETF</td>
-<td>7.05</td>
+<td>09-12-2025</td>
+<td>4.14693 %</td>
+<td>4.02064 %</td>
+<td>3.83917 %</td>
+<td>3.58183 %</td>
 </tr>
 <tr>
-<td>TLH</td>
-<td>iShares 10-20 Year Treasury Bond ETF</td>
-<td>12.16</td>
-</tr>
-<tr>
-<td>TLT</td>
-<td>iShares 20+ Year Treasury Bond ETF</td>
-<td>15.72</td>
+<td>09-11-2025</td>
+<td>4.15016 %</td>
+<td>4.03781 %</td>
+<td>3.86433 %</td>
+<td>3.61192 %</td>
 </tr>
 </tbody>
 </table>
-<p>$$
-$$</p>
-<ul>
-<li>Each ETF will have their own product page with all details, expense ratio, duration (for bond ETFs), holdings and more</li>
-<li>Long term Treasury bonds market data can be downloaded from: <a href="https://www.ishares.com/us/products/239454/ishares-20-year-treasury-bond-etf">TLT product page</a> &gt; Holdings &gt; Detailed Holdings and Analytics</li>
-</ul>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8b69cb09-5334-4a37-8060-b72ad0d77897">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Duration-of-TLT:-Example">Duration of TLT: Example<a class="anchor-link" href="#Duration-of-TLT:-Example">¶</a></h2><ul>
-<li>From 9/17 to 9/18 close, treasury yield <a href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&amp;field_tdr_date_value=202509">was up 6 bps</a><ul>
-<li>Search "treasury yield today" to find this link</li>
-</ul>
-</li>
-<li>Form 9/17 to 9/18 close, TLT price <a href="https://finance.yahoo.com/quote/TLT/history/">dropped from 90.12 to 89.19</a>, or down $1.03\%$<ul>
-<li>Search TLT on <a href="https://finance.yahoo.com/">finance.yahoo.com</a> &gt; click Historical Data on the left
-$$
-0.06\%\times 15.72 = 0.9432\%
-$$</li>
-</ul>
-</li>
-</ul>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1166afb9-4559-45ae-8274-191916bd6b31">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Duration-and-Volatility">Duration and Volatility<a class="anchor-link" href="#Duration-and-Volatility">¶</a></h2><p>\begin{align*}
--D\Delta \approx \frac{B(\Delta) - B(0)}{B(0)}
-\end{align*}</p>
-<ul>
-<li>Short duration means bond price is stable; It does not change much no matter how much the yield curve moves<ul>
-<li>An extreme example, the price of a bond maturing tomorrow (duration 1/365) should be very close to the notional principal, no matter how the market moves</li>
-</ul>
-</li>
-<li>Longer duration means bond price is more sensitive to yield change, so</li>
-</ul>
-<p>$$
-$$</p>
-<p>$$
-\text{Long Duration} = \text{Volatile Bond Price}
-$$</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f9b2bfdd-5e42-4e23-8c73-23a79b31df1f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Duration-and-Volatility-(Cont.)">Duration and Volatility (Cont.)<a class="anchor-link" href="#Duration-and-Volatility-(Cont.)">¶</a></h2><p>$$
-$$</p>
-<p>$$
-\text{Long Duration} = \text{Volatile Bond Price}
-$$</p>
-<p>$$
-$$</p>
-<ul>
-<li>Previous example, on a day when the yield drops $0.06\% = 6\text{ bps}$ across the entire curve:<ul>
-<li>1Y duration bond price up $0.06\% = 0.06\% \times 1$</li>
-<li>5Y duration bond price up $0.3\% = 0.06\% \times 5$</li>
-<li>10Y duration bond price up $0.6\% = 0.06\% \times 10$</li>
-<li>30Y duration bond price up $1.8\% = 0.06\% \times 30$</li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a65849d7-3d54-41cf-9146-78659464ec38">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Backtest-Portfolio">Backtest Portfolio<a class="anchor-link" href="#Backtest-Portfolio">¶</a></h2><ul>
-<li><a href="https://www.portfoliovisualizer.com/">portfoliovisualizer.com</a> &gt; See all the Analytics Tools &gt; Backtest Portfolio &gt; Edit Portfolio</li>
-</ul>
-<p>$$
-$$</p>
-<p><img alt="duration_vol.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeYAAAGoCAYAAACTwUbTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAANfMSURBVHhe7L0FeFzZkf79LXOySZYhy7yb/yab7CYzk4HMZJjHDJJlS7bMzJaZmRlli5kZLWZmZlZLrRZL73fq3JYFFrS4bddvnvuM+3ZLarW673uqTtVb/x8YhmEYhtEbWJgZhmEYRo9gYWYYhmEYPYKFmWEYhmH0CBZmhmEYhtEjWJgZhmEYRo9gYWYYhmEYPYKFmWEYhmH0iNkR5t52ZKQmorqlV3uCYRiGYRhiVoS5pzYZq5fNgUV0g/bMQLrR2taB5yW7G7WVFahratPeHkxLfSWKikrR3KE9oaVNVSPOF6NB06M9o9DbpkJJUSGqGjTaMwzDMAwz+8y4MNflPsWe1YZYtHg+FizbDPfEcnm+q7kKYV4OOL5jObZf98ZAfe2qz8GdY1uxYLEp7nqkas/20YvsgEdYs2IFtmxag5VbjiK+okXeUx5tj82rTLB58wYYr9uH4DyVPK8pjcLhzSuxfvNGmBivhUVwvjzPMAzDMLPNzApztwq3Ni3CxoteaFCrEHF/Oz5Zsg/lXUBppB2Omx3H/k1LYLzfDu3aL0F3Ne6brca2C06oUD07+4ze2iRsWTIfV4OK0dPVDLsTa7HqmAu6NWU4umoujjuko7unHQG3dsFg+x20iO9sc2gVTE86QdPdg2L/61i8bAdSGgdH1AzDMAwzG8ywMNfi9PKPsMsyQbndmYdHtyyR1yyi4o42dItTKc6nsXaPFfoS1vWJDli1fCPsfQLh5OiGhMJ67T0KDTGWWGm8A/lC3Im6GCus3HAK+en+WL98E2KUIBlduV5YvWwX0hpycWzNcjyOblLu6MzCPlMDWCZwSpthGIaZfWY4ld2LorBHMJg/Fxt2H4d7bIn2fD9RVkewZq/1M2FOdj6H9994HztOXMKVk7swf95q+GTUaO8FqiIew3TdAZRqc981URZYuWwnouM8sNV4F5I0ym51Z5YnTJetR1huCo5vNIZ1Yqs8j/ZM7DYxwK2gKuX2BGhvb4darUZLSwsffPDBBx98PDs0Gg16e8dX6DwrxV9t5cl4eOEols//GrvveEFNobKWocIcaXEYi00uoVb+Xr1wOmmClSfdZXRNDCfMq4x2IuaZMCvnSZhXC2EOzxPCvMEYNgOEec9KEuZq5fYEaGtrQ0NDAxobG/nggw8++OBDHqQLKpVKv4W5vSoGV84/knvKRHeBK77+agUCC/v3jocKc6zlIazaZaG9BSTaHYbxTstnwtwQawmTFduRpz1RHfkYKzacRlFmANYv34hobSq7I8Mdqwz3IKMxf3AquzVdRMxLYJOkFWqGYRiGmUVmVJi7VanYMOcT7HsUivrGBiS6XcCc+VsRV61VakHEkwNYudPimTA3ZntixdzFsIopQlNNDo6vno/D9gloLE1HdGKxUOZM7DSYh1MuaVCra2F+UETUp9zR21aJk6u/wf4H4VC3qOB2aRMMdj5AKzrhcGIVDA48QI26BRku57HQcCcymsa3omEYhmGY6WDGU9kVia7YsmoJFi5cLARxDaxDs59Fv0S803nsPO7UX5UthDTF5yHWrDDGalMT7D5rhwbxBVEPd2LpFgvZ71wSaYeNJiuxbp0p1u48jZQaJX9dm+yFnatMsHbdGphsPoTwomZ5vr06EWd3rcTqdWthvHIT7COEwDMMwzCMHjAre8ydJSFYY2gCr7z+SLmP7q4OtLU/f769uR5VNQ2KiPc2wfL0Fpx36u9p7tSoUFVVg9aBKi/obmsW56vRMsR4RNyB2qoqND53B8MwDMPMHrMizOhSIzczC02d2tvjpVuDooJ8qFhTGWZG0IjFsuXTfERl93dEMAwzPcyOMDMM80KRW9mMvRZxuOpJhj1cj8Ew0wkLM8MwYxKVU4MD1gk455KKlrbnt5oYhpk6WJgZhhkTz/hS7LOMxymnFJTz4BeGmVZYmBmGGRPaX95nGYfj9knIKG3UnmUYZjpgYWYYZlRaO7pw2y8LB6zicdgmEZFcAMYw0woLM8Mwo1LV2IoLbmk4JETZzDIePoll2nsYhpkOWJgZhhmV3MomHLFLxGHbROyziINDRKH2HoZhpgMWZoZhRiU+r07bKpWBU47JeBCYg84ubplimOmChZlhmFHxTS6XrVI0pvW6dyYue6RDpWF3H4aZLliYGYYZkZ7eXliHFeCofRKSiurxUETLx8S/K7hlimGmDRZmhmFGpKOrW6awTzomo6GlHTbhBdj9JBb5VcpAGIZhph4WZoZhRkTV0oHjDkm46JYmb3vEl2CneQwSC+rkbYZhph4WZoZ5xalWtaFlmIluRH6VWlZjmwfnydthmVXYaxmHwNRKeZthmKmHhZlhXmFKaltw1iUVjlFF2jODic2rhZlVvLTkJFKLG2Qh2EiPZxhm8rAwM8wrSld3LyxD87H7cSxOOiRLI5GheCeUYpe4PzqnVt4mIT9sl4j7ATmyMIxhmKmHhZlhXlFSiupxUES/+0RETFGxf3K59p5+rJ7mS2HOqWiSt6lN6oQQcXICo8IwhmGmHhZmhnkF0bR34YZ3Jg7ZJuBxSJ5sgbrulTFopGNbRzdu+WbJ+yq17VFtnT244pEuq7Rrm9vlOYZhphYWZoZ5BQlJr5SRMKWyO7t78ESI864nsUgrbtA+AqhRteKMcwquCsFubu2U57p7emEenIsjtonIq+SWKYaZDliYGeYVo7KxFaedUqT/dVGNWp6Lz6+VYx0thFD3UVitlkMrHofkokcIch+uscXyfEI+t0wxzHTAwswwrxjhmdXY8SgGbkJg++SWUtuX3NNk2rpaRMpEdE4Ntj+KlkI8kNCMSuw0j33WMtXb24v65nYZTTMMM3lYmBnmFYNMQsxEdExR8kD8ksux+0kcHCIL4ZtULkV6j7hNQj6Q5KJ6bHsYLYS9RN72SijFUbskWUzGMMzkYWFmmFcIxfs6X5qGZJWrtGcVyutbZMU17T2T7Sb1N3snlkE9oCCMyK9slr3MFqF5CEqtkHOa6fFDI2uGYSYGCzPDvEJ0dffgtm+2tNmsqB8yiKIXcI8rkfabgUJw69XDV13THvV51zQp7gdtEoQwJ0ihfhSUKwvJGIaZHCzMDPMKQS1QZ5xTcdo55blImGjr7IZKo1RgjwRVaN/0yZTFYiTw1P98zTMTZ8X3rG1q0z6KYZiJwsLMMK8Qdc3tOG6fJCdGTTS6pQptio7l/nNWlTxn+TRfprPzKhUjEoZhJg4LM8O8QhRUN8seZOpFnoylZlm9Bpll/XvUvkllsnAsPFMRaoZhJg4LM8O8QiQV1sv9YOfoqR1CkaIdbmEXUag9wzDMRGFhZphXCOpB3mtBYxsrtGemhtrmNhy1T8IVz/RBKfKOrh55MAyjOyzMDPMKQT3MO81jEJ83ta5dJL7ktU3tVlS1TZDhiENUEe4H5siiM4ZhdIOFmWFeIWzCCrDzcSyyy6e+SMspugj7reJlupwoqlYrJiUiQidvboZhdIOFmWFeEbp6emT0esg2ESV1LdqzU0dkdjW2PYqBb3KZvE090dRSRWJNwzCGm/fMMMzzsDAzzCsC9R/TpChy9KqZhn7j3IomKcQUlVNb1lmXFPmz6Da1VtmEF0hfbYZhRoeFmWFeEShipalSNIdZ3f68uchkIaewC25puOaVKf22KVImP21aEFwXP3OvEG3y2WYYZnRYmBnmFYHGOB60ToB5UO60TIKivmgyHqGfcdQuUfZLF1QpM5upncpMCPXA2c4MwwwPCzPDvCJklDbKcY/209hr7BFXIiPlfZbxeBKS96x1itzCbMML5YCMiKzB06oYhhkMCzPDvCLE5NRIYfZJVIqzpoP4gjo51IKGW/RVZ/eRViIWBuaxcIhiExKGGQ0WZoZ5RfBPrpDmIhHZ0xexVqva5NSpa14ZaB9iLELTrE44JOG2XxZaua+ZYUaEhZlhXgFoR5kiVdr/TS1uUE5OA/RzsspUKB86UlLQ2tElp1JRbzO3TjHMyLAwM8wrQFdPLx4E5siirOKaqe9h1hVpcGIeO2gABsMwg2FhZphXgI6ublx2T5eWmQ0tHdqzM09QaoV0AgtOYycwhhkJFmaGeQVobu3ACcckXHBLndWhEplljXIKldXTPO0ZhmGGwsLMMK8AZfUtOGqXhHsB2dPSw6wrDS3tco+ZoneK4hmGeR4WZoZ5BcgQkepBm0RtD/PsCXO7EGNyHjvukCyrtBmGeR4WZoZ5BYjOrYGZZTx8kqavh1kXaEngGFUkn0tiwdSOnmSYlwUWZoZ5BfBLKZeuW1HZNdozswc5f217GA3faTQ6YZgXGRZmhnkFoCh1u3kMMkpnv00ph6ZQWcTBIjRvVve7yds7PLNK+ngzjD7BwswwLzk0aZF8q2mIRFGNWnt29qhtasN5lzRc8kiHSjN7rVv0Why2ScBF93QerMHoFSzMDPOS09bZjdu+WTjpmKwXjltd3T24558tFwoltbNndhKWVS0tSql9K7mIo2ZGf2BhZpiXnAZ1Oy66peGyjFD1IzJ0ii7CzsexSCyYnfnMNO2KXMhocbDfOh6Wofnaexhm9pklYW6G1cPrSKrS3mQYZtooq9fI3uF7/jmzai4ykEgRrZIoesSXas/MLE2aDpxzTZMzo+m1Oe2UjIoGbt9i9INZEOYOpPjew2e/fBP77oUIiR5MRVYkniblo0t7eyCVKQFw9HkK1dA726vgZ/8AN27chkdkFp5derobEeZmiRvXb8IhMFn85D66kPHUFbduXIO5YyAaZm+bi2GmnbyqJpmytXqqP1FhYbUah2wT8CAgR+6BzzQ0aENxIMuHV0IpdprHICClXHsvw8wuMyzMPYi2O4v5i9bh2t2b2LpsAfbe8gH5/zRmheD0ri1Y9PmbWHLIfoCIKvQ2pmH7F/+FH8/Zhrx27UmiRwWr4xtguPk4rJ/cgumSJbjplyPu6Ibvte0wWHsAllaPsGn5Epy0T5Bfku11FYsN1+KepQWOb1yGTacd0DJ7xaEMM63QNKntj2LgGluiPTP7NLV24rh9siy86uye+SiexHjPk1gk5NfJfW4aVXndKwOa9uFCAoaZWWZWmLuqcWzxpzjtVSBvtiQ9xJwFm5HeAlRnRiAgKBae9/Zj7T4btMlH9NEKp8t7sHqNIUy2nEbegDvbc7xgsngFgrQjZjNdz8Fw622oKhOxeZkBHDIVia8Kuw9D4yOo6KjDxQ3LcNIpW55HZQjWGq6AdyFXZTIvJ1TktEuIUFBahfbM7NPW0Y0rHhk47ZyCevXAlfb0Q8Vnd/2ysd8qXo6n7BUhO6X5abhGRmmj9lEMM3vMrDD3tsDm8FLM2XwBaSVkdNCLqqJSNA34XMbaHMWavdaDhDnP/wY27ruFhGg7bNh0GDkDtoKqIx5jlakZSrQL3doYK5iuOYiUBC9sWrETidqiz64cb6w12o648jQcW7cC1gnab9KRBbPVhngYwWPomJcT78QyuZ8bnz87hVbDQe3L5sF50r97KiqzmzSdcuFBKfKxeqMrGlrllK1bPllo7VSi9YjsGpnutw1XggaGmU1mfo9ZXYCHJ7dg3tdzsf7QTaTXDE5aR1kdGSTMHbXJOLB5K4LKhPLm2cN0w1EUD/C+rxLCbLruAEq04l4T+QQmS7YiIs4DW413CWFWPqSdmR5YZWiK0OwUnNho3C/MbRnYabwU1/wnvr/U2dmJ5uZmqNVqPvjQm6NFHM3NaliG5uKQTSIS8yqhaRn+sbNx2IXn4oB4XnE5FWidxPOi3+lpWjn2WyeI3zNB/L55SCmsRWMT3dcy6LH0cyIyymVFuGNkPto0LWgR50qq6nDcPhFnRARfWt2oV68THy/u0acLlJUZDzMqzD0dTaiuVQwOqvJT8ejoSnyz7jjymvr3mAYJc68aNmaL8JXpaUSmpMDrwUHMWWgKh7ACtGp/z+oIc5iu3o9SbSa6NtpS3D6ApARPbDYWEbNWfzuzvbDGaBtiSkXEvN4YNn3C3J6JfaYGeBg+8RRWa2srGhsboVKp+OBDb47mJhXq6htxyztDVh7nlNSgpblp2MfO5NEknpdaHF5xhdhjEY+AxCIhmBN/Xhp1M6xDc2Rq+qxLKvZZxmP3k1jYhGbL359+Hj2uSft4euw+ywREZpahraVZvE5NaJTnc+XXhqeVoFU9+68THy/+QbrQJN5fei3M7WX+WDFvFYL6alAan2L+Z0bwyenPZfcJszzTrUag1UWcuXAZly9exPFdJvjgo69x7IYHauWjhShmusF4yUpEaLN02R4XsWTzdTSUxWLjsmVwz1dy3LVCwA2XHUJpew3OrTfEOQ9thWpVGNYZGMAzj/eYmZcPmuZ03i0Np5yS0dKmX4VNsbm12Eqe2UmTq4bu6u7Fbb9smRUgu8/EwnqccUnBYdskVA4xVGlt78ZFt3Scdnp+b5vsOen5+HN1NjPLzHDxVwPMj5hg/roDcHBxxsnNBjDedQNl7f2riacPd8Ng0yMM50+kSX2EJcb7QbvThUEPcfZmoPiezXiwfyWWbbsIF2dLbDJciDPOqeIRHXA5sxZLVx+Bs6s9dq5ahH0Pw+V0m2SnU5hjsBqWzq64tNMEq/Y/gopHwzIvIaqWDjlikeYfd+pJD3MfVGhFgzUcooq0ZyZGZUOrFNprXpmyqIxwiSmW3zthiIEJCTcZijwI1BZ/DoBaqPZZxsEqrGBWPbwZZub3mEXE6nnvAD78xQfYfskBRUMUsTjRH45eScP2MbeUxsHOyR9N6IbflXUwOeSs9Cy3lMDp/lWcOHEKFl6xSrRNdNTB68lNcf4k7jo+RfOzz1o7Er0f48yJ47h4zxFl/XcwzEsFFVYdsUvCw8AcITb6JczkVX3ELhGPgnJlpfRESStukCJMs6b7Mobx+XVytKRj9GDR94grwe4ncQhJq9Se6ada1Soi7VRc8WDvbGZ2mXlhJtqKcPviNWRPtBizsx7Oj67BJ43nuTLMaKSVNOCgdQIcIgu1Z/SHmqY2uSd8zSsD6kkIYWBquezTDknvF1salEGif8Uz/ZnbmUZE09e9M3HQJgGldc9ffCijQJ7iB0REXc4uYMwsMjvCPGl6ZUqaYZjRicyukQVNvkn6N/u4pb0L170yZRqaRHoiUMqZxkdSNXZWeX/LI4nxHb9sHBXi3DdRK1vcT21j9wNGtia1iyjAHhFR81ALZjbRWZhb68oQ7u2Iswe2Y7WJEYxWrsHOQ+fh7BuBsvqJfagYhple/JLKZZo3KocqM/QLSjtTip2qqSfay9zS1olzIuo+65zy3AhJn8Qy7DCPQUSW4j7knVQqZ1IHDZPG7uNpRpVMgfvo4UKGeXXQQZhbEe16GysXzYfp5n04ffYcLl+7jutXL+Pc2dM4sGMjDI3W4b7ngL1dhmH0AqeoIilG6SX6GQHaRRRip3msLLyaCJSSptT0Xf/ni7lStHvP9BrQ6EtKmVPbWPEoi4BcKg4TC4WHQbnaMwwz84wuzF0t8Ht4DFv3XURoat4Qm8w+OpCfEozze7fgtGUI2ri6mWH0hicheTKVXVg9dFyMfkCuZJQ6jsmdWERPmQBKT5P39VBon5miaRJkKgYjlzFKb/eM0lPaQFXsQrwvuqexbzYza4wqzL1t9YgJDUOtLmLbWoawsHioOnj3l2H0AWodomImsp8c2s+rL0RkV8sWJf/kifUOO4poeLeIiik6HgoJMEW+VPxG4kyRdUj66LNmKbKm1+y4Q9KzvWmGmWl02mNuyPHHbtMdcIhT9l1Kox2wbtk8zFmyDvaRJVyIxTB6CBloXHBLw2WPdNnPrI+klzTK8YsTqRrvq6Kmwq+RZimTWQgJM4nyUREJl9aNXm1N1zLqgaaBFnF5fTZGDDOzjCnM7WXh2DD/ExjvuoboYjU0lVFY/dXH2H7uLu5e3Iu5izYjuprz1wyjb5TVa+Se6l3/LLSLSFAfoT3iw0I0JzKXmbIAVNF9wztzRFezvMomWZlN6e6HgbkjVmMPhIrFyAHMO4ELwJjZYRRhbkPI4wtY/MHPMHfnQzkzmQi/sxWLt9+D0nXYhfvb5+GDhRth7pGgPccwjD5AokQTk6yeau1n9RCqpD5mlySdybrG6bZFPdrkiT3QWGQoZBRy3iVVPi4gRbexl9R2RQVgtD8/GeMThpkoowhzFwqTwnD70CrMX3sGNaTMjQkw/eYr3AwqVh4CFa5t/gYL1x+HS5D4YGnPMgwz+9C+67ZH0XCN6fu86h+tHd245J4mpzoNbXcai6DUCtkOFZox8r5xjxB7p+himTkoq9etJau2uQ3nXFNlAdh4nxPDTAVj7zF3FOHcNgN88fUczP3iUyw3e4Q6ERq3FMfh1Or5+Mx4L3Im6uDFMMy0EZ5VLSPFQCFg+kqniEipl5mEs2QYN66RIGMRygQctk1ETnmT9uzwUHV1tUp3rwX63lS9bWYVh9J6dgBjZh6dir/QWg43y4ewcA6FSpvZKU/2x9lD5xGWxw45DKOP0B4pVTzTFCd9hVLQVPh1wCYB6aW6j14lsaXCttMi0q5XT31US9XeVABGk6oYZqYZXZi7NCjOL4Bub/tWFBSWcB8zw+gBJHi24QWyYjlzguYdM4VfcrkUwfG4k1EETNEyFX51j7dqTAcis6uxVyxq9HkbgHl5GV2YO2rhcGkXdp+8h4yqkVNBmvI03D+9GwduuaKRK8AYZtI0qNuRX9U84fGDVEh1LyBbu7eq3+nYaCHIVAVNAq0rSptVvHQOmw6qGlvluMyzzqmob2ZPQ2ZmGTOV3dtaB+cbB7HCaDnWbj8GS0dPhEVFITIiFK62j3F42xosX26CY3fdwZbZDDM1eMSXyP7eggk6dlF71EW3NJxyStH7EYYksjvMY+E0ZETjaFDhF6XpQ8cwDJkM1M9MxWX0sxhmJtFtj1lQmxONhzcu4JDZHmzesBEbN2zBHrNDuHTLHHH5vA/DMFOJZWi+jCJ1bfEZiqqlEycck3HJo3/sob5Ciw9KuVN7kq4ZAtvwfOn4NXCi1FRTWNMs0+UX3Xk+MzOz6CzMA+nq6ERnB28mM8x0QJXK5kG5ct+VhjN09YxfWMm4g7yhHwTmTDgdPlNQ2viMS6ocx0jtU2NBCw1y/DoiRHM6rUZ7e5XKb6ps18fpXMzLy4SEmWGY6YPmFCvtOvE4KaLekewmRyOjtBEHbRKl+Ya+QxXW170zcNIpWae5zNUqRcjJ/1o9guPXVNE3w/mmT6beuqcxLx8szAyjZ9CEIzl0QevxHJ6pzBMeD9G5NXKqFM0kfhF4HJKHPSIyLawee3AEiSX9blZh+ZjuZAD5cVMkT/vZSdw6xcwQ4xbm3q5OtLd3SrN3/U6QMcyLSZWICKlHlyJeEiBrKUDj+7TR3jTNIqa2nxcBt9hi+XwTC8YWP0orb3sYDd+kmVl00MjIneYxsreZYWYC3YW5tx1R9hdhsGAujFadRF4X0JzhhbM3naBiL06GmTJKalvk2MHzrqnSGpJmCuuS4h2IkxCR7Y9ipJ/0i0BYJo1/jNepZcottkR6gJNgzgS0X09tZxQ5d3A6m5kBdBbmukR7mKxYCxurB1i/fAciGnvQ25SBvavXwSb6xViVM8yLQF5VsxQem/ACOEQWYaeIJMeTRqXY2jI0T36PAvG9XgQyylQydU/ZgdFQUstKf3ZRzcx4ATe2dOCiW7pcKNG/GWa60VmYY22PYvu5IPGvChzeZIandUqlqOOx7TjlnCz/zTDM5MksVclo1z2uVAoyCSxFwLpCw/6peIyi7okUjs0GfU5etLc+WhU5tS2dckqWmYSRRj1ONX3e2fut41H+gryezIuNzsJcG28Lk9U7EBkZhEObDyJaLMRr0zxgYrASLqm6e9wyDDM6NKB/p3ks/JLKpRCRAxXtObe26yZEFNVdck+X05GokOxFgCqzz7qk4Ixz6qgTnSjNT5E1tZHNJBTJ73kShyw9tzdlXg5032PuaUPQk2NYOu8T/Pynr+OT+fMw9+t5OPQgCB1cBcYwUwa5WVEP81PtOMN7QoTIBWysKUp9UJR8Qoj5bb8stL0gfgOUoqaea+q9LhqlMjsuv07OSqZ95pnEL5kGgsTLiV0MM93oLsxa6vNjYWfxEHcfPBFvUv2dWsMwLyrU4rRPiE+MdipUcFqltIa0CSuQ5iNjQR7bJCIWIXlymMWLAllg7hfPe7TKbG/x2lBbFflrzyTx+bWyn5m2FxhmuhmHMHcj09cWNx+GaG8DAY9uwyNc/w0MGOZFgjyjKUJOLVYqqmtUrbLwaGAUPRppJY2ynWg8+9L6AP1utLc+dH50V3evNPeg41FQrnTimumitsLqZhmp089nmOlGZ2FW5/vDdPES3HJLhrLT1YF420swNNqKqEouiGCYqYAiXKqopkKo/Mr+1DU5eR2ySZQ2lLkDzg9HZHYNdj6Ogf84pjXpA7QQ2SGEeeCCgiw3yRbzQUCOrMamVPdpp5Rxt49NFpr2dUz87Cue6ejQIWvBMJNBZ2FOsDuGnSdctLf66Ib1ga047Zquvc0wzGSgcY1U2EQCNLSiOiStUkSLcbjqlYGGlpFHEfok0X7o+OYb6wNFNWocsUvEw8AcuedMuMeVyHYxWpDQvjm1SdGox5kezEE2qVc9M3DGeeYXBcyrh87CnON7Gas3nUflwCEr7aU4uc4UN4M5nc0wUwHtIV/xSJetTkN7Zkms7MIL5H4zzVqmCuGhe8h00z6yUFp50jjFF4l6dYesPqeKcnVbp0xdU/sUZQ+SCuql0UexEG+6b6ahBZNFSL58LjljZCwYZrLoLMw9bUW4unsFvppjjBNXb+P2tZNYOf8bmO6/hbJ2Tu0wzFTQ2tElozLq1aUWoqFQKxGldXeIKHK/dQIsQvMGVTHTfmxfdTO1Fr1I0KLkrl+2HAFZr26XRWy0r24enKsXRWwe8aXY9SQWsXlc9MpML+Mo/hK0VcHb5i4uXrqES5cu4oFDEF4MXyGGeTGgvUyaKHXVMx3tI6RryVgjIqsaN7wzpXCdckp5Nv6QvoZmMNMs5helh3kgVHlOc5ZzKpqkFzalscMyxy54mwkisqux9UG0TrahDDMZxifMgg5NM2oqK1BZVYPamkoU5Re/kBcAhtFHyuo1ch+VUtVjtUZpRHTtHF0szUio4IsgQxISdqrifhHHFJKpClWk+ySW4pJ7mvhdUqQrmD5AvuO0ECKbVIaZTnQX5pYyWJ7fgs/efw+v/d9P8dprr+FnP/sf/L//+gT3Q0b3t2UYRjcoUjxsmwDrp7pNlKJ95P1W9PgCeZsKxo7aJeKOX5ZMa79o0GCKI3ZJ0nKT9slpHKS+oAwXSZaGL2R7yjDThe7FXz5X8PWXa+Edl47MrCxkZmaKIwPp6TmoU49cIcowjO4kFzXIiJHMNnShSdOJ007JOOuSKovDcoWw0x4tWUj2TvHGbG13KzQ90+tPXVTdjOP2STgkFifUN6xP+7mNmg5pc0qLBh5mwUwnOgtzhtcV7DvnrL3FMMx0QI5W5Nrlm6TbPiZF1eZBubLHubBajeTCBphZxsEzfmodqqJbK2BQ5ol91WFQ9UyfKJHgUeEb+WHTYkOfWpNomMVt3yy5YOBhFsx0orMwtxQEY/uazbAJTUZ2Tjays+mgyDlfRMy8emSYqYDsN8nZajwFT6HplXKfOUT8n4rC6Ot1cQjTlfDWcswrdcXPC63xVqENTtRGo6t3ejoxyNv7hk+m/B1o7OVUR/2ThZ4T7TNn8jALZhrRWZjzQ83x9Y9/jP998x28/8EH+OD99/H+++/g568vwJNwLoZgmKnAK6FU2lIm5Ndpz4xNXmUT9lrEwzqsAI7a+c0pRYqd52QJ15Tj6xIXvF9sj0v18VhXGSAE2go3GpJlz7SmpxNBLSW425iCsq6Rh0/oCmUAKA2/S/wONGVL3yA3NTMaZqEnleLMy4nOwtze0oDykjJU19agproa1dqjpraRCyEYZoogO0oSZrLg1BWqxL4mXalScd41Te5Rj2XbORSKgLPbG/CgMRXHa6NwSkTFR2sj8U2pC94ttIWFKlM+LrOjHgvK3PGhEOr9NeFYV+GP94vs8NMCC/l1PVKuJwdN0aIFClWd6xvxBXVymMVMT7diXi10FmZJVx0ig/wR9DQUwcEBCBKHq60LEgp1X90zDDMy5Au9zyIOeeMc0kA2lWTDecg2UXpJk0uWLlR1aeDfUixENgyfFjvi7UIb/FIILYnte+L4SkTLDk052kcrRLZWyCiaIucPiuyxvSoES8s85dcEiO/1MkNmLrTH/DBo8GvCMFOJzsLcWZ+OExuXYs6iBfj8gw/xzaJlWDrnXfzwR1/CNqFS+yiGYSYK9S2Taxf5RZfoKKx90N4yiTK1GJGlZ13zyJ0Srb1dcFcXwKw6DEvKPPCOEOO3i2ywrNwbZ+tiEdJSgpT2WhkdV3QN/zxIgC/XJyC+tUqms33UhULIbbFCfI+aLsXs5GWkUd0uq8blMAvOFDLThM7CnOZ+HqabbqK5txUWB48hMK8DnXUJOLhtLwLy2P+LYSYLOXpR4RNZco7XVIP6l8lYhPY/aQjGcHaefbg05+EXhbb4hRDj+aVuOFMbAz8htDXdExfU7t5eHK2NwuuFlrhanyjP1XW3yZ9lrcpCbGslGnte/LZKel1pmMVZ8Teq5WEWzDShszCnOJ7EruNKu5T1kT1wTFbaBe5vMcJZN54uxTCTpUGt9MnSEIfx9slStH1TiDpVDD8JyUNPz/B7vbQHfLgmQqad7zemyVT2VFHU2YTFIgKnlPgh8TOMK3xkuvsnBU/wiThnWO4lzxd0vrgVzTTVirIaNGTkRfMiZ14cdBbmtqpobF5mgHv+ucjxv4rlq7bj7Jl9mLvACJ6Z3DrAMJOlqrFVRr23fLPQ2jH+NKlHfAm2PIiGbbjiAjYcTSJqXVLmiTmlrjKinWrcmvPlHjW1VX1V4oxzdXGwbsqU/c+0X/2GEOq1lf4iOn8x+4BpwUN+3mTikl3O1z1mehhX8VdJylO4BWWJf7XB+9YhLFlqigdBGeCdFoaZPBSB0T4xzSMmM4vxQkJBwk77zSOR3FYjo9etVcEy/TzVUERuq8qGeWO6jKD76OjtRnFnM3ZUh+L1AiscqY0U517MqXRuscXSBCapsF57hmGmljGEuRc93d3olkffh0ice+7zPPUfcIZ51aBK7N1P4mRl9kQgM47a5nZ0jTL8wlqVKSuv7zWmas/MLEVCnJeVe4mI2hr3Z+k5TBbqZaaZ2KMtgBhmMowqzF3qDJw0McTcBQuweMlicSzBEvn/xSJaXoKlSxfgm69XwymOe/oYZrJQ7zL1MDtGTZ9hz9GaSLwhItYwTZn2zMwT11qJL0qc8X6RvWzVetEgQd5yPwr+KTz+kZkeRhXmns4GJD0Ngn9gAAKDAhEUEoKwiHCEPzue4ml4PMq0s2AZhpk4NLCBXLu8EqfW57qPuu5WmJT7Yl6p26A082zgSpXhRbZYVeEr27emAlV3+7RZhQ4koaAOO8QCyp0DEmaaGNceM9GpUUPd0oKWFrU8aisr0dDC06UYZrKEpFfJqurg9OnxBUhqq5GFWTuqQtDeO7uVIZ1CQGmfmxzEolortGcnToyIwpeVeUmzE+qxbhIiPV1QZoP2mMnUhWGmA92FubMOrrf2Y86XX+DrOd9gztw5mPP1R/j5T7/Co3B+gzLMZPFOLJN2jzG50+MR7dyci58VWOJGQ5L2zOxi15Qtno8Frmj7nicKiTxVfdO+NUXhdJiKSHy6XMgKqpulCYx5cK5sU2OYqUZnYS4OewCDpdsQnByDcxu34qFPEhID7mPF8u0IL+VUNsNMFvLJJp/rtOKpGUAxECrPPFEXLS00A1v0IwWb3dEgW6pWlPugfhKtW/FtVfik2AHG4vs8VmVgrxBpMk/5UnzvvI6pb2mqbNDI0ZTU1jaakQvDTBSdhTnO+hD2nQ2U/7Y+fBiB2vqUh3vW4ZrveH1jWxES4IkC3X36GealpkcEXmQMctg2Efnj9MnWBXVPBwzKvfBNieuINpszDe0H764KlVXiEZqJFVLRNCoaQ0n90bZN1MqptGydr4uT5iYna2OmvGeEzF/ICOaiWxpUGh55y0w9OgtzXaoTVhltwNP8BoSbH8D2M9ZITPDDugXz8CB8fMUqDdn+WPTl+7ji/bwRQq+mBqVVDeLDNYDWWiREBCMkIgH1wy6sO1GQGo2g4KfIqRx4UetFWVYCgoNCkDZkDJ6qLBOhwYGITS/iZi9m1unq6cUdvywctU+S9ppTTUpbrexf3lwZNCMFUrpi35SDd0R0e64uVntmfNBErM+LnWBY5oXaAZai1V0a6QP+sYikY1tHHtFIC5bx9lO3d3bjuncmTjgksy0nMy2Mo/irFb6PL+OiZQy6VDk4uW4+XvvZW1h/yQ6146izyI+whfFiA2zevhkGi5bhlleKPN9amQGr6+ewbuknWHnaBX3fsq0yDee2LseGXQewd6sJjDZfQmb1wA9DB54+PgnD5etw9NAuLFu+Hh5pSn9hqsslLF++GkeOHMDyZaawjFRSeDVJzli3Yjn2HTmM9csNcdqKxtUxzOxySURhJxySoBqnHacu2IhokoZV3G1QPm/6Qmlns3QEMyj3RMME0tkX6+JlZPygMU17ph/7pmwZSe+qDoWm5/mUc3FnE7ZVBcv9aTJe0Rmxkr/nny3rAcqmYRHFMOMQZoXe7r5qzi40qsb5puyuwznjr6XRPlHgeQIfzdmMfKHCZbFuuH3jCW4dXw9TM1utMHfD8/wqzNlyG3IEe28lThp/g/0iquijuzQMaxYuhk268lxC7+7Bsj2WaG/MxW6j+bj1VPnApTmewpK159HQo8bdHUbYcSdcntek2mHZ0rWIqGL/MmbmoWwNRV00P5lcu2hk40TsOMfiJKV7C6zwdBb7l4ejW7wCB6rD5YhJ/5bx9W8Xdqgwr9QVc8VR3PV8+r9JRMM0L5oWJD5Dvreqpx07hCi/WWgtB29QX/X1hkRU62gVahGaJyvoC6Zh24FhdBLmjppsWN46j+tWAVIgCyMccPLwQRw7ew0R2eOwpetpxPX1n2PVBXcoa+N6hPqEoHzAlleiwwms3WOlvb8TaaHeCM/t+xlqXN+yDGc8MrS3xUUt6glWrdyDIu2CuC7WGqvWH0NWsg82rNiGeKnoYhmR6421RjuRVJOJY2tXwDJOe0dnFsxWG+BxDH/AmJmlqEYNy6d5QpBTsNciXkRgCdL1i/ZNp5LG7nasrvCT/tgFs9y/PBye6gK8VmCJC3Vx2jO68VBEyT8TonptlCrzQE2xFH0qMMvpUIpaunt75HjLN4ussaU6GPbNOXL/nW6vrPDVqWDMOaZY/M3ikDoNhXoMM6Ywd9Wn4fiahfhqwQIsXLIM69ZthOkqA5gdPYtDmxfhc6MdSKrWvTJRlROAXasWYZHhalyyCcPQeu4oqyNYs9daK8yDSXe/AMO1x5Db1B9RVEU8hum6AyjR5r5rIp/AxGAbouI8sNV4FxJblItcZ6YnVhmuwdOcFBzfaAzrBO3KuC0Du4yX4kbAxHspW1tb0djYCJVKxQcfYx5tLc3ILq3FWZdUae14zjkJD/3T4RtfgOKKGjQ3NQ37dRM52lVqBNfn491iO2wtC0BdYwOah3ncbB0aVTMy68uxoNgVC8vckaOqQpt4zsM9lo4mcXQ2t8C3IQ+flzrjqyInxNcVQ9PU/Nxjm1VN8vfdXRokU9rfiIXJldo43KxNlGI9v8gFiXUlQHMbcuoqsK80WAi9FS5Ux4jvpx7xdWppboJ7dIFMZQenFEMtbg/3OD74IF1oEp9nsssdD2MKc47XJRiZnoLsrOwqxoH5H2O7ebS8T8gsrm1Zhau+udrbo/PsyXXUI8zdBntM5mDFkYeoHrBHPZIwFwrBNTLYAN+MwStUKcxrD6C0U7ldG20JU5O9iIvzxBYhzEla/e3M8sIao82ILEzF8Q3GsEnULgnaM7FXLDTuhk68d7SzsxPNzc1Qq9XTfmhaWoY9z8eLcbRqWpBbWoOzQox3PYmDQ2Qhahqa0d6qkQfdP9zXTfRoU2twsyoebxXZ4F5NEjrE7eEeN1tHizg04jhZHYWfi4jVpiZ1xOdIj+1saUVobT6+FIL8nlhs2DVmolXdIu8b7mvaxfcqUtfjdkMKFpW6y7Q2pa8pdR2sKpLfj762t6UNGU1VMjU+r9gFuY3V4nkN/7fQtKgRlFyK/VYJ8IorkkZLwz2ODz76dGHKhTnW7ij2nnHXVi53w+3MAVz0UtoSKNXsctIMZ1yStbdHp60sGLs3H0N6X9a4IQRzP18Gn9x+ZR5OmGtT3EQUvB4uCc8XaDQn2sJ42Saka79FWeg9LNt4HhV5oVhvJCJkrd5qUpxgbLAPueoSnFhjhLt9dzQnYfvyJXDs+wYMM43UqTtw3TtLWm/aRxROu0FFp/jkrq8KlDOSU9qnx7hkKiD3r/eL7bG1OgSj5d8yOhtgUOElFhrWeNDwfMHXaFR3tcBKlSnT+k5NwwcTtBdPRiX26tGDDZosRRGzW9z02KcyrzZjCnO83XFsP2CBSnU72pvLYb5/C45YhqG5rRVt4vaDvVtx1k23Ss+e1iIcXfk1TE8+QVpmOpyv7sD8FQeRqeq/OIWb74PR1sfPhLk61Qdr5s/FBcdYNKkaUFVZhabWVhQl+sPBU/zcljIcX70Q2656ITs7Eac3LMbWW6Eiulfh5vaFWHfMClk56bixbzlMTziJD30PAm5sxdz1x5CYnQPvG7uxeM1JlAyXO9czqlVtsuiEx829uDhHF8v0tW1EAdo6p7/gMLejAZ+XiEVpuQ9ae7VpJT1E09MJUyGYn5Y4IrHt+alNZZ1quae8oMwdbxRaymrsibZ9jWZHGtdWhfeL7LCmwh9q8ZxGIqeiSUTM8bAOG3n2NcNMlDGFOdPnBr58/R18OX8hFs6fg08+eA8ffPoF5i1cgAXzv8A7b3yDeyF52kePTWt5Ai7sW4VPPv4MyzYfx9PsOu09Cun+D3Hutj+UhpFeJLtfx7IlxjA7cgT795th985duGTtC+drW7Fsp7Vsc1IXRODU7m3YuHEDDl22QkWb8sFrr0jG5QM7sEGc333qPvL69qbbymF3ZT82ifOb95xCZL7+FcQMh3tsiTTPp15XLjp58ejs6sG9gGxpIlJaNzMmHzaqLGngcW2StpczgYUqQ1p0DnyuVFn9oDEVi8o88JqsnnbC5fr4KRt8MZQ28X2pherdIlv4j+KQVt6gwQGrBNzzH6+5EsOMzZjCrGkoRVzYU4SK42lYGCKioxAVGS7+TbdD5XSpchHJjYvGFBzYuhvR42gdHERnA6wu7cfD4FfHo7umqU0WCx20TpApNGqtoVU78+LQ2NIue5XJMWomBr9QK9L+mnBZ+DQVbVKtrUDHND5tMgshi06DMk+ohCBTxLqn+il+XmCN+aVuuNWQjIz26c8WUZX4m+I1218TIV/D4ahXt+OIWGBd88qQ5jAMM5WMKczTQncH6mvroA1sx09vp6x4m541s35Cw9m3m8fANaYEwWmV2GcZJ4Q6BcW12rYvRu8pq9fIi/ldv2x0iOh5uiHzjoWl7lgqhG6iNpztQoiT4oGjZsB//Q3w+n8CW9cAof5AbjaQKoLbQF8gRNyum+hCW0svLSSqw2WBFg24OFMXKxcV5FZGPcszhTIe0wcfFTsgqnX4SV9Nmg65UCZrTnXbq3QlYmaC2RFmZlw0tXbivGsajtolokybAvVKKMXux7Fyxd7CF4YXAspw7DSPlb3KM0GgpkSaihyviZKipwtlpYC3K3D3KrB3M/DVL4FviavE/yeO3xLHb2v/Tf//q9/vv4+On/4XcGwfUJBHHRhAldC0iFDA0Rq4dg7YvhZYuxy4cgZIH6Fe1EddJK1DaQAFTYlaU+mP8q6ZX3ySkxhVb39T6oLjtVHwEFH0wD1nGl5x3SsTZ5xT2JaTmXLEx4nRd55mVmP3kzjYDCg06enphXVYvrzQ+yTql5sTMzyxubWyGtsrfmYqeS/Wx0txc2kevgaE0tK11SLqTRJi7AEsnwd8/4+A3x8gtnT8u4iUt6wSoukmIuMA4NRB4MPXgB/8HfCaEOOvhXh//HPgd7WP/8+/Av7vX4F//GPge7+iCPrA70fHX/4e8MlbgKud9sloITMUozKl6npFhQ/ytKYgMw3Zg9IgjGXlXnKPnkT6TkPKs+UNZTweBubgmEMSimv1YygI8/IgPiLjo7YgES72lrBycENKEVcHTze0MqeomCpA8wYN6AAqG1txwjFZRtJFNXxx0Hd8ksqkHW1U9vNVx1NNi4jujMq98XWJC0o6B79visX6jqLXL94TUa4QUBJPEstfJcH8HWDOB8CmlcDpI8DDWyKKHqYGirZVa8Sv0TYgWPR1B+Z+rgj074jjb/8Q+OBnwIJPgK2rgevngXPHlAXAf/wl8CviMd/5bcBJRNQDoerr5eK5Z3bofn3JyQD2bwcsHgApYqFBKfipoLarFQ5NObJafK2I3qkYjaBpYLbhBThok4DM8plLszOvBuKjoSM9rfC/b4Y5cxfBxHg5lhsbY+G8uTjyJBTtXPswbdDQ/N1PYvE4OBdd3c+/0IGpFSIKi8GjoFxZ9cvoLzbaC3lW2fRfyJPaavBxsSO2DDNNarsQSRLi3xTH9/8A+DcR4X4jot4n94HSYhENTmKGRqcQxJhIICsdqCgTCwSxXuwa0nVEae6aKuDsUeV5/OOfAwkx2jsFHb3dzwRQF0qKgJ/9v/7FxZ/9LvDWD4FrZyf3u/RBYyTXVvjLXvCBlqbucSXSljOxgAMUZmoRb2PdqE90hNFSE7gm9hdDlMU5wsTIGO7pvGKcDrq16Wr68CeP0LtMEfUN70xpqB+dM8nqG2baoL/lTZ9Mmd2gfvSxoMlHwS2l4x5J2Id5Y7pMvz5WCYUcQLPQlX/+U+Bbvwo8vgukJYufNUvNDa0awGiuIqgfvS6uMYM7J3WiXIj/uz9RvgeJ8eqlSjROt+nYLCJ/+jmThYxHKKUdrOnfhqBF8fZHMYiYgQwI82qhszDH2R7DztNe2lv9OB/bhtPO+jVK7mVB00GimyEnDlWphrqK95NcpLgQUSsODXFn9A8q0KMq3jMuKXIxNRpUqHWqNkY6UA0VVl2gFh9qM6Lq5rghs4jvXFVSyIs/156YZQrzgJ/8qyKiq5cMTo0PpKkRCA8Bju0H9m0RCw+xqAgLBj4Ugk5f+7/ie2RrZ9tUVij3/8tfKPfN/wjIm2S7sWNzDn5ZZIcbDUnP9pkjs2uw5UEUAoRAM8xUorMwV0ZawWTZRoQU9EfHqoIArDU0hWOC/lr9vciQyFK/8iWPdLQKkR4JisaehChj6BLZFUwvKa/X4Jh9Eu74ZY255UD7muSCRYVbtLdJkfN4KBTR9rxSNzlRqaa7f0HXogY+e0sRK8sH2pN6QIQQ3D//jvK81hkB6gFb4nXi0nL1LPD2/wG/Lu6nx1C6mv7fd/z4P/pFeSAZqcCP/kV5zNs/Eo8Zn4PnINI76vBhkb3cGqDUNpFUUCeL+SilzTBTiXjL6kiPGq7XduDrT7/EspVrsNrEEF9+Phf77nihlbc2pwW6mFPR1x2/bO2ZkYnIqsbWh9HwSyrXnmH0ifSSRmkOYx9ZKPdYRyO5vUbaaH4mjg+LHbC4zAO5A6qTyb5yNAJaikFjFE/V9g2bUYh8CnzrV4B//jMlUtUnPJ1EhPvXiojO+1BEw0FCkM8A/66Neun44T8C65cDl08Bm0yAD94EDOcJwR0lqUB91m//r/brhUiH+Gnv0NIk4oyhe+DDUd/dJo1PFpW5P2vfyiprlJkquwi25WSmFt2FWUtlegQcbKxhbeOI6Eze05xO0sTFnD74NOxgLLLLVTggLvwUOXdN82AEZvyEZ1XJjEZA8tgLJ6fmXJnGppnBl+rj5V7xxspAWDdlyttbq4JxujYG5Z3D9/dSm89wbVJnDisCRdXL+khOJvC/Ivql59jXsvUH4jBZAljcB6qH9/oYEyo0M16ofL/v/RZg9RAIFgK9aRXw1o+VqnHKINSOcjmjGc5HaiLxQbE9wrQuakXVahy1S8Kj4NxpH0bCvFqIt+oo9LSjIDMdFc00wKIKafGJyMjJQ1FRkTzyxFI1MSEdVeO15GR0IiyzSrbX+KeMfTEni8Dzrqk455IKlYb3mfUNj/gSbHsUg/j80SucKJg+WhuFD4rsEdlaLqPj9ZUBeF1EwK8XWkkvafJx/rn4t0mFL2KHOFO19HTAsMwLX5W4yJR2HyRq1F9Mghcdrj2ph2SmAu/8BPiL74poeI4S5U8FlMbfuQ743V9R2rm+LQ4S6u8OaBX7D/H67N8KaEYoFiMv75+K199cu+9f1dgq6z9u+mSNWTfAvDpQNoq2UcY56XEQ4u04Cm3lOLHeBFZJ1SiPtcS819/Eux9+iA+fHe/irZ8vgkV4kfYLmKnELa5YWm/G54+9h0/zPu/6Zwshj0Mx9zTrHeT2RRHzWP7maimsntIzuqIvZdpRL8Q6EtcbkuClLkBYa5msEqbiLkp32zRliYhOu+/ZVi2dszYKMR/YJkUV2CQ+b/8Q6NJzDaEIl1LQ04HFPWVP+qOfA+ePK8Jv8xj45iOlKO7XxHHuyPAX1XBNOd4TiyL6W9A+s1rTJS05L7il8WL4JcXTBUhJ0N7QAWo3/O+/B/7he5MrOBxdmMWbjwa3Kx/vLjTV16OhsRGNz44GNDSoZmR83avI42Aq6IpFQdVgg4iRkH2VZGCRw+0bswld1BvFhZqK8gj6fNz2y8IJhyQ5lWg0kttq8Fmxk/SH7hwgrEMtNUl0aaYwCfhbQqBpIhOJhYUqU0TT1rjfKJbsWrqFEC/8RIkMSaBfdVQN4m8ypMmhU+gqmZN851eVdPfTQO0dAygTCyXyHSfjlobeNtD0yJvemThun4TaZs4avkyQgcyhHcDv/Trw798XC7hQcXLAR5B69c+fVSLjPoQc4uM3xALvV4AFn4rbk6jDHVWYe8UbsTA1BXGxsYiLS0RKSipSk1OQ8uxIRlJCJqqbpnHkzCsK7VlRf/Ih20Tx+ur2oU8oqBMRdjwcoziDMZuQRSO1RlE7DVHX3I5zrqm46pkufc9Hw0aVLfeX7w4Q1tGIb6uSgyreLrLR7j8Hyf3lyNb+Fh5qK/oDITY//FugenD3FDMEs63KhfWNHygX2oFQVoJeX2qb6nMluxeQI7NaYy24mBeLc0eB3xDvg98QCkkL2n/9KyHGEcp9bg7AX39bOf/vfw44WimT17avUd471AFQP8lGpVGFuaslF9e2b8aq1Wuxfv16eWzYsAEbN27Cpo0bxb/XwMR4D7x1KGhhxkffxfySO13MdUuTVdCMWOsEuefVF60xM09YVrU0nrjqmYF2ES2TdeoBm3g8CMwZ9e9CUTENTHi90BKh4xjTSFXchuTpLMT5w2J7mFT4oKqrXygWf6ZcRA7v1p5gRoSinNeFKNPrRRHT0JT29fpEvCNeZze1MojEIjRPFmiWsF/2S4O7EN5vi0iZ6jEunlBMcEhwf/j3wBoDcV78+/fEfW/9t1KcSMfP/k2xof1nIdSxIpoekuAaN+JbjUYvurs60ak9+hJrvT3dAy4wPc/2t5ipo1Bb8fkwKAcdXbptFdD4ucse6dLwRRd3KWZ6cIkplgskanVLKqxHflUzdj2OhUPk6NX11L9MokqzhwcWbukCtVOtLPfF/xZY4JgQ975PJPUIU7HTP3wXKHl1xpdPigBv4E/+APjWbynp7YEEtpTIiJkq5uk1pgEy+60SEJ7J20ezBQlh1SQ9XmiYC1Xq79oA/OUfKvUYFDXLbakGZSuIxJkWbH/y28Dl00pBobW5+Gz9iXL+j8V5P4/nF3MTYQxhHkxvcwW8LK9i60ZTrN64HTes/VDFC8VpIaWoAXuexMExWve0NE2cIj9mSq2lFg/JwzEzQo/4VFIRXp8wk6EIzdKmLYaxqusp8n1PXPS3VwVPyIozv0MlC5Pi2vrz1aaLlYvG4V3aE4xOnDmoXIgpapr3ERDkA7S3AhXdzdIzmwxguoQ0V9S14pBNIq54ZIxqAsRMD6fF3+lb3xLv8yUTE0T6mJnfUlzi+kaYflssyI7vHfz9GuqB5QuA138kBNx38H352cAOIegPbk7sOQyH7sLcXIzzW+ZhziozPHj4CI8e3scek6+xeNc1lPH2ypRDK/AtD6IRkDK+pWBQWqU0Gglim8BZQd3WiXMuKXJO7y2fLBy2TZQtbEfE/+PyRt94cmzOxesFVrhen6Q9MzmS4oE/EpHf34oVPc1IZnSHPMVP7gf+TWtwQgJ97SQN2OjExip/zCl1RX6XihKGsuKeBs3o0j3BTB3Ul0/7wPT3+TPxPpcp5HESHw1893eVavy3fwwc3aNkmYZNRYtzQ4sGpwudhbnA/wZM1p9G2cA6r9YinNhggvtP2ZJuqvFKKJV2f7FjXMyHQg5TFJ1R5EwRNDOzUAX9EbskOXyEshZH7BLlRKnjDknIr3o+Pd3a2yVn/5Kz1IGacGn7OF4LzpFYb6RctKgohZkYZHqyexPwB78OvPHvgEpETjc08bJVzUetZLPICGivZZysIRjJaIQmitmGF6K+mQtlp4KzQpQpo/H9bwP/98/K+3zDivFHrOQZT9/HbIuyGJsK2sRnmuaKTwadhTnR/gS2HnXQ3uqjG5b7N+Oc2/iN9pmRIUG1DivAIXFBJ0ev8VDb1IazImKjojH1GBXAzNRDYzr3WsTDN6lMXqTNg3NlC9spp2RpAjOQzPZ6mbamtOhqcVD/sdK/PPn9ITIR+e5vAn8qDpq/zEwcap2h4p7fFhfwtAggsDcPrxVY4E5Dsry/o7MHt32z5NZFbuXzV3eqEbkj7t9hHoNInkQ1ae5eAX5d/C3+4NeAR7eB5AQRMf+OOH4PSBlH/3sEWdSKBRdNWxtu5vhEoDbGC3Vxst2xchKfY52FWZMfhg0Lv8YJc19k5hehMC8D3o+P4esl2xBTwoVGU0lrRzdu+WTilGOKrOgdD1SUd9s3W1aKVtTzHsNM4xlfKh2++jIdyUUNcmznebe0Qf3+VDVNgvxmoZUs9qKWJzqu1idOupiSZhDP/UCJIo5wJfaUsG21Elld3C8WVL3V+LzEUU7waqdmZgF51e9+Ejesb3amiJZp3CcJt0MktzJOhiBf4I9/V/wtxHv74vH+CHnFPOXvs31d/zka9zlSURh9Rr7+pfI1x83GH2mPBGW73im0lf3ufQZBE0FnYSZKE12xZcmX+OiTz/DpJx/ha8Md8EjkN9pUo+qbKiWi3tYJWP05RRfLKG0s+0dmaqFMB7XPUPFdXqViCkNRMw2uCE6rlIVhBNls7q8JlxabVEGd19GIos4mWYnd59bVLa735RPMaLvYAb8pPtnU3lHHdvZTAlVq/6a4iH/5c6Cptw0mVd5YIBZSfdkNcv6i3nXasqho6F9MkyMf+QqQte4h6wS54GZf7YkRGgB8/08UUT47xJ0tNkJEv7+h2KoW5Co1FfM+Bv7330VUfed54XWwUvan//0vgaIpyihR+poW27TN4dCUM+w2ta6MKszdrTXISMoCxV09bSrIzGinWlwwSlBSWgENFyFOC9SPvN86XrpFTYSY3Bq5z0zR22zSpOl8Jka6klbSIFuMxvllegGZh1DvMl2gaUuhj4G9y+TOdbMhSXpdr60MQO2AsYwDoSKUvxYXIeMlin90H7QPFh8z+NxAaGTim9o+XGrpYKYGGnDxX38D/NW3gawkEWW1hMkLcEJb/8rHO7FM9q+7xfbnRel9cMYpBYftE3HAMR7nXdKkxzYzPkg8//sflff1ykXPCy0lLpZ8rqS4qYr+P7WTyuj4bXEc3CU+n+KzoxHrKGpx+s/vK/fduPD899KFErGItlFlDmprvNeQIj/XO6tC5D7zZBBPbWTaK4NhumAVwuq6UBx8C+dvB05qFcDoRnqp7lOlhqOgulkKs+VTxQRhNiCDFLIrpCpxXaEFCRVL0X5sTdOLd/GiMZ1UfT3azGUvdSF+UWgr5yVntA/v2ZcmLvx/8fv9F5Z/FgJ947wi1r/8mTKA4S9+VzE+oItMQ0P/xeXBDeVrXhORArV4MFMDJTI2rVSitZtiwePWmyaHidg09Y9kJcElET5gk4A0bbtiYGoFDlkmYmtgOLYEhOO4dTK3Mk6ABSL6pbTz528/P2WsWIpjN0L8gT/8VeX9T61Pm8Xfi0aH/tOfKuc+egP49E3l+9DtL98ZPPt7KPSRimqtQHnX4L3iTrEK2F8dJo2AFpV5wEWdJx/3TYmzHNea2Db5OgLx9Eahuwm2x1biw8+/wryvfol3PvgGqzdsxLr1a7FWHquwYsUueCZza85U0jdVKkCHqVLDUa1qlX20VJAyW5FnVE6N3HM75ZiMhiFFTyNBKV9aUJBhQ1zei5eGzxALqp3mMbAbYUHV2tOFLVrLTE/1yPmzzSbKhYPGEa4zEhcZ7cWm7/jRP4joTRsRUMqaZhbTBWflYuDf/lKc+zXA9on2mzFThrsj8Fvior7sMyC8uRwfldnhaE3koGClzxb3olsa8iqbcMc3G4esE7Eo0xOm0YE4YJ6AwHG2QL7qkAUmve4/+iex+BlySQxuKcHXQhAtWtJBZnerlwKfCcEls5C+ax/1oP/sP/s/PzS9zOIh0DJGbRZNE/u42AHbRQTc2NN/DfNU58vuiblicf2RuJ8MZ6h97l2x4L7ZkDwlwat4mmOgqUGQqxWObTfCUuM9ePjkCZ48O8zx8IE9UsUFiZk63GL7pkpNTJwaWzpkHy25gM3GODpKX1O0Ty0ktEB4mjG2QTNNXaJokyrRZbYgsmjcafDZJiS9Ug4dCUob/sKb1l4r5/murwiQIj0cGSnAn/828D0hrn17Xw6WwPJFwBEzwNkWqBQXJ5pic/oQ8AtxkaHogNJ1v6698Hz9HtDOXTlTTrFYb/3LnwDf/x1xsU9RY1G9M4zLfaAZ8Lekd6wcJmMRJz6DqThjn4rdPtH4rMwRBsk+OCAWnbZhhWyZqyNdncDcD5Uo9961frElSjqbsazcS6aPaTRqK7rQMcL7vqIM2L0FML+j22eD9ohJlCkrQhasfU5vtPVkUOYlxZiyX+Gt5VhT4Ye3C22wssIXNd1TU3A7tjD3oa5EWQVX+c4ET0LysOeJ7lOlhkJifMMnU4rzbFhzUoR8wTVV9u/2Re7kGT0SVAxDPaB0MfOIL5ULCrqoNenxKD1aNNCwCrLb7IMifvp9qa91OJ6IFThNfrrdINR3GOiis0kbLVMPsi5QKi49FfDzBO5fB/ZsBVKnxp+EGQKNy3zvfxW7xlt3urBPHYRvSl1k29tA2jq6cT9AeT+fsE7GqrhAfFPtjA15gdjtEIMbHplobuNWRl2gASy/TxOe/kosSAfYx5MzHqWTKfv0YZED5pS4IkUsfKcCiog/EaL8pYjE7zemCeH1Fz/HBlZNWbhSnyA7KWhmet8agXwIbFVZSGmbOoMZnYW5IsUPrv5D+5W7EWVnKYfAM2MTX1AnC7LCs6qRkF8v/bCHQpW912mqlE3ihEW1q7tXijvt1w4UjpmC9tcoFU9i+0BcoOjftG8+EonidaFZxXf9soWA98A2vEBGzVQIpm80qDsQllH17PWlv1OWttf8uneGNBepGebv1i0+xrSqp17ltPbhMyF52cDffBv4028prl2M/nHrshBmSmd/CdxVJ+LtYmtxIX9+64Iqsy+7ZuCAWxw+z3XGUVUEnNqysdkjHMdtklHGrYw6sehTJVo+dWBwtPy4MUNOYdtWFSwHv7wt/m3blD3hNHI3euTn8m5jCr4ocZJzt/u+H2W6qCbkQyHWdCwp85TFX9OJDsLciWRvG2xZ/BE+/HoVzl68hksXLuDSxSu4cGInPnj9Q9xj568xqaHqTBEFbn8ULQca0D4UDalwjS1GizbdTFElOX6RKF0RUSPZO04U55gi+TPIc3umcY4WP1sIbYoQaErH7xLRPzmRUevIUOh3p9+VfmdyLSNic2ulxaFzdLG8rS9QJuCmT6bcOycfcxqQT1kBOldco8Z511S5t0h96ENJFatpmrNM4twpLgNEoDfwzcfAqsXKBX/FAiVaNp4v72b0EMpGfOvXgP/6Q+BiTAF+UWWJGw1JzwQhQ1zc67SV9vWNHThYEIl3S23g0VyIiNo67AyJxAHLBLkYfVmhedc+HoDvJAc6RD4FvvMbwF+LhWrlgN2hhDbqI3eSEW12R4OcYU4R7t7qp4NmmOsCPb2glhJsqgyU35NaGKlH/VFj+iCR928pwkdF9rIS36k5d8ILAF3RSZjTQ12x1/hrfLlwI67de4Q7t2/j9u1buHn9Oqy8I6HirMyYkCMUXdDv+WfLSmWaQHTKKUUWCz0MzJVGFGTjSKJNgh2fV/eckFEJfs0I7TVD8U+pwDaxCOibCTxTkCiR0FI0SUJGt8+7psnbQ9tESupa5O9OvzM5nfXtKZOpymHxeGo9mo098pHIqVBJQb4inhdV1tJiixYclLKk2dnH7JNgGZo/7P4hzVd+rcAStppMedvJSnEqIiHum/lKxx+KIyxIPoTRQ2gPk4ryaD9/9dE6GDQ5YXd1KNKFIJPjE43dXFPph9xOldzzNK70xuIGZ2w/osabP+uCiWsUDjvFwSNudlsZpwOqit5oDPz8v/vf19YPJy7O1BZF0TINYOn7HrTooT3dN0WEbKXKkgLZ2tOJ5eXe+LrEZdymHuTORXvGlKreIBbNlk2ZSB0hJW6rTWWTje50I1463ahIdIOdh27D25nBkOAoU59EBDugVaJIRFm0/0oFQzTsgC76ZCqSXd6fJqFiA5+WQlysj8eqCl/MLXXFQ1WaTI2ORpQQ5G0Po+E3w7OyyROYosiHQbkypU7QvjGlql1jS1Dd2CYFOjq3RrswiYW5eOzAym1qNSIrS4qi+9LE+kBEdrX8G9G0qD5InGnhQc+VUvbDvd5qceHYQCvyMkdkdNTi0SXge7+tGOdvNQUs7gN7NwMG34jIWdzH6DcBXood5A//owOLMvwwt9pJfi6pSGhBhSveLVYKgS7UxeOrOnssDY3A3/1JjxSrz68n4qhbjFig5zwbo/syQAMk/vIPFEH+3q8CP/5n4LfEv//t+2IBPgEPKn9P5TPyF2LxSu2DRLeIhk/XxuCNAiuxGHqKlgFFd1ScRQVZ5F8+nnUAjfEkkTerCRPfb+wIczzfezLoLMzF8V54aBc+Y0/sZYL2JU84JsnUZ/MQ/2q67RRdJIuGHofkyf7fPrrER/dkbbSsOqTqQEqF9lUK0l4ImVWMBEV0lE6mtPJ0ohER8UCrSd/EMhmpP83obzYsrW15tvA4bp8sI0tajJCA0zzb4QrDqMKZzBp8k2Z2YTEalFqnqtrkwsHFPlQ7cMA6HrtF5J9a2AANOmWrRUyr8hrQCpz2rI52hODssW558aIqauqxZF48yJVt/oeK8HxoH45PVJb4ptwZVh2pSG+rw52WJHxWbYtfFttinsoeP16TL13DaLj+/xkVwswrClfEApy6J14WDL9WotvVhiIoCBOBnPjYLv1KOUdbNOQ3TnQLLU0WQjta/zC1N33/e4rIm23tj5btm7JlKtlQRLhK73I/lI6moqwTddHPropklzrWXjDtT9Nn00NdoFfaJn513aiKt8UK4x1Iqn553kwzRaK4kFP7E1XtDgelPkvrNM8JVHmXGt+UuMgeOeumLLmfQs3rBuVesjz/TkOKTMWQpWOQpgRuzfno0Hr3kskIpY8fB+eJyHV61uZkO3nVK0OmnMkPmASaZhEftk1Aofj5fVBKnlqIHgXl4GFgDu74ZcvHJReN7IBB2YRj4vnT/i0NAZgIVO1NFdJ1zcMX0Y3ndaHfgbIbtMAgI5SBUEaEbBepCp72Fb1aC+Qq/HOxkDopLhS0uPq8zhZmYZn4+++IaOs3gUe3tF/MvJAECvGg/vJ//agSh0tiUIhaeNgAC4RgH9sNXMrMxJI2e3yS4YY//ZsW/OAvgfd/DPzJPzZiq384TjkkI3MGskFNtUC97h4/EyImAvhjEd3+kTgG2shmZyh99ZTSvnAMsHig+FN/+/eB5XOVKveh+HmIyFt8RkiUKZXdJ+DxrVVyD5iKJyNbn29HpNYpKtAyLvdGU0+73Gs+XxeHBeJc8gjV0tVdGmkQQtmOyu6JD5yYDnQX5hQ3LH3rdXxuuA4HDuzHvr17sXfvLmzbehxBOvSpvspQGptSuaMJ0XDQKo7SY7SqGwjtZ9G+CEXOtLdCRRA/K7CQq0mbJmUPs1bVLoWC9j77isumEjIAIV9gisopjUuC9Sg4Vy4GbvpkCTEdWfRIEPvS3CNBj6HnTlF1af34PzRUFUsZCNrXv+uX9dxrQGYgJLSUetcFKsSj15NmKw+370176ZSiJ1cgMhF5v9he/l2onYNSm4tqXfDRIpW84OzgMYwvPCQq0o1K/D3PCCE+tFlExCI6pL8vtVN99H/AWZ9S/GR5sYwabR4BlrfFY77VCiPzOBy2iZdZoenEyx74aqlY3K9ogpejODFNISG9n+l3XCui5aFia3FPeV366igoU0T//vavKyI88Dn5uAJ//m3lcXs2is+UtiRF3dMh93/p+mat3VceCnnM09jU94vs4N9SLI0+fiEeTwvkE2JhPNzWn5e4vtI1lFqfRss+zgbiJdANVVkOQr39EBAQgAD/QAT6B8DX2wPOjn7IqZz4FI2XHUpXUQqb9lOHjv0biwPV4TIypn2QoZA4r67wlxf/jZWBOCjelF+If9PYwPTOOqADsh/4tBCThilMmVEUSvuotJ9K6feA5ApZRX3JPU3uF1MhFBksTAVeiWVyQUO2hgMh0afq9eEMWOj50Wi90+L1ptQ5pc0pW0H73H1QxEsCS3vwNOS+L1U2GpQBoFaoR7R3Poo5RKxY2VOFKPlgUybjQWMaVja5Y4F/JP7wt3rwT9+d2J4bo39QVf13hcB8WyvI1Oq2bxPw4RuKI9tf/6YiRN98pAhWfQ3w43/vwXubs3HYPQrOUcXTIgcFWcD6hSKa/6IUbwR74s0oN/zgk2o4CJHU5b0+Hsh05R/+DPieeB1o1Ohw7N4gBPePgM/fUYZHnBfRM7Wc/eJHigc5QV/7ffEYqrsg69mBzzOkpVSmm3dVhz6b5jUc1qpMfCCEmRy53i+yh2G5F+aXuePrUhfkdAzuTiEhpoCH9qu9W8a3Lz0T6CzMfdQVJMLJ9gks7FxEBDhybyqjQFEyVR1Tb25f1bEuUGpmoXhT0UEpl+Gg8yTQfYbpj4QI0AqRIjZaZT70y5F7omTROVXI8Xbi96HoMWVABoAGwFM696IQ6OKaqUkL5VU1S6GnXuiBlc7Z2upoGhYxdLFDLmMUJVMEH5BSIR3FqI2JhoJQXzSZP1BlPEX65DIm08/qsfvF++Yse43Rs0/ps9cKLeDR2z+AJE/ThJ+92Sov3nevak8yLzy017zkC0WU3/wfICFGOd8oNICiR4oiqdUnMU45Tx//3abAj74swSGfSNwJyEJLx9S2tFQUAz/91178nUEWPsxzxGe1tviq0RY/9/TH3/9DKx5fn1pxPrZPu488X9k/Hg4asZiSIBbN2l+1U9x+9ydKZuHKaXHtqBWvn7aSe+eAsY1Er/jvbG0sXi+wlFt1oz31jI56afhCNTmUScwVC2PzxnTZ73y1IXHQ15Z2NWN+qbscz1g2ifGM04XuwtzdAs8bO/DVnCVYu2Y1Vq9Zg8VzvsK+e/5ofZnKC6cQ2pekgiES5qhxDkh3V+fLnjrFCk63TxKJMQ3ef0N83V1VCmyfFmC/ZQLytSMIJwuNtuvr3R0uBUzPsrVjhE/nBFC3KT3OJxyTB+3r0mtKQkuR8MBomiq7SazJ9GPgoiFRRNYU4V/1TJftTBSFU9W41dM8mYanxcZYUIQu5yznjNx+RjUBi8pFdFzuBqeIJjwNAKKeAufMlEjgg9eBtpk3YmOmEYoYze+LC/2QLAiJtoON4sg2kDAf4Ie/rMZeuzic8kpEVcsEF83iY1ZJ8zOGXHtvXe3Bfx1IwCc1Nphb5YwnjZk4UhuJT1VW+OHZWHznV3phdXdqxJlSzT/4a+B3fw2IDFbOkT0ptTTRGNO67pHf7N7uiqf7j/4R+PJdZUvg07fFNWZIrKcIqBsWl3mgtHN0AaWqbUpnG4lIOU3rxlbYoZJtVLSXXCqCnT581UVSwGns6hS8FFOOzsJcG28LI8M18M3sv+DVpHpi9XJjOKfMvInFi4C6tRPnXCiNnTyuqJWqsenDRPvLfurxmWxkiTfkvFJXfFHmjHPhSThqnSSN9acC/5Ry7BSLDF2HvTeJhULffOGJQB8Y6vcmU5ZorSCSTSeZeFCB2UHrBJlC76t0900qk+n0oUMkyE2N/Mf3ikh6t0Ws/HoaSUmuaBR5U7vWaN7FlOmw1M5Zpgh8JJyb8/BhnRW+cYnBn/6OEgHQfhpFBlTBSz7XzKtNi1jPLliiwerzqTjmFofypok5gD0JaMRC2yRE5gzITgmxNjSrwXsFtjCs8kSktiuAFozLKz3xSbUt/n5egfRi95iCPWdq86Nq829+IRbF7e243ZSALZXBslVsQZmbNNOpHsE7mqJo6genaJs+J//yF0COUh4zCDfxmXqzwEqmnXV5uvViMVA1IMNIQc15Edy8Lr5HX98ztaDuqAqR+8u0Hz3Jl2FaEC+JbsTZHsXO017aW/04H9sm9zGZ56HK6P0iIqNK5PFAY8aoGtugzHPEeb2jYd+cjV+W2GJzVBiOWCVNSZFJlVhY0KSo4/ZJ0gBkLGhPhwzmL9XHT+qNT7OZSRBtwpQRlvH5lFKOk2YsdI4GZdAkK2pJo+dHe8pldc+n0ql4i4rJqGAtt1IR1xaKyEUUTb/TaBaJ5Gt8zatvzrKSOqeeR0tVJs7VxSGro15a+m2rDcan5fb4h3crZWvML/8P+PjnwE//G9ixTtlnZJjTB4WA7s3GMdc4pNaMryCUqBDr4m9co/BasQXWu2ShUxuYxoYCbx5NF599GzxuGuxcRfu0X9U44OM0d3zvHxvxg78Si/ihDsvjgOaCf/BTRVQfXwPSe8tkIPFxsaNMD1OlM9XHDHXQGkhSnDKSkdy9QgO0JwdA+8A7q0PwXpEdgjUTN2QhZ7DPxPMyKfeFXXMOTLUGJeQL0dCjnyksnYW5OtYOJgar4ZNRC1lQ29uNmkwPrFy6Gq7J439zvQqQIcVA0wlqdaJePKoGDBQrNZrhmd/RKNM/A6sCKY1NFYXHawZXY+tKhRD2OeUuMIrzwyGrRLgPGNw+UShy3WEeI6PmsaBIeUtlkEypf1RsL3/XidLU2iELtcjOlArpaK+etgbIe5uqoA+JyPm6VyYsRERLNp7uo+wBU494Se1g0Safd+qXHm0CVnmDRvycRNz3y5ED2envSB69ZLX4XqU15pa74lBNBObVOeFd70ARJXfDeE7/nhpdxBimj8xUYO/dHJjZxMIud/wz0y/eaMcb/t74vFEIoedTRAlBJi6c6MX/mAfj81q75wY60NXlVkMSPqq1wi89gvH7327DL/5LGWXp4aQUZT24Cdy/AVg9UuwwKR0/EskJwO/8KvDf3xcRqLgk3NEkSAG905gi62MiNOVSDJeVe4uoeeSFPBmThPhpbwyBhoNQMSst8CcjoBQ1769RBl7QfjONajwtoujCafa7ngw6CzPQDr8HBzHvs8+xaJkxlhsuxGefzccR8wC0j7QkesVxiiqSqdK8kmZkddXLnjpaRZJDDY3/o568b8TKklaYe6rDcL0+UU4eMhErufcK7RDZUQqq64oUHzxvD8D6MeBqL6LX4acKPkPT24mtInqbn+wphZnSsJOBUr5UKHXRPV3uM4/F9fokmSaiqshPxe9IkX/ZgP2d8ULRMbVh0QCQkyIqviR9xJXw0yaMHNXiZGaCCrnIiWs8UCEZ7ZlTb3VXnwvCEDLLGrHncRwswvNgpc7EV2VO+KjOCmbV4TiVlQyjend8UGeJOWob/JNBLn7yt8/vOTLMQK46FUkP+QvxKQOW5GOTJaLM143K8WG2E76us8cbwV64/FiNVqHDXxqp8HqEK9bW+6BRLI6HQlOQNlcF4uNGK7xxMwa/+ys9+H2hAJTdoepx2nKhg+xGv/ObYvGwUYjaCE+OKqcpDX1U2mX2yAlMJHjZItDog/r33yi0nPBwCSpmpaKv6wO8yCdKhKZCDqegwtgIERDpu2SJP8H4qBTvDFd7G1haOyAiTX9cmfQN2rOk/tmjNkkorG/GrtpQIVZ2QoCfitVajHzTUqEC7cdQcQKJNPnskmhTSsikxgtVmlbsNBErU/FXopRR3/E///H8fmWd+GBm9xcC41pzIj5Nd5EtTXd9s8ZVET4QqmIm0aJotG+fd7SePx91oVhU2MKoyhM1aIRFZzJeL7LCQRFRjmUjOhIJ+XVSPE84JEsBJmvPPnIrmmQFNj0/ch0bL9R6dd0rQ0bEZXXDp7Mpmj5mlYyzcYn4qNweC6pdsM4xG1980IVfiL/F21824l2LCLztHYA//vMWOJlrv5BhRsAxsBp7LOJxPCoOLRi5MrsgZ3BB1O5VwL9uScGcJlt8UeaIT0oc8KlZEU6aAj80yccvK61wpTFhxM8oVSovq/TAR9U2ePd0Br55FzD8AjCaq/hcb16pGHv80W8oBVkPhqniplng//qnipinRgF54pNObZurK/yk/WwfNGyCWgdXlPs8O0+GSCS4I01Y64PmlVPv8gdF9ohpm7xPBhmOUAcLZfNeBMRLOzZNhXG4uGcNFi1ZjuO3vcQbiRkLSptSm85tr2xcq0jCOyXWsteY3nD0Pqf0ChVG0V5lTbdG2jY+1ZTJloCH4o2bggpYPlCqef/qW0qhhOkS4PO3FXGmYQc71gJersoM33/6I/Fh+j1g9VKguhQIQj6+znPGHodYXPfIlPupEyEotQI7H8fIliUqLsnsqMPOqlDp3Z3f2V+Z3djdjhBNqayg/KrODh61JQhxAKIT2rGtMQC/LLXFvcZUObOUPpzjKQqjMYoUDZM404AP2rvvgy4aVOxF+8eqCfZrk/c1CftIvuJU7HZELLB2pD3FF/V2eGt/tnz96e/wR7+mRBy//v/1igtZJ7aIC9sE10DMK0R6iQqHxft5s0sMgkuGFymypvy774qF348AN0cgPhz4wb924meOATBReeBgbQTmNtviJ8cT8de/2YufXozF543W8B1j6yhSU4mvhKh/XuEA+zpyBnz+DUuFXX/wW8Cf/r64xriIEwMeQg5eVPT1/k/F6TaxyGjLxGsFFsNGthR8vCsW6jSRibbuTIRIvyaiaNo7pg28kQjXlIsgxVZ6zLfMwNAIfUNcUkanuyYDZkafwHT/FVhbW2DL0i+x8pQzxmeV8epB1bs0d/VkYCK+LnaRLTTj2dNQVQM/+3fl4n/5tPakQCNWRZdPAX+jta2jg9JPf/m7wJ/8pnL7p/8M7LlWD8NCL2z3iMAll/QxZzuTcxWlislju4/iWjWO2ifhjH0KSms08GstkvagtMigObT0bxp5R4IrV7dltviySSxAklPkvFp6Lv8snufJJ3VY0eSGX1Rb4P1iOxiVecvMwa2GZFnUUd6plq0M5C1t35wjLiyD88CUfaA9ZJrERVaeNORiIBTVD/UgHw80spEyC7d8Mwf5fhPdQmVv+2ThoF08Fue746M0d3znu614+79FNHFLsSOkxdH2deIitFnpYWWYsSivb8EJ2ySYWkfAPO95q95WDTD30x78/j81iIVfD74jPkv/+mfA3/6oXvrlry8NgLcIXQ1rXfG2RyD+4t9UeEco+fI6D1T2auTikLad4vLrkFH2vN+EU1MOPiixw0fldjijikZu9/N1QvvE+5nS1T/4GxFpU2uWFoOvxDVHnH90gxahPTgkFghvFw1vhERiTNlAWrBTKpmcueg2beuRxfBwZInzS8s85J61vnlYzxTizz06uT6XYbL5Avr+tJ153lhtvAtJqlEqAxhZKXzIPBFrnwbjffHmp4Ku8UDesiRsv/hfcbEfprYuLgqY85E4PgDuXAEKxbfPSAVWiaiaWnR+7ze68GlwIHY8fYqz9qlyn3g0gtMqZSsUCRQZhZAoU6/vgScJ8EgpwRVVAj4st8UilRPMW1JgrknBmhYPvFthhbfLLTFHrNzX1flinnkq/un7yqCGfxEXku/+KvAd8SH+cnsFtmdFw0wdhHWtHnJ/7K0yS3xSZi8/tFTFSRWdtAdPqX1KOw2E0uhUjU2v61TT3tWN+4E5w7ZDSec25zSYOcdiXq0DfnA8FrvWKm0vDDNRyNTmrEMKtnmGYVdoGpqGBM0hYrH3N29W4tNcZ8y1S8Br/6YswP9rbRa+rrfH3pgoXLRPx8pUf3xa4IIfm6Xiw3xH7K19isxSFZ4E58lumf1WCbIuo7rp+QIsb3WhNOL4WYEl5pa4wlKVNchZi4oWl4gFNonzD/8BsHoIBPoq40r/6Y+BujJxQI054mtpsARlwoZC5ke0CP8/EVGTGLsLoaVODdo7pkX4UNGlvmXa3qOq6XuNaa+kKBNjCnOs3THsP+OhHe0uaBJ/7HX7EFrzYuTqZwuat7rfIh4Gsb7Yp6KySeUtRhGVpwuwe6My8u/IbrHyvC2E0U+Ia57S35efC/z1d4Wg/RYQ4C2/bFw8vAn8hYigf3IpBlujg3HCKnmQ4cZQqL2ITDxo8hM5d5EBB1U7H7FOwt2AbOyvDMcH9Vb4Js8Dy86VYOnniuXf8avNOJWUif2ZiVh6vAzvvd+mTesCS8UHmhYK964Jcf4NxaLw9X8CVizthsn2ZhyxqIZleT6O1IdjeZMrNjX74FZHLE63heO9Ehu5Dz9wn4wGWVAKe7hJVFNBaLpYmIiIfGhVN5mznLZPwfaAcLyf6YR5ZhWom3iROcNIyOPghmcm9nlF4qMHMUjPG5yunfcL4N+2peAbjRXmNtjjiYiqXR4BCyND8UmlHY4GxOOUZSrMwqPxRbkTPs12lf+/VpKMM2IhTt0g51xScEE7kpQW3sNBPc4X6+LkXjBFvftrwmX7Xx/1YsFgLBb7vy3Emfac/+oPlM83batRVB7SViIW07RNFzGiiNI23ZX6RGRqv29Ea7msp6HRjR0DtrTImGRrVRBeL7TEKfH5bxvFfvNlR7zEoxNnfxxmZ9z7dwPUKTBbb4bIxld1LTM27V09eBSQCzPbOCzIckNAVwGSwgDDeeKN/YfKniRFlH0H7SN/Wxx//fvA2z8EfiwEjM6vN9J+wwmwfrH4WfNzsSEuCIcfJyIye/hIk/aXnoTkyRak4NRKuRcdmFwuxeiCUxp25YThM5UNPgj1x9/9pAG/q33OdNC//0E857/7llIIQh/Yn/4/4LaI4Ae2WoQHA2+K8wO/9o/E8drfAysNeuDi246wmE5paegTqcGiYk9ldrHWvWcmoD5tiizOuabKnuc+6HU7apGMddGBeNc3ECFhE0+ZM0wfVHT4JCgP+51j8Jl7EK5bqZ8JW5y4VvzNn3Xi545B+LrWXvo+m9Z7IRwFMKn1ktHpCa9EnLJKxUG/OHxR6iRE2RFzKlxhk5WHo1ZJ0gOe3sdUHEkFk7d8s9A5iokOpZx3VoXIFkfKXtk0ZQ2aT+xoDbz3v8pnnIpRwwKV82RBSz7WDsNEvyPR3NMB4wpvfF7ijGJttwYtwi+LSPo1EUnvrA5FY8+rvVkqXuLRSXE9jy/f+RLrtu/C1u07sH2dEd7/xQcwWLsR27dtxJrVZvAdMmTgVYeKkM47pmKfWwwW5Xli4armZ8VCf/k7wFfviWh5NXDtPPUeAhtWKG/6v/49yPYFWpn+rYiYUxK133AChHoA//hWLZaHB+LAk3gEjFDYRCliaul6RIPbu/o/WtIVKzscX6hs8U6QL773F834nnheH72mFIaQ+JI/7t+IFTQJM81hpUrxoZZ6fdSJdUGwL2B+Bzi6T3kNviu+H6XnSLD/5Fchv/+f/JqIrA+n4aM6ZSrMTPJEunvFP5u3TPvuVPR22DIRC2J8sDsiHb2cKGKmAPqkUTvlfpt4LE3wwXsmNXIaVFuruB6IRfV3/64BHxc6YnNNoIw2ab+Vajo+LnXA0dIo3PDIlOZBJ9yTsLLIF++X2GFrTRAsovJw2CpRjpolKMNENRLUuTDWdpZGCDFVTNNeMPX7OjTnDhJbSm0/uQfYPhYLeqHZJNwmFT5yz3hgIaguXK5PwLsiQrfX/ozo1krZbrWkzEP2Qb/qiEvh6NQXJuDJtcu4dPUyrojj8rXruHv/Lm5cv4LLVy/g3Lm7iC6YucjmRaCwSo1j1snYGxWKtx5GCUHuxT/9lTJVheaVkon7UKjYgyatRIQCF08pvcuToaMFWLa6FV+aR+KgQyxco58vzKDRiFQ5fso2BQG5lbBsycQVVRyuNybiYG0kvlbZ4Y1AL/zFvzRiqxBecgqiC0cflMoqKR67r3o46DVIjgfOHAY+exv4uYio3/kf4P/9nYim/6wFv4zzwJwap+eMEqaKCvECWTRmorirf085QbyP5cCRMKUYJyKrCocsErHDJxJfZXoguVr34j2GGQvfxHJZw7EmzQ//sDwHf/ArwMdviAX6bwP/aZqNT6pt8FCVBk1vl0zxkjfAp2WOuFWYipuuWdKS9qpLBnZlh+F/S57gWn0SHvnl4rB1IioGuPMFplRg28MY+CXp1k5IBkg0pYlMdEZLJ8fJGcmOcrpd6zgrp0mIyUSJUuDSkEj8frQYIFvbgYuBV5UxhXlaEFf0jo52jGNO/QsFDaw4apOITXFB+Nt5eXJPtiBXe+cM4uXVg18eSsMhryjc8cmWTlnyXS+OtJJGXPNMx+HHydhpkwqjAj+8U2qN19Pt8H8JDngt1R5vBXrjkxX18LBUvt90QgPRSfTLxfph/i+Af16bjg/qLXGybvioObSpHOmtwywIxe/WLLS8RS0igK4uVHaroRaRL43B7COmtAlGef74eakFlhf4IyBW6V/uEg+64p0qB3XEZjfgsluGjDTmpLhjfyV59fIlg5k6aHgKFYiuiwvEAt8Y/OQflawapYvfcQjF53W2cowoQS5Yc0pcsKzaEx55RXIfmepAaFF9Kz0NZqow+FaV4IoQ6queGYPmjxfXtkirWrKV1dBnYQyoYMu43EeaA+WOEglbqjLkHPi7janj/mSQpzX9DDJXOlITKf0baABP6yu8rzyQ2RHmnjpcPr0fT4tfzgsdTT866hCP+R4h+MFrzSidBVEmWoRumbnmY7trJE5ZpeCcUyrsQ0vgGFaKE7bJMhpc4xyNj9NcxWrVBt/4RmD5xRKsvVyBjRerYeHcivrpneU+LBkikn73kxa8Fe6Br6rtEVBWrSwoBHXinzdycvBhkQMWl3oiqKi/nJV0+tYTDd4/mo3PnKKwMNsH8ytdYJgSjMshpQh52o0bjo34LNYX7xTb4NN0d7wr/v+xWziuXu1EdCBwx60Ih+3icVi8XsctU7AuJBQflTogpp23a5iphUbCHrNMxuqgINnrX1vXizuXgMWmzfgiyx3GNV6DJjRFt1YguL1ECjoVd1FNBO0f+yWVyz3atOIGOc7UMbJokKEQ/fu+f7b8mtGGsAzkan0CflFk82zww1Do5x2riZI9ymGaiRlNXRE/o88F8fMSJ8S3jW8C38vMzAtzey3c7x7GR++9iTVHLVDc0vdn70WLqgZR3k9g6Zs4yAunIMoFJw7uw76Dx+AaWaA92097VSrunDkIMzMzXLMOQLP2W/Y05sHiynGY7TPDufvueFZI3t0I3yeXsd9sL46cv4/sKawwp57b+/45OOgUgzfPxuH0Me0ds4R1chXeD/WAaWgg9tjH4pBlIo4+ScIe8fwWRHnjnXw7zK92weOqbKRndqNDT9qAkiKAT68qs1S/TPHCvts1OLVTXLSu5eGXeUpBDJmWfBrhB2d/DWK8AMNtDXjTxw/vVVnh4zI7fFnqjK+LXPFegR3eyLLFa5aheCvIG78os8a+rDgE5TVgbWkgfllthZ+ci8Of/UYv3vxJC45YJ+OkiDAOOMfji2xn3G1OGVQhzjBTQV5lM87YpWKzdzi+KHKGT5fSUhmFIrxdZC0HpAz3viO/Aaq0pqJNGtxChV70KDIDopR1WObzAheepcwpJ897XSBPARLm7VUhw5oBUQW1Ubm3jHjJm38ikKHSpyWO+IUQdzIs4k9YPzMrzL0d8Lq6E/NXHoZXoC/Ob1oMk0PmoN2Q6nhX7Fu7Fou/fAdLDtg9yzy2ZPlg5RID3HINRZjbDRguXg3vjAEVRiKSubR1GdadtERMpC/2GC/EYcs4ocqtsDy0Aib77yIq+ilObDTAthv+4o0u3viPD2LBqgMIioqC5fH1MNpxAzVTZC5Tp27HFfd0bHONwOfbS1H2vHfAjFLT3Ilj1bFYWeUD4zxfmIYFwTQgGCY5fthSH4iLDXHP9QzrC7HJnVgdGYsPq63lXvd/70/EWylO+KrCEfcKc7E5N1yK6lsPovHD+WV4XTzmwxohutVh8GspQmGXCqWqdjzKLsKOylA5NP6DChtcq0pBW4dysclpJ4tCT3wghPzH16Lwg6WF2G+ehrN2KVga5YtDDRHo4PQaMw3Q1tIFlzQc8UjAl/kumF/uLluVrjeI97lYkHqpn7940MKfhJhS05Eicr7imSGPhpYOWIcV4KBN4rBRMbnn0RQ18runWerxebVS4EeKoMnJj/qJvypxkWn0oZClJjlzkYPXRAWV5sevqwyQs5Zpot5EILMhMkWqF9fdl4mZFeauKhxe8CHO+mtHeJW4Y9XKvUhrFm+E0ixk5VUiyvYE1u21Rl8CJ+zhHqzYa/Hsj+943Bg7bvdXRmlSnWBisAbx2hnaJUG3YbTpCmqKIrFhmQn8tD+qOckOK4zMUNhagdNrl+Ganzb90hyPrcuXwTlrav6wyWX1OGqXgJUW0bhppz/FQjQ+MrurAREd5QhsL0ZWZ/0LITgtXV24VKuYm3xUYyMNSRyblL2BIk0LTCp98MtCe3xU5IgPK21woS5eVpcOhbxyQ1rKhnUnokKUxRUe+KTWRs5TNkz0gWGoHzaXB6FOLPAYZjqgdqarHunSme9CmXiPl9pJy0oa+kJiNVx1sqa9Cze8aQRpiizwuh+QI21qM0obpQeBHDQzjAsezSS3flogo2Yy6qGefTIUoslsA/ejB0JDdX5aYAGbYYZQkMUmVVXTNKnJRLrkhkj+3RMlMrsaOx7FyEzAyxRxz3DE3A6/G5vwmcFWOAfHoV6Exb3t7RjoGRFtdQRrnglzL7yvbsC2y/7aF70Xvjc2YvUJ12eGJ1URj2G6Zj9Kte/F2mhLmK4yQ2K8JzaTQ5l2LkFnthfWGG1FdHEqjq03hk2C9o72TOwzNcT9p1NTWR6aXYm9VtHYdicHRZUvaXXbLHBflYavylzwpClDe0aBqrbnlLvi/VJ7PFBNfMBsSbcazuo8nG2IxdrqAKyrDkSuiLgZZjq545sljXyKGzU42hglB9jQvuvemrBhhYYiY4p8rwlB7RSXFxroQgWKDlFFcgLc45CRq5ozy5pwVXzdg8AcuIivu+kjrn2WcUgsGD5jFtlGLUz2sr+5XeYa+zleGyWfZ3jb7NVeNIkFyGWPNNnuSVa9w3l+v6jMQvFXK57aXITxwvlYvHIn3BMHFw5EjSDMytuiBz7XN2HZfrtne9BSmNcdQIk24K2JfAKTJVsRGeeBrUKYE7V72J1ZnlhluFoIZwpObDSG9QBh3mm8FNf8J1bAQLS1taGxsRENDY2wCs3DBvNoWIbloaWxSZ7nY3JHU6MKdQ0NiK0uRG1DPVTidt99rapm+FRmwqYiWZxXHjvwa3U56Os0qia0q9RoE9+vqK4K+XWVUPPfj49pOuR7tUmFh/5CHK3ikZ1fg+yGciwpccMbRVZ4UJX43PWjWTw+o7BKFnzd9c2AulmFwEQhyEKYafIaCbN7dL78vgO/buBRXFGD6to6dLY2Iyy1WLr8PQjIRl19A5pU/V9Hn7GyhhoYlXri0xInJNaXis+DCs3iqGiog3GpN74sdkZmXbk8P/BnTPehUimvhUdskdxrp9fjolsacstq5Pnhvma2jgZx3VKJ17V3QDGeLsyoMHepy5GYqDSUd7c2IfzJfnxusB3Jtf2plOGEecvF/knavtfWY/0Zz2erwprIx1i1ap+IeJTbtTGWWLX2MNITvbFxxQ4hzMp5GTEv24n4ygwcW7dikDDvMzXA46iJp53bRdSvVouLukaDrPIGOCeVorpJXOhbNWhpaeFjCo7WFg26Ne3y/0Pv62ptE++n4e8b76ERR4emVR7D3c8HH1Nx0PusVVwvnKMKpLhEZIjAoK0doU3FOCqi0Xx1nXwP0mPosfQ1beJ6Ep1VLh6fAIeIfHS2aZBZXCsjZjpIoJMKquXjhv48Ouj7tIuvaRX302PqxCKUWiZJ2NKKqgddrzTis9Qujks1sbII7GF1Mjo1behoaUVMY4kQZSdsrQxCXUsT2rSfO/lcNc//3Kk+6HkWVtTLAs2TjinSi4F6uhPzq9Ahfr/hvmY2D414XfRamDsqgrDkk3mwTVZEsKfUB/M+N4Z/fv/+7mBhBpLsj2PBmnNQEs3ijbRpIQ7bJaCnq0O8j7vQWRCIVQsN4FGoiHus5WEs3n4fLbWp2LpsIZ7EK+nIAu8rWLziJGq6VLi2xRBmFvHyfHeuB4wXr0BQ6RRVfzEMw+hIaEalbGMKGsHLeij0OHo8fR3R0NIpPbFpJOpppxTUj3P0aXBahdx3phbP4aQjtq1K7iWvqwyESmt756LOwxsFlrjVMHh/eSZ9KdxiS+QeuV9yhXhNKuQ+c8QItsMvIjO8x9wK/3v7MNdwNc5eOI/1hvOw84IjGgb8QcMe7YHhFqVSm+ipTcPRjQuwdt9JnDu0EUtXn0BOcw/SXC9g+1EaFNoFr2u7sWj5dly8eAIrlhrhcTiNDexFhPkhLFmyHhcunYWJoQGueCn7k8VhD2GwdAlOXLyIHSsNsOeaN4+xZBhmxkkqrJdC6xIzeNQpUdPUKiuwMweMbaTZ4PT41BJlZKL05Q/KkSnph4E5aBsyEnUsqJr5tGOynERFfvFDIUevvdVPpYd2XxEYDb34ubg9cO6zStOJWz6Z8EooHVbgpxIa03rULhGnxEKkSfzcjFIVDoionxYXPdP9w2eIWdhj7kSazw18/stPcNYxAeoh76O6ojTEJhf3T7MSdDcUwM/ZFlYOnsivIQntgNPZtdh0wVf7JmhBYrAHrKxsEZ420HauC+kRvrCytEZg3OC5nlXp4bC3soRrYLx482lPMgzDzCCF1WqZyn4c/LwLUXRuDbY9ipaV1zT0gpBGIeLx5Q3arTiBa2wxNtyLhEe8tgVlHNClzzWmWPycmBGj9sS2anxW4ihnJCe11WCTiJ5p0EXOgGpq6sne8yQWxx2SUVI3sdYnXaB2MZuwAuwwj0FASoV8/tR2dtIpWRaztWvbIF90ZkGYBR2VcLaye1awNW46GxDobo/40v43J8MwzItGTVOb3B+97p0pRWcg5OhFrU1yAEV1Mzq7e3DFI11GilSd3UdacaO0kaWWqYlQUNWMI+JnXBbfe6TWKZqhTFXY5Iv9ebGz/P9AH+34/DpZfKZE/yJy1Z6farLLlej4snu6nJVO0Oty1TNdVqs3qMeXytdXZkeYGYZhGDRpOnDeNU36WDe39osi2WjaRxTK6PiAEG5nIXYk4meEKNMIx4Ge11RYRONax1tg1Af9rEeBudhrGYeMsuFbBEu7mmV/tbTQLLLH+brBTl3+KeVyn/uANVmFpqCsbuqDJhJgmvZG7VER2YPdzWzC8uXrlFWmP94Rk4GFmWEYZpYg56qHQTnSyYvS2n3QyFFKW+8XQmdmmSCjWb/kchyzS4JNeMEgL+ypQBn/Giv7oUf6zjaqLOn2Rd7WHurB1sgOYhFBkf0l8TxpdKrLCMVkk4GicjOLOJmyptdnIMGpFdhnEY+Q9Kop/7mzAQszwzDMLOIRXyKduGLz+kecUkqWqqyveKbDIiRfRqNnnFNka5NPom7jG8dDbXO77IWmlPjANPlAaP7y5sogfFnijKLOwZEpGXzQ4iK5qEF+D0orlw3YB58slBGgdD+l9mn4x1AojS9HtooFQp8w01Qt8g/XtA8W8RcBFmaGYZhZJEpEqzR8wnfAvOQSISq0X2v1NA/l9RpZOU170ZTapsdPNTJ1LiJxErc4EZmORGmnGsltg39+m4heL7mnywKs1vYu2b6081GMLEqbqr3mpxlV2C2em3lQHjqHcfiqbGyVldq3fbOkAxjt11OVOhWJZZSMvvdOKXJ9g4WZYRhmFqFBElQ4ZRmajy5tARjZZJIwuwlxI6yf5ktRpqh0okVeY0E/k8ZG0s8aWog2GlQVfVqI8g0fsgntkVaZ51xS5XOtaJi81zz5g1PmgBYmuSMM3aCitVs+WbLti1rAqA3tkHg8tZGFClEfCVqQeCeU4UloHmqa9adploWZYRhmFqlrbsN5IWS0j9zcppgN+yeXy73a8ExFVEiMzSzjcEoIYKmIoKcDNXlPi8iXBJUKzXSFFhZHbBJhSYKu3fumYjCKvt3jSia955smIl6qxH4UlPts4TIc9hEFymuWVY07/lky7U8HtYONFBOrNB1yOhcZlFBbGvVF6wMszAzDMLMITX6iFCxVFfeZfNiGFWCvRTwyy5UqaSoSe+Cfgzt+2WgbOPVniqEInfZxw7QLAl2Iy6vD3iexso+6TzbrmtrlHjm1dlWNQ+SHwz22BNuFcIYPqcQeCu0nU5bhrHMqjtgl4qoQXNrrvuefjQ6a+DEMpXUtOEHbBDZKdG0hImeK0GcbFmaGYZhZhlqjSIjTy1RS3PqEulLVL2otIpqmUZHTSW5lk4zM7wdkjxqdDiRARMfbHkTjaeZg4fROKJWC6pNUNuGouVlE8dRKdtwhacxMAc1lJiGmlD8VymWLSJ7E+ZQQ3pEi4WTxNVTpTcVrJOBk82kn/hbkqDabsDAzDMPMMqHpWg/s9CqZzqZpSXSQ1eVM0trRhZvemdJwpKD6+XnQw0GtUVSYlVw8uFq6sqEVJ4UokkiqtJXe+VXN0mZ0uMrq4cgub5L91TSqcqyFQo1YxJx2TsZuEb1Taxk9+kFQDg7ZJKKoZng3sgDaMhALIvLZJsMSWgRQhbxrXAnGsc0+5bAwMwzDzDIkQLQ/6hhVJC0tKfKjPdU+K86ZhPa3tz6MRrBYLIwFVUiTnSiljgsG9GH34Sx+HzIE8U0qR0RWtYx8tz+KlkKri+55CIGkFHOIDs+lWzwX6gmntiqKtAn6etpnjh2h0tzyaZ7MTGRqjVWoAv6ca4r8mZTOny1tZmFmGIaZZWqb22SUSoJF/cwkDFS0NBtQRTPtM+tiEiJTzZ4ZQsxShy0Yo7avE/bJOCyiVsoI9I2nvCHEU902+l4u7aWT1SZ9DQmmLlDU22fVSUTnitdSRNBeic8P16BFz2WPNBy1S0LdgIrsrHIVjtorozSp8Gw2YGFmGIaZZajg6IZXhqzMJnvJneaxz0Y7zjSUbiaHMXMRCXeM0eNLYkzRvRwg0fV8URq1I5ErGPUT3wvIQXppo9zLpRR36Ri2nSSQ1EZG1dIT7TWm34WEmYq6hpqlUe/zSackXBevO/ViDyRGCDpF2pSGH+t5TgcszAzDMLMMiQYVgFF1MIkWRWspRcpox5mG2rfOOafisohW1WNUKNMIRup9pnT2SNE1RaOxeTXPBmQ4RhbKfeCxolFZPPYwBiGj9CGPRbWqVbaYUYQ+dEBHSnGD9Pa2F89nqMUp3aJ9ato7pz3x8fR1TwUszAzDMHpAYGqFTCEr9pupKKqdvvGJoyGnNYnInVK8ZNYxGmTBScJMLl+6Spes4n4YPWpLlswg+GTI51BU+/zeta7Q97ntmynFeWg6nF5v6l8m4R/uuZMf90V35XUgE5WBVDRo5O/R2DI9piQszAzDMHpAIrlVCVGmYiRyuiIHrdniUWCOTOUWiYh4NKhArK+aXFfo96SvofGQI4l5fpVaDvC465cte7gnCn1/u/ACmc7OLB08OYsyFNQeNVrk7hVfKovXyGZ04HO1iyjAdvMY3PHLkj7jUw0LM8MwjB5QLCLDs84pUrSor3bonuhMQoVnJMwkoqNBBWL0OEoL6wr9nifsk+Te8XD9wh1d3dLnerjxjhPBP6kc20WEPtCghNrCSFTJXGS0EZV5lc3y7zHQpKRMRN4UgVO/NKXk6fvUjZFZGC8szAzDMHpAS7tS4UzpbPvIIu3Z2SEkrVK2b5Gb1mg8FOJKET61eOkKTYq64JYqfa2HM/4IFtEp7e2SOE9Fu1i89B0fnG6vVrXJvXy59zxKdXh7ZzfuBWTLxUe+EGmCnMj2iOfnHF0EmzBl8AcZwtBYSqoLIM/xgqpm6eg2UViYGYZh9AQSo10iChtLEKeblKJ6uXdMfdUjyQulmK94KN7aI42KHAlKUdNQiqEVz9ReRVXeRya5tzwQKlA77pAoI/Q+oSeHM4p2qbBrLPmkhcIu81j4i79JvboDZ11ScMIhCbVN7fL7UaqcvhdF0LRIoUifhniQ+E8UFmaGYRg9wT+5QhZ/UavQbEIRMEXuDwNHrrYmYaLUO7lltYxz5rGrNgWeMCBVTiJHpioUgfY5d00FFBGfd02RrU990TGlyPeS8YkOP6fPwYzsPWl2Nr0ujiJa7ovl6XlTIZuTOEf75k5iMUOGKK2T8DRnYWYYhtETyLCDem9nuj1nKNTidMIhWYqupmP4VC+la4/ZJeJJSB46x/l8aWoWpcr9UvozA9E51bJIi3qih7Y2TQZ6avf8s3DINkH2LhN9e+hJOliD0l4/9UHThCtyOKMMQUHV1ETzI8HCzDAMwwyCXLnI8ISizKoRUrJ985snMtoxu1wlRdg6TEklU2vSLSHIlA4mE5KpxjWmSGYiyG6UtgkoAqYKeF3nRSeI35WEmZ4fifR0L5xYmBmGYZhBkPBYiEiYBkDQfuxw0OANmio1EQMQilwp+rzlmyVnOJNXNaWI7weSy9fUix7NaN4vInSyA6X9YLI/pf1zXadIkc0nFaztfhwnp1hNNyzMDMMwzHNQ9TFNWkosGD7dSwMiaKxjQuHwAyJGo89j+7xrGmqa20TkXCCnSMXk1WofMbXItLt9khDXNPgmlckis6FuX2NBQzi8E0unpFJ8LFiYGYZhmOegAiaaMjXcZCcSNapopvRwTsXwEfVoUERuGZonh0WQUFLKnMZcqqfJVKVLROE0xlKlGV/1+GzBwswwDMM8R4KIlCm97Brz/B4yFYTd8cnCKacUlDdObMiDV0Ip9okouc+sgywyp3fn9sWBhZlhGIZ5DnK9OmqbiMfBec9NmWpQt8teXepjbm6bWJQbmV2DQ9aKBSlFzBVD/KhfZViYGYZhmOegkY5nnYX4emY8N2WKhjjQZCYyChnvXm0fVJl90iFZtk05RBZytDwAFmaGYRjmOajISU6Zsn9+ylRuRZM06Ohrd5oI9c3tOO2UothdVit2l4wCCzPDMAwzLGQRSsI5dARlXF6t9J+mfeKJQoG2W0yJrO6e5rbgFw4WZoZhGGZY+qZHJQ5xyCKjDpq6RC1Ek2GCWfCXHhZmhmEYZliCtVOm6P8DcYwokkVb0+HSxbAwMwzDMCOQLCJlapmiAQ0Dg9sH/tlSmMsbJtYqxYwOCzPDMAwzLOSQRVaWA8cj9hWFHXdIQuMLYtjxosHCzDAMwwwLOWWRI9dF9zQ0tCiV2bXN1EbVN+5x6qZAMf2wMDMMwzDDQj3K1iJaJmeuvhnRZG1J4x4f07jHaRg4wbAwMwzDMKNAVpnbH0YjNFOZIpVSVC9bpVxiitkUZJpgYWYYhmFGJK2kEQdFxGwbrrhzRWZVy6lSgWkVygOYKYeFmWEYhhkRcug665KKS+5pMnXtl1yObY+iEZc/PSMaGRZmhmEYZhTIBOSuXxYO2SSgpE4jW6fIdCSzbPzjHhndYGFmGIZhRsUzrkTOXg5Nr4R5cC5OOCajVIg0Mz2wMDMMwzCjklxYj4PWCXgQkI2rnhm45J6OxhbuYZ4uWJgZhmGYUalqbMUJhyQcs0/CYdtE3PHLQhdPnpg2WJgZhmGYUSEjkTu+WTJqpv1ly9A8bpWaRliYGYZhmNERKkyTpvZZxklxdo8rYWGeRliYGYZhmDGhEY8ULVN19tMMxWyEmR5YmBmGYZgxyatswknHZFmdnVzUoD3LTAcszAzDMMyYtLR14oJrqhwDWVSr1p5lpgMWZoZhGEYnXKKL8CgoF5oOnio1nbAwMwzDMDrR2tGNts5u7S1mumBhZhiGYRg9Qu+EOd3HDi7hRdpbDMMwDPNqoVfC3FgYD7MlH+ObDVdQpOrRngVaytLg+OQ+7j+2Q2qxMqx7EJ11CHW1xL17D+EfX6A9KehVI8bHAffu3od7WCb6EzC9yI32wcN7d2DtEYYm3i5hGIZh9AS9EWZVTii2GS3AzuNXcGLHCizacQHF7UB3aRT2rFyE3aeu4drJ7ZhvsBNP8waIc28z7M9uhcG6g3h49xKMlxjgfnC+uKMHQbf3YKnpbtx7cAtrly3FOdcU+SV5/rex1MAU1+7fw8G1Bth2wRWt8h6GYRiGmV30RpiDbm3CvM2PlBvdBdg+dw4eJ9Ug3+8CvjY5rY12O3Bt7TfYa5MgbxEdeb5YucgIftqZ3amOp2G47S6aq5OxZdkS2Ka1yfPlwbdhYHIMlZ31uLxxGY7ZZcjzKAvAagNj+BZ1KrcZhmEYZhbRG2FO9byIr75aBc+UEohAGc1lBSht0KC1OAK7Vpvihp0P/O1vYJXpLoTk9EfM1RGPxTkzlGjT0XUx1jBdewipiV7YtGIHEluU81053lhrtB1x5ek4tm4FrBO0I8s6smC22hCPIodJketIb2+vPBiGYRhmsujRHnMbgizOwnDBV1i67gAC0yuV002luLPPGCu37cf+baYw2XUNJU39u8VVQphNxeNLSM0FNZFPYLJkKyLjPLDVeJcQZkUwOzM9sMrQFKHZKTix0bhfmNsysNN4Ka75lyu3J4BGo0FdXR3q6+v54IMPPvjgQx6kCw0NDeMO3PRDmHu70VTfKP/ZUpkLb4uTmPO1CQLzqpHqeAzGu+9BCXxb8cBsGXbcCXtmoF4VYQ7TNftRqs1E10ZbwtR0P5LiPbGZhFmrv53ZXlhjtA3RJak4tt4YNonaXeX2TOwzNcCDsIlbzHV3d6OtrY0PPvjggw8+njteTGHuacDNjUtxzFW774tuXF87B8ddY+F3dztWnfTSngd8L5tg6UFH7S0h1ekuMF5qimhtJjrX+wqWbrqG+tJobFi2HF5FSnRdH/0EywwPoritCmfWLcNFb21LVk0kNhgawD2Xh34zDMMws4+epLJ7EOd4DnO/WYEHzr6wvXUI8xasQVBhC+qSnbF80WJcs/FBoPNdrDRYCYfkChSEW+PSvRARCqtwe/cKLN99HT4+jti2bAGO2yeJKLwN9sdXwmD9KXj7umPfmkXYdSdERtoJtkfxzbL1cPTxxc19pjDecxcNbGbDMAzD6AF6tMfciSTfR1j68Xv4ctV++CeWac8DpYk+uHzyKA4fPwev2FJ5zvfKeqzY7ygkXWiwKh/W18/h0KHDuOccBm32GtBUwvneJRw8eAhXLf3R+Ex8NYhyuYOjhw7i1DVLFLIqMwzDMHqCHgkz0QPva2fxOGqMQqyuejjevwj3pBrtCYZhGIZ5OdAzYRbS3N2NnrE2ynt70N0zvs10hmEYhnkR0DthZhiGYZhXGRZmhmEYhtEjWJgZhmEYRo9gYWYYhmEYPYKFmWEYhmH0CBZmhmEYhtEjWJgZhmEYRo9gYWYYhmEYPYKFmWEYhmH0CBZmhmEYhtEjWJgZhmEYRo9gYWYYhmEYPYKFmWEYhmH0CBZmhmEYhtEjWJgZhmEYRo9gYWYYhmEYPYKFmWEYhmH0CBZmhmEYhtEjWJgZhmEYRo9gYWYYhmEYPYKFmWEYhmH0CBZmhmEYhtEjWJgZhmEYRo9gYWYYhmEYPYKFmWEYhmH0CBZmhmEYhtEjWJgZhmEYRo9gYWYYhmEYPYKFmWEYhmH0CBZmhmEYhtEjWJgZhmEYRo9gYWYYhmEYPYKFmWEYhmH0CBZmhmEYhtEjWJgZhmEYRo9gYWYYhmEYPYKFmWEYhmH0CBZmhmEYhtEjWJgZhmEYRo9gYWYYhmEYPYKFmWEYhmH0CBZmhmEYhtEjWJgZhmEYRo9gYWYYhmEYPYKFmWEYhmH0CBZmhmEYhtEjWJgZhmEYRo9gYWYYhmEYPULvhFldV42axlbtLYZhGIZ5tdA7Yfa8sBtHH0Vrbw2htwc9Pb3aG0PpRWdnt/bfg+ns7NL+azBdnZ3iqxiGYRhGf9AfYe7SIPDxaSz58lN8OtcE5qHZeCannQ3wNT8HY+P1uOeZpj3ZT22aLw5sXoONG9Zh9+kHKG5RvlJdEI6TuzZiw4b12HroOjLrO+X5nuZ83DuxE+s3rsO6rYcQnFkvzzMMwzDMbKM3wpzjcw0Ll2xAQEIuEr2v44uvDOGX1ybuaYX7pe0w3n4eIfHZaGhuV76gj+ZcHDBZiANPIlBVnoPL2wyx5WqgFPMrWxZi2zVfVFQVw/yIKVYetUMHuuF9cTMMdtxAQWUlIh4dxGLTYyjUcOzMMAzDzD56Isy98L+xHnM2PtLe7obNiYOwja9FW3Eg1q3YCI+YTKSmZKBGMzhd3ZRgCxOjzcjsUG5XR5pjxYZzKM0JxnqjtQirU863Z7lh1bI9yG4uwvE1Rrgfpo2S29Oxe6UhbFNoEcAwDMMws4veRMx1OQFYv+BrbDh2BT6xhdqzQLrbRXzyi4+wee8h7N28EktMDiCxvFl7L1AV8Rimaw+gVCvMNVGWWGW8B3FxHthivAtJGuV8Z5YnVi/bhIiCFBzfYAybRG2BWXsm9qwywJ2QGuU2wzAMw8wielX81VGTibsntmPJonnYesoK6q4exNsexdfz9yNTRcrbjHs7F2HdZX/0KF+iCPO6Ayh5JswWWGmwHVFCmLcKYU5sUVLUJMymy9bgaY4Q5o3GsE7QKrYQ5l0mBrgRUKncngBVdS1IL6hHZmEDMgroaESm+D8f4zzk69eovH7i38M+ho8RD+W1E//m1278x7P3nvLvYR/Dx6jHs+sev37PDno/ZRc1orunT7F0Qz+EuacF4c72SKrWFmc1pmLHgrm4GZGLJOdTWGPmIM8TyQ5HYbzDAsojRaQd9QQrTXajSJvhrokWwrz+OHJSfbFhxVbEq5XzMmI23IXk2mwcW7sClnEtyh1CmPeuWtp/ewI0t7SjTtWKxqZW5JWqkFXYiAZxu56PcR0N4vXLEm/inBKV/PfQ+/kY/UjLb0BReRO/dhM46PObmluP0io1v37jPOhaV9OgQXJOPSpqW/j1G3I0NrWht3d8NUz6Icy9atzfMgeLD1qLKFmIKBV0GX6Fc/4lqE13geG8lQgtbQW6Vbi9awm23X0KjaoKJRWN6KmIwfqFC/AwplZ8ox54X9kCAzMb8T3ysW/5N7jklS9/RKzFISxeexmqXg0e7jHC+steIC2vj3qMJYvXIrZmfCuakaisa0Vx5cRF/lWnpKoF5bXabAYzLvJKhSirhhRHMjqTU6yCWtO35GfGQ29Pr1xUt3UM37LKjA/92WPOC4eZ8WIYr9uC1csWwtTsLkqa6J4W+N47BoNlq7FtsylWbb+IvOYuJNgcgslOa9mHnOB4CYZLV2HXzs0wMtkCv2yl4ivH5w6MlyzHjl3bYLhiLezjK+T5hixvbDFZjC07d2LlsuW45JgwZf3MFUJUiiq0YTozboor1Sir4YXNRMgVH5i6Ri5inAg9IqLJLlKhSa3dE2PGRVdXDzILG6FpG94zghkferXH3KXOx6ElX2HNZU+oBy1ce1CanYTouFSIgFTQCptT67D/QeQzQa3KT0d0dByKlQc8o64kG9FRMcir6C8YIzrqihEfHYXUPEWspwoW5snBwjxxWJgnDgvz5GBhnlr0SpipbSo7PATxJYNF9Dm6mpEYE4HiRv17E7AwTw4W5onDwjxxWJgnBwvz1KJnwvziw8I8OViYJw4L88RhYZ4cLMxTCwvzFMPCPDlYmCcOC/PEYWGeHCzMUwsL8xTDwjw5WJgnDgvzxGFhnhwszFMLC/MUw8I8OViYJw4L88RhYZ4cJMwZLMxTBgvzNNAp3qTMxKAPOL9+E6QX6O6eqsa/Vw967408VpYZi47ObrHA0d5gJgULs65oSuFmfgOnz5zDY7co9A+jakWUhznOnT6NG0/cUDmgW6unS4OMKC/4xhY81yddFO+Li+evwi+hVHvm5aY8ORA3L57FuUt3EJ7bP2ZTU56KJzfO4/S5S/CIzNOeVWipzYOfky/yGga8qF318Le9jTPi9b5j64vaVyHA6apDoN1d8TufxV3bANQ/+527kRZkiwtnTuHKPVvkN/abO+SGu+PKudO4cP0xksv7DVvqcyNw9/JZnLlwHcEpU9sqqK901eXB4d5lnD57DrZ+yf3jZFsr4flE+Uw/cY9Cf66hBeGuj3BevMduPnFHxbMETieSfG1x8expXLlrh9yGV8NMIyeS3kunxHvJHCml/dnAitQg3LxAn+m7iMxt1J4Vr15JEp7cpM/0RbiLz/TQa197SQzumVsgs5rNSEaChVkHetvKcWO3IUz3X4e7qw12GszH3tu+8g2X4HAG8w23wNbdDWe3L8faY9biYw1UxbniwMa1mPvJmzA+6zPgzdmFOPtzMDBYjWOXzRGf8/IPzyiNssKKBca4ZukKm5v7McdgHfzzxWWwvQAnNizFtjOP4WF7EysWGcM2plqsaFrgdvsIVpsswntvLIJngUr5Rj1qOJ3fhsWrD8PR2Q6H1i7A+vPOaH6ZA+xuFaxPmGLZ1lNwdXfCEdNFWH/SGp3iDVUQeBcLF66CubMHbh5ag+U7r6G2swe53texZNFaPLR3w8MzmzHHZC+S6rvRXRuHbcsX4/AtO7iYn8aSJesRkNV/QX0Z6WrMxqn1S7D15F24Oz/EqgWLcco+Ht29nXA6uwaG4nX1cLfFjhVLcNQqWpzvgee1XVi0+gCc3FxxeqsBjMweQNXRiRirE1i8bAesXdxw7YAJFmw6i7ymlzt1m+lzE4uWrsEDWzc8Ep+9BSt2I66+E11FQdhosASnHrvA9tYRLDLZhehqcb4qBnuMF+LAdQu42FyHwVxD3PXLfjbbAD0NeLD7S/zj/3wCl8zO50SbUWBh1oG6pCdYYrATGdqVc1XQOcxdcwJ16hZcXjMfF/yLtHdEwnTpajwtb0NlZgxiEnPgcXMvNh33ePbGbC0KxKbl6+CV0R81vtx0wXq/EXbeDn52+8r6xTjnnileV3MsXn4IpdoXJ+LuVqw8Zo82IUZx4aHISY/E/hWmcM7RiocmD3sN5+B6jCLUqth7+GLBbuS/xFvS7UU+WLF4NULKldudaY8xf9km5Kq6YbVrCcws45Q72nKEuJjALSYX93cZ4JRLpnIeVTATC0mLhGoh2GexZOMN9MXPTieMsfVGYP9F8yWkyO8iFqw5ibJeRQKyLA9g6e7bqKxJw7rFxvArUIS1OvIWjNadRk6ReB2NlsMtU5ulKQ/E4kUbEZ2RiTNrl+J+VJVyvjkVG+YvgkuadtH4MtLbhMubl+GEQyqUl68Ku5cb4t7TUqRb7MGKQ5boknd04u4OE5xzikeK2wkY7r4Pjfb1Dr64FsuP26BDezvJ6SI27F4P0+Vb4ZnRysI8AizMOtChrkV5Vb301ibC7+7B+tNuaNGU4uBKI7ilS+9QoCkP+5YtgFV8fxQcdGewMKc5ClGfY4BDh/djnekqHLrpCXXXy/z27EFdZSkaWrRWbi2ZYkUtBCSjEYXep7By9100KPcg00N8qDeLqK/v5VCnY7/Rqn5h7u1CuMVJGK02g7WDJfasERcNy3DxoVfufhnpbm1EWUX1s6Et2c6nYbLrDuo71LiwYRkehGi3QrrqcW71AlzzSkdNZTma25V3XHdpCNYt24C4ilbEmO/ExjPuz77X0wfbseqQPV5md+22xmqU1faJZw9cTq/HnntPUV/mjVVGB5DWoLx5VHkuMFq0AzElTSgXr3eH9gNbGnoLxuuOo6BBg6ryCrRqA+SmZHuYrNiJ5JqXOGLu7RS/czma2pQXo6c6DBuN1yG8UI3As1ux726gVrABz5PrsfWKB1T1Vahs6Fspt+DOLmMcs0uQj2vL98fWdXsRmh2HI2s3wzVVw8I8AizM46QoxgLLlm7B05I2EcHlYO8qsbpO6xPmHOyb84VYVffvGwfcHizMQXf24IOPVsE7KR/lOSHYtOArnPXI0t77ktPdAKsjK7HhrDMoHslwOYqVe+6iL3eQ4X4Sc0zPo6JPORpSBguziLZTPK5h1cptuHzpEravNcU1j7T+PcOXnLosL6xaYgrnFFrKNOD0RqMBwlyLcwaf44xLinKbaCnG5a0GMHsQIW+G3tmKTWfd0bdFHXJ/BxbvfCz/Fq8Cmd5XYLDSDBl1vWgtcBZR2wGk9glzrgvmfLkeEWX9+56aokjsWL4ED0P758MTvSLaPrR6Kc65pL3U2YZBtJbh+g4DHLgfJEXW8/hmmD0T5l4hzCthetpBG0ETXYi0OALDTedQ0izOtdfg3qHNuBVYJh5dAjOTTfDO7WFhHgEW5nFQl+qBtUuNYBleopxoyMBe42X9EXMzRcwLYZPYHzEPFWbf6zux6XSA9hYQfHcn1hx1ewXeoC3wuLYVRntuokQboqU6C2HedRd9spvpdgzLtl6HuG4qDBHmnso4bFliANccpUynPcsdRgtWIrrq5a8A0xRHYKfRErkQkXRW4/Q6g0ER81lTETH75ii3O2tgftQU607Zo1H75gu6vVVGzH0LmdD7W7HqiP0zoX6ZKYywxoqlG+CTquRnGrMcYbJMRMyNyputSQjzskXbEVetvFhdtSk4vG4JjtuED174afJwaedy7LodMKBY7CWnsxFWJ1Zj9fEnqJdV/71wO7YJe+8qIk14Hl+HzVe8ZNsZkeh+DYbGexCj/bAn2x3ALz41hIV3OPw87sDwq3k4etsH5U2vwrtv/LAw60hLcQwOrFkNm+gBVdTdFeJiOB9nPHPlzZ7SICxbbIqQov7k4FBhTrI7DsM1Z7Xp217YHjfGhkviDS5vv6x0ItrmBFbtu4qyAXnT0vC7WGC4D3naz2bgpXVYddymP7U6RJi7i59izbxF8C1WopruokAYfb4QAZS9eInpqs3G2c2rccszVXuG0ODBjiXY9TBSudmcinVLDWGfTD7zLfC8uRvrT1lBu2SUJDuewMJ1F7ULoR5Ymxlg++3gl35RWJvlgy2mtKfZX9fRUxWFNQuN4JGtvHfKAi5g8cojKGgXr0ZLEW6arcYRm9jBr41YDD05uRG7bvqKyFB77qVHDd9be7Hh5GOxYO7/pcPv74TRvgdol+c0uLp+GY7aJEqhLo60wprVZogZ8GEvivHArVu3cef2Ldy6eghzP/4Um448QBqPyB0WFmYd6GrMwO4v3sKcTWfh//QpvD3d4eYWgormdiSJleGC+aa48dgCRzYsxcaz9mgakN/yvrwJxvucnglzd1MGjos38bpDl/Dg2iEYLNsM/9yBl8+XjzTXE3j9tY9x9rE3QgJ94O7mgqDEIrSri3Bpx2Ks3HcBT+6ew9JFK+ESN6CFpz4BW+csgk2mdhdaRIW2Z7bIqmxrWysc3bocWy45o+kl7rro7SzDGYMP8bHRPniGhMHX2wOurv4orG1BQZgVls41woX7Fji/yxjGZndRL8K78Idb8X9vzcMdpwAE+nmL19sVEZmV6KxKwr7Vc7Hl1E08Eu+9RUu3IDRvjIExLzhtpWEwef91LDO7juCwYHh5uMHNLwb1LWp4XN+K+at2w/zxPVlhfMYpHt09arHg+QRvzt0MZ7+n8PP2hLunN/LKyuB4xgSvfWAMS88Q+Pt4iWuAO2Jf8q6K8Aeb8Pq7X+GmfQCCxXvJzdUFkVllaCoKxy6Dedhz4SHunt+FBab7EV/bieZ0V8z5+evYfO4JQkIC4Cleb8+ghGcFhwrZ2CI+6x55vS/9onCisDDrQEdTIRzv3sGd+/dx9/ZtsfK7juvXrZBeRbtzvUgPccWNK5fx0MH/ub7aoqRQBETmD3oD9qiK4PToJq7cfISY/L7Sp5eXwhh33Lx1Bw/u38Vt8frduHYZFt6xSiqwKR9uj2/h8rXbCEzUbhH00VaDp+KimNMwIMzuaUaEhw2uXbkCS/cIqF/yT3ZvRyU8H93HnXvivXfntnj9buDqlUeIzVeiv8I4P9y+ehl3Ld1RKoOPHqQF2+H6rbt4cE95va9fuwKH0Az5+PbKFNjeuy7eew8QnaPMLX+Zaa1Kh+WdO7gnPrt36LN78xquP3BGoawHa0ao22NcvnIdDgFJSlFcZxOCHe7g5p37uHdXvN63buH6zdsIS8lHrJ8tbty5h/viWkDnr12/Do/YYvqql5aMIFvcun0H9/veS1cuwSE4RQYaTYUJeHzrGq7dtkCi8uZDQ0EMHonI+P6De/LxN29cw20LH1S1DIhWumoQ7OWH3NpXpTpk/LAwMwzDMIwewcLMMAzDMHoECzPDMAzD6BEszAzDMAyjR7AwMwzDMIwewcLMMAzDMHoECzPDMAzD6BEszAzDMAyjR7AwMwzDMIwewcLMMMwY9KKra4Bz0wB6urqe2c0yDDM1sDAzDDMGKjw5vAm7r3gNmrQUa3MMxptvoIqdFRlmSmFhZhhmTEpDb+DjjwwRUKSd3qxKwrovPsAx5/R+H/judmhahxnj19sJjaZ1UGT9bFBRT9eI0TjDvKqwMDMMowMaPNg5F4aHneWtmLtb8LnJCVRoo+WiaGfsXGMCY5OVOHDRATUaRWzLE31wYOMqGK9YDtNtp5BQScLeA+/rR7Bp83asWWmM87bx8rEMwyiwMDMMoxOqdFcsnGMEt8gg7FwyHzdDy+X56gx3rFq0ElYhGSgvScHJNQuw+1EsuptKcGz9Cpx3ikV1TQUsjxpj6e4ncoqT/Z6FeOP9RXjoGoDM0pd/whrDjAcWZoZhdKQb3lc34mc/+gmMDj6BMuivB77X1+P1Xxrh5oPHMDd/hH0mn+It4yto6ehAS2M18rNSEfY0DPaXd+PrxUdQ3wvYmJli+0Uf+R0YhhkMCzPDMDrTUeiGj17/EjbxfbOc22BzdBHeX7EXD+7fw7174rj/EE6h6ejpqoHXgxNYv3kPrty6jYObDPDlslOKMO9fh52XfLXfg2GYgbAwMwyjMx01IVj6zVoE5rVpz3TD66IpDA84aW/3U59ohYUfzkNIg1LpVRt2D4uXHPr/23uvoDyWtM/zZmNvN2I3dm829mI2ZmN3ZyYmJqa/6Z42p7uP0XFCFu+9904Y4Z1ADnkJeSGEhPAeAUIIBEKAcALhEd57b9/f1msQRuicPl8fdeuLzV/EG1BVmVVZWRX5z+fJrHwYUwizPcfO5Sn2CwSCnQhhFggEfzPLg/kc/taYnOYF1R6YbM7G7OBRwu5mUVvzintnI4gtecdCXxl2R9QIvpfHy+c5HDf+gT8fDmJ8A+K8zHCKylKdQSAQbEcIs0Ag+JtZnaghxPcMVb2bFrMcGf212fi72+Pg6ELQhXs0j8hHoGV0vkjAxdIMt4DT3L4VQ0ToRbpX13l2O5qria+U2QUCwQ6EMAsEAoFA8BkhhFkgEAgEgs8IIcwCgUAgEHxGCGEWCAQCgeAzQgizQCAQCASfEUKYBQKBQCD4jBDCLBAIBALBZ4QQZoFAIBAIPiOEMAsEAoFA8BkhhFkgEAgEgs8IIcwCgUAgEHxGCGEWCAQCgeAzQgizQCAQCASfEUKYBQKBQCD4jBDCLBAIBALBZ4QQZoFAIBAIPiOEMAsEAoFA8BkhhFkgEAgEgs8IIcwCgUAgEHxGCGEWCAQCgeAzQgizQCAQCASfEUKYBQKBQCD4jBDCLPhkyGQbbMhkqq2PIWN9bZX1jZ9LJxD8a5GxJr1ja+viHRP820AIs+ATsUHeeS/CYp+rtmFp/B2lT/PJffKUt/0zqr1jXPJ04UZei2r7n8UKbbUl5OQ8obp9SLVvJ+Pv6sjNzSO/IJ/8fOlX+JTnL8roHl9WpZCQLdFSWU7H8Kxqh5LFoTaqXtczu6Ha8SswO9xBcU4uefkFPC99QenzIvKf5JJTUEbfxJIq1eeOjMmBNum9KJTq9Al5efm8aupTHfu1GOGclwcXM3a9Y7IF2uureLr5PKXr5+QV0dI3zVjXa/LzcqRn/ZSSsjKKiwqlsuVRVFrLzPoqfU01PCvcypct5XvbM6U6sUDw9yGEWfCJkPGu9gWVikZWxkjDEzzMNDBx8MTH3RotfXPiX/ZIx6YINdLhVEqTItc/Bdk02TH+Upks8fZxR09Lj1sFb6VS76St+CGenl74HfcjICAYP1cL/vyHb3nUMK1KISE19o98tDngdI151S6Y4YaHOlruN5hcV+36FRh685RIdy/8gzw59NUf+eqwGcH+vnj4n6Oqe1GV6nNng/zLTvz+C3V8AkLwP+aElroOoQ9KWVWl+PsZJ8jUgKAHdTuf6fJb3LW+Q03PieDAAPx8fXH3CiX7VS9tz+/i7+PNcQ9Hvvntb1C3dJWeuy+hp+MZXBkiwuAg3x21JCQoUJnvWAgZ5V2qEwsEfx9CmAWfCBljvZ0MTCxI/09xyf0oZqefSHapnDXqHwXwnYYDDRMTnLez4EJKJS2vS8grfEHfpDKVkhVaq0vIlizZms4R1T4Zg+/aaG7vlvKUUdU+qty9Mk5lcR55Ra8Y3a5L0v6q4ifkFpTQNbnNulUxXP0AtW/0KexSZnqbFsFh0wgGf8bo7Cq4hJFzNKPbiyux3PcC0wOHuFWhLNdYbTyH9+tR8E517bVpakoKyCksY3B+u1Qs8uZlkWR9FdDYvWl9rTPY3kRHTw/1FeU09Yyr9m9nTqpfS9yvlKm2YXWyl8bWNrpa3lBeJVnqisvI6K4rIztXOn/vts6ExGBLNbnZOZTWdewQxI3ZIcqLcsktqmBoVtmrWBjvo6GhnUWV9T8z1EltY69C9Ia62mjv7OZNTSWNTW00vW2gb1rVG5E6Lc2NNXSObq/YDfIuOWESlCL9p6T/WQwaB/R5Mby5Z5nWqufk5D6hvmvr/icHOmnqGGT83Rvyc/Oobh9WHVEy29dIfk4eVS2vCLS25ETCm53CvNCIh4URN56PqXbswWw7fpqHuFs5oNohpw8/U1NOprbuPJ9A8CshhFmgYFlqK5f+Fb+VD3VOxRo3bA7hfvWZ9P8C510OYRyZJe3dZJyip0X0TI5xxV6DAzqWhEWGYK2lhq5jFO1zUpKNUZKiPdA3scPXS7KkNM14WCa3SjZIDLXhj7/7Fn19PcKT30gNaAeX/FywdzmGl5sNtu7RtEjaI1t4x2VfJ8ztXDnmYom2oSNFbTtdjtN9DeQXv3kvDJ0FF9GyimTwo/cmZ5qL7mZEpu9l6a9TeMGZI/bnmJatE+uphaXUKVGcf+4d14PdsXf1wsvVFiunEOrGpCNrQ8QG2WFs6Yi3hwMahtak1MkFY40Hvur8928PoKVjyvUnjfKz7EISZg8rPK6Uq7alrlD5Nf7y5Rcc1NDDPvgyI6sblD2OxNzKCX9vD0wsnEmq6JVSblCRdAoDQzO8fDwx0NQlKr5M8ZxWBxs4Ld2jtbM3Hnam6FiFUj+6Rp8knOrqnnRKz19ORVwAPxhEKzpdKUHm/Pkv36JpaMX1x2kE2+nid69WkW6tuwjTo4eJb9gcxpAjCfNlZ8xCM96L3FT1I4zVTSkblwRdNiO9A65oG9vge8wZXek9ufesXZHuZWwgf/qXH/AJCpbq0pQfftAjuUYpoKN1GZhoHsbcwYtAf0e++lqNk2ktHwizp4Uxt8t+wgUtCbO/dJ4PhNnMjDOZnUKYBZ8EIcwCUh/B//O/w7//3+D//gU/efr/+H9AdqrqRDtY466LNr7XCxVbY/XZOBoeRMfclVuJebzpl1vSciY4ZbQfq7B45iRTTTZVjvFBbe5UTkra18y16Gs0q4y7yttuqLvcUFh0qWG2HNQPpXNqjjXZGtkX3NCxjaZ/eonluXYCzQ/j97iNmYoYvj1kwmuFMbxKxtVwrmS+lW98QHtJIhF+rhzRMCL+pdwFv87i/Bxzs3PMLy7vaIQnKmMlEfWmZedQ8hYT1bgaGuIXGYqxqSvVQ/Lc6zyP8ULLIoSO6UWpnH2csNLE/forNoZecf7STbpUYpd7yhaz4/cV10zwPYKa22UGp+dZ23OS3IzUSZAs5ssvVNtKYf7zjzokVQ2wtLrOxOsHaGiZkvlmkrXlBYokK1Xd4QyDS7MkXTnP07dKcZp+GcNhPXc6JE3szAjjGzUPRhSXnCPuZDDJtcP0ld3DQN+Pd6qyViWEc8T8suK5pPibomEdQdekVFap9BXXPdF1Oadw63flRGNoFYWk7dvY4Ol1D/apmXHq3GXORR5H/ftvCU14rTg6UHqNQ9oOlPUqe0lvM06gputN2/IadQmhfLvPlsoR+bu0wn1/fQwjcpHJ5oi21cXuZA6rUtlXpmuw09EkLLFpp5Aut+BrfBR9u0AunjvHqcgort7Ok97IbUy3ShbzYe5UbB/3HuSEmRZaZse4dOG8It+1O/lIb6xA8KsghFlA3E34X/4H+J+kt+F//gU/efr/9X+ExDjViXYgF2YdfGMKVNsSM13kJd0j2MUCtUM6XMuqkRrKaSItjbmQ1apMs9GCg7YpN4qUFsraeAvx188SdfIkXpaHOOh4BbnGJp1wwurEE0UaZINE2h/gCzUTPNzccXd3Qf3AjzheK5fyN+LvoIeVRzCX7qbSObFpF39I9+sn3L55hWP2kkik1bIw3snVAEtMzSxwO5/C9Hsf7wy3/Y3xjClRbe/Nm5QIfvN//b8EJigtRnkn5KKzNn/9ThcPd3fc3FzQOrAfh8gMxdGlgUbuXT5N5KlTOOscxMT9usLKfuilj0/sS0WavflQmMeeX+CIlRdtKvGsifXkr19+g62LB+6u7tjqq3HA8jitcr1bHyXv0VWiok4SdsyEfVou1Eg6Pdf3XOpc6OHkG86Nh3kMqoYHugpjMDDYKcxHLZTC/CjQnmPnlZ0xOYsdmeho2VM7PEPGSRuO3d6y6pVsUBjjzn5tN+49eEDc/VhOBbhwLDKWEenmn52xxzYoTmHBK1jswOuoOgmNA1Qnn0DL8Y7UMVMeyr4gWd4RT5BN12NjrEVcraqAjBFhY074o12u7KVmfEw0sPG/TJx07dh790jKKJPeyG18RJjDzXQxcTsl5YtT5EvOfCk9BYHg10FqWgX/f2ddso6GJR0c6JeanF/wk6cfHlTm/xClMPvdesb6ygT1L2u3NVzrdOWf55CWBS+6x7hoZ8LZ1DfKQyuN2EvCfLdigvWJGo6ZGXLidhZNLW9JuyAJrsNl5PaRXJgtQrOUeda6CbY5gOfdMnq63/HuXTcDI2PMLqqUdGWaipyHhPvZo6VnRVy5VPBtTPU3U9Oy5aqcq09E96gVrwbmGe7toKOjg+5BqTyqVn2uNRsTXQtKBt8r9Z4stRdipaZJ/tCmrAxzylEft0tP6e3ulsr5jv7hceYWVpjryMfRwJQzj/JoamsjPsgaC49rUk0phdnz1tbs9g/ZS5gvctjCg0ZVpZdecsHIPoLmPuV1e/oGmZqdZ3W5n4seZrieuEtVYwsvU09zRNeFCum5yllfGOJp8k2CPWzQMbTnafcc/SW3MTAMpE91+zVJJ1BXCXOCJMzuZ3KUB+SsT3DJ0YiIW/H4uTiR+Xa3fG2QK1nvFnJLV7WH5Qbs9dW5UzVF2Tkn7IPjt4R5uQd/raM8aOijOiUSTbvrLCgyrpMR7Yh5ZAEy6b2xMdEi4c3m8xkhwnoPYV54g4elCbFVmwK+B3sKs9KVfS63b+f5BIJfCSHMgk+EUpj970pW61Irzj/+mdD0LVfiSmsKRzVNKGwZ4pL9bmE2I+71JHO1t/nmOye6VK3yixsuqNlffm8xvxdmlngYZI6Z/2OFkMmZHehjanWdjqKHXLyd+37/HV8DDMI38ylpyT3NN987sDm5erw6Hu1D1lSO72Vdr5MeYSkJSeqWWHyExbYCbI/oUzy8OTtshfQoOww9bivuQc7ScI9ikllXWgj7DTyRz1OXkxFqjanLtfcW898rzP1FlzkkCW7d5nDq6iS9/bOsjT1H/SstMluUZRwuvsR+KV3jhFQv+dc4n/hKsV8+MS3a/AA+iU2M1Kege9iKOtW082c3PFGzuLK3MEs0pEby9e/+G7oulxn+oNKUY8ymIWlbIjdUirmWGnerFxgpucBRYy+appRHR17e4Ii2Kw3zK7x+FILGLmE2C8tBtj7DWQc9jt+uUJ5zpRlXAx3CHjfuEmblGPOtFzuc1zv5iDD7m5kSlfzhzH2B4NdACLPgE7FGjOV+XC4o3c1NT65jrqeLS0AEZyMDMdXRxismn+X1KYJ1jxKeUKdIx0o9Jj9qcq1kjI3ZdkKtj6Bl7UVkeBAmR77gC/0TkgxtEB9ogY5vijKPxHzHM9wkK8nSPYAzkcHY2nvypG2ehfZ87PQ0sfUK5VT4cYxNrEms2vmd8sZiH7cDbdAz9yTqVBhWuuqEPXjByh6t7mJnLpoHtHhc//MjivNvszH4+gBPBrYssqW+CnzMtDFz8eO0VE47exdS66dYH32Nu9FRDB18iAgLRm/fHzhkHa2Y+XzP6SB2V7bcwx8yzSkbXWzOyCfaKRkpPMXXOrbUb/pl18a5H26FppGDdI+n8HCwlazzctY3FogPseCAni1h4eE4m6nxX78xpWJklZHqJCzUD+HqH8nJYA90TY7xtH0e2VIXoXZH0bb25tzZk5irf8lXNpcUHZVYTxNswraJrMRa73O0vvwXXK5vivx2JIv5gh2//8qAk2cvcu70CeyNpOcYeJcheW9qdYTbIZbo23hyOioIUz0TolOVQwMlN7z4zvgCyont6yRFmKHlk4h8GH6g4gGGR9Rx8ztBVKgHX/zlS4KTdgnzUiPO6vtQt/Tnwrlozpw+TUTIWdKKm7fSTb3F7fuvufaiZ1veHty1NAl6uMsCFwh+JYQwCz4RG7RVFFG1zUU81d1A+uM4YmMfUlDRprJil6krfc6bbpXQbUxSXlRC66ByctjSaBvpD++RkPOc9s5mip5WMy+du7u+gtJa+aziLZbH2shKvM+9B4lUdag+oZJYls6RlShdN+4RL1s2P7naxdoUZblJ3L0XR96r5vcW9m7me+vIL6lkZi9jehdr0/28KHjG4OLOs61PvyM36SGxDx5Rsa088/1vSH5wl6T8Srpaa3n+8jXz0nW6qp9R2br3oidKVml6Vcqrt1ufCy0NNVFQ+orJ7d522RzVhancuxdLXmmDYkhAwdIoz9LiiX2cTdO7Dl4UvqB7QmlBz/TUk/Yoltj4JOo3n5HEwnArmdL+R5lFNDQ28LJaWWddr8t49Wa7dSmx2oqvrRUJDXvNlJMx1FZNcnw8D+IfEBcXR4p0/zPbq2x9mld58mdzn6LX71Q7Jeu+rYanZS2qZyWjp7Gckpru92I5+KaEuLv3efKygbrXlTRuK7+CjRleP8vl4YM46drxxEvXv3cnXjrHuy3BXZmm+mkBbaPva0tinuqS59S/+4nZ3ALB34EQZoFA8MlYW5imKuEkVt4XGd3eSRAIBB9FCLNAIPhELFN4KYAjBw1IqtnyYAgEgp9GCLNAIPhEbDA9PMDQ+NbipAKB4OcRwiwQCAQCwWeEEGbBJ0LGWHcL7f0/8SmKgmU6Guro2hWNSSD4R7C2MMLr6iamlsT8asHngxBmwSdig7QIO8XKX8omb52GwgeEBgbgHxDA9ZQSVfSlEYL0NYl8XK/Y+mfQUZbIcT9/gkNCCAkJJVT6GxgcRlHbXms5bTAz1EXm45uU7lpze3ngDTdOB+Nz3J/Lj4vZ3dVY6K/hStRpKoe2z4JaJPv6CeKe/prfxK5QnniLQB8/6Z6CCQ6W/0IICvAjKiabyZ/7APuzYYGi+1fwl+4jNDRYem+CuZr4QjFT/ddiui2F/d9ZU9q9c2ba0ngTMSGB+AcFKd6H4OAA6Z2Ioaa9i9zYExyXyiKv1yB53Up17OcTQFx+LVNTHdzYni/Qj4CTd2kf2xXpRCD4CYQwCz4Z62urrK7KVWCFqscn0dI25XxsMplJt3A2OoLnlTxJlmaJsjDiXKZqSc5/AqPtNaSmppOVmUV29hNSrofw3VeaPOna/omMxNIIj6J9MDcx4vuv/8KFwq1PwWRzrYRYaeIQeouM5DgcDI/id6t0xyIk6wvdhBr/iEXUVjCPiep7/LjvCCl1v+bkqDW6ql+QmZpJalwEf/3dPgIuJZCXlUHe83pFsIl/G4wSYnQUbcczFOQXkBZ/AyuNQ3hdzeUn1ur6Raz25aJ52Iny3p3CLBfsH3+/n1O3U3mSk0NWRjoZGaX0jozTWJ5DRtYTboc58OWfD3AlNYvMlAxetQww0pom5TvAmbup5OVkk5WeRkZeGaPz/2Z6Q4LPACHMgk/EBuUJN0gr65T+nyDM8nvc45VRgeQsvUnAwNieVwOjXHayIPjyQx7eOMWxY4GkvthKtzzSxJ3oMLy9fYm+n8+UwlraoDLnETE3Hygs1Gu5yqAUI03POBPsi2/gKfJVUYbkjDQVc1ba7+MfyqNnP78oRE18MObBD/jAuzk/QklhPg1djVzwsuBC7uY6XTBYeAENM19F8Ac5w/kX0DLbWqt6k8maeA6pGVKoEII5LjlrYB2VrRLqdWpy7xN83Ieg07dpfh8eUUZrcSKh/tI9BEaSU6P6Tniyncc3rxL38C4RYeep2x1/Us5MBcZHrHnSsSU8/XVPuHTlPo+uRBB2V7lwyWRzkVR3fvgGnSKvdqvu1qfekXA5El9vH07eSGf4fcStJSqzbhPg401Q5GWq3snDgUFfeTIxD/PeL7/amBvLvVT5+thrvHh8nTsPH3Iu8hQJGYlcuPqIzkml+bs8WMX5i/don9j+AfMI4bYWhCe1qbalsqf78Z2JN12q1V86K1KJDDiOb0A4mYpoWXKmyYy9Q0JantTJOonHMX+SSrbeKdl0O7dPB3A8KIpbNyM5qu5Oxeb6oiqmW1PR1HCnYfrjb8to6W3MDVzpkm2lmWxK5KiGF03KOJsCwb8KIcwCBZPrS4ytLzL+C37y9FPrH4uNqFr565K84V8l5aQV+80CKGvcWkFpbnaaxZUJLlr8wFdHLIhLy+RulDP7j1pTPCBJ1WIbYbZ6uEbe5kl2Au6GGvjdlgeOkJEYaMp/+U9fcSwsitTKfsYbs3E0s+NqvGTZJFzAVN+abEkVVwaeY69nyIk7ydL+y+jtV+NS/k8EtJ9rw9fKlNhXO2P77mSSi8ck63+bMFfdPo6F01k2ndvLHemYmDlRNri7gV4i1lsH67MF9DYko3PUkheKJa7WefnoJOZ2fiTl5kv14IqxYxS9ixv0Pr2CoY4Zt5PzSL4RzBF9e4p7JREer8Dk2//In3UdOHk5nrapD62y1dESDA9bktW05VivS43iv/2732DtFcT1vHqG6jJxtLbh0oNMch5ewMjAhpwmSWhXRjjnZoJt4GWyczIIsNbEMTpH6hZBQ+IJqePhzOOMXGKjnPhRSxIxSYze3jvGEetwNm87J9QUY89b0hNb47rDl/yHrzUIPhXDs5eFOB7ez8UieccNmh/5oWYaSM/i9voa4YStGb43SllckN61oXfEBltiG/UIuV72ltxBW1Obs3eTSb17Gh11I2LL5Qu2TBOhvY/f7zPmfkoqt8+4oXbYnKJ+SXzXR7jgYsBR2zBSM9I4e0yPfzngSFX/zrqbbk9H85AdT5vHmZ+dZWZqhvnFlR2dur6n1zHVdaZZHsJKxWRzMuqHHShunVTkm56aZXFJWMuCX4YQZgElC/2YD+RhMfgEq8H8v/knT285kM/LRVXEgx2ookupwj4y00v8WTfUj2ph5+LFufgi1XrR40QaaxASV6nYglbsNA24/nwIFkaorWpgfG6B6ekZXtzx4JDdJYUbMzncHsNj8cos0plu+hhwxDKKV69rqK15hqfB91hdesVM1V1+PKxDbodyRHuw5TUv3+xVXiXNqScwcjmNYpnsxUkaXhZRWPiU0rpOVt6PbUqN+y5hrrzli7nj6fchA5e7sjHQsSG/fbsFqGShIx9rrSMcOHSY4AfK+5YtNOK4fx+eF5Kpr6mhqvAeal8eJK58kIl3tdS0D7I4P8PMhDxw/wGi87thtgYHnUPcqdlrLFzJnsKcdpIDGkEoux7rxPlpoGZ/moqaOuqqn3Nc9wssLhYhW5niTc1r+qcWmZme5nXSSdR1AxX3mBlmipZ9NCPLctFZoO5VCV1TkjA/DMTQ7axUQ0oKTjtgFxgnCdoKN5wP43yrTHUEss5Yox+QIh1b5a6PJYEfRJ6a4Ly9Ht98r42rqxvWBof5w3f65Cus/zkuu2rjcafyvViW3vBA0+4a87IpIs0N8LlRrjy20YanmS7XX0yy1BzPoYN2VI0pcy12pHH4iBMvd7myZ989Qe9PX6JtaouzowOWJlacjSvaWi1NYi9hnmrPQfuPX6JjLs9nj7mxIzfTX+8QdIHg5xDCLODpfA96/ZKQ9Odg9At+Bqo8cmH/kD3CPkpMj/ZQnHQDB70DWIfeY3J5htPWJpzPUMVIXm1SRJe69VwuG+u0Fsfh5eFGQFAg9vrfc9DpmkLQFWEfI/IUWVjtIdT2R77Vd+a4ry++vj64uB3jao50TtkcWTcjsDIzxczGhXs59YpgC3uy2keYjSYns5Ruz/WxVm6ecMXJ2YWA69nMvM/4oTC/uuUjWcxn3lvMS5IwmxjZ86z7vZpvY4P0IH3+uN+WFtUnvsvvctD57kfMnX2V9+DtiZNnBMXNk6zMjpIQHYKrtw+Bfp4c/OO3XCx8J6nHa1wNDUhv2zUWvo29LeaTHLW4KEmbxMYEZ8y+5pCJg1RvxxXX9nB1ICZHvnb5Gj1VkqUs1b9fUDDOZurs1w9lUOprrA6+JtrPCTMTE+y9T1Larrzzhjj/jwjzsiTMOoQmqdZElxgtj8XA6Dgt72rwtrYio22392WUSFtTPC7k0dPTQ29fN9lXj2MTcIvBqUFCdQ5z59XWuzf2Mg4zDTta1oeIsrMgfDNoxdJbvC2NuVs+xXBusPQOnWBAFStytisLrSPOH44xt2egdVAqU2UnPb09dHf3MDIxu0Ng97aYU9A4aEtW9TtVvl7Gpj/+fASCvRDCLFA0NkNr8/SvzUkN1t/+k6cfXvtYoyMXZl3875SyutAhCVw0ddsD3Q7lo6OhS2bTIJcdPowudb9Ksm4609E4YMqTZmWj35Z1Ag3bi4rZ3DuiS20MEmF3hND0LaHcZHFmRhEsXzY3RMWzBGx1j+Jzv0p1dCd9z2LQMfGl42fb0Q+FuTUlDH27cElKlCzVPkDP3IW6jxizcte3ldvF92OxK3156KtbUfyBMb9Kargpet63mFBoxyLnzY5yJrcTZl7jYqBHcrNyfHcvPibMR0yjlXGHZZOSMB8hKrtDcWw78x15mB86QlyNcp3ugZJbGOr78W5xnYU5pb9j4t0b8m6Fo66pR1HfBu2PAjDwOM/mqtQlF5wlYb6vEmZtAhNeq45ILHUQ6mKBm5c3Lt6XGPugD6McYw5LbFFtSww/kSxee142d3PRRotz8g6Kiu78C+jp+zO4MU6kjTmhDxuUQrrYhJdKmKfKL0idkkB6VTE8V/rz9hbmNuUYc93klujuZk9hfpuEuroHdeMfzycQ/BxCmAWfiDVuO2rgfaMEmWTBRJp8g1HQXVoHJpifGqYsXh7m0IP6gXGiLfU5ldygzLbyBht1I+5VTrLQnIjad4bkt4wx3tfKJdeDfKNyZT8Os8ckKEOZR2p+X9z05bCuN1VdI8xPDlLw+BFVg4t05JzH0OI4NQOzbKxMcdFdF9vzRap829iY5Jy9Nt53d7tT92KEc+6GRGd3q7Yli7e3CFMddW4Uv2NmYoj7AUYY+9xm5iPt88sYT0wdtixs1ka5aKeFRfB9esdmGeusJSk5g8GlFVICtdH2ucPo5CRtrx6j9duvOF8gd2VX46ijReLbnxLm5+iqmZHRuCXMtcknOGB4GqXmbFB+z4cfDL2o6hxlbrKfnOTHvOpaYL4zF4PvDxL3epDJoU7u+JvwjUYY4+szPAiywflMCuNLG8y/K8BM/TDJrWvMVsSw/4glRZ1jTPS3EmF0ADO/eIUwxziq4/ewWlGGTcpvufIf/v1/JjxJGTFqJyOEWRnhde251BFYYHZyiIIr7uwzDKB/dpWXd7w4YhPGm74JpgffECIJtfvNV9K1pgk1NyLoQZ1KmBvxMNUjpkTqLsw24KqtQVRCJZNTY7yI8+W339vyqm/XGLMkzEf3W1HQNMac1Lmbnp5memqGpdWtoYnewhgMtRx4u12Ymx5LHQdnKgc+HMIQCP5WhDALPhFrPPAyJfhOsWJrrq+ei372GFlYYWtphoGFBylVcjfkNGcdrLiU2aRIx8pb3E1suV8+BuuzZF0+xuGjOti5HcPH0xpd22gmWCf9rBcOUSpXtpzFQR5Ge6FvYIyNtTXOQeepG1yWfzxM3ClvjIzNsbYwxu74Od6OfjhhbfZNEsZmLpQNftTRvY1RrvnbcrVgexQlGY3ZVzAzMMDM1BhD52Cpcf646V11NxCHY5eVVquKmf5qwl3MMTK1wtrakpAb2YxJRZ3rfYmPuSTOxlZ4HQ9QhLGMSn8LUw14S3WZ3vrxJS9Xx8qw1HUkb5tV3ZB5Dj3by6oZ7hLzwyRGu2Ggb4q1jSVufueoG5Cfc5Hi2HA0Dh/FxsUbXw8njE19aJZua6KthEAXE8wsbDAzNiHidqHyu+2VUWKDnNDQNcTZ8zge5qZ4npV3oJa5e0xKl7zlypYz15TAt1/pk9Oy1XHYYpJrbmb8eEAXF2cX7CSr18jci/wGpftaNjvAwzMuGJmYY2FqhEdUIkMKQ36Uk062RCWqXNmLzQRI79itEqWDvbcsDnMNTcztXPH1dkXb2pfq/p3CPNvzFPN9P6CnGCt2xN7OFisrD7Lqtlwa/cV3sDU9Ruv2MeaWNKkefahRTOgTCP51CGEWfDKW5pQzWbdYY2yoj57eAWYkS0uJZHHNzrCgmEQkIZOsrplZFlc2G7YNJqQ8A2MzUiO7wezUrHQWyf5amGN2fvfnQVLaYen8fUPsmNwrCfm4Yv8gCx9pL9cWZ5ianVc25D/LBotz28u4xbxkLff09jP7scnqKlYXpfJLVuAH11tfZLCvh/6R97a0AtnyNP19/UxL9SZbnWNmQbr3jTWFNbescsvuycYqM9OzrKjGVOWsLS8wPbv72jImh/sVdbf7M7Gp0QFFeaQrszA9xdLmba/MMdDbw4B0bGeWFUb6exmUntn62goLi/LKkEl1Jr0Pm89ZxWR1rCT6p+jbs75kLM1OMzI4QG9vL73S/W+9N5tIz3awl56BMal8myjfqfnN2dDSOzUnbW9/Xsszo9L5hliQ9i0vzLPNEFYgk9fb+CgD/X1Suj76+qTry9/bxa2O28bKIjMzc1IJtpCtL0vW9RxrH7jlBYK/HSHMAoHgH8/GMg1PE3GzMOR0mmrin0AgUCCEWSAQ/ONZGuJBpBv+V9KYFtalQLADIcwCgUAgEHxGCGEWCAQCgeAzQgiz4JOxIQ9i8bOzYGQsLy6yImbLCP5BbKytsLi4vGvCmkDw+SCEWfCJ2CDnjDtBd56ptmFuqIWCrHRS07Oo7RpX7R3jnIs9V7ObVdv/LBaoK31CcnIqL+q2Fq2QI5sfpCQ3jZSMPFqGf9kqTlNdtZRU1jO/XQXWZql7mU+T4pOkX4mNVVoqcklJTSMzO5eCwgJyMjNIle6nqKLpV4vG9KlZX57gdVEBmVLZ0+WRmZ6U0jf94ez3v4eWnBjsXc4xsqsvONnXQlFWJukZGWRIv7TUVPKfNzIzPUBpfjopaenk5OVTkJ9HpnQ8Varr+v55VqTj5UVZZKRv5cstrFAtCCMQ/HKEMAs+Gf3NNbzpkK8aJWOgOgNHQ3Us3fwI8nVEW8eQO8/lq01NEWasy6lU1XfM/wxWhkk46YqukSMBQT4YHj1CVEIFio9tZlqIcjbDxMETP3cb9Aydeda5c0GPtZUlllZ2fga0yURdPAf+epBHdZuraMNgaQzffanOk46PLwzyi9lYpDj+FIHBERx3NOaPv/nvWPkGE+IXyJUHT/mZr7c+Gxb6C9D43Z8xc/Hn5IlwXCwN0DQP4nXvr1dXbRnR6BmFMLix02YuvuHLH3+rRkBoBGGhoQT5BRB9vYCRoSbunA0hKDgMm6Nf8YfvtPALiyQoIJAnzbMMldxi/x9/h31AOBGhYQT7B3DywkN6flkfTiB4jxBmwSdCxlB7E++G5QtHTHLe5TCW556p3IcyWlLD+F7djrpxeaACS84lvaRBsiJTMwroHFUu96hkkYYX+SQlp1P+dnNd5A362hqpa2yjrqyQF2+VS0ayOCRZtqmkZT9nYHvYvYUhSvMkizczn5aRD1vLtifRfP2dLTVjSsusLTeaH/e70SVpbUtSGNrmgfQpDi1y57gZVuGp275dXedZjD9+d4o/4hpdJ/OEGZouN5ULcDDOaYsDOF2RR8lSMtZeTUZKEk8r25SdARWzfY1kpyWTkV/OZgTIlfEuqhve0FxfTVFpJVN7WGULTVlYHjHi5fvVSzbobGrgzdtWqkoKqepQdhLWpropzEyRzv+S8e3KvTDMizy5hZjL2x2LpKzRWvlU4VUob+hW3e8qXfWvaOpVLcIpdRBaKsvpHJcKvDxOY20tra2NlBaXUPumhsrGrbWtJ3rfUl7dvuM74IXePLSPOPCiV2XOrg0TZfkV9rfK3tfv/HAzTzKSSc8rZVj1qsiWJ2mobqBvsIfyQsl6zS9jdGHbE1keozw/g8ynZeTdi8LUOpKhXcL87JY/ui732BbF8QNexbhjHnB7hwekt/AaJrpudPxURoHgFyCEWaBgeW1dsdzg8i/4ydOvSPn2Zo3r1gdwvSJ3ZS9wye0I+iHJLL5PPk15WRn9U2NcsTvKj5rmnDh9Akf9g2jahCIZIpKmDfMg0gl9c2eC/N3Rli/VWSyPzbvB4xArfvebrzEwMiIqrYmNqWbOejni7OmHv5c9Vs6RvJmQIZtvJ9rTTto+ht8xWzR1rMhr2rJe5Yx31VL6uvN9wz9V+xAdg+OSRbVBUoQT9qeeqI5Aa9opLJxOS/K6xdPzrrhc22OZTxUrfaWYqKnxoGmZiYoYDh+1p3pMLsEy2p7F4Wxti39wCA4WBvjfLZaESkZf+UMsjfVw9w3E1UIPM69bjEp1t1B5gy+++D1qGgY4hVyie3sfRsVcYwZWkjCXqWIdS3u44qjNH37/HfomFsQU9bA6WEWIk610/gB83Kyx975MtyTO62P1hDmYYunqw3E3W7RN3SnukvcKVnh2L0h6FvYEB3qjr65NeEIl67JFLlur4XH3pfJSy734H/6G6GeSAI+9wOT73/C1uh6OPqeIvR6KurYXPYrexxqPAvWkdyJ1R2dELsw6Rx0p71M9jY1xzjkdwiOuSvF8JhqysDPQw+mYHx72ppJlHUmzvAMyVYftN7/nsJkLkVEhmB7ch1XYA0blVbDcw1UfMw7qWREUGY6l5j4OWZ1j93LWCmF2jf1JYX4pCbNZwC229/vkS3Oa6rrTKYRZ8CshhFnAG8naOZ3ewMm0Bk79gp88/ZkMyXrr376w5CY7wz5OvS3Ew/wImkZ2XLyXQmXHZpiDCU4aqWEXlcSivBGdq8T0kDa3X0niOd3KnWv3UEVspPqeO0edYiSJgNRwWw4bR9E3L5/Es0r6WSe0bc/RNznPwkwbQeaH8XnYzLQkhPsOmfBaIWAb5N+L5lbutqAIu5FNcs3bFNeYUvkGd/1tsTu5FSGrN/ccRraBdKysMNjZSnPzG+4EWGIReoemlmZauga2VsbaRvG1YxjZeeJpZUb4Q2Ugh7XROtx0fyAspY75xWV6nt9GS82Q8rFZqrLu86BAtfDGzGvsdA4S17jCWu1tvtyvR2rNCKsfWfFrpiFdYTG/GN+UvFlJmA0wcLvOmCKm8Bx3/Mww9bnHxMwicyNVOErnP5nTzezbp8Tcz1RGnpJSxrga4HGtTKq6bhx+/IrTBb2KI6OvEom6kcLs2jK33bTxi1eF7VzuJ1z/EFdKBxXCbHr0G87ktrIs1Yls9CX2uurE1kkPY+0dPoY63H+1GYdKycLgM4y//h4bz2CiT53E0VANNZsT9Mr7BrIJLjjr43ouXynm6yOcttPm2PVilpfacP7hG04k1ygs8NnGeNQO2FI1s0FfwXkOH3Ckbkp+ZJ3nN46jYRTFyC4hfXEvhG//qklIRBQnwsMIDjpDcctmWBIl5dfcMPO/qYgHvcng81tofvslLsGRRIWfIDg4lJyaLc+AQPBLEcIsoKFnkpOp9USm1BOV2vA3/+Tp5QL9tm/n8pFK9gj7uNjP8+zHREqW64GDGpxLfiVJ5TRRlsZcyFKJ5UYzDtqm3CwaUGyuDDdw52Ik4eERuJsd4KDj1a2wjydUluzGACfsD/DFAWNcXVyknxMahw/iev0l61MthLkaYe7ky+mr8TQP/9SMnFVyL3ujZXuGXoXfWRIduTCfUsWUlpALs7F9mNRZGOC8jQEHDx3k+y//xB+//o5Dh9XQcTpPz15zumZbcFf7T/zeIIIB1UqiYzWpaP3pd+jaOuPi4oqTtTGHDhqT0yH3K29Qk3efiLAIIoLcUftxH7deL7NcdYOjlp68/Ynxyw+FeZrzblZ431RF1Vpqxt3wW/ZpWOImry9new4eOExQvHId68E3RZyLDCM8IgyDg2qSEMqf4SLZ5z0xMLUhOOI8ua83I2tJHRmXjwjzSAkOBqYUDmyq2DJ3vC3wjiljquUxxlYBtO2qq4X+pxh8r0nY1YckJSXxOPYKbnbOJNcOS3VYg62JJvENW373rtQgNFxO0jnQhrueOdlvlQMGi725aB1xoW5skWdXXTAKTHtvCbdmXcTEPOIDV3bp3SDUDjnxKDlJunYiCY/TaRrYGR5sL2HuL76BrtoRLiQkK8qc8Pgx1V07vTICwS9BCLNA4SJcWllncWXtF//k+fZGKcx+t4pZXx6l8tlLJrY1ZgPPr3JY04znXWNctN8d9tGUexWTrI1V4mpkwJn4p3T2dJFzzQN1+8sfhn1c6yHY5gDecVWMDA8xODQsWYJzW2VbX6CuKI0zYW5oa5tx+/lWVKgtZLyIDUXL0Iea9+K9QnywPfZROaptaFO5ssdk68yMjzE8MkhihAP2Z5Kk/4cZnZhh27LU21gnwVcXp5inqm0YqohH/7ANpV2jDA0NMjQyztz8ImsbkghedMfE+QTP67voq8/F1uggMZWLCmE+Yu5G/V59IRV7CfMFN0s8r0qWr5yZepxNDnIqq5VhVX1Nzs4rhid6nsVgZGDNw8JqunvaOO9qiutpVT1LDLVUcO/8CWz0NfC8lMWSZDHfcNYi8HGNMsHaMJGGW8Jsr29E7rstIX2XdxYzlwhiTgfiez5zhxtbzoIkqNrqLlSPbVVi8VV3Drk8ZGOyDnuzncLcnRH8Xpg9dE1Iq1cK4pw8zvJRV+rHFym64oxZSNaWMGfuLcxFN/3Q9Xj0k67svYS5t+AapnrH6BeubMGvhBBmwSdCJcx3yyVhbsN1/xf4P6593xDPvXmkEOaitmEufSDMZsS9nmSu7jb7vnOgXdEOyyi6bM9+h8uKT392CLNkiSWGWWHsdV9hTcsZ62xnZGmN9sL7nLyc8v5zoTu+BhiEbwmNkg1ai25hZelB1fDOwBgNieHoyCd/KYZrF6X8ZlhHpO8QlLxTdthe2BqH3pslHh03wuPG1udj8nFee639XCtVegfkM9Rb2wbYWB8k2OIQHneUFuxa9zMsNL/hxuuVX0eYN+RRmwywj8xWdMrkDLa1MCklfx5thabdeWV9ycY5Y6OH27mnrE03cTrsHHUqz+7AkwjUDD0ZkhIm+mtiEa28//XJN7ge+IFrL/YWZtlMKz6GX/Hbr7RIqvvwJhRjzPLJXz2bHb4lEsLMOeQpCfP6HJfcDPG4/EzhrpYPO1x2NuBYTBHL8004a+4S5iNOVE5sMFB8GW1dDxoVa39uKF3Zhh+6spWTv+7+cmEujMFEx2VHXGaB4O9BCLPgE7FGjJUarheVDXZbcSw2BjrYeQVyIsgbAy0dAu48l6zLKUL01IlIUIUDXKnHdL8WMSVjyObfEeWgwVFTF4KDjmOi/lf+YnBCkpkNHgZaouubqswjsdRdhreFDiYOXkQE+2Jl70l+2zxL74pxNdbGwtWPsAAPDM3sSd9UFxVTTTmo/5f/k29NjxF99gwRYeEEh0WR1yAJx0I7Zx2NMXTw4LinLToGzpR0b/cjb1CXdZe7T+rfi9zeLHLP9Si2qvpQIuN1ajR66locCwjF180e14h4pmQb1KeeQePgIVx9A/F3MeWLL77gQvEkyxWX2KdrQ83mEP0eTNcmobdPnWLFBDM5U5yUBNb+3HPVNkw25WFvoIm1m1Qv/sewdgmkYnCdxfZCbLQPYeZ0jEB/Lw5+8ScsQ1NZWZsiNtgCTRN7wsODsDEyJDy2RLp76Cq+g9YPR3ENDiPc24Gv/2UfV+TCPFSE6RF1Mjq3hFn+XqRHmfBfv/eiZ68Z5f35qP/uz1i4B3Hm1En8pA6Flq4TeU3DiuNjddnYGhng7BOMt7MlZg7hvJXr+/grzH/QJLFGOS1vtiOVH/eZUywXeNkgMb7mHDawJSTyFDZa3/K9yQlGd43RF9/w4Q+/PUiwfIw54gRhwcGcuviQ7Y+75LwNOh6XpWe0lbc79wKaB6xoFMIs+JUQwiz4RMjoqimnvkPZoMqZH2zlSWYyjxNTKa3bdCcv01RZQcvmBLKNaarLXtE5orR9Vye7yU97TMbTV/T0d1H+op4FSQ76mmuobNq0NJWsT3fzNCuJhJQsGnq3rLE16RyF0v7HyWnU7DH2NzfSTmF6JplZGaSmpJCSkkxiShq13coyyeb7KcqU58+iaeBf+z3tOj31FdR27JzsJGegsZzUxATSCyqZXN5s3NdorSrkcVImDe3dvK2v5k33jGTsdlJaWbvnZ1KbrE73U1lawdj7c63SVltJXfuYalvJ0mgreWmJPE7Po3XbZ2RT72pIfZzA06oOelvrqaptlc4gZ4GG0lweJyTytOLtey+E/N666kp4/DiJsppmWutr6RiTnt/SKNUvKxicV7gb3lN2xwfb8LQdXodN1pfGqMzPISU1heTkJJLTc2nbtajL/FAT2SkJJGU9Y3ONFtnSBK9fvKJ/WunxWJsfoKz0NWMLqmsvjig+pUvJK6OlrZW6hmZ2R5Cc6GkiX35dxTuQohhnzsh7wdg2J8pYew2vGjpV9aFkYbiDivKaHTO1BYK/ByHMAoHgH8LG+ir9zc/wsrHlYdWHHRSBQKBECLNAIPiHMNaYj6Pm97hdzmGXES0QCLYhhFkgEPxDWF+aY2xsYk8XtkAg2EIIs0AgEAgEnw3w/wG5hPqSXz7GxQAAAABJRU5ErkJggg=="/></p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1f6e1e2c-ffb8-44ce-88ba-92f349d5deeb">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Modified-Duration">Modified Duration<a class="anchor-link" href="#Modified-Duration">¶</a></h2><ul>
-<li>So far we've derived the formulas under the assumption that the yield $R_j$'s are expressed with continuous compounding</li>
-<li>A different definition of the yield will lead to different formula</li>
-<li>Consider the below definition of yield $R$:
-\begin{align*}
-B = \mathcal N \left(1+\frac{R}{m}\right)^{-mT_N} + \sum_{j=1}^N c\left(1+\frac{R}{m}\right)^{-mT_j} 
-\end{align*}</li>
-<li>Compared the above to the bond pricing formula
-\begin{align*}
-B = \mathcal N e^{-T_NR_N} + \sum_{j=1}^N c~e^{-T_j R_j}, 
-\end{align*}
-in the new definition, the same yield $R$ is used for all terms, and it's expressed with a compounding frequency of $m$ times per year</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=25844821-c9c3-4d1b-9665-39a3b1ec28fa">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Modified-Duration-(Cont.)">Modified Duration (Cont.)<a class="anchor-link" href="#Modified-Duration-(Cont.)">¶</a></h2><ul>
-<li>With this new definition of $R$, we have
-$$
--D^* \Delta = \frac{B(\Delta) - B(0)}{B(0)}, 
-$$
-where
-$$
-D^* = \frac{D}{1+R/m}, 
-$$
-with $D$ the discounted cash flow weighted terms as before</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d700e873-2e18-421a-bf95-4cec42031d1a">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Modified-Duration-(Cont..)">Modified Duration (Cont..)<a class="anchor-link" href="#Modified-Duration-(Cont..)">¶</a></h2><ul>
-<li>Given
-\begin{align*}
-B(\Delta) &amp;= \mathcal N \left(1+\frac{R+\Delta}{m}\right)^{-mT_N} + \sum_{j=1}^N c\left(1+\frac{R+\Delta}{m}\right)^{-mT_j}, 
-\end{align*}
-find the derivative $B'(0)$:
-\begin{align*}
-B'(0) &amp;= \mathcal N \left(1+\frac{R}{m}\right)^{-mT_N}\left(-\frac{T_N}{1+\frac{R}{m}}\right) + \sum_{j=1}^N c\left(1+\frac{R}{m}\right)^{-mT_j}\left(-\frac{T_j}{1+\frac{R}{m}}\right)\\
-&amp;= -\left[{\color{red}T_N}\mathcal N \left(1+\frac{R}{m}\right)^{-mT_N} + \sum_{j=1}^N {\color{red}T_j} c\left(1+\frac{R}{m}\right)^{-mT_j}\right]/\left(1+\frac{R}{m}\right)\\
-&amp;\approx\frac{B(\Delta) - B(0)}{\Delta} 
-\end{align*}</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e923f6e4-0a32-4d48-9746-d71818c4dc4a">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Modified-Duration-(Cont...)">Modified Duration (Cont...)<a class="anchor-link" href="#Modified-Duration-(Cont...)">¶</a></h2><ul>
-<li>We have
-\begin{align*}
--\left[{\color{red}T_N}\mathcal N \left(1+\frac{R}{m}\right)^{-mT_N} + \sum_{j=1}^N {\color{red}T_j} c\left(1+\frac{R}{m}\right)^{-mT_j}\right]/\left(1+\frac{R}{m}\right) \approx\frac{B(\Delta) - B(0)}{\Delta} 
-\end{align*}</li>
-<li>Multiply by $\Delta/B(0)$ on both sides to obtain
-\begin{align*}
--\Delta\left[\frac{{\color{red}T_N}\mathcal N \left(1+\frac{R}{m}\right)^{-mT_N} + \sum_{j=1}^N {\color{red}T_j} c\left(1+\frac{R}{m}\right)^{-mT_j}}{\mathcal N \left(1+\frac{R}{m}\right)^{-mT_N} + \sum_{j=1}^N c\left(1+\frac{R}{m}\right)^{-mT_j}}\right]/\left(1+\frac{R}{m}\right) \approx\frac{B(\Delta) - B(0)}{B(0)}, 
-\end{align*}
-where the quantity in the square brackets is $D$ and we've used the fact
-\begin{align*}
-B(0) = \mathcal N \left(1+\frac{R}{m}\right)^{-mT_N} + \sum_{j=1}^N c\left(1+\frac{R}{m}\right)^{-mT_j}
-\end{align*}</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3f47c0e1-2efc-4476-835d-4be26cdd11d8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Convexity-of-ZCB">Convexity of ZCB<a class="anchor-link" href="#Convexity-of-ZCB">¶</a></h2><ul>
-<li>The approximation
-$$
--D \Delta \approx \frac{B(\Delta) - B(0)}{B(0)}
-$$
-is only accurate when $\Delta$ is small. For large yield curve movement, we need 2nd order approximation</li>
-<li>Consider the ZCB case
-\begin{align*}
-B(\Delta) &amp;= e^{-(R+\Delta)T} \approx B(0) + \Delta B'(0) + \frac{\Delta^2}{2} B''(0)\\
-&amp;= B(0) - T\Delta B(0) + T^2\frac{\Delta^2}{2} B(0)
-\end{align*}</li>
-<li>Divide through by $B(0)$ to obtain
-\begin{align*}
-\frac{B(\Delta) - B(0)}{B(0)} \approx - T\Delta + T^2\frac{\Delta^2}{2}\\
-\end{align*}</li>
-<li>The 2nd term on the right hand side is an adjustment to the original approximation. $T^2$ is called the convexity, denoted by $C$ hereafter</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3684428e-f541-41d7-a192-079b909c3dc3">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Convexity-of-Coupon-Bond">Convexity of Coupon Bond<a class="anchor-link" href="#Convexity-of-Coupon-Bond">¶</a></h2><ul>
-<li>Taylor expansion of $B(\Delta)$ at $\Delta = 0$ gives
-$$
-B(\Delta) \approx B(0) + \Delta B'(0) + \frac{\Delta^2}{2} B''(0), 
-$$
-so
-$$
-\frac{B(\Delta) - B(0)}{B(0)} \approx \Delta \frac{B'(0)}{B(0)} + \frac{\Delta^2}{2} \frac{B''(0)}{B(0)}
-$$</li>
-<li>We will define
-$$
-\frac{B'(0)}{B(0)} = -D, \qquad\frac{B''(0)}{B(0)} = C
-$$
-and write
-$$
-\frac{B(\Delta) - B(0)}{B(0)} \approx -D \Delta + \frac{1}{2}C\Delta^2
-$$</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2b9b1464-60e9-4fc8-99e0-5ce54661568b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Convexity-of-Coupon-Bond-(Cont.)">Convexity of Coupon Bond (Cont.)<a class="anchor-link" href="#Convexity-of-Coupon-Bond-(Cont.)">¶</a></h2><p>$$
-$$</p>
-<p>$$
-\frac{B(\Delta) - B(0)}{B(0)} \approx \Delta \frac{B'(0)}{B(0)} + \frac{\Delta^2}{2} \frac{B''(0)}{B(0)}
-$$</p>
-<ul>
-<li>We have
-\begin{align*}
-B(\Delta) &amp;= \mathcal N e^{-T_N(R_N+\Delta)} + \sum_{j=1}^N c~e^{-T_j (R_j+\Delta)}, \\
-\frac{B'(0)}{B(0)} &amp;= -\frac{{\color{red}T_N}\mathcal N e^{-T_NR_N} + \sum_{j=1}^N {\color{red}T_j}c~e^{-T_j R_j}}{\mathcal N e^{-T_NR_N} + \sum_{j=1}^N c~e^{-T_j R_j}} = -D,  \\
-\frac{B''(0)}{B(0)} &amp;= \frac{{\color{red}T_N^2}\mathcal N e^{-T_NR_N} + \sum_{j=1}^N {\color{red}T_j^2}c~e^{-T_j R_j}}{\mathcal N e^{-T_NR_N} + \sum_{j=1}^N c~e^{-T_j R_j}} = C
-\end{align*}</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ddf88679-95cb-49b6-a2e4-f51b2d6cfa93">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Convexity:-Properties-&amp;-Implications">Convexity: Properties &amp; Implications<a class="anchor-link" href="#Convexity:-Properties-&amp;-Implications">¶</a></h2><p>$$
-$$</p>
-<p>\begin{align*}
-D &amp;= \frac{{\color{red}T_N}\mathcal N e^{-T_NR_N} + \sum_{j=1}^N {\color{red}T_j}c~e^{-T_j R_j}}{\mathcal N e^{-T_NR_N} + \sum_{j=1}^N c~e^{-T_j R_j}},  \\
-C &amp;= \frac{{\color{red}T_N^2}\mathcal N e^{-T_NR_N} + \sum_{j=1}^N {\color{red}T_j^2}c~e^{-T_j R_j}}{\mathcal N e^{-T_NR_N} + \sum_{j=1}^N c~e^{-T_j R_j}}
-\end{align*}</p>
-</div>
-</div>
-</div>
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1f71b58f-6689-43ba-960c-8d49fea8208c">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b0b25a53-d4a2-4813-bc05-937e134399c3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
-<li>Duration is a weighted average of all payment date terms</li>
-<li>Convexity is the weighted average of all payment date terms squared</li>
-<li>Same weights as duration</li>
-</ul>
-</div>
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6ebd07d4-2fcb-457d-90ed-074d634e77c4">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ul>
-<li>Since $w_N^* \gg w_j,$ the duration is close to the bond's term squared: $T_N^2$</li>
-<li>For ZCB $(c=0)$, the convexity is equal to the term squared $T^2$</li>
-<li>Like duration, high coupon rate pulls convexity lower</li>
-</ul>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=78a68e5a-633e-49ec-a884-35c23e7364fa">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Dollar-Convexity">Dollar Convexity<a class="anchor-link" href="#Dollar-Convexity">¶</a></h2><ul>
-<li>Recall that
-$$
-\frac{B(\Delta) - B(0)}{B(0)} \approx -D \Delta + \frac{1}{2}C\Delta^2
-$$</li>
-<li>One side is absolute change but the other is the percentage change</li>
-<li>Define the dollar duration and dollar convexity as
-$$
-D^{\$} = DB(0), \qquad C^{\$} = CB(0), 
-$$
-respectively. We then obtain
-$$
-B(\Delta) - B(0) \approx -D^{\$} \Delta + \frac{1}{2}C^{\$}\Delta^2
-$$</li>
+<li>Data from <a href="https://www.global-rates.com/en/interest-rates/cme-term-sofr/">here</a></li>
 </ul>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b0b05ea0-ce00-4416-8a0d-ec26b41ef18b">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2fe747e8-82d3-4f43-8234-825f990440a9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Portfolio-Convexity-and-Portfolio-Dollar-Convexity">Portfolio Convexity and Portfolio Dollar Convexity<a class="anchor-link" href="#Portfolio-Convexity-and-Portfolio-Dollar-Convexity">¶</a></h2><ul>
-<li>The duration and convexity of a portfolio of $M$ bonds are
-\begin{align*}
-D &amp;= \frac{\sum_{i=1}^M{\color{red}T_{N_M}}\mathcal N_M e^{-T_{N_M}R_{N_M}} + \sum_{i=1}^M\sum_{j=1}^N {\color{red}T_j}c_i~e^{-T_j R_j}}{\sum_{i=1}^M\mathcal N_M e^{-T_{N_M}R_{N_M}} + \sum_{i=1}^M\sum_{j=1}^N c_i~e^{-T_j R_j}},  \\
-C &amp;= \frac{\sum_{i=1}^M{\color{red}T_{N_M}^2}\mathcal N_M e^{-T_{N_M}R_{N_M}} + \sum_{i=1}^M\sum_{j=1}^N {\color{red}T_j^2}c_i~e^{-T_j R_j}}{\sum_{i=1}^M\mathcal N_M e^{-T_{N_M}R_{N_M}} + \sum_{i=1}^M\sum_{j=1}^N c_i~e^{-T_j R_j}},  
-\end{align*}
-respectively</li>
-<li>And its dollar duration and dollar convexity are defined as
-$$
-D^{\$} = DP(0), \qquad C^{\$} = CP(0), 
-$$
-respectively</li>
-<li>We have
-$$
-P(\Delta) - P(0) \approx -D^{\$} \Delta + \frac{1}{2}C^{\$}\Delta^2
-$$</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ab31af68-f32b-439f-822c-85135c6f455c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Hedging-by-Duration-and-Convexity">Hedging by Duration and Convexity<a class="anchor-link" href="#Hedging-by-Duration-and-Convexity">¶</a></h2><ul>
-<li>We have shown that, if you make a portfolio's dollar duration zero, it's immune to small parallel shifts in the yield curve</li>
-<li>To make it immune to large parallel shift, you need to make dollar convexity zero too, so that
-$$
-P(\Delta) - P(0) \approx -D^{\$} \Delta + \frac{1}{2}C^{\$}\Delta^2 = 0
-$$</li>
-<li>Suppose you are hedging a portfolio with dollar duration $D^{\$}_P$ and dollar convexity $C^{\$}_P$. If you could add a bond with dollar duration $-D^{\$}_P$ and dollar convexity $-C^{\$}_P$, you are done</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ae27375d-369a-4fd6-bf71-1c35a9d66b1b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ul>
-<li>But in general this cannot be achieved by one single bond</li>
-<li>With two equations ($-D^{\$} = 0$ and $-C^{\$} = 0$) we need two variables</li>
-</ul>
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ab424e8c-e4e6-41de-86f3-27849f8b8921">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Hedging-by-Duration-and-Convexity-(Cont.)">Hedging by Duration and Convexity (Cont.)<a class="anchor-link" href="#Hedging-by-Duration-and-Convexity-(Cont.)">¶</a></h2><ul>
-<li>Suppose we have two bonds $B_1$ and $B_2$:<ul>
-<li>$B_1$ has dollar duration $D^{\$}_1$ and dollar convexity $C^{\$}_1$</li>
-<li>$B_2$ has dollar duration $D^{\$}_2$ and dollar convexity $C^{\$}_2$</li>
-</ul>
-</li>
-<li>Buy $h_1$ units of $B_1$ and $h_2$ units of $B_2$ so that
-\begin{align*}
-&amp;h_1 D^{\$}_1 + h_2 D^{\$}_2 = -D^{\$}_P\\
-&amp;h_1 C^{\$}_1 + h_2 C^{\$}_2 = -C^{\$}_P
-\end{align*}</li>
-<li>Solve the system to obtain hedge ratio</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4f366e2d-4ea1-45c6-9b8c-f5425da08abc">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Linear-Systems-for-Hedging">Linear Systems for Hedging<a class="anchor-link" href="#Linear-Systems-for-Hedging">¶</a></h2><ul>
-<li>It's not uncommon we need so solve a linear system to figure out the hedge ratio</li>
-<li>Steps to hedge<ol>
-<li>Characterize factors (reasons) of the portfolio value change, in our example $\Delta$ and $\Delta^2$</li>
-<li>Write portfolio value change in terms of the factor changes</li>
-<li>Find hedge (trades, in our example, bonds) and hedge ratio to make coefficients ($D$ and $C$ in our example) zero</li>
-</ol>
-</li>
-<li>We will see linear system for hedging again in PCA</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fdb61684-f12c-46a7-8be8-cdcf410eef2e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Hedging-by-Duration-and-Convexity-(Cont..)">Hedging by Duration and Convexity (Cont..)<a class="anchor-link" href="#Hedging-by-Duration-and-Convexity-(Cont..)">¶</a></h2><ul>
-<li>After all the hard work we have
-$$
-P(\Delta) - P(0) \approx -D^{\$} \Delta + \frac{1}{2}C^{\$}\Delta^2 = 0
-$$</li>
-<li>The portfolio is now immune to large parallel shifts in the yield curve</li>
-<li>But still exposed to nonparallel shifts, which can be hedged by PCA</li>
+<h2 id="CMT-and-CMS">CMT and CMS<a class="anchor-link" href="#CMT-and-CMS">¶</a></h2><ul>
+<li>A CMT (Constant Maturity Treasury) rate is for example the 10Y US Treasury yield (zero rate) observed daily</li>
+<li>Notation is $R(t, t+\text{10Y})$</li>
+<li>Can also be 1Y, 2Y, 30Y, etc.</li>
+<li>CMS is Constant Maturity Swap, say 10Y swap rate observed daily</li>
+<li>More on interest rate swaps and swap rates later</li>
 </ul>
 </div>
 </div>
