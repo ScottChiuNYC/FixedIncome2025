@@ -57,7 +57,7 @@ Analysis of Fixed Income -- Fall 2025
    :caption: Contents:
 
    01_yc6
-   02_overview
+   02_rates
    03_ust
    04_duration
    A_yc_construction
