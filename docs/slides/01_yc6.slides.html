@@ -7968,7 +7968,7 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Instantaneous-Forward-Rate-in-Terms-of-ZCB-Price">Instantaneous Forward Rate in Terms of ZCB Price<a class="anchor-link" href="#Instantaneous-Forward-Rate-in-Terms-of-ZCB-Price">¶</a></h2><p>$$
+<h2 id="Instantaneous-Forward-Rate-From-ZCB-Price">Instantaneous Forward Rate From ZCB Price<a class="anchor-link" href="#Instantaneous-Forward-Rate-From-ZCB-Price">¶</a></h2><p>$$
 $$</p>
 <p>\begin{align*}
 f(t, T) &amp;= \lim_{\tau \downarrow 0} L(t, T, T+\tau) \\
@@ -7988,7 +7988,7 @@ f(t, T) &amp;= \lim_{\tau \downarrow 0} L(t, T, T+\tau) \\
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Instantaneous-Forward-Rate-in-Terms-of-Zero-Rate">Instantaneous Forward Rate in Terms of Zero Rate<a class="anchor-link" href="#Instantaneous-Forward-Rate-in-Terms-of-Zero-Rate">¶</a></h2><p>$$
+<h2 id="Instantaneous-Forward-Rate-From-Zero-Rate">Instantaneous Forward Rate From Zero Rate<a class="anchor-link" href="#Instantaneous-Forward-Rate-From-Zero-Rate">¶</a></h2><p>$$
 $$
 Note that
 \begin{align*}
@@ -8008,7 +8008,7 @@ The quantity $TR(0, T)$ is called the time weighted zero rate. This identity mea
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="ZCB-Price-in-Terms-of-Instantaneous-Forward-Rate">ZCB Price in Terms of Instantaneous Forward Rate<a class="anchor-link" href="#ZCB-Price-in-Terms-of-Instantaneous-Forward-Rate">¶</a></h2><p>$$
+<h2 id="ZCB-Price-From-Instantaneous-Forward-Rate">ZCB Price From Instantaneous Forward Rate<a class="anchor-link" href="#ZCB-Price-From-Instantaneous-Forward-Rate">¶</a></h2><p>$$
 $$</p>
 <p>Recall that
 \begin{align*}
@@ -8035,7 +8035,7 @@ P(t, T) = e^{-\int_t^T f(t, u)\,du}.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Zero-Rate-in-Terms-of-Instantaneous-Forward-Rate">Zero Rate in Terms of Instantaneous Forward Rate<a class="anchor-link" href="#Zero-Rate-in-Terms-of-Instantaneous-Forward-Rate">¶</a></h2><p>$$
+<h2 id="Zero-Rate-From-Instantaneous-Forward-Rate">Zero Rate From Instantaneous Forward Rate<a class="anchor-link" href="#Zero-Rate-From-Instantaneous-Forward-Rate">¶</a></h2><p>$$
 $$</p>
 <p>Recall that
 \begin{align*}
@@ -8059,7 +8059,7 @@ which we just derived.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Forward-Bond-Price-and-Instantaneous-Forward-Rate">Forward Bond Price and Instantaneous Forward Rate<a class="anchor-link" href="#Forward-Bond-Price-and-Instantaneous-Forward-Rate">¶</a></h2><p>$$
+<h2 id="Forward-Bond-Price-From-Instantaneous-Forward-Rate">Forward Bond Price From Instantaneous Forward Rate<a class="anchor-link" href="#Forward-Bond-Price-From-Instantaneous-Forward-Rate">¶</a></h2><p>$$
 $$</p>
 <p>Recall that
 \begin{align*}
@@ -8068,6 +8068,26 @@ P(t, T) = e^{-\int_t^T f(t, u)\,du}.
 Thus
 \begin{align*}
 P(t, T, T+\tau) = \frac{P(t, T+\tau)}{P(t, T)} = e^{-\int_T^{T+\tau} f(t, u)\,du}. 
+\end{align*}</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9594b150-7398-403f-8bd8-8af0fed2825d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Forward-Term-Rate-From-Instantaneous-Forward-Rate">Forward Term Rate From Instantaneous Forward Rate<a class="anchor-link" href="#Forward-Term-Rate-From-Instantaneous-Forward-Rate">¶</a></h2><p>$$
+$$</p>
+<p>Since
+\begin{align*}
+P(t, T, T+\tau) = e^{-\int_T^{T+\tau} f(t, u)\,du}, 
+\end{align*}
+we have
+\begin{align*}
+L(t, T, T+\tau) &amp;= \frac{1}{\tau}\left(\frac{1}{P(t, T, T+\tau)} - 1\right) \\
+&amp;= \frac{1}{\tau}\left(e^{\int_T^{T+\tau} f(t, u)\,du} - 1\right). 
 \end{align*}</p>
 </div>
 </div>
@@ -8086,7 +8106,7 @@ P(t, T) = e^{-R(t, T)(T-t)}.
 $$
 We can isolate $R(t, T)$ to get
 $$
--\frac{1}{T-t}\log P(t, T). 
+R(t, T) = -\frac{1}{T-t}\log P(t, T). 
 $$</p>
 </div>
 </div>
@@ -8105,7 +8125,7 @@ P(t, T, T+\tau) = \frac{1}{1+\tau L(t, T, T+\tau)}.
 $$
 We can isolate $L(t, T, T+\tau)$ to get
 $$
-\frac{1}{\tau}\left(\frac{1}{P(t, T, T+\tau)} - 1\right). 
+L(t, T, T+\tau) = \frac{1}{\tau}\left(\frac{1}{P(t, T, T+\tau)} - 1\right). 
 $$</p>
 </div>
 </div>
