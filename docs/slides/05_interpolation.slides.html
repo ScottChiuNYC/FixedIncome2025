@@ -7525,7 +7525,7 @@ main {
 <li>Although we've been using the Treasury yield curve as our only example, in practice there are many other curves<ul>
 <li>Important ones are SOFR, Term SOFR, fed funds, LIBOR</li>
 <li>SOFR is by far the most important one if you work in the rates business in a bank, more important than the Treasury yield curve</li>
-<li>In the rates business, many curves are simply a spread curve plus the SOFR curve, spread from quoted basis swap quotes</li>
+<li>In the rates business, many curves are simply a spread curve plus the SOFR curve, spread from basis swap quotes</li>
 <li>In a credit desk (trading credit projects including corporate bonds), corporate bond yield curves are a spread curve (known as the z-spread) plus the Treasury yield curve</li>
 </ul>
 </li>
@@ -7658,6 +7658,7 @@ $$</li>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Linear-Interpolation-on-Time-Weighted-Zero-Rate">Linear Interpolation on Time-Weighted Zero Rate<a class="anchor-link" href="#Linear-Interpolation-on-Time-Weighted-Zero-Rate">¶</a></h2><ul>
 <li>In conclusion, it makes sense for the $TR(0, T)$ curve to be a linear function between FOMC meetings dates in the short end</li>
+<li>The slope of $TR(0, T)$ at $T=T^*$ equals $f(0, T^*)$, which is the anticipated SOFR daily fixing level at $T^*$</li>
 <li>FOMC meeting schedule is not determined for 3Y out, why not just make the curve continuous and smooth?</li>
 </ul>
 </div>
@@ -7669,8 +7670,14 @@ $$</li>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Short-End-Curve-Interpolation:-Example">Short End Curve Interpolation: Example<a class="anchor-link" href="#Short-End-Curve-Interpolation:-Example">¶</a></h2><ul>
-<li>Assume that, today's SOFR yield curve is as below. If, from the 2M point to the 3M point there will be no FOMC meetings, what should the yield be at the 2.5M point? You can assume 30/360 DCC for this exercise</li>
+<h2 id="Short-End-Curve-Interpolation:-Example-I">Short End Curve Interpolation: Example I<a class="anchor-link" href="#Short-End-Curve-Interpolation:-Example-I">¶</a></h2><ul>
+<li>Assuming:<ul>
+<li>Today's SOFR yield curve is as below</li>
+<li>From the 2M point to the 3M point there will be no FOMC meetings</li>
+<li>30/360 DCC</li>
+</ul>
+</li>
+<li>What should the yield be at the 2.5M point?</li>
 </ul>
 </div>
 </div>
@@ -7733,13 +7740,19 @@ and hence $R = 4.104\%$</li>
 </div>
 </div>
 </div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d6235419-0894-4a05-b85b-4f16c051016b">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=93710991-e14a-4259-bf1c-06a003aedfd9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Short-End-Curve-Interpolation:-Exercise">Short End Curve Interpolation: Exercise<a class="anchor-link" href="#Short-End-Curve-Interpolation:-Exercise">¶</a></h2><ul>
-<li>Assume that, today's SOFR yield curve is as below. If, from the 3M point to the 4M point there will be no FOMC meetings, what should the yield be at the 3.333M point? You can assume 30/360 DCC for this exercise</li>
+<h2 id="Short-End-Curve-Interpolation:-Exercise-I">Short End Curve Interpolation: Exercise I<a class="anchor-link" href="#Short-End-Curve-Interpolation:-Exercise-I">¶</a></h2><ul>
+<li>Assuming:<ul>
+<li>Today's SOFR yield curve is as below</li>
+<li>From the 2M point to the 3M point there will be no FOMC meetings</li>
+<li>30/360 DCC</li>
+</ul>
+</li>
+<li>What should the yield be at the 2.333M point?</li>
 </ul>
 </div>
 </div>
@@ -7785,7 +7798,163 @@ and hence $R = 4.104\%$</li>
 </div>
 </div>
 </div>
-</div></section></section>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c5ac252b-00ec-41c9-af2d-a7ab18524de2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Short-End-Curve-Interpolation:-Example-II">Short End Curve Interpolation: Example II<a class="anchor-link" href="#Short-End-Curve-Interpolation:-Example-II">¶</a></h2><ul>
+<li>Assuming:<ul>
+<li>Today's SOFR yield curve is as below</li>
+<li>From the 1.5M point to the 2M point there will be no FOMC meetings</li>
+<li>From the 3M point to the 3.5M point there will be no FOMC meetings</li>
+<li>There is an FOMC meeting at the 2.5M point where the consensus is that the Fed will cut its rate by 25 bps</li>
+<li>SOFR daily rates moves at the same time by the same amount as the Fed target rate</li>
+<li>30/360 DCC</li>
+</ul>
+</li>
+<li>What should the yield be at the 3.333M point?</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=16e9375f-8111-4752-bf04-039e1fb44bfc">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div style="display: flex; justify-content: center;">
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th>1 Mo</th>
+<th>1.5 Mo</th>
+<th>2 Mo</th>
+<th>3 Mo</th>
+<th>4 Mo</th>
+<th>6 Mo</th>
+<th>1 Yr</th>
+<th>2 Yr</th>
+<th>3 Yr</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.22%</td>
+<td>4.21%</td>
+<td>4.17%</td>
+<td>4.06%</td>
+<td>4.00%</td>
+<td>3.81%</td>
+<td>3.64%</td>
+<td>3.54%</td>
+<td>3.50%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=eae191c9-9a80-42b8-9eda-a39766ecdaf8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Short-End-Curve-Interpolation:-Example-II-(Cont.)">Short End Curve Interpolation: Example II (Cont.)<a class="anchor-link" href="#Short-End-Curve-Interpolation:-Example-II-(Cont.)">¶</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=0260f699-cd2d-402e-94bd-8462c1c40508">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div style="display: flex; justify-content: center;">
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th>1 Mo</th>
+<th>1.5 Mo</th>
+<th>2 Mo</th>
+<th>3 Mo</th>
+<th>4 Mo</th>
+<th>6 Mo</th>
+<th>1 Yr</th>
+<th>2 Yr</th>
+<th>3 Yr</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.22%</td>
+<td>4.21%</td>
+<td>4.17%</td>
+<td>4.06%</td>
+<td>4.00%</td>
+<td>3.81%</td>
+<td>3.64%</td>
+<td>3.54%</td>
+<td>3.50%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6f6c9043-4eaa-4b3a-807c-ee3b6c1fe895">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>Recall that the slope of $TR(0, T)$ in the interval [1.5M, 2M] is $f(0, T)$, the anticipated SOFR daily fixing level in that interval. Numerically, it's
+\begin{align*}
+\frac{2\times 4.17\% - 1.5\times 4.21\%}{0.5} = 4.05\%
+\end{align*}</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3d56067c-cb6c-476f-af37-7391dd8f1013">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>Similarly, the slope of $TR(0, T)$ in the interval [3M, 3.5M] is the anticipated SOFR daily fixings in that interval, which is $4.05\% - 0.25\% = 3.8\%$</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f4f39aca-11a4-4ef9-9734-e468257ccb5a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>The slope can also be written in terms of yield at the 3M point and the 3.3333M point as
+\begin{align*}
+\frac{3.3333\times R - 3\times 4.06}{0.3333}, 
+\end{align*}
+which we know should be $3.8\%$. Thus $R$ can be backed out to be $4.034\%$</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div></section></section>
 </div>
 </div>
 </main>
