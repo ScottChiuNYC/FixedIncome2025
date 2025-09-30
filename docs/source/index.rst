@@ -26,15 +26,15 @@ Analysis of Fixed Income -- Fall 2025
 +--------+------------+-------------------------------------------------------------+
 | Week 4 | 9/23/2025  | Duration and Convexity                                      |
 +--------+------------+-------------------------------------------------------------+
-| Week 5 | 9/30/2025  | Term Structure and PCA                                      |
+| Week 5 | 9/30/2025  | Curve Interpolation                                         |
 +--------+------------+-------------------------------------------------------------+
-| Week 6 | 10/7/2025  | FRAs, Interest Rate Futures and Swaps                       |
+| Week 6 | 10/7/2025  | Principal Components Analysis (PCA)                         |
 +--------+------------+-------------------------------------------------------------+
 | Week 7 | 10/14/2025 | Midterm Exam                                                |
 +--------+------------+-------------------------------------------------------------+
-| Week 8 | 10/21/2025 | Yield Curve Construction                                    |
+| Week 8 | 10/21/2025 | FRAs, Interest Rate Futures and Swaps                       |
 +--------+------------+-------------------------------------------------------------+
-| Week 9 | 10/28/2025 | Interest Rate Risk Management                               |
+| Week 9 | 10/28/2025 | Yield Curve Construction                                    |
 +--------+------------+-------------------------------------------------------------+
 | Week 10| 11/4/2025  | Volatility and Interest Rate Options                        |
 +--------+------------+-------------------------------------------------------------+
@@ -60,6 +60,7 @@ Analysis of Fixed Income -- Fall 2025
    02_rates
    03_ust
    04_duration
+   05_interpolation
    A_yc_construction
 
 
