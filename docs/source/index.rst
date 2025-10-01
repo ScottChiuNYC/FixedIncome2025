@@ -62,5 +62,5 @@ Analysis of Fixed Income -- Fall 2025
    04_duration
    05_interpolation
    A_yc_construction
-
+   B_finite_difference
 
