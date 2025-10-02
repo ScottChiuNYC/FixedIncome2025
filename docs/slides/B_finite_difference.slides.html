@@ -7441,13 +7441,21 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="B.-Approximating-PDEs-by-System-of-ODEs">B. Approximating PDEs by System of ODEs<a class="anchor-link" href="#B.-Approximating-PDEs-by-System-of-ODEs">¶</a></h2><h3 id="Deriving-the-System-of-ODEs">Deriving the System of ODEs<a class="anchor-link" href="#Deriving-the-System-of-ODEs">¶</a></h3><p>PDEs can be approximated by system of ODEs.
-This is known as the <a href="https://en.wikipedia.org/wiki/Method_of_lines">method of lines</a>. Take the simplest heat equation as an example:
+This is known as the <a href="https://en.wikipedia.org/wiki/Method_of_lines">method of lines</a>.
+In this section we use the simplest heat equation as an example to show how to derive the system of ODEs. Consider the initial boundary value problem
+$$
+\begin{cases}
+u_t = u_{xx}  &amp;\forall~(t, u) \in[0, 5]\times[-1, 1]  \\
+u(0, x) = u_0(x) &amp;\forall~u\in[-1, 1]  \\
+u(t, -1) = u(t, 1) = 0  &amp;\forall~t\in[0, 5]
+\end{cases}.
+$$
+Here the boundary conditions are set to zero to further simplify the argument below. First discretize the PDE in space. Let $\{x_j\}_{j=0}^{m}$ be a uniform grid in $[-1, 1]$ with $x_j = -1+2j/m$. We write $u(t, x_j) = U_j(t)$ for all $j=0, 2, \ldots, m$. In particular, we have
 \begin{align*}
-&amp;u_t = u_{xx} \qquad\qquad\qquad \forall~(t, u) \in[0, 5]\times[-1, 1],  \\
-&amp;u(0, x) = u_0(x) \qquad\qquad \forall~u\in[-1, 1],  \\
-&amp;u(t, -1) = u(t, 1) = 0  \qquad\forall~t\in[0, 5]. 
+U_0(t) &amp;= u(t, x_0) = -1, \\
+U_m(t) &amp;= u(t, x_m) = 1.
 \end{align*}
-Here the boundary conditions are set to zero to further simplify the arguments. First discretize the PDE in space. Let $\{x_j\}_{j=1}^{m-1}$ be uniform interior grid points in $[-1, 1]$. You can consider $x_0 = -1$ and $x_m = 1$. We write $u(t, x_j) = U_j(t)$ for all $j=1, 2, \ldots, m-1$. Denote by $\vec U(t)$ the vector
+Next, denote by $\vec U(t)$ the vector
 \begin{align*}
 \vec U(t) = \begin{pmatrix}
 U_1(t)\\
@@ -7484,11 +7492,11 @@ But the PDE gives us $u_{xx}(t, x_j) = u_t(t, x_j) = dU_j(t)/dt$. Thus we can wr
 $$
 \frac{dU_j(t)}{dt} = \delta_x^+\delta_x^- U_j(t) + O(\Delta x^2) \qquad\forall j=1, 2, \ldots, m-1. 
 $$
-If we drop the error term and write in vector form, we obtain a system of ODEs that approximates the original PDE:
+If we drop the error term and write in vector form, we obtain a system of ODEs that approximates the original heat equation:
 \begin{align*}
 \frac{d{\vec U(t)}}{dt} = \delta_x^+\delta_x^- \vec U(t). 
 \end{align*}</p>
-<p>The operators can be written in matrix form as
+<p>The shift operators can be written in matrix form as
 \begin{align*}
 S\vec U(t) &amp;= \begin{pmatrix}
 U_2(t)\\
@@ -7540,67 +7548,37 @@ U_2(t)\\
 U_3(t)\\
 \vdots\\
 U_{m-1}(t)\\
-\end{pmatrix}. 
+\end{pmatrix}, 
 \end{align*}
-These hold because of the zero boundary conditions: $U_0(t) = U_m(t) = 0$.</p>
-<!-- Now discretize $t$ and apply the trapezoidal rule
+where we have used the zero boundary conditions $U_0(t) = U_m(t) = 0$.
+In matrix form, the finite difference operator $\delta_x^+\delta_x^-$ is
 \begin{align*}
-U^{n+1} &= U^{n} + \int_{t_n}^{t_{n+1}} \dot U\,dt\\
-&= U^{n} + \int_{t_n}^{t_{n+1}} \delta_x^+\delta_x^- U\,dt\\
-&\approx U^{n} + \Delta t\delta_x^+\delta_x^- \left(\frac{U^{n}+U^{n+1}}{2}\right). 
-\end{align*}
-So the Crank-Nicolson method is 
-\begin{align*}
-\left(I - \frac{\Delta t}{2}\delta_x^+\delta_x^- \right)U^{n+1} = \left(I + \frac{\Delta t}{2}\delta_x^+\delta_x^- \right)U^{n}. 
-\end{align*}
-To write in matrix form, expand the operator to get
-\begin{align*}
-\left(I - \alpha\left(S-2I+S^{-1}\right) \right)U^{n+1} = \left(I + \alpha\left(S-2I+S^{-1}\right) \right)U^{n}, 
-\end{align*}
-where
-\begin{align*}
-\alpha = \frac{\Delta t}{2(\Delta x)^2}. 
-\end{align*}
-Rearrange to get
-\begin{align*}
-\left(-\alpha S + (1+2\alpha)I -\alpha S^{-1} \right)U^{n+1} = \left(\alpha S + (1-2\alpha)I + \alpha S^{-1} \right)U^{n}. 
-\end{align*}
-Thus the scheme in matrix form is
-\begin{align*}
-&
+\delta_x^+\delta_x^-\vec U(t) = 
+\frac{S-2I+S^{-1}}{(\Delta x)^2}\vec U(t) =
+\frac{1}{(\Delta x)^2}
 \begin{pmatrix}
-1+2\alpha & -\alpha&&&&\\
--\alpha & 1+2\alpha & -\alpha&&&\\
-& -\alpha & 1+2\alpha & -\alpha&&\\
-&&& \ddots &\\
-&&& -\alpha & 1+2\alpha & -\alpha \\
-&&&& -\alpha & 1+2\alpha
-\end{pmatrix}U^{n+1} + \begin{pmatrix}
--\alpha\beta_L^{n+1}\\
-0\\
-0\\
-\vdots\\
-0\\
--\alpha\beta_R^{n+1}\\
-\end{pmatrix} \\
-&= 
-\begin{pmatrix}
-1-2\alpha & \alpha&&&&\\
-\alpha & 1-2\alpha & \alpha&&&\\
-& \alpha & 1-2\alpha & \alpha&&\\
-&&& \ddots &\\
-&&& \alpha & 1-2\alpha & \alpha \\
-&&&& \alpha & 1-2\alpha
-\end{pmatrix}U^{n} + \begin{pmatrix}
-\alpha\beta_L^{n}\\
-0\\
-0\\
-\vdots\\
-0\\
-\alpha\beta_R^{n}\\
-\end{pmatrix}. 
+-2 &amp; 1 &amp;&amp;&amp;\\
+1 &amp; -2 &amp; 1 &amp;&amp;\\
+&amp; 1 &amp; -2 &amp; 1 &amp;\\
+&amp;&amp;&amp; \ddots \\
+&amp;&amp;&amp; 1 &amp; -2\\
+\end{pmatrix}\vec U(t).
 \end{align*}
-Note that the solver can only go forward in time: One can only solve the unknown $U^{n+1}$ given $U^{n}$, not the other way around, or otherwise the scheme will become unconditionally unstable.  -->
+In summary, the system of ODEs is
+$$
+\frac{d}{dt} \vec U(t) =
+\frac{1}{(\Delta x)^2}
+\begin{pmatrix}
+-2 &amp; 1 &amp;&amp;&amp;\\
+1 &amp; -2 &amp; 1 &amp;&amp;\\
+&amp; 1 &amp; -2 &amp; 1 &amp;\\
+&amp;&amp;&amp; \ddots \\
+&amp;&amp;&amp; 1 &amp; -2\\
+\end{pmatrix}\vec U(t), 
+$$
+with the initial condition $U_j(0) = u_0(x_j)$ for all $j=1, 2, \ldots, m-1$.</p>
+<h3 id="Why-ODEs?">Why ODEs?<a class="anchor-link" href="#Why-ODEs?">¶</a></h3><p>In most applications, the systems of ODEs obtained from discretizing the PDEs in space are still solved numerically. In other words, we still need to discretize in time. It is natural to wonder why not just discretize in both time and space at the beginning.</p>
+<p>There are benefits turning a PDE to ODEs. On the theory side, numerical schemes solving ODEs, e.g. Runge Kutta, and their behavios have been well studied, including stability and convergence analysis, all directly applicable. On the engineering side, once the system of ODEs are derived, one can apply the existing numerical ODEs solver softwares. As an example, SciPy does not have PDE solvers, only <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.OdeSolver.html">scipy.integrate.OdeSolver</a> for system of ODEs, which can be utilized through method of lines for quick prototyping. Furthermore, space and time can be discretized in different ways. If we discretize the weak form of the PDE in space, we actually get a different system of ODEs. This leads to the spectral method and exponential convergence in space.</p>
 </div>
 </div>
 </div>
