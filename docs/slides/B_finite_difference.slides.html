@@ -7501,7 +7501,8 @@ If we drop the error term and write in vector form, we obtain a system of ODEs t
 \begin{align*}
 \frac{d{\vec U(t)}}{dt} = \delta_x^+\delta_x^- \vec U(t). 
 \end{align*}</p>
-<p>The shift operators can be written in matrix form as
+<p>Next we write the system in matrix form.
+The shift operators are
 \begin{align*}
 S\vec U(t) &amp;= \begin{pmatrix}
 U_2(t)\\
@@ -7556,7 +7557,7 @@ U_{m-1}(t)\\
 \end{pmatrix}, 
 \end{align*}
 where we have used the zero boundary conditions $U_0(t) = U_m(t) = 0$.
-In matrix form, the finite difference operator $\delta_x^+\delta_x^-$ is
+The finite difference operator $\delta_x^+\delta_x^-$ in matrix form is
 \begin{align*}
 \delta_x^+\delta_x^-\vec U(t) = 
 \frac{S-2I+S^{-1}}{(\Delta x)^2}\vec U(t) =
@@ -7582,8 +7583,8 @@ $$
 \end{pmatrix}\vec U(t), 
 $$
 with the initial conditions $U_j(0) = u_0(x_j)$ for all $j=1, 2, \ldots, m-1$.</p>
-<h3 id="Why-ODEs?">Why ODEs?<a class="anchor-link" href="#Why-ODEs?">¶</a></h3><p>In most applications, we still numerically solve the system of ODEs obtained from discretizing a PDE in space only. In other words, we still need to discretize in time. It is natural to wonder why method of lines is needed.</p>
-<p>There are benefits turning a PDE to ODEs. On the theory side, numerical schemes solving ODEs, e.g. Runge Kutta, and their behavios have been well studied, including stability and convergence analysis, all directly applicable. On the engineering side, once the system of ODEs are derived, one can apply the existing numerical ODEs solver softwares. As an example, SciPy does not have PDE solvers at the time of this writing, only <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.OdeSolver.html">scipy.integrate.OdeSolver</a> for system of ODEs, which can be utilized through method of lines for quick prototyping. Furthermore, space and time need not be discretized the same way. If we discretize the weak form of the PDE in space, we actually get a different system of ODEs. This leads to the spectral method and exponential convergence in space which finite difference method cannot achieve due to its local nature.</p>
+<h3 id="Why-ODEs?">Why ODEs?<a class="anchor-link" href="#Why-ODEs?">¶</a></h3><p>In most applications, we still numerically solve the system of ODEs obtained from discretizing a PDE in space only. In other words, we still need to discretize in time. It is natural to wonder why method of lines is needed?</p>
+<p>There are benefits turning a PDE to ODEs. On the theory side, numerical schemes solving ODEs, e.g. Runge Kutta, and their behavios have been well studied, including stability and convergence analysis, all directly applicable. On the engineering side, once the system of ODEs are derived, one can apply the existing numerical ODEs solver softwares. As an example, SciPy does not have PDE solvers at the time of this writing, only <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.OdeSolver.html">scipy.integrate.OdeSolver</a> for system of ODEs, which can be utilized through method of lines for quick prototyping. Furthermore, space and time need not be discretized the same way. If we discretize the weak form of the PDE in space, we actually get a different system of ODEs. This leads to the <a href="https://en.wikipedia.org/wiki/Spectral_method">spectral method</a> and exponential convergence in space which finite difference method cannot achieve due to its local nature.</p>
 </div>
 </div>
 </div>
