@@ -4,4 +4,4 @@
 
 For AI assistants and contributors, see `copilot-instructions.md` for repo-specific guidance.
 
-![2025 Yearly Heatmap](yearly_heatmaps/2025.png)
+![2025 Yearly Heatmap](yearly_heatmaps/2025.png) 
