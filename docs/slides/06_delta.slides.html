@@ -7750,13 +7750,109 @@ main {
 <li>Portfolio PnL will be $778-370 = \$408$</li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=395d7cc8-123e-4e71-89c4-06c2121bd7df">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Delta-Ladder-and-Dollar-Duration">Delta Ladder and Dollar Duration<a class="anchor-link" href="#Delta-Ladder-and-Dollar-Duration">¶</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=3640f866-7eca-4d4c-94bb-67e3de36701a">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>1m</th>
+<th>1.5m</th>
+<th>2m</th>
+<th>3m</th>
+<th>4m</th>
+<th>6m</th>
+<th>1y</th>
+<th>2y</th>
+<th>3y</th>
+<th>5y</th>
+<th>7y</th>
+<th>10y</th>
+<th>20y</th>
+<th>30y</th>
+<th>Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>Delta</th>
+<td>-185</td>
+<td>-231</td>
+<td>-303</td>
+<td>-275</td>
+<td>-690</td>
+<td>778</td>
+<td>-3739</td>
+<td>-2320</td>
+<td>314</td>
+<td>-65</td>
+<td>23</td>
+<td>-6</td>
+<td>1</td>
+<td>0</td>
+<td>-6698</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b8ced62b-43e6-46ad-bf31-923d8157fb8d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>PnL computation:<ul>
 <li>Scenario 6: Curve parallel shifts up by 1 bp<ul>
 <li>Portfolio PnL will be $-185-231-303 \cdots -6 + 1 + 0 = -6698$, sum of bucketed delta</li>
-<li>For this reason, a bond portfolio's dollar duration $D^{\$}$ should be always close to its sum of bucketed delta</li>
 </ul>
 </li>
 </ul>
 </li>
+<li>Recall that for small parallel curve shift $\Delta$, we have
+$$
+-D^{\$} \Delta \approx P(\Delta) - P(0)
+$$</li>
+<li>Thus, a bond portfolio's negative dollar duration $-D^{\$}$ should be always close to its sum of bucketed delta</li>
 </ul>
 </div>
 </div>
