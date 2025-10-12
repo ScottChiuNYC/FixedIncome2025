@@ -62,6 +62,11 @@ Analysis of Fixed Income -- Fall 2025
    04_duration
    05_interpolation
    06_delta
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Appendices:
+
    A_yc_construction
    B_finite_difference
 
