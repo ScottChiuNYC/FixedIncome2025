@@ -1,0 +1,14 @@
+repos:
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v6.0.0
+      hooks:
+      -   id: check-yaml
+#   - repo: https://github.com/ScottChiuNYC/daily_challenge
+#     rev: v0.1.0
+#     hooks:
+#     - id: draw-2025-heatmap
+#       name: draw 2025 yearly heatmap
+#       entry: python daily_challenge/__init__.py
+#       language: python
+#       description: "Generate the 2025 yearly heatmap and stage the generated image."
+#       additional_dependencies: ['matplotlib', 'numpy']

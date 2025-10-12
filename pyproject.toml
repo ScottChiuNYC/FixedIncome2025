@@ -14,6 +14,7 @@ pandas = "^2.3.2"
 matplotlib = "^3.10.6"
 jupyterlab-spreadsheet-editor = "^0.7.2"
 gfuncpy = "^0.1.8"
+pre-commit = "^4.3.0"
 
 [tool.poetry.group.dev.dependencies]
 docutils = "^0.21.2"
