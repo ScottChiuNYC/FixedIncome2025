@@ -7468,6 +7468,29 @@ main {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=21c57900-fa92-4f0b-abab-700dc8bdb646">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Yield-Curve-Instruments">Yield Curve Instruments<a class="anchor-link" href="#Yield-Curve-Instruments">¶</a></h2><ul>
+<li>So far we've been looking the treasury yield curve which has terms, not instruments</li>
+<li>The 2y point is on the curve every day but 2y treasuries are not issued/traded every day<ul>
+<li>Recall that 1d after a 2y Treasury note is issued, it becomes 2y-1d</li>
+<li>On any given day, it's possible there is no Treasuries in the market that's exactly 2y long</li>
+</ul>
+</li>
+<li>Imagine a world where all Treasuries are ZCBs and newly issued every day for all tenors<ul>
+<li>All numbers on the yield curve table below would be directly quoted from the market, no need for bootstrapping</li>
+<li>The yield curve buckets will be instruments, not just terms</li>
+<li>We still need curve interpolation to compute our inventories, for example a 2y-1d bond that we accquired yesterday</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div></section></section>
 </div>
 </div>
