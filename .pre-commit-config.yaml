@@ -1,6 +1,6 @@
 repos:
     - repo: https://github.com/ScottChiuNYC/daily_challenge
-      rev: v0.1.0
+      rev: v0.1.1
       hooks:
       - id: draw-2025-heatmap
         name: draw 2025 yearly heatmap
