@@ -69,4 +69,5 @@ Analysis of Fixed Income -- Fall 2025
 
    A_yc_construction
    B_finite_difference
+   C_interview
 
