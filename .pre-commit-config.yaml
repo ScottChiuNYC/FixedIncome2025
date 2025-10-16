@@ -1,9 +1,9 @@
 repos:
     - repo: https://github.com/ScottChiuNYC/daily_challenge
-      rev: v0.1.1
+      rev: v0.1.2
       hooks:
-      - id: draw-2025-heatmap
-        name: draw 2025 yearly heatmap
+      - id: daily-challenge
+        name: daily challenge
         entry: python -c "from daily_challenge import main; main()"
         language: python
         description: "Generate the 2025 yearly heatmap and stage the generated image."
