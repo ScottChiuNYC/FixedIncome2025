@@ -7451,7 +7451,7 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Overview">Overview<a class="anchor-link" href="#Overview">¶</a></h2><ul>
+<h2 id="Modeling-Yield-Curve-Movements">Modeling Yield Curve Movements<a class="anchor-link" href="#Modeling-Yield-Curve-Movements">¶</a></h2><ul>
 <li>Although the below curve has 14 points, when we model this curve's movement, we should not model it by 14 independent random variables</li>
 </ul>
 </div>
@@ -7520,6 +7520,45 @@ main {
 </table>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c64018d6-e77d-4d06-abea-381090424c9e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>Rates for nearby maturities on the curve tend to move together—both in direction and magnitude—because the corresponding bonds are close substitutes.<ul>
+<li>If 2y bond is too expensive, investors with the need can just buy 3y bond</li>
+<li>If borrowing for 2y is too expensive, investors can just borrow for 3y</li>
+</ul>
+</li>
+<li>As we will see now, principal component analysis (PCA) tells us 3 independent random variables are enough</li>
+<li>First we need some math</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=aeea9d61-0f91-407d-9faa-8834a24cf73c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Singular-Value-Decomposition">Singular Value Decomposition<a class="anchor-link" href="#Singular-Value-Decomposition">¶</a></h2><ul>
+<li>Every $m\times n$ matrix $X$ can be written as
+$$
+X = USV^{\mathsf T}, 
+$$
+where<ul>
+<li>$U$ is an $m\times m$ unitary matrix (more on unitary matrices later)</li>
+<li>$V$ is an $n\times n$ unitary matrix</li>
+<li>$S$ is only nonzero on the main diagonal, meaning if $S=(s_{i,j})$, then $s_{i,j} \neq 0$ only when $i\neq j$</li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 </div>
