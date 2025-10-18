@@ -7444,7 +7444,7 @@ main {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=41778c4a-0c55-4279-b69d-765f71566b6e">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=3172be1b-99ae-4d95-a0a6-fa6b7b14833e">
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=58501c89-20d4-4cf4-bb5b-9e5220b848a6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7555,9 +7555,31 @@ $$
 where<ul>
 <li>$U$ is an $m\times m$ unitary matrix (more on unitary matrices later)</li>
 <li>$V$ is an $n\times n$ unitary matrix</li>
-<li>$S$ is only nonzero on the main diagonal, meaning if $S=(s_{i,j})$, then $s_{i,j} \neq 0$ only when $i\neq j$</li>
+<li>$S$ is an $m\times n$ matrix with nonzero entries only on the main diagonal, meaning if $S=(s_{i,j})$, then $s_{i,j} \neq 0$ only when $i\neq j$</li>
 </ul>
 </li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7637571f-9b80-44c4-9e8b-40cfb78c0bbd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="The-$S$-Matrix">The $S$ Matrix<a class="anchor-link" href="#The-$S$-Matrix">¶</a></h2><ul>
+<li>This is what $S$ looks like:
+$$
+S = \begin{pmatrix}
+s_{1, 1} &amp; 0 &amp; \cdots &amp; 0\\ 
+0 &amp; s_{2, 1} &amp; \cdots &amp; 0\\ 
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots\\ 
+0 &amp; 0 &amp; \cdots &amp; s_{n, n}\\ 
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots\\ 
+0 &amp; 0 &amp; \cdots &amp; 0\\ 
+\end{pmatrix}_{m\times n}
+$$</li>
 </ul>
 </div>
 </div>
