@@ -62,6 +62,7 @@ Analysis of Fixed Income -- Fall 2025
    04_duration
    05_interpolation
    06_delta
+   08_pca
 
 .. toctree::
    :maxdepth: 1
