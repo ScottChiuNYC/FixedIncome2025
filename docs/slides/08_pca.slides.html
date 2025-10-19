@@ -7440,11 +7440,33 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="08.-PCA">08. PCA<a class="anchor-link" href="#08.-PCA">¶</a></h1>
+<h1 id="8.-PCA">8. PCA<a class="anchor-link" href="#8.-PCA">¶</a></h1>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=3172be1b-99ae-4d95-a0a6-fa6b7b14833e">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=695dde8f-85fc-48de-9d8d-d3679bbbbe1d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Overview">Overview<a class="anchor-link" href="#Overview">¶</a></h2><ul>
+<li>So far we have talked about<ul>
+<li>(Treasury) yield curve construction: A snap shot of the market</li>
+<li>Duration and convexity: What happens to the portfolio value if the curve moves parallelly</li>
+<li>Delta ladder: What happens to the portfolio value if the curve moves but not parallelly</li>
+</ul>
+</li>
+<li>Something is missing: How will tomorrow's curve move?<ul>
+<li>Of course no one knows exactly, but we can still say something</li>
+</ul>
+</li>
+<li>Principal component analysis (PCA) provide a great tool to model yield curve movements and to hedge any portfolios that have rates exposure</li>
+</ul>
+</div>
+</div>
+</div>
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=58501c89-20d4-4cf4-bb5b-9e5220b848a6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7535,7 +7557,7 @@ main {
 <li>If borrowing for 2y is too expensive, investors can just borrow for 3y</li>
 </ul>
 </li>
-<li>As we will see now, principal component analysis (PCA) tells us 3 independent random variables are enough</li>
+<li>As we will see now, PCA tells us 3 independent random variables are enough</li>
 <li>First we need some math</li>
 </ul>
 </div>
