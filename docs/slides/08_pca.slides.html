@@ -7569,7 +7569,7 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Singular-Value-Decomposition">Singular Value Decomposition<a class="anchor-link" href="#Singular-Value-Decomposition">¶</a></h2><ul>
+<h2 id="Singular-Value-Decomposition-(SVD)">Singular Value Decomposition (SVD)<a class="anchor-link" href="#Singular-Value-Decomposition-(SVD)">¶</a></h2><ul>
 <li>Every $m\times n$ matrix $X$ can be written as
 $$
 X = USV^{\mathsf T}, 
@@ -7580,6 +7580,7 @@ where<ul>
 <li>$S$ is an $m\times n$ matrix with nonzero entries only on the main diagonal, meaning if $S=(s_{i,j})$, then $s_{i,j} \neq 0$ only when $i = j$</li>
 </ul>
 </li>
+<li>For our purpose which is to model the curve movement, the important case is $m&gt;n$</li>
 </ul>
 </div>
 </div>
@@ -7593,7 +7594,7 @@ where<ul>
 <h2 id="The-$S$-Matrix">The $S$ Matrix<a class="anchor-link" href="#The-$S$-Matrix">¶</a></h2><p>$$
 S = \begin{pmatrix}
 s_{1, 1} &amp; 0 &amp; \cdots &amp; 0\\ 
-0 &amp; s_{2, 1} &amp; \cdots &amp; 0\\ 
+0 &amp; s_{2, 2} &amp; \cdots &amp; 0\\ 
 \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\ 
 0 &amp; 0 &amp; \cdots &amp; s_{n, n}\\ 
 \vdots &amp; \vdots &amp; \vdots &amp; \vdots\\ 
@@ -7636,10 +7637,10 @@ where $v_j$ are column vectors</li>
 <li>$V^{\mathsf T}V = I_n$:
 \begin{align*}
 V^{\mathsf T}V &amp;= \begin{pmatrix}
-\frac{\qquad}{} &amp; v_1 &amp; \frac{\qquad}{} \\
-\frac{\qquad}{} &amp; v_2 &amp; \frac{\qquad}{} \\
+\frac{\qquad}{} &amp; v_1^{\mathsf T} &amp; \frac{\qquad}{} \\
+\frac{\qquad}{} &amp; v_2^{\mathsf T} &amp; \frac{\qquad}{} \\
 &amp; \vdots &amp; \\
-\frac{\qquad}{} &amp; v_n &amp; \frac{\qquad}{} \\
+\frac{\qquad}{} &amp; v_n^{\mathsf T} &amp; \frac{\qquad}{} \\
 \end{pmatrix}
 \begin{pmatrix}
 |&amp;|&amp;  &amp; | \\
@@ -7807,7 +7808,51 @@ but I'll spare you the details</li>
 </div>
 </div>
 </div>
-</div></div></section></section>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=931e4697-16ec-4a62-8012-6c7d513ca464">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="One-Property-of-SVD">One Property of SVD<a class="anchor-link" href="#One-Property-of-SVD">¶</a></h2><ul>
+<li>Recall that $X = USV^{\mathsf T}$. We will write $T = US$ and $X = TV^{\mathsf T}$:
+\begin{align*}
+X_{m\times n} &amp;= USV^{\mathsf T}
+= \begin{pmatrix}
+\\
+|&amp;|&amp;  &amp;&amp;&amp; | \\\\
+u_1 &amp; u_2 &amp;&amp; \cdots\cdots &amp;&amp; u_m \\\\
+|&amp;|&amp;  &amp;&amp;&amp; | \\\\
+\end{pmatrix}_{m\times m}\begin{pmatrix}
+s_{1, 1} &amp; 0 &amp; \cdots &amp; 0\\ 
+0 &amp; s_{2, 1} &amp; \cdots &amp; 0\\ 
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots\\ 
+0 &amp; 0 &amp; \cdots &amp; s_{n, n}\\ 
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots\\ 
+0 &amp; 0 &amp; \cdots &amp; 0\\ 
+\end{pmatrix}_{m\times n}\begin{pmatrix}
+\frac{\qquad}{} &amp; v_1^{\mathsf T} &amp; \frac{\qquad}{} \\
+\frac{\qquad}{} &amp; v_2^{\mathsf T} &amp; \frac{\qquad}{} \\
+&amp; \vdots &amp; \\
+\frac{\qquad}{} &amp; v_n^{\mathsf T} &amp; \frac{\qquad}{} \\
+\end{pmatrix}_{n\times n}\\
+&amp;= TV^{\mathsf T} = \begin{pmatrix}
+\\
+|&amp;|&amp;  &amp; | \\\\
+s_{1, 1} u_1 &amp; s_{2, 2} u_2 &amp; \cdots &amp; s_{n, n}u_n \\\\
+|&amp;|&amp;  &amp; | \\\\
+\end{pmatrix}_{m\times n}\begin{pmatrix}
+\frac{\qquad}{} &amp; v_1^{\mathsf T} &amp; \frac{\qquad}{} \\
+\frac{\qquad}{} &amp; v_2^{\mathsf T} &amp; \frac{\qquad}{} \\
+&amp; \vdots &amp; \\
+\frac{\qquad}{} &amp; v_n^{\mathsf T} &amp; \frac{\qquad}{} \\
+\end{pmatrix}_{n\times n}
+\end{align*}</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section>
 </div>
 </div>
 </main>
