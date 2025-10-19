@@ -7452,7 +7452,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Overview">Overview<a class="anchor-link" href="#Overview">¶</a></h2><ul>
-<li>So far we have talked about<ul>
+<li>So far we have covered<ul>
 <li>(Treasury) yield curve construction: A snap shot of the market</li>
 <li>Duration and convexity: What happens to the portfolio value if the curve moves parallelly</li>
 <li>Delta ladder: What happens to the portfolio value if the curve moves but not parallelly</li>
@@ -7462,7 +7462,7 @@ main {
 <li>Of course no one knows exactly, but we can still say something</li>
 </ul>
 </li>
-<li>Principal component analysis (PCA) provide a great tool to model yield curve movements and to hedge any portfolios that have rates exposure</li>
+<li>Principal component analysis (PCA) provides a great tool to model yield curve movements and to hedge any portfolios that have rates exposure</li>
 </ul>
 </div>
 </div>
@@ -7554,7 +7554,7 @@ main {
 <ul>
 <li>Rates for nearby maturities on the curve tend to move together—both in direction and magnitude—because the corresponding bonds are close substitutes.<ul>
 <li>If 2y bond is too expensive, investors with the need can just buy 3y bond</li>
-<li>If borrowing for 2y is too expensive, investors can just borrow for 3y</li>
+<li>If borrowing for 2y is too expensive, borrowers can just borrow for 3y</li>
 </ul>
 </li>
 <li>As we will see now, PCA tells us 3 independent random variables are enough</li>
@@ -7577,7 +7577,7 @@ $$
 where<ul>
 <li>$U$ is an $m\times m$ unitary matrix (more on unitary matrices later)</li>
 <li>$V$ is an $n\times n$ unitary matrix</li>
-<li>$S$ is an $m\times n$ matrix with nonzero entries only on the main diagonal, meaning if $S=(s_{i,j})$, then $s_{i,j} \neq 0$ only when $i = j$</li>
+<li>$S$ is an $m\times n$ matrix with nonzero entries only on the main diagonal, meaning if $S=(s_{i,j})$, then $s_{i,j} \neq 0$ only when $i = j$. Also the nonzero elements are sorted, meaning $s_{1, 1} \geq s_{2, 2} \geq s_{3, 3} \geq \cdots \geq s_{n, n}$</li>
 </ul>
 </li>
 <li>For our purpose which is to model the curve movement, the important case is $m&gt;n$</li>
@@ -7601,6 +7601,9 @@ s_{1, 1} &amp; 0 &amp; \cdots &amp; 0\\
 0 &amp; 0 &amp; \cdots &amp; 0\\ 
 \end{pmatrix}_{m\times n}
 $$</p>
+<ul>
+<li>$s_{1, 1} \geq s_{2, 2} \geq s_{3, 3} \geq \cdots \geq s_{n, n}$</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7871,11 +7874,21 @@ s_{1, 1} u_1 &amp; s_{2, 2} u_2 &amp; \cdots &amp; s_{n, n}u_n \\\\
 \end{pmatrix}_{n\times n}
 \end{align*}</p>
 <ul>
-<li>$T$ has mutually perpendicular column vectors too but with norms $s_{1, 1}, s_{2, 2}, \ldots s_{n, n}$<ul>
+<li>$T$, like $U$, has mutually perpendicular column vectors too but with norms $s_{1, 1}, s_{2, 2}, \ldots s_{n, n}$<ul>
 <li>For example $\langle s_{1, 1}u_1, s_{2, 2}u_2\rangle = s_{1, 1}s_{2, 2}\langle u_1, u_2\rangle = 0$, as $s_{1, 1}$ and $s_{2, 2}$ are just scalars</li>
 </ul>
 </li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=890be360-7498-4130-a4bc-f088e0285a44">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Curve-PCA">Curve PCA<a class="anchor-link" href="#Curve-PCA">¶</a></h2><p>We start from collecting the yield curve movement data from the past $m=66$ days</p>
 </div>
 </div>
 </div>
