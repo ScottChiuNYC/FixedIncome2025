@@ -8253,9 +8253,21 @@ s_{1, 1} u_1 &amp; s_{2, 2} u_2 &amp; \cdots &amp; s_{n, n}u_n \\\\
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="What-Just-Happened?-The-Implication">What Just Happened? The Implication<a class="anchor-link" href="#What-Just-Happened?-The-Implication">¶</a></h2><p>$$
-$$
-$$
+<h2 id="What-Just-Happened?-The-Implication">What Just Happened? The Implication<a class="anchor-link" href="#What-Just-Happened?-The-Implication">¶</a></h2><ul>
+<li>Think of rows of $X$ as independent sample of the curve movement drawn from the same 8-dimensional distribution</li>
+<li>Recall that $X = TV^{\mathsf T}$. We have established that a unitary matrix like $V$ is a rotation matrix, so $X$ and $T$ are the same data, simply rotated</li>
+<li>One row of $X$ equals one row of $T$ multiplied by $V^{\mathsf T}$</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=97a914d1-cb73-4ab2-90de-ac873ed99832">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="The-Implication-(Cont.)">The Implication (Cont.)<a class="anchor-link" href="#The-Implication-(Cont.)">¶</a></h2><p>$$
 X = TV^{\mathsf T} \approx T\begin{pmatrix}
 \frac{\qquad}{} &amp; v_1^{\mathsf T} &amp; \frac{\qquad}{}\\
 \frac{\qquad}{} &amp; v_2^{\mathsf T} &amp; \frac{\qquad}{}\\
@@ -8264,8 +8276,6 @@ X = TV^{\mathsf T} \approx T\begin{pmatrix}
 \end{pmatrix}
 $$</p>
 <ul>
-<li>Think of rows of $X$ as independent sample of the curve movement drawn from the same 8-dimensional distribution</li>
-<li>We have established that a unitary matrix like $V$ is a rotation matrix, so $X$ and $T$ are the same data, simply rotated</li>
 <li>One row of $X$ equals one row of $T$ multiplied by $V$
 \begin{align*}
 \begin{pmatrix}
@@ -8282,7 +8292,8 @@ t_{11} &amp; t_{12} &amp; t_{13} &amp; \cdots &amp; t_{1n}
 \frac{\qquad}{} &amp; v_2^{\mathsf T} &amp; \frac{\qquad}{}\\
 \frac{\qquad}{} &amp; v_3^{\mathsf T} &amp; \frac{\qquad}{}\\\\
 &amp;0&amp;\\
-\end{pmatrix}
+\end{pmatrix}\\
+&amp;= t_{11} \vec v_1^{\mathsf T} + t_{12} \vec v_2^{\mathsf T} + t_{13} \vec v_3^{\mathsf T}
 \end{align*}</li>
 </ul>
 </div>
