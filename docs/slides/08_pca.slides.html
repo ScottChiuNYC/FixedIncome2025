@@ -7577,7 +7577,7 @@ $$
 where<ul>
 <li>$U$ is an $m\times m$ unitary matrix (more on unitary matrices later)</li>
 <li>$V$ is an $n\times n$ unitary matrix</li>
-<li>$S$ is an $m\times n$ matrix with nonzero entries only on the main diagonal, meaning if $S=(s_{i,j})$, then $s_{i,j} \neq 0$ only when $i = j$. Also the nonzero elements are sorted, meaning $s_{11} \geq s_{22} \geq s_{33} \geq \cdots \geq s_{nn}$</li>
+<li>$S$ is an $m\times n$ matrix with nonzero entries only on the main diagonal, meaning if $S=(s_{ij})$, then $s_{ij} \neq 0$ only when $i = j$. Also the nonzero elements are sorted, meaning $s_{11} \geq s_{22} \geq s_{33} \geq \cdots \geq s_{nn}$</li>
 </ul>
 </li>
 <li>For our purpose which is to model the curve movement, the important case is $m&gt;n$</li>
@@ -7663,12 +7663,8 @@ v_1 &amp; v_2 &amp; \cdots &amp; v_n \\
 \end{pmatrix}, 
 \end{align*}
 where $\langle \cdot, \cdot\rangle$ stands for the inner product of two vectors</li>
-<li>Definition: If $\vec a = (a_1, a_2, \ldots, a_n)^{\mathsf T}$ and $\vec b = (b_1, b_2, \ldots, b_n)^{\mathsf T}$, then
-$$
-\langle \vec a, \vec b\rangle = \vec a^{\mathsf T}\vec b = \vec b^{\mathsf T}\vec a = a_1b_1 + a_2b_2 + \cdots + a_nb_n
-$$</li>
 <li>Unitary means<ul>
-<li>The column vectors have <em>norm</em> 1 and</li>
+<li>The column vectors have norm 1 and</li>
 <li>Inner product of any two different column vectors is 0</li>
 </ul>
 </li>
@@ -7685,7 +7681,7 @@ $$</li>
 <h2 id="Vector-Norm">Vector Norm<a class="anchor-link" href="#Vector-Norm">¶</a></h2><ul>
 <li>Let $\vec a = (a_1, a_2, \ldots, a_n)^{\mathsf T}$ be a column vector. Then its norm is
 \begin{align*}
-\lVert \vec a \rVert = \sqrt{\langle a, a\rangle} = \sqrt{a_1^2 + a_2^2 + \cdots + a_n^2}. 
+\lVert \vec a \rVert = \sqrt{\langle a, a\rangle} = \sqrt{a_1^2 + a_2^2 + \cdots + a_n^2}
 \end{align*}</li>
 <li>Norm is the "length" of a vector in high dimensions</li>
 </ul>
@@ -7693,7 +7689,23 @@ $$</li>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b6a1c669-fccc-4115-8526-5f02873b07e9">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=837b1d15-ea2d-4ac5-b436-6b4ea0f6f91a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Inner-Product">Inner Product<a class="anchor-link" href="#Inner-Product">¶</a></h2><ul>
+<li>If $\vec a = (a_1, a_2, \ldots, a_n)^{\mathsf T}$ and $\vec b = (b_1, b_2, \ldots, b_n)^{\mathsf T}$, then
+\begin{align*}
+\langle \vec a, \vec b\rangle &amp;= \vec a^{\mathsf T}\vec b = \vec b^{\mathsf T}\vec a \\
+&amp;= a_1b_1 + a_2b_2 + \cdots + a_nb_n
+\end{align*}</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4f2e4ca2-12a6-4c8e-8048-f62b11db2647">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7714,7 +7726,23 @@ So $\theta_1 - \theta_2 = 90^{\circ}$ (plus multiples of $180^{\circ}$), so $v_1
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b6a1c669-fccc-4115-8526-5f02873b07e9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>In general, in 2D and 3D, inner product has the property
+$$
+\langle \vec a, \vec b\rangle = \lVert \vec a \rVert\lVert \vec b \rVert \cos\theta,
+$$
+where $\theta$ is the angle between the two vectors</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=51ee8e65-0eb2-437d-971e-4d943ad9e4ef">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
