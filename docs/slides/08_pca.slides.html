@@ -8339,9 +8339,54 @@ s_{11} u_1 &amp; s_{22} u_2 &amp; \cdots &amp; s_{nn}u_n \\\\
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="What-Just-Happened?-The-Implication">What Just Happened? The Implication<a class="anchor-link" href="#What-Just-Happened?-The-Implication">¶</a></h2><ul>
-<li>Think of rows of $X$ as independent sample of the curve movement drawn from the same 8-dimensional distribution</li>
 <li>Recall that $X = TV^{\mathsf T}$. We have established that a unitary matrix like $V$ is a rotation matrix, so $X$ and $T$ are the same data, simply rotated</li>
-<li>One row of $X$ equals one row of $T$ multiplied by $V^{\mathsf T}$</li>
+<li>Think of rows of $X$ as independent sample points of the curve movement drawn from the same 8-dimensional distribution</li>
+<li>Rows of $T$ are then also independent sample points drawn from some 8-dimensional distribution</li>
+<li>One row of $X$ equals one row of $T$ multiplied by $V^{\mathsf T}$<ul>
+<li>This is a conclusion from the block matrix multiplication</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cd21ac75-403f-4610-abd3-4aa492bf1046">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Block-Matrix-Multiplication">Block Matrix Multiplication<a class="anchor-link" href="#Block-Matrix-Multiplication">¶</a></h2><ul>
+<li>If all $A, B, C, \ldots, H$ have the right sizes so that all the below operations are legal, then
+$$
+\begin{pmatrix}
+\begin{array}{c|c}
+A &amp; B\\
+\hline
+C &amp; D
+\end{array}
+\end{pmatrix}
+\begin{pmatrix}
+\begin{array}{c|c}
+E &amp; F\\
+\hline
+G &amp; H
+\end{array}
+\end{pmatrix} = 
+\begin{pmatrix}
+\begin{array}{c|c}
+AE+BG &amp; AF+BH\\
+\hline
+CE+DG &amp; CF+DH
+\end{array}
+\end{pmatrix}
+$$</li>
+<li>Legal means for example<ul>
+<li>Number of columns in $A$ equals number of rows in $E$ so that the matrix multiplication $AE$ is defined</li>
+<li>$AE$ and $BG$ have the the same size so that $AE + BG$ is defined</li>
+</ul>
+</li>
+<li>That one row of $X$ equals one row of $T$ multiplied by $V^{\mathsf T}$ if $X = TV^{\mathsf T}$ is a special case where $X$ and $T$ are sliced into rows</li>
 </ul>
 </div>
 </div>
@@ -8370,8 +8415,56 @@ t_{11} &amp; t_{12} &amp; t_{13} &amp; \cdots &amp; t_{1n}
 \frac{\qquad}{} &amp; v_3^{\mathsf T} &amp; \frac{\qquad}{}\\
 &amp;\vdots&amp;\\
 \end{pmatrix}\\
-&amp;= t_{11} \vec v_1^{\mathsf T} + t_{12} \vec v_2^{\mathsf T} + t_{13} \vec v_3^{\mathsf T} + t_{14} \vec v_4^{\mathsf T} + \cdots + t_{1n} \vec v_n^{\mathsf T} 
+&amp;= t_{11} \vec v_1^{\mathsf T} + t_{12} \vec v_2^{\mathsf T} + t_{13} \vec v_3^{\mathsf T} + t_{14} \vec v_4^{\mathsf T} + \cdots + t_{1n} \vec v_n^{\mathsf T}\\
+&amp;= t_{11} \vec v_1^{\mathsf T} + t_{12} \vec v_2^{\mathsf T} + t_{13} \vec v_3^{\mathsf T} + \vec\epsilon\\
 \end{align*}</li>
+<li>We obtain a 3-factor model for the yield curve movement $\vec x$:
+$$
+\vec x = t_1 \vec v_1^{\mathsf T} + t_2 \vec v_2^{\mathsf T} + t_3 \vec v_3^{\mathsf T} + \vec\epsilon\\
+$$</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=71175c9e-235e-4dce-81b8-0b636ac05973">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Center-the-Data?">Center the Data?<a class="anchor-link" href="#Center-the-Data?">¶</a></h2><ul>
+<li><p>Centering the data means find the average yield curve movement and subtract the average from the data</p>
+</li>
+<li><p>If we had centered the data with the average $\vec x_{\text{avg}}$, we would have got
+\begin{align*}
+\vec x = \vec x_{\text{avg}} + t_{1} \vec v_1^{\mathsf T} + t_{2} \vec v_2^{\mathsf T} + t_{3} \vec v_3^{\mathsf T} + \vec\epsilon\\
+\end{align*}</p>
+</li>
+<li><p>In practice, PCA is performed in a rolling period, and $\vec x_{\text{avg}}$ would be a moving average</p>
+</li>
+<li><p>The 3-factor model is used to predict tomorrow's yield curve movement, whether to use the version with a moving average is personal choice</p>
+</li>
+<li><p>By not centering the data, we are assuming $E[\vec x] = \vec x_{\text{avg}} = \vec 0$.</p>
+</li>
+<li><p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+</li>
+<li><p>One simple assumption that can lead to $E[\vec x] = \vec 0$ is $E(t_1) = E(t_2) = E(t_3) = 0$, $E(\vec\epsilon) = \vec 0$</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e884ebcd-517c-4354-9269-d0245eb3bfc4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Role-of-$t$'s-in-the-Model">Role of $t$'s in the Model<a class="anchor-link" href="#Role-of-$t$'s-in-the-Model">¶</a></h2><ul>
+<li>Tomorrow's yield curve movement $\vec x$ is
+$$
+\vec x = t_1 \vec v_1^{\mathsf T} + t_2 \vec v_2^{\mathsf T} + t_3 \vec v_3^{\mathsf T} + \vec\epsilon\\
+$$</li>
 </ul>
 </div>
 </div>
