@@ -7577,7 +7577,7 @@ $$
 where<ul>
 <li>$U$ is an $m\times m$ unitary matrix (more on unitary matrices later)</li>
 <li>$V$ is an $n\times n$ unitary matrix</li>
-<li>$S$ is an $m\times n$ matrix with nonzero entries only on the main diagonal, meaning if $S=(s_{i,j})$, then $s_{i,j} \neq 0$ only when $i = j$. Also the nonzero elements are sorted, meaning $s_{1, 1} \geq s_{2, 2} \geq s_{3, 3} \geq \cdots \geq s_{n, n}$</li>
+<li>$S$ is an $m\times n$ matrix with nonzero entries only on the main diagonal, meaning if $S=(s_{i,j})$, then $s_{i,j} \neq 0$ only when $i = j$. Also the nonzero elements are sorted, meaning $s_{11} \geq s_{22} \geq s_{33} \geq \cdots \geq s_{nn}$</li>
 </ul>
 </li>
 <li>For our purpose which is to model the curve movement, the important case is $m&gt;n$</li>
@@ -7593,16 +7593,16 @@ where<ul>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="The-$S$-Matrix">The $S$ Matrix<a class="anchor-link" href="#The-$S$-Matrix">¶</a></h2><p>$$
 S = \begin{pmatrix}
-s_{1, 1} &amp; 0 &amp; \cdots &amp; 0\\ 
-0 &amp; s_{2, 2} &amp; \cdots &amp; 0\\ 
+s_{11} &amp; 0 &amp; \cdots &amp; 0\\ 
+0 &amp; s_{22} &amp; \cdots &amp; 0\\ 
 \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\ 
-0 &amp; 0 &amp; \cdots &amp; s_{n, n}\\ 
+0 &amp; 0 &amp; \cdots &amp; s_{nn}\\ 
 \vdots &amp; \vdots &amp; \vdots &amp; \vdots\\ 
 0 &amp; 0 &amp; \cdots &amp; 0\\ 
 \end{pmatrix}_{m\times n}
 $$</p>
 <ul>
-<li>$s_{1, 1} \geq s_{2, 2} \geq s_{3, 3} \geq \cdots \geq s_{n, n}$</li>
+<li>$s_{11} \geq s_{22} \geq s_{33} \geq \cdots \geq s_{nn}$</li>
 </ul>
 </div>
 </div>
@@ -7663,7 +7663,10 @@ v_1 &amp; v_2 &amp; \cdots &amp; v_n \\
 \end{pmatrix}, 
 \end{align*}
 where $\langle \cdot, \cdot\rangle$ stands for the inner product of two vectors</li>
-<li>Definition: If $\vec a = (a_1, a_2, \ldots, a_n)^{\mathsf T}$ and $\vec b = (b_1, b_2, \ldots, b_n)^{\mathsf T}$, then $\langle \vec a, \vec b\rangle = a_1b_1 + a_2b_2 + \cdots + a_nb_n$</li>
+<li>Definition: If $\vec a = (a_1, a_2, \ldots, a_n)^{\mathsf T}$ and $\vec b = (b_1, b_2, \ldots, b_n)^{\mathsf T}$, then
+$$
+\langle \vec a, \vec b\rangle = \vec a^{\mathsf T}\vec b = \vec b^{\mathsf T}\vec a = a_1b_1 + a_2b_2 + \cdots + a_nb_n
+$$</li>
 <li>Unitary means<ul>
 <li>The column vectors have <em>norm</em> 1 and</li>
 <li>Inner product of any two different column vectors is 0</li>
@@ -7886,10 +7889,10 @@ X_{m\times n} &amp;= \begin{pmatrix}
 u_1 &amp; u_2 &amp;&amp; \cdots &amp;&amp; u_m \\\\
 |&amp;|&amp;  &amp;&amp;&amp; | \\\\
 \end{pmatrix}_{m\times m}\begin{pmatrix}
-s_{1, 1} &amp; 0 &amp; \cdots &amp; 0\\ 
+s_{11} &amp; 0 &amp; \cdots &amp; 0\\ 
 0 &amp; s_{2, 1} &amp; \cdots &amp; 0\\ 
 \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\ 
-0 &amp; 0 &amp; \cdots &amp; s_{n, n}\\ 
+0 &amp; 0 &amp; \cdots &amp; s_{nn}\\ 
 \vdots &amp; \vdots &amp; \vdots &amp; \vdots\\ 
 0 &amp; 0 &amp; \cdots &amp; 0\\ 
 \end{pmatrix}_{m\times n}\begin{pmatrix}
@@ -7901,7 +7904,7 @@ s_{1, 1} &amp; 0 &amp; \cdots &amp; 0\\
 &amp;= TV^{\mathsf T} = \begin{pmatrix}
 \\
 |&amp;|&amp;  &amp; | \\\\
-s_{1, 1} u_1 &amp; s_{2, 2} u_2 &amp; \cdots &amp; s_{n, n}u_n \\\\
+s_{11} u_1 &amp; s_{22} u_2 &amp; \cdots &amp; s_{nn}u_n \\\\
 |&amp;|&amp;  &amp; | \\\\
 \end{pmatrix}_{m\times n}\begin{pmatrix}
 \frac{\qquad}{} &amp; v_1^{\mathsf T} &amp; \frac{\qquad}{} \\
@@ -7924,7 +7927,7 @@ s_{1, 1} u_1 &amp; s_{2, 2} u_2 &amp; \cdots &amp; s_{n, n}u_n \\\\
 X_{m\times n} = TV^{\mathsf T} = \begin{pmatrix}
 \\
 |&amp;|&amp;  &amp; | \\\\
-s_{1, 1} u_1 &amp; s_{2, 2} u_2 &amp; \cdots &amp; s_{n, n}u_n \\\\
+s_{11} u_1 &amp; s_{22} u_2 &amp; \cdots &amp; s_{nn}u_n \\\\
 |&amp;|&amp;  &amp; | \\\\
 \end{pmatrix}_{m\times n}\begin{pmatrix}
 \frac{\qquad}{} &amp; v_1^{\mathsf T} &amp; \frac{\qquad}{} \\
@@ -7934,8 +7937,8 @@ s_{1, 1} u_1 &amp; s_{2, 2} u_2 &amp; \cdots &amp; s_{n, n}u_n \\\\
 \end{pmatrix}_{n\times n}
 \end{align*}</p>
 <ul>
-<li>$T$, like $U$, has mutually perpendicular column vectors too but with norms $s_{1, 1}, s_{2, 2}, \ldots s_{n, n}$<ul>
-<li>For example $\langle s_{1, 1}u_1, s_{2, 2}u_2\rangle = s_{1, 1}s_{2, 2}\langle u_1, u_2\rangle = 0$, as $s_{1, 1}$ and $s_{2, 2}$ are just scalars</li>
+<li>$T$, like $U$, has mutually perpendicular column vectors too but with norms $s_{11}, s_{22}, \ldots s_{nn}$<ul>
+<li>For example $\langle s_{11}u_1, s_{22}u_2\rangle = s_{11}s_{22}\langle u_1, u_2\rangle = 0$, as $s_{11}$ and $s_{22}$ are just scalars</li>
 </ul>
 </li>
 </ul>
@@ -8230,7 +8233,7 @@ s_{1, 1} u_1 &amp; s_{2, 2} u_2 &amp; \cdots &amp; s_{n, n}u_n \\\\
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Scores">Scores<a class="anchor-link" href="#Scores">¶</a></h2><ul>
 <li>Class result: PC1 score volatility $\gg$ PC2 score volatility $\gg$ PC3 score volatility</li>
-<li>Curve movements that can't be explained by the first 3 PCs are often treated as noise</li>
+<li>Given how tiny PC4 (and beyond) score volatility is, curve movements that can't be explained by the first 3 PCs are often treated as noise</li>
 </ul>
 </div>
 </div>
