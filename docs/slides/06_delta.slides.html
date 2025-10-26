@@ -7549,6 +7549,97 @@ main {
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=4942120a-9fdc-4b1d-ace9-27b454c7e6cc">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>0.6689807456903467</pre>
+</div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=12efebda-3971-4a5f-abc7-887b928a94c5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Delta-Ladder-of-a-ZCB:-Example">Delta Ladder of a ZCB: Example<a class="anchor-link" href="#Delta-Ladder-of-a-ZCB:-Example">¶</a></h2><ul>
+<li>Assuming 10y yield is $4.02\%$, what's the Delta ladder of the 10y ZCB paying $\$1$ at maturity?</li>
+<li>Let's look at the Delta at the 10y bucket first. What happens to the ZCB price if 10y yield is up 1bp?</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cb940860-0028-4c27-8ea2-703d5b7e5478">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>ZCB price today is $e^{-TR} = e^{-10\times 0.0402} = 0.66898$</li>
+<li>If the 10y yield is up $\Delta = 1$bp, the bond price change is $e^{-T(R+\Delta)} - e^{-TR}$</li>
+<li>But for small yield change we have the approximation
+$$
+\frac{e^{-T(R+\Delta)} - e^{-TR}}{\Delta} \approx -Te^{-TR}
+$$</li>
+<li>Thus we have the bond price change
+\begin{align*}
+e^{-T(R+\Delta)} - e^{-TR} &amp;\approx -Te^{-TR}\Delta \\
+&amp;= -10\times 0.66898\times 0.0001\\
+&amp;= -0.00066898
+\end{align*}</li>
+<li>This is the Delta at the 10y bucket</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=da5168b5-7b35-47e9-8835-aa9d889bace8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>Yield change at other points won't affect the ZCB price a bit, so the Delta ladder is 0 at all buckets except 10y where the Delta is $-0.00066898$</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=146adba7-624d-43da-ae7e-44f455c9b5cf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Delta-Ladder-of-a-ZCB:-Example-(Cont.)">Delta Ladder of a ZCB: Example (Cont.)<a class="anchor-link" href="#Delta-Ladder-of-a-ZCB:-Example-(Cont.)">¶</a></h2><ul>
+<li>Recall that<ul>
+<li>A bond's price change is approximately $-D^{\$}\Delta$ for small yield change $\Delta$</li>
+<li>A ZCB's dollar duration $T\times\text{(current bond price)} = T e^{-TR}$</li>
+<li>Thus ZCB price change is $-Te^{-TR}\Delta$</li>
+<li>We've just derived the same conclusion as Chapter 4 (and if you check Chapter 4 carefully you will find it's the same derivation)</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=52dc476c-6aaf-49ca-9386-3e6d4b9163b5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Delta-Ladder-of-a-ZCB:-Exercise">Delta Ladder of a ZCB: Exercise<a class="anchor-link" href="#Delta-Ladder-of-a-ZCB:-Exercise">¶</a></h2><ul>
+<li>Assuming 2y yield is $3.46\%$, what's the Delta ladder of the 10y ZCB paying $\$1$ at maturity?</li>
+</ul>
+</div>
+</div>
+</div>
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6e2aca88-445d-472f-bb6a-54c8a5d1bff5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7852,7 +7943,7 @@ main {
 $$
 -D^{\$} \Delta \approx P(\Delta) - P(0)
 $$</li>
-<li>Thus, a bond portfolio's negative dollar duration $-D^{\$}$ should be always close to its sum of bucketed delta</li>
+<li>Thus, a bond portfolio's negative dollar duration $-D^{\$}$ should be always close to its sum of bucketed delta times $10,000 = 1/(1 \text{ bp}) = 1/\Delta$, a conclusion consistent with the previous example and exercise</li>
 </ul>
 </div>
 </div>
