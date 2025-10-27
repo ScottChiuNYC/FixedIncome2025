@@ -7444,20 +7444,62 @@ main {
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a0fd8cd8-f65e-4b2d-9273-50e3a6b07d4a">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=59c9851d-6f7f-418f-ae45-af80071ea73e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Types-of-Interest-Rate-Futures">Types of Interest Rate Futures<a class="anchor-link" href="#Types-of-Interest-Rate-Futures">¶</a></h2><ul>
-<li>Interest rate futures are exchange products</li>
-<li>In the U.S., by far the most pupolar ones are<ul>
-<li>Treasury Futures</li>
-<li>SOFR Futures</li>
+<li>Futures are exchange products</li>
+<li>There is a margin mechanism to avoid default risk</li>
+<li>In the U.S., by far the most pupolar interest rate futures are<ul>
+<li>Treasury futures</li>
+<li>SOFR futures</li>
 </ul>
 </li>
 <li>Both products of the CME group</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3e6156f5-11fa-4f96-b8e2-3740fb4302fc">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Treasury-Futures-Overview">Treasury Futures Overview<a class="anchor-link" href="#Treasury-Futures-Overview">¶</a></h2><ul>
+<li>Historical note: Treasury futures were CBOT (Chicago Board of Trade) products. CBOT merged with CME (Chicago Mercantile Exchange) in 2007 to form the current CME group</li>
+<li>Deliverable bonds<ul>
+<li>A typical futures contract requires one party to deliver a specified quantity of the underlying commodity (think of <a href="https://www.ice.com/products/30/FCOJ-A-Futures">15,000 pounds of frozen concentrated orange juice</a>) to the other on the delivery date</li>
+<li>But there are so many treasuries with various dates and coupon rates this won't work</li>
+<li>Treasury futures are structured in a way that, all similar treasuries can be delivered</li>
+</ul>
+</li>
+<li>Delivery date<ul>
+<li>There is not a set delivery date. The party with a short position can choose to deliver on any business day of the contract month</li>
+</ul>
+</li>
+<li>Contract size: One contract involves the delivery of $\$100,000$ face value of the bonds</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=34bb191d-5674-46a3-8cba-e8ddda956f7a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Quotes">Quotes<a class="anchor-link" href="#Quotes">¶</a></h2><ul>
+<li>Treasury bond futures prices are quoted int he same way as the Treasury bond prices (the spot market)</li>
+<li>Quotes are in dollars and 32nds of a dollar per $\$100$ face value<ul>
+<li>$110$-$03$ means $\$110\frac{3}{32}$ for a T-bond with face value $\$100$</li>
+<li>One futures contract represents $\$100,000$ face value of the delivered bonds so $1,000$ such bonds with face value $\$100$</li>
+<li>If the quoted price dropded by $\$1$, say from $110$-$03$ to $109$-$03$, the holder of a futures contract lose $\$1,000$</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -7469,7 +7511,6 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Treasury-Futures">Treasury Futures<a class="anchor-link" href="#Treasury-Futures">¶</a></h2><ul>
-<li>Historical note: Treasury futures were CBOT (Chicago Board of Trade) products. CBOT merged with CME (Chicago Mercantile Exchange) in 2007 to form the current CME group</li>
 <li>For specs of Treasury futures, see <a href="https://www.cmegroup.com/">cmegroup.com</a> &gt; MARKETS &gt; Interest Rates &gt; U.S. Treasuries<ul>
 <li>More detailed spec in the <a href="https://www.cmegroup.com/rulebook/CBOT/">rule book</a>, for example <a href="https://www.cmegroup.com/rulebook/CBOT/II/18.pdf">Chapter 18</a> for ZBZ5</li>
 </ul>
@@ -7515,7 +7556,7 @@ main {
 <thead>
 <tr style="text-align: right;">
 <th></th>
-<th>Name</th>
+<th>Ticker</th>
 <th>Remaining Term</th>
 <th>Original Term</th>
 <th>Notes</th>
@@ -7523,43 +7564,43 @@ main {
 </thead>
 <tbody>
 <tr>
-<th>ZTZ5</th>
-<td>2-Year T-Note Futures</td>
+<th>2-Year T-Note Futures</th>
+<td>ZTZ5</td>
 <td>[1y9m, 2y]</td>
 <td>&lt;= 5y3m</td>
 <td></td>
 </tr>
 <tr>
-<th>ZFZ5</th>
-<td>5-Year T-Note Futures</td>
+<th>5-Year T-Note Futures</th>
+<td>ZFZ5</td>
 <td>&gt;= 4y2m</td>
 <td>&lt;= 5y3m</td>
 <td></td>
 </tr>
 <tr>
-<th>ZNZ5</th>
-<td>10-Year T-Note Futures</td>
+<th>10-Year T-Note Futures</th>
+<td>ZNZ5</td>
 <td>[6.5y, 8y]</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<th>TNZ5</th>
-<td>Ultra 10-Year U.S. Treasury Note Futures</td>
+<th>Ultra 10-Year U.S. T-Note Futures</th>
+<td>TNZ5</td>
 <td>[9y5m, 10y]</td>
 <td>10y</td>
 <td></td>
 </tr>
 <tr>
-<th>ZBZ5</th>
-<td>U.S. Treasury Bond Futures</td>
+<th>U.S. T-Bond Futures</th>
+<td>ZBZ5</td>
 <td>[15y, 25y)</td>
 <td></td>
 <td>Can be callable</td>
 </tr>
 <tr>
-<th>UBZ5</th>
-<td>Ultra U.S. Treasury Bond Futures</td>
+<th>Ultra U.S. T-Bond Futures</th>
+<td>UBZ5</td>
 <td>&gt;= 25y</td>
 <td></td>
 <td></td>
@@ -7589,7 +7630,7 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Month-Code">Month Code<a class="anchor-link" href="#Month-Code">¶</a></h2><ul>
+<h2 id="Delivery-Month-Code">Delivery Month Code<a class="anchor-link" href="#Delivery-Month-Code">¶</a></h2><ul>
 <li>ZBZ5 means Dec 2025 contract, ZBH6 means Mar 2025 contract, etc.</li>
 </ul>
 <p>$$
@@ -7643,13 +7684,14 @@ $$</p>
 <p>$$
 $$</p>
 <ul>
-<li>There are <strong>quarterly futures</strong> for delivery months HMUZ and <strong>serial futures</strong> for other "off-quarter" months</li>
+<li>There are <strong>quarterly futures</strong> for March, June, September and December (HMUZ) and <strong>serial futures</strong> for other "off-quarter" months</li>
 <li>For Treasury futures, only quarterly are trading. For SOFR futures, serial are also trading</li>
 <li>Quarterly are much more liquid (important)</li>
 </ul>
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=6f4f7cab-540e-4985-a571-c5943c5a19e6">
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=99a49926">
 <div class="jp-Cell-inputWrapper" tabindex="0">
