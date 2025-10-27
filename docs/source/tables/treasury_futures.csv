@@ -1,0 +1,7 @@
+,Name,Remaining Term,Original Term
+ZTZ5,2-Year T-Note Futures,>= 1y9m,<= 5y3m
+ZFZ5,5-Year T-Note Futures,>= 4y2m,<= 5y3m
+ZNZ5,10-Year T-Note Futures,"[6.5y, 8y]"," "
+TNZ5,Ultra 10-Year U.S. Treasury Note Futures,"[9y5m, 10y]",10y
+ZBZ5,U.S. Treasury Bond Futures,"[15y, 25y)"," "
+UBZ5,Ultra U.S. Treasury Bond Futures,>= 25y," "
