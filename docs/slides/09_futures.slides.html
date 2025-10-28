@@ -7731,7 +7731,7 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Conversion-Factor">Conversion Factor<a class="anchor-link" href="#Conversion-Factor">¶</a></h2><ul>
-<li>Because you can choose to deliver from a basket of bonds, it wouldn't make sense to settle with one single futures settlement price. It has to be adjusted</li>
+<li>Because you can choose to deliver from a basket of bonds, it wouldn't make sense to settle all contracts with one single futures settlement price. It has to be adjusted</li>
 <li>Cash received by the short when a bond is delivered is
 $$
 (\text{Futures settlement} \times \text{Conversion factor}) + \text{Accrued interest}
@@ -7807,6 +7807,30 @@ $$
 \sum_{j=1}^{40}\frac{5}{1.03^j} + \frac{100}{1.03^{40}} = \$146.23
 $$</li>
 <li>Dividing by the face value gives a conversion factor of $1.4623$</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5e3f98b8-4779-46a8-89c5-3170b3487d48">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Cheapest-To-Deliver-(CTD)-Bond">Cheapest-To-Deliver (CTD) Bond<a class="anchor-link" href="#Cheapest-To-Deliver-(CTD)-Bond">¶</a></h2><ul>
+<li>The conversion factors only roughly adjust the differences of all deliverable bonds. There is still one that's cheapest to deliver</li>
+<li>The party with a short position needs to deliver the bonds and receive cash
+$$
+(\text{Futures settlement} \times \text{Conversion factor}) + \text{Accrued interest}
+$$</li>
+<li>The party can deliver the bonds it just purchased in the market at
+$$
+\text{Quoted bond price} + \text{Accrued interest}
+$$</li>
+<li>The cost to do so is therefore
+$$
+\text{Quoted bond price} - (\text{Futures settlement} \times \text{Conversion factor})
+$$</li>
 </ul>
 </div>
 </div>
