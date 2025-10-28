@@ -7686,12 +7686,26 @@ $$</p>
 <ul>
 <li>There are <strong>quarterly futures</strong> for March, June, September and December (HMUZ) and <strong>serial futures</strong> for other "off-quarter" months</li>
 <li>For Treasury futures, only quarterly are trading. For SOFR futures, serial are also trading</li>
-<li>Quarterly are much more liquid (important)</li>
+<li>Quarterly are much more liquid and important</li>
 </ul>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=6f4f7cab-540e-4985-a571-c5943c5a19e6">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c12ae235-d025-43b3-a949-928628f7f61e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id=""><a class="anchor-link" href="#">¶</a></h2><ul>
+<li>Cash received by the short when a bond is delivered is
+$$
+(\text{Most recent futures settlement price} \times \text{Conversion factor}) + \text{Accrued interest}
+$$</li>
+</ul>
+</div>
+</div>
+</div>
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=99a49926">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7851,6 +7865,34 @@ Settlement = 93.25: costs = [2.69, 1.87, 2.12]; cheapest bond = 2 (cost = $1.87)
 </tbody>
 </table>
 <p>Instruction: Treat the numeric ranges above as placeholders for pedagogical examples. When we obtain the product‑spec PDFs or exact rulebook pages, I will (a) replace the ranges with verbatim contract windows, (b) include any coupon or CUSIP eligibility rules, and (c) add links/citations to the exchange source.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1f0d7819">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Why-invoice-=-(settlement-%C3%97-conversion-factor)-+-accrued-interest">Why invoice = (settlement × conversion factor) + accrued interest<a class="anchor-link" href="#Why-invoice-=-(settlement-%C3%97-conversion-factor)-+-accrued-interest">¶</a></h2><p>Treasury futures are designed to allow a short to deliver any one of a set of eligible Treasury securities (different coupons and maturity dates). Because delivered bonds differ in coupon and remaining cashflows, the exchange converts the quoted futures price into the cash amount payable for a specific bond using two adjustments:</p>
+<ul>
+<li>Conversion factor: normalizes a bond's price to the futures basis. The conversion factor equals the theoretical clean price (per $100 par) that the bond would have at a standard reference yield (historically 6% with semiannual compounding). Multiplying the futures settlement by the bond's conversion factor gives the invoice 'clean' price component for that bond.</li>
+<li>Accrued interest: compensates the deliverer for coupon interest that has accrued since the last coupon date. Bonds trade with accrued interest in the cash market, so delivery must include accrued interest to fully compensate the short.</li>
+</ul>
+<p>Together these terms give the cash the short receives when delivering a particular bond:</p>
+<pre><code>Invoice = (futures settlement × conversion factor) + accrued interest
+</code></pre>
+<p>Why other futures don't need this: many futures reference a single standardized deliverable (a fixed grade/quantity and location) or are cash‑settled (equity index futures). Those contracts don't require a per‑issue normalization by coupon and hence don't use a conversion factor plus accrued interest term.</p>
+<p>Practical consequence: the conversion‑factor system creates delivery optionality (the short chooses which eligible bond to deliver) and gives rise to cheapest‑to‑deliver (CTD) behavior and a persistent basis between cash and futures. Traders must include CF, accrued interest, and financing/repo costs when evaluating delivery or arbitrage decisions.</p>
+<p>Example (illustrative):</p>
+<ul>
+<li>Futures settlement = 95.00 (per $100 par)</li>
+<li>Bond conversion factor = 1.25</li>
+<li>Accrued interest = 0.45</li>
+<li>Invoice = 95.00 × 1.25 + 0.45 = 119.20</li>
+</ul>
+<p>If the bond's clean market price = 119.10, the short's approximate pre‑financing net = (119.10 + 0.45) − 119.20 = +0.35 (profit before financing/repo cost).</p>
+<p>(End of explanation — I can expand this section with a short diagram or add references to the CBOT rulebook if you'd like.)</p>
 </div>
 </div>
 </div>
