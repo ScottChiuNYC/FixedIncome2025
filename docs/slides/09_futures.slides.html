@@ -7751,7 +7751,8 @@ $$</li>
 <h2 id="Computing-the-Conversion-Factor">Computing the Conversion Factor<a class="anchor-link" href="#Computing-the-Conversion-Factor">¶</a></h2><ul>
 <li>The conversion factor for a bond is equal to the quoted price the bond would have per dollar of principal on the first day of the delivery month on the assumption that the interest rate for all maturities equals $6\%$ per annum (with semiannual compounding)</li>
 <li>The bond maturity and the times to the coupon payment dates are rounded down to the nearest 3 months for the purposes of the calculation</li>
-<li>If after rounding, the bond lasts for an exact number of 6-month periods, the first coupon is assumed to be paid in 6 months</li>
+<li>If, after rounding, the bond lasts for an exact number of 6-month periods, the first coupon is assumed to be paid in 6 months</li>
+<li>If, after rounding, the bond does not last for an exact number of 6-month periods (i.e., there are an extra 3 months), the first coupon is assumed to be paid in 3 months and accrued interest is subtracted</li>
 </ul>
 </div>
 </div>
