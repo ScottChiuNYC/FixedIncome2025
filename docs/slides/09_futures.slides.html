@@ -7474,7 +7474,7 @@ main {
 <li>Deliverable bonds<ul>
 <li>A typical futures contract requires one party to deliver a specified quantity of the underlying commodity (think of <a href="https://www.ice.com/products/30/FCOJ-A-Futures">15,000 pounds of frozen concentrated orange juice</a>) to the other on the delivery date</li>
 <li>But there are so many treasuries with various dates and coupon rates this won't work</li>
-<li>Treasury futures are structured in a way that, all similar treasuries can be delivered</li>
+<li>Treasury futures are structured in a way that, all similar treasuries can be delivered (but for a single futures contract you must deliver a single eligible bond; you cannot split one contract's delivery across two different bonds)</li>
 </ul>
 </li>
 <li>Delivery date<ul>
@@ -7697,11 +7697,13 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id=""><a class="anchor-link" href="#">¶</a></h2><ul>
+<h2 id="Conversion-Factor">Conversion Factor<a class="anchor-link" href="#Conversion-Factor">¶</a></h2><ul>
+<li></li>
 <li>Cash received by the short when a bond is delivered is
 $$
-(\text{Most recent futures settlement price} \times \text{Conversion factor}) + \text{Accrued interest}
+(\text{Futures settlement} \times \text{Conversion factor}) + \text{Accrued interest}
 $$</li>
+<li>Futures settlement is the most recent futures settlement price</li>
 </ul>
 </div>
 </div>
