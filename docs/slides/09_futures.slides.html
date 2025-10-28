@@ -7512,7 +7512,7 @@ main {
 <li>Deliverable bonds<ul>
 <li>A typical futures contract requires one party to deliver a specified quantity of the underlying commodity (think of <a href="https://www.ice.com/products/30/FCOJ-A-Futures">15,000 pounds of frozen concentrated orange juice</a>) to the other on the delivery date</li>
 <li>But there are so many treasuries with various dates and coupon rates this won't work</li>
-<li>Treasury futures are structured in a way that, all similar treasuries can be delivered (but for a single futures contract you must deliver a single eligible bond; you cannot split one contract's delivery across two different bonds)</li>
+<li>Treasury futures are structured in a way that, all <em>similar</em> treasuries can be delivered (but for a single futures contract you must deliver a single eligible bond; you cannot split one contract's delivery across two different bonds)</li>
 </ul>
 </li>
 </ul>
@@ -7731,12 +7731,27 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Conversion-Factor">Conversion Factor<a class="anchor-link" href="#Conversion-Factor">¶</a></h2><ul>
-<li></li>
+<li>Because you can choose to deliver from a basket of bonds, it wouldn't make sense to settle with one single futures settlement price. It has to be adjusted</li>
 <li>Cash received by the short when a bond is delivered is
 $$
 (\text{Futures settlement} \times \text{Conversion factor}) + \text{Accrued interest}
 $$</li>
 <li>Futures settlement is the most recent futures settlement price</li>
+<li>Roughly speaking, the conversion factor should be larger when the delivered bonds are more expensive</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2d92de18-d51f-45fc-b1f6-567557ebcfe2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Computing-the-Conversion-Factor">Computing the Conversion Factor<a class="anchor-link" href="#Computing-the-Conversion-Factor">¶</a></h2><ul>
+<li>The conversion factor for a bond is equal to the quoted price the bond would have per dollar of principal on the first day of the delivery month on the assumption that the interest rate for all maturities equals $6\%$ per annum (with semiannual compounding)</li>
+<li>The bond maturity and the times to the coupon payment dates are rounded down to the nearest 3 months for the purposes of the calculation</li>
+<li>If after rounding, the bond lasts for an exact number of 6-month periods, the first coupon is assumed to be paid in 6 months</li>
 </ul>
 </div>
 </div>
