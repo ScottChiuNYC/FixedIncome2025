@@ -7701,7 +7701,6 @@ $$</p>
 <ul>
 <li>There are <strong>quarterly futures</strong> for March, June, September and December (HMUZ) and <strong>serial futures</strong> for other "off-quarter" months</li>
 <li>For Treasury futures, only quarterly are trading. For SOFR futures, serial are also trading</li>
-<li>Quarterly are much more liquid and important</li>
 </ul>
 </div>
 </div>
@@ -7966,6 +7965,96 @@ $$</li>
 &amp;\text{Bond 3: }\quad 119.75 - (93.25\times 1.2615) = \$2.12\\
 \end{align*}</li>
 <li>The CTD bond is Bond 2</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1f6f820d-14d6-4dbb-a4de-92f80bd5d817">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="SOFR-Futures">SOFR Futures<a class="anchor-link" href="#SOFR-Futures">¶</a></h2><ul>
+<li>There are two types of SOFR futures listed in the CME Group: 3m SOFR futures (quarterly) and 1m SOFR futures (serial)</li>
+<li>Both liquid but <a href="https://www.cmegroup.com/markets/interest-rates/stirs/three-month-sofr.quotes.html">quarterly</a> are more so than <a href="https://www.cmegroup.com/markets/interest-rates/stirs/one-month-sofr.quotes.html">serial</a></li>
+<li>Settlement: Cash settled</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2369e1e8-ac54-4cb2-8fff-35951a82d447">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="3M-SOFR-Futures">3M SOFR Futures<a class="anchor-link" href="#3M-SOFR-Futures">¶</a></h2><ul>
+<li>Using Dec 2025 contract as an example (SR3Z5)</li>
+<li>Settlement date are both Mar 2026 IMM date (3rd Wednesday)</li>
+<li>Settlement price is $100 - R$, where
+$$
+R/100 = \frac{1}{\tau}\left(\prod_j (1+\Delta t_j r_j) - 1\right)
+$$
+is the daily compounded SOFR fixings from (and including) Dec 2025 IMM date to (but not including) Mar 2026 IMM date</li>
+<li>The 3m period from Dec 2025 IMM date to Mar 2026 IMM date is called the reference quarter<ul>
+<li>The contract month Dec 2025 marks the <strong>beginning</strong> of the reference quarter</li>
+</ul>
+</li>
+<li>Quotes are also in the form $100 - R$<ul>
+<li>A quoted price of $96.25$ means $R=3.75$ and the futures rate is $0.0375 = 3.75\%$</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=306068d5-9325-45c2-b96c-77d77da6c3a8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="3M-SOFR-Futures-(Cont.)">3M SOFR Futures (Cont.)<a class="anchor-link" href="#3M-SOFR-Futures-(Cont.)">¶</a></h2><ul>
+<li>Contract size is $\$2,500\times (100 - R)$</li>
+<li>If you are long one contract, and if the futures rate is up 1bp ($R$ is up 0.01), PnL is
+$$
+2500\times (100 - (R+0.01)) - 2500\times (100 - R) = -\$25
+$$</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b6d06b6f-2cd2-4e5f-b2ee-48048393313c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="IMM-Date">IMM Date<a class="anchor-link" href="#IMM-Date">¶</a></h2><ul>
+<li>3rd Wednesday of March, June, September and December</li>
+<li>Very unlikely to be a holiday</li>
+<li>A rare exception was 2024 Juneteenth (6/19)<ul>
+<li>President Joe Biden recognized the Juneteenth as a federal holiday and signed into law in 2021</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=0ba12a58-e558-47d4-b751-961a63c823ce">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1609d504-76f6-4708-b6be-a674f5e5872a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Treasury-Futures-and-SOFR-Futures">Treasury Futures and SOFR Futures<a class="anchor-link" href="#Treasury-Futures-and-SOFR-Futures">¶</a></h2><ul>
+<li>Trading Treasury futures is betting on spot rates<ul>
+<li>This will become clear if you imagin a simplified world where Treasury futures contracts only allow one specific T-bond to be delivered, there is a set delivery date, and no convertion factor</li>
+</ul>
+</li>
+<li>Trading SOFR Futures is betting on forward rates $L(t, T, T+\tau)$ (or futures rates $L+\text{convexity adjustment}$ to be precise)</li>
 </ul>
 </div>
 </div>
