@@ -7444,6 +7444,58 @@ main {
 </div>
 </div>
 </div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f9011b83-d0a7-4a13-9a5f-e5d1fd6dfa3a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Overview">Overview<a class="anchor-link" href="#Overview">¶</a></h2><ul>
+<li>Interest rate swap is by far the most liquid OTC product</li>
+<li>In this chapter we introduce the standard SOFR swap and its pricing</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a21e8a42-594d-4cf5-af76-4e4533ca8813">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Standard-SOFR-Swap">Standard SOFR Swap<a class="anchor-link" href="#Standard-SOFR-Swap">¶</a></h2><ul>
+<li>In an SOFR swap, two parties aggree on a term and a notional principal, say the term is 10y and the notional principal is 100 million</li>
+<li>Party A agrees to pay party B a yearly interest determined by a fixed coupon rate, say $3.65\%$, on the the notional principal agreed upon at the end of every year for the following 10 years</li>
+<li>In return, party B aggrees to pay party A a yearly interest determined by the 1y SOFR term rate:
+$$
+\text{SOFR Term Rate} = \frac{1}{\tau}\left(\prod_j (1+\Delta t_j r_j) - 1\right), 
+$$
+with $\tau = 1$ for 1y. The payment is also made at the end of every year for the following 10 years</li>
+<li>There is no principal payment on either side, that's why it's called the notional principal</li>
+<li>There is no initial payment on either side, but the fixed rates are quoted in the market for all terms up to 30 years</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=74e382ea-3269-40f8-bab0-869f0bcf6896">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Standard-SOFR-Swap:-Terminologies">Standard SOFR Swap: Terminologies<a class="anchor-link" href="#Standard-SOFR-Swap:-Terminologies">¶</a></h2><ul>
+<li>Fixed Rate: The fixing coupon rate, $3.65\%$ in the previous examle</li>
+<li>Floating Rate: Yearly SOFR term rate in the previous examle</li>
+<li>Fixed Leg: All fixed coupon payments (cash flows)</li>
+<li>Floating Leg: All floating coupon payments (cash flows)</li>
+<li>Swap Legs: Fixed leg and floating leg</li>
+<li>Payer Swap: If you are the party who pays fixed coupons, you say you have a payer swap</li>
+<li>Receiver Swap: If you are the party who receives floating coupons, you have a receiver swap</li>
+<li>Swap Rate: The fixed rate is called the swap rate of the term. For example $3.65\%$ would be the 10y swap rate in the previous example</li>
+</ul>
+</div>
+</div>
+</div>
 </div></section></section>
 </div>
 </div>
