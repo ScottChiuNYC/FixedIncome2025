@@ -7464,14 +7464,14 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Standard-SOFR-Swap">Standard SOFR Swap<a class="anchor-link" href="#Standard-SOFR-Swap">¶</a></h2><ul>
-<li>In an SOFR swap, two parties aggree on a term and a notional principal, say the term is 10y and the notional principal is 100 million</li>
+<li>In a SOFR swap, two parties aggree on a term and a notional principal, say the term is 10y and the notional principal is 100 million</li>
 <li>Party A agrees to pay party B a yearly interest determined by a fixed coupon rate, say $3.65\%$, on the the notional principal agreed upon at the end of every year for the following 10 years</li>
 <li>In return, party B aggrees to pay party A a yearly interest determined by the 1y SOFR term rate:
 $$
 \text{SOFR Term Rate} = \frac{1}{\tau}\left(\prod_j (1+\Delta t_j r_j) - 1\right), 
 $$
 with $\tau = 1$ for 1y. The payment is also made at the end of every year for the following 10 years</li>
-<li>There is no principal payment on either side, that's why it's called the notional principal</li>
+<li>There is no principal payment on either side, that's why it's called the <em>notional</em> principal: No one has ever seen that 100 million</li>
 <li>There is no initial payment on either side, but the fixed rates are quoted in the market for all terms up to 30 years</li>
 </ul>
 </div>
