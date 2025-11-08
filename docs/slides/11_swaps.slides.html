@@ -7604,8 +7604,8 @@ P(t, T) - P(t, T+\tau) &amp;= P(t, T+\tau)\left(\frac{P(t, T)}{P(t, T+\tau)} - 1
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bf76965e-e63b-4c43-94a8-87fe97762fed">
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=091def17-7108-440d-b6c6-ae29e6573855">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7618,9 +7618,23 @@ $$</li>
 <li>Dollar duration of a floating coupon payment is hard to compute from the formula $\tau P(t, T+\tau)L(t, T, T+\tau)$</li>
 <li>We look at the alternative form $P(t, T) - P(t, T+\tau)$. Its dollar duration is
 \begin{align*}
-D^*_{\text{floating}} &amp;= (T+\tau-t) P(t, T+\tau) - (T-t)P(t, T)
+D^*_{\text{floating}} &amp;= (T+\tau-t) P(t, T+\tau) - (T-t)P(t, T)\\
 \end{align*}</li>
 </ul>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bf76965e-e63b-4c43-94a8-87fe97762fed">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>\begin{align*}
+D^*_{\text{floating}} &amp;= (T+\tau-t) e^{-R(t, T+\tau)(T+\tau-t)} - (T-t)e^{-R(t, T)(T-t)}\\
+&amp;\approx (T+\tau-t) [1-R(t, T+\tau)(T+\tau-t)] - (T-t)[1-R(t, T)(T-t)]\\
+&amp;= \tau +R(t, T)(T-t)^2 - R(t, T+\tau)(T+\tau-t)^2
+\end{align*}</p>
 </div>
 </div>
 </div>
