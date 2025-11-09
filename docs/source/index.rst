@@ -36,13 +36,13 @@ Analysis of Fixed Income -- Fall 2025
 +--------+------------+-------------------------------------------------------------+
 | Week 9 | 10/28/2025 | PCA II                                                      |
 +--------+------------+-------------------------------------------------------------+
-| Week 10| 11/4/2025  | Interest Rate Futures and Swaps                             |
+| Week 10| 11/4/2025  | Interest Rate Futures                                       |
 +--------+------------+-------------------------------------------------------------+
-| Week 11| 11/11/2025 | Yield Curve Construction                                    |
+| Week 11| 11/11/2025 | Yield Curve's 6 Representations With SOFR Extension         |
 +--------+------------+-------------------------------------------------------------+
-| Week 12| 11/18/2025 | Volatility and Interest Rate Options                        |
+| Week 12| 11/18/2025 | Interest Rate Swaps                                         |
 +--------+------------+-------------------------------------------------------------+
-| Week 13| 11/25/2025 | Term Structure Models                                       |
+| Week 13| 11/25/2025 | Volatility and Interest Rate Options                        |
 +--------+------------+-------------------------------------------------------------+
 | Week 14| 12/2/2025  | No Class                                                    |
 +--------+------------+-------------------------------------------------------------+
@@ -65,7 +65,8 @@ Analysis of Fixed Income -- Fall 2025
    07_midterm
    08_pca
    10_futures
-   11_swaps
+   11_yc6_sofr
+   12_swaps
 
 .. toctree::
    :maxdepth: 1
