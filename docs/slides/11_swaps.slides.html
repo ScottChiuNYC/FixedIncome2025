@@ -7964,10 +7964,22 @@ S(t) &amp;= \frac{\sum_{n=0}^{N-1}\tau_n P(t, T_{n+1})\left[\frac{1}{\tau_n} \le
 &amp;= \frac{\sum_{n=0}^{N-1}\left(P(t, T_0) - P(t, T_{n+1})\right)}{A(t)}\\
 &amp;= \frac{P(t, T_0) - P(t, T_{N})}{A(t)}
 \end{align*}</li>
-<li>Note that, previously in computing PV of a future floating coupon payment, we have seen a special case of the below identity with $N=1$
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5439492d-b26c-48a8-9df3-9908901cbad9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Swap-Rate-Alternative-Formula-(Cont.)">Swap Rate Alternative Formula (Cont.)<a class="anchor-link" href="#Swap-Rate-Alternative-Formula-(Cont.)">¶</a></h2><ul>
+<li>The numerator simplifies to
 $$
 \sum_{n=0}^{N-1}\tau_n P(t, T_{n+1})L(t, T_n, T_{n+1}) = P(t, T_0) - P(t, T_{N})
 $$</li>
+<li>Previously in computing PV of a future floating coupon payment, we have seen a special case of this with $N=1$</li>
 </ul>
 </div>
 </div>
@@ -7978,7 +7990,7 @@ $$</li>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Swap-Rate-Alternative-Formula-(Cont.)">Swap Rate Alternative Formula (Cont.)<a class="anchor-link" href="#Swap-Rate-Alternative-Formula-(Cont.)">¶</a></h2><ul>
+<h2 id="Swap-Rate-Alternative-Formula-(Cont..)">Swap Rate Alternative Formula (Cont..)<a class="anchor-link" href="#Swap-Rate-Alternative-Formula-(Cont..)">¶</a></h2><ul>
 <li>We have
 \begin{align*}
 A(t) &amp;= \sum_{n=0}^{N-1}\tau_n P(t, T_{n+1})\\
@@ -8014,13 +8026,29 @@ S(T_0) = \frac{1 - P(T_0, T_{N})}{A(T_0)}
 $$
 \sum_{n=0}^{N-1}\tau_n P(T_0, T_{n+1})L(T_0, T_n, T_{n+1}) = 1 - P(t, T_{N})
 $$</li>
-<li>If you short sell an $N$-year ZCB with notional $\$1$, and you lend out $\$1$ today, your net cash flow today is the negative right-hand-side $P(t, T_{N}) - 1$</li>
+<li>If you short sell an $N$-year ZCB with notional $\$1$, and you lend out $\$1$ today, your net cash flow today is the negative right-hand side $P(t, T_{N}) - 1$</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=dcae986f-315c-4652-9db2-ddfd002fba88">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="No-Arbitrage-Argument-(Cont.)">No Arbitrage Argument (Cont.)<a class="anchor-link" href="#No-Arbitrage-Argument-(Cont.)">¶</a></h2><p>$$
+$$
+$$
+\sum_{n=0}^{N-1}\tau_n P(T_0, T_{n+1})L(T_0, T_n, T_{n+1}) = 1 - P(t, T_{N})
+$$</p>
+<ul>
 <li>If you lend out $\$1$ at floating rate for a year, at the end of the first year you receive $1+\tau_0 L(T_1, T_0, T_1)$. You keep the interest $\tau_0 L(T_1, T_0, T_1)$ and lend out the principal $\$1$ again at floating rate for the second year</li>
 <li>At the end of the second year you receive $1+\tau_1 L(T_2, T_1, T_2)$. You keep the interest $\tau_1 L(T_2, T_1, T_2)$ and lend out the principal $\$1$ again at floating rate for the third year</li>
 <li>If you keep doing this for $N$ years, you get interest cash flows $\tau_n L(T_{n+1}, T_n, T_{n+1})$ at the end of the $(n+1)$-th year, for $n=0, 1, \ldots, N-1$</li>
 <li>At the end of the $N$-th year, you keep the interest $\tau_{N-1} L(T_{N}, T_{N-1}, T_{N})$ and use the $\$1$ to clear the ZCB you sold at the beginning</li>
 <li>But we have established that, the time-$T_0$ PV of $\tau_n L(T_{n+1}, T_n, T_{n+1})$ is $\tau_n P(T_0, T_{n+1})L(T_0, T_n, T_{n+1})$</li>
-<li>Thus we must have PVs of all interest cash flows sum up (left-hand-side) to be the initial cost setting up this strategy (right-hand-side)</li>
+<li>Thus we must have PVs of all interest cash flows sum up (left-hand side) to be the initial cost setting up this strategy (right-hand side)</li>
 </ul>
 </div>
 </div>
