@@ -7840,6 +7840,20 @@ so
 K^* = \frac{\sum_{n=0}^{N-1}\tau_n P(T_0, T_{n+1})L(T_0, T_n, T_{n+1})}{\sum_{n=0}^{N-1}\tau_n P(T_0, T_{n+1})}
 \end{align*}</li>
 <li>This is the $N$-year swap rate quoted in the market</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1dcc08d1-3fab-45a6-93cf-44b7b90f829b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Swap-Rate-(Cont.)">Swap Rate (Cont.)<a class="anchor-link" href="#Swap-Rate-(Cont.)">¶</a></h2><p>\begin{align*}
+K^* = \frac{\sum_{n=0}^{N-1}\tau_n P(T_0, T_{n+1})L(T_0, T_n, T_{n+1})}{\sum_{n=0}^{N-1}\tau_n P(T_0, T_{n+1})}
+\end{align*}</p>
+<ul>
 <li>A weighted average of the forward term rates, with the discount factors being the weights<ul>
 <li>The closer the reference period $[T_n, T_{n+1}]$ is, the more heavily weighted the corresponding forward rate</li>
 </ul>
@@ -7866,8 +7880,8 @@ K^* = \frac{\sum_{n=0}^{N-1}\tau_n P(T_0, T_{n+1})L(T_0, T_n, T_{n+1})}{\sum_{n=
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Swap-Curve">Swap Curve<a class="anchor-link" href="#Swap-Curve">¶</a></h2><ul>
-<li>The swap rate thus backed out depends on the tenor structure (depends on $N$)</li>
-<li>For each term $N=1, 2, \ldots, 30,$ we can compute a different swap rate $K^*$, which form the swap curve</li>
+<li>The swap rate depends on the tenor structure (depends on $N$)</li>
+<li>For each term $N=1, 2, 3, \ldots, 30,$ we can compute a different swap rate $K^*$, which form the swap curve</li>
 </ul>
 </div>
 </div>
@@ -7883,13 +7897,13 @@ K^* = \frac{\sum_{n=0}^{N-1}\tau_n P(T_0, T_{n+1})L(T_0, T_n, T_{n+1})}{\sum_{n=
 \begin{align*}
 \sum_{n=0}^{N-1}\left(\tau_n P(t, T_{n+1})L(t, T_n, T_{n+1}) - \tau_n P(t, T_{n+1})K\right)
 \end{align*}</li>
-<li>Following the same derivation as we've done previously, we obtain the formula for a foward swap rate, which we denote by $S(t)$ hereafter
+<li>Following the same derivation as we've done previously, we obtain the formula for a forward swap rate, which we denote by $S(t)$ hereafter
 \begin{align*}
 S(t) = \frac{\sum_{n=0}^{N-1}\tau_n P(t, T_{n+1})L(t, T_n, T_{n+1})}{\sum_{n=0}^{N-1}\tau_n P(t, T_{n+1})}
 \end{align*}</li>
 <li>The spot swap rate is $S(T_0)$</li>
 <li>$S(t)$ is a weighted average of forward rates, both the weights and the forward rates are random, and they are related in a complex way</li>
-<li>Same as the spot swap rate, and the forward term rate $L(t, T, T+\tau)$, the forward swap rate is uniquely determined by the current yield curve</li>
+<li>The forward swap rate is uniquely determined by the current yield curve, same as the spot swap rate, and the forward term rate $L(t, T, T+\tau)$</li>
 </ul>
 </div>
 </div>
