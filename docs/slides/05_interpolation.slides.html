@@ -7538,7 +7538,7 @@ main {
 <li>Important ones are SOFR, Term SOFR, fed funds, LIBOR</li>
 <li>SOFR is by far the most important one if you work in the rates business in a bank, more important than the Treasury yield curve</li>
 <li>In the rates business, many curves are simply a spread curve plus the SOFR curve, spread from basis swap quotes</li>
-<li>In a credit desk (trading credit projects including corporate bonds), corporate bond yield curves are a spread curve (known as the z-spread) plus the Treasury yield curve</li>
+<li>In a credit desk (trading credit products including corporate bonds), corporate bond yield curves are a spread curve (known as the z-spread) plus the Treasury yield curve</li>
 </ul>
 </li>
 <li><strong>Each curve has its own 6 representations</strong></li>
@@ -7670,12 +7670,12 @@ $$</li>
 <h2 id="Why-Piecewise-Constant-$f(0,-T)$?-(Cont.)">Why Piecewise Constant $f(0, T)$? (Cont.)<a class="anchor-link" href="#Why-Piecewise-Constant-$f(0,-T)$?-(Cont.)">¶</a></h2><ul>
 <li>Think of
 $$
-f(0, T) = L(0, T, T+\epsilon)
+f(0, T) = L(0, T, T+\tau)
 $$
-for $\epsilon=$1d</li>
-<li>Market quote of $f(0, T)$, like $L(0, T, T+\tau)$, is implied by the prices of market instruments and cannot be chosen subjectively<ul>
+for $\tau=$1d</li>
+<li>Market quote of $f(0, T)$, like $L(0, T, T+\tau)$ for arbitrary tenor $\tau$, is implied by the prices of market instruments and cannot be chosen subjectively<ul>
 <li>It is not a matter of opinion</li>
-<li>Posting an incorrect quote creates an arbitrage opportunity</li>
+<li>Posting an incorrect quote leads to an arbitrage opportunity</li>
 </ul>
 </li>
 </ul>
