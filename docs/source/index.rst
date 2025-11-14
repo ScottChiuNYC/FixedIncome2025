@@ -66,6 +66,7 @@ Analysis of Fixed Income -- Fall 2025
    08_pca
    10_futures
    11_swaps
+   12_yc_construction
 
 
 .. toctree::
