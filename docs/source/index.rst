@@ -70,7 +70,7 @@ Analysis of Fixed Income -- Fall 2025
 
 .. toctree::
    :maxdepth: 1
-   :caption: Project:
+   :caption: Semester Project:
 
    project
 
