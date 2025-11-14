@@ -77,4 +77,5 @@ Analysis of Fixed Income -- Fall 2025
    D_project
    E_python_env
    F_fdm
+   G_mpca
 
