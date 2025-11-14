@@ -67,6 +67,14 @@ Analysis of Fixed Income -- Fall 2025
    10_futures
    11_swaps
 
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Project:
+
+   project
+
+
 .. toctree::
    :maxdepth: 1
    :caption: Appendices:
@@ -74,8 +82,7 @@ Analysis of Fixed Income -- Fall 2025
    A_yc_construction
    B_finite_difference
    C_interview
-   D_project
-   E_python_env
-   F_fdm
-   G_mpca
+   D_python_env
+   E_fdm
+   F_mpca
 
