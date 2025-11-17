@@ -7473,6 +7473,23 @@ main {
 <h2 id="Curve-Instruments">Curve Instruments<a class="anchor-link" href="#Curve-Instruments">¶</a></h2><ul>
 <li>Unlike Treasury yield curve which is constructed from the Treasuries, there is no SOFR bonds</li>
 <li>The SOFR yield curve is constructed from futures and swaps, as they are the most liquid rates instruments linked to the SOFR index</li>
+<li>For each futures contract, the corresponding convexity adjustment is quoted, and we first compute forward rates from the formula
+$$
+\text{Forward Rate} = \text{Futures Rate} - \text{Convexity Adjustment}
+$$</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f3bf6b05-d141-4928-93b7-7af33325715e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Curve-Interpolation">Curve Interpolation<a class="anchor-link" href="#Curve-Interpolation">¶</a></h2><ul>
+<li>Numerical setup is the same</li>
+<li>Recall that in curve interpolation</li>
 </ul>
 </div>
 </div>
