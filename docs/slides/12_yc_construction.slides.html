@@ -7472,8 +7472,8 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Curve-Instruments">Curve Instruments<a class="anchor-link" href="#Curve-Instruments">¶</a></h2><ul>
 <li>Unlike Treasury yield curve which is constructed from the Treasuries, there is no SOFR bonds</li>
-<li>The SOFR yield curve is constructed from futures and swaps, as they are the most liquid rates instruments linked to the SOFR index</li>
-<li>For each futures contract, the corresponding convexity adjustment is quoted, and we first compute forward rates from the formula
+<li>The SOFR yield curve is constructed from 3M SOFR futures and standard SOFR swaps, as they are the most liquid rates instruments linked to the SOFR index</li>
+<li>For each futures contract, the corresponding convexity adjustment is quoted, and we first compute forward rates by
 $$
 \text{Forward Rate} = \text{Futures Rate} - \text{Convexity Adjustment}
 $$</li>
