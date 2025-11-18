@@ -1,0 +1,15 @@
+,Instrument,Quote,Convexity (bps)
+" ",Deposit,3.97," "
+" ",Futures Sep 25,95.9010,0
+" ",Futures Dec 25,96.1825,0.015563
+" ",Futures Mar 26,96.3925,0.091519
+" ",Futures Jun 26,96.6275,0.207215
+" ",Futures Sep 26,96.7875,0.362651
+" ",Swap 1y,3.6151," "
+" ",Swap 2y,3.3980," "
+" ",Swap 3y,3.3624," "
+" ",Swap 5y,3.4232," "
+" ",Swap 7y,3.5379," "
+" ",Swap 10y,3.7120," "
+" ",Swap 20y,4.0420," "
+" ",Swap 30y,4.0199," "
