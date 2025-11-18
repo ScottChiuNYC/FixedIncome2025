@@ -7481,15 +7481,20 @@ $$</li>
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f3bf6b05-d141-4928-93b7-7af33325715e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Curve-Interpolation">Curve Interpolation<a class="anchor-link" href="#Curve-Interpolation">¶</a></h2><ul>
-<li>Numerical setup is the same</li>
-<li>Recall that in curve interpolation</li>
+<li>Numerical setup is same as explained in <a href="https://fixedincome2025.readthedocs.io/en/latest/05_interpolation.html">Curve Interpolation</a><ul>
+<li>Interpolation is done on time weighted zero rate $TR(0, T)$</li>
+<li>Linear interpolation at the short end</li>
+<li>Cubic spline interpolation for the rest</li>
+<li>Which implies piecewise constant instantaneous forward rate $f(0, T)$ at the short end and quadratic spline for the rest</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
