@@ -7513,7 +7513,7 @@ main {
 <h2 id="SOFR-Caps-and-Floors">SOFR Caps and Floors<a class="anchor-link" href="#SOFR-Caps-and-Floors">¶</a></h2><ul>
 <li>Given a tenor structure
 $$
-T_0 &lt; T_1 &lt; T_2 &lt; \cdots &lt; T_N, 
+T_0 &lt; T_1 &lt; T_2 &lt; \cdots &lt; T_N, \qquad \tau_n = T_{n+1} - T_n\quad \forall n=0, 1, 2, \ldots, N-1, 
 $$
 where
 $$
@@ -7521,12 +7521,29 @@ T_{n+1} = T_n + 3M, \qquad \forall n=0, 1, 2, \ldots, N-1,
 $$
 a 3M SOFR cap with strike $K$ pays the buyer a series of cash flows
 $$
-(L(T_{n+1}, T_{n}, T_{n+1}) - K)^+ \quad\text{ at }\quad T_{n+1}, \quad \forall n=0, 1, 2, \ldots, N-1, 
+\tau_n(L(T_{n+1}, T_{n}, T_{n+1}) - K)^+ \quad\text{ at }\quad T_{n+1}, \quad \forall n=0, 1, 2, \ldots, N-1, 
 $$
 where $L(T_{n+1}, T_{n}, T_{n+1})$ is the SOFR term rate</li>
 <li>Similarly, a 3M SOFR floor with strike $K$ pays the buyer a series of cash flows
 $$
-(K - L(T_{n+1}, T_{n}, T_{n+1}))^+ \quad\text{ at }\quad T_{n+1} \quad \forall n=0, 1, 2, \ldots, N-1
+\tau_n(K - L(T_{n+1}, T_{n}, T_{n+1}))^+ \quad\text{ at }\quad T_{n+1} \quad \forall n=0, 1, 2, \ldots, N-1
+$$</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=94c45fab-79b4-4ede-84fc-37ce389edbf6">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Why-the-Name">Why the Name<a class="anchor-link" href="#Why-the-Name">¶</a></h2><ul>
+<li>Imagine you have liabilities to pay floating coupon $L(T_{n+1}, T_n, T_{n+1})$ every quarter (3M)</li>
+<li>The payment to be made is unknown before the end of every coupon period, $T_{n+1}$</li>
+<li>If you buy a cap with $K = 6\%$, when the term rate fixes to be larger than $6\%$, from the cap you recieve
+$$
+(L(T_{n+1}, T_n, T_{n+1}) - K)^+ = L(T_{n+1}, T_n, T_{n+1}) - K
 $$</li>
 </ul>
 </div>
