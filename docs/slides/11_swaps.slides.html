@@ -8048,7 +8048,7 @@ $$
 S(t) = \frac{\sum_{n=0}^{N-1}\tau_n P(t, T_{n+1})L(t, T_n, T_{n+1})}{\sum_{n=0}^{N-1}\tau_n P(t, T_{n+1})}
 $$</li>
 <li>If all forward rates $L(t, T_n, T_{n+1})$ are up 1 bp, the swap rate will be up <em>approximately</em> 1 bp<ul>
-<li>"Approximately" because when forward rates change, ZCBs $P(t, T_n)$ also changes</li>
+<li>"Approximately" because when forward rates change, ZCBs $P(t, T_n)$ also change</li>
 <li>So we are saying a parallel <em>forward</em> curve shift of 1 bp will lead to 1 bp shift in swap rate</li>
 <li><a href="https://fixedincome2025.readthedocs.io/en/latest/04_duration.html#DV01">Previously</a> we define PV01 to be PV change corresponding to parallel <em>zero</em> curve shift of 1 bp, not exactly the same</li>
 <li>There is not a rigorous definition of PV01, as in what rates are up by 1bp? Because there is no need. For one thing, the curve never really moves parallelly</li>
