@@ -8023,8 +8023,14 @@ A(t) = \sum_{n=0}^{N-1}\tau_n P(t, T_{n+1})
 <li>The time-$t$ PV of an forward starting payer swap with fixed rate $K$ is $A(t)(S(t) - K)$</li>
 <li>Plug in $t=T_0$ to obtain the spot starting swap PV $A(T_0)(S(T_0) - K)$</li>
 <li>But market will quote $K=S(T_0)$ so that no cash flows happen initially</li>
+<li>Initially, the PV is $A(T_0)(S(T_0) - K) = 0$</li>
 </ul>
 </li>
+<li>Imagine you have bought a swap at $T_0$ with zero PV initially. After a tiny $\Delta t$, if the swap rate is up 1bp, the PV becomes
+$$
+A(T_0 + \Delta t)\underbrace{(S(T_0  + \Delta t) - K)}_{\approx 1 \text{ bp}} \approx A(T_0)\times 0.0001
+$$</li>
+<li>Thus PV01 of a swap is approximately its corresponding annuity $A(T_0)$ times 1 bp</li>
 </ul>
 </div>
 </div>
