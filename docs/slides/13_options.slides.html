@@ -7511,11 +7511,12 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="SOFR-Caps-and-Floors">SOFR Caps and Floors<a class="anchor-link" href="#SOFR-Caps-and-Floors">¶</a></h2><ul>
-<li>Given a tenor structure
+<li>Consider a tenor structure
 $$
 T_0 &lt; T_1 &lt; T_2 &lt; \cdots &lt; T_N, \qquad \tau_n = T_{n+1} - T_n\quad \forall n=0, 1, 2, \ldots, N-1, 
 $$
-where $\tau_n$ is now fixed to be 3M. A 3M SOFR cap with strike $K$ pays the buyer a series of cash flows
+where $\tau_n$ is now fixed to be 3M</li>
+<li>A 3M SOFR cap with strike $K$ pays the buyer a series of cash flows
 $$
 \tau_n(L(T_{n+1}, T_{n}, T_{n+1}) - K)^+ \quad\text{ at }\quad T_{n+1}, \quad \forall n=0, 1, 2, \ldots, N-1, 
 $$
