@@ -7536,12 +7536,20 @@ $$</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Why-the-Name">Why the Name<a class="anchor-link" href="#Why-the-Name">¶</a></h2><ul>
-<li>Imagine you have liabilities to pay floating coupon $L(T_{n+1}, T_n, T_{n+1})$ every quarter (3M)</li>
-<li>The payment to be made is unknown before the end of every coupon period, $T_{n+1}$</li>
-<li>If you buy a cap with $K = 6\%$, when the term rate fixes to be larger than $6\%$, from the cap you recieve
+<li>Imagine you have liabilities to pay floating coupon $\tau_n L(T_{n+1}, T_n, T_{n+1})$ every quarter (3M)</li>
+<li>The payment to be made is unknown until the end of every coupon period, $T_{n+1}$</li>
+<li>If you buy a cap with $K = 6\%$, when the term rate fixes to be lower than $6\%$, from the cap you recieve
 $$
-(L(T_{n+1}, T_n, T_{n+1}) - K)^+ = L(T_{n+1}, T_n, T_{n+1}) - K
+\tau_n(L(T_{n+1}, T_n, T_{n+1}) - K)^+ = 0
 $$</li>
+<li>Given the liability, you will pay a lower than $6\%$ coupon $\tau_n L(T_{n+1}, T_n, T_{n+1})$</li>
+<li>But if the forward rate fixed to be larger than $6\%$, from the cap you recieve
+$$
+\tau_n(L(T_{n+1}, T_n, T_{n+1}) - K)^+ = \tau_n(L(T_{n+1}, T_n, T_{n+1}) - K)
+$$</li>
+<li>Given the liability, you still pay a the coupon $\tau_n L(T_{n+1}, T_n, T_{n+1})$</li>
+<li>Overall you pay $\tau_n K$ which is at $6\%$ annual coupon rate</li>
+<li>If you buy a $6\%$ cap, your payment is capped at $6\%$</li>
 </ul>
 </div>
 </div>
