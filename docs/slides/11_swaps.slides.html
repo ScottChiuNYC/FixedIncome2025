@@ -8036,6 +8036,33 @@ $$</li>
 </div>
 </div>
 </div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=aabc6be6-b019-4f02-a398-fac74f228fdb">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Swap-PV01:-A-Closer-Look">Swap PV01: A Closer Look<a class="anchor-link" href="#Swap-PV01:-A-Closer-Look">¶</a></h2><ul>
+<li>You bought a swap with zero PV initially, and after a tiny $\Delta t$, the swap rate is up 1bp</li>
+<li>But swap rate is
+$$
+S(t) = \frac{\sum_{n=0}^{N-1}\tau_n P(t, T_{n+1})L(t, T_n, T_{n+1})}{\sum_{n=0}^{N-1}\tau_n P(t, T_{n+1})}
+$$</li>
+<li>If all forward rates $L(t, T_n, T_{n+1})$ are up 1 bp, the swap rate will be up <em>approximately</em> 1 bp<ul>
+<li>"Approximately" because when forward rates change, the ZCB prices $P(t, T_n)$ also changes</li>
+<li>So we are saying a parallel <em>forward</em> curve shift of 1 bp will lead to 1 bp shift in swap rate</li>
+<li><a href="https://fixedincome2025.readthedocs.io/en/latest/04_duration.html#DV01">Previously</a> we define PV01 to be PV change corresponding to parallel <em>zero</em> curve shift of 1 bp, not exactly the same</li>
+<li>There is not a rigorous definition of PV01, as in what rates are up by 1bp? Because there is no need<ul>
+<li>For one thing, the curve almost never really moves parallelly</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Despite all that, $A(T_0)\times 0.0001$ is usually a good approximation of swap PV01 in practice</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a1d0bb9b-7d18-4534-8c5b-cc2c2b1917a0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
