@@ -7495,8 +7495,32 @@ main {
 </li>
 <li>The more exotic the product is, the higher the fees and bid ask spreads, and hence the revenue<ul>
 <li>Justified by the significant investment in a quant team of PhDs to build and maintain the model, the hardware, and limited market players</li>
+<li>Only 4-5 banks have a working model to quote/trade all rates exotics</li>
+<li>Even with a working model, sometimes trade from a client can be too risky for small banks to take in</li>
+<li>The larger the book is, the more risk a bank can take</li>
 </ul>
 </li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1fffa570-a2b5-4109-90ed-39e7c9e70f01">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="SOFR-Caps-and-Floors">SOFR Caps and Floors<a class="anchor-link" href="#SOFR-Caps-and-Floors">¶</a></h2><ul>
+<li>Given a tenor structure
+$$
+T_0 &lt; T_1 &lt; T_2 &lt; \cdots &lt; T_N, 
+$$
+where
+$$
+T_{n+1} = T_n + 3M, \qquad \forall n=0, 1, 2, \ldots, N-1, 
+$$
+a SOFR cap with strike $K$ pays the buyer a series of cash flows $(L(T_{n+1}, T_{n}, T_{n+1}) - K)^+$ at $T_{n+1}$, where $L(T_{n+1}, T_{n}, T_{n+1})$ is the SOFR term rate</li>
+<li>Similarly, a SOFR floor with strike $K$ pays the buyer a series of cash flows $(K - L(T_{n+1}, T_{n}, T_{n+1}))^+$ at $T_{n+1}$</li>
 </ul>
 </div>
 </div>
