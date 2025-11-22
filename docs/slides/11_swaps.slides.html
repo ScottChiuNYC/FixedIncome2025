@@ -8123,28 +8123,6 @@ S(T_0) = \frac{1 - P(T_0, T_{N})}{A(T_0)}
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e0b18614-08a0-4435-9537-7003532ebc6f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Constant-Maturity-Swap-(CMS)">Constant Maturity Swap (CMS)<a class="anchor-link" href="#Constant-Maturity-Swap-(CMS)">¶</a></h2><ul>
-<li>Standard SOFR swaps are so liquid the swap rates itself is an index upon which people trade derivatives (CMS swaps, CMS options, etc.)</li>
-<li>Think of a fixed term, say 10y. We have $N=10$ and
-\begin{align*}
-A(T_0) = \sum_{n=0}^{N-1}\tau_n P(T_0, T_{n+1}), \qquad S(T_0) = \frac{1 - P(T_0, T_{N})}{A(T_0)}
-\end{align*}</li>
-<li>Think of all $T_n$ some calendar dates, say $T_0$ is 11/19/2025, $T_1$ is 11/19/2026, etc.</li>
-<li>At EOD 11/19/2025, when we have a close curve, all ZCBs, and hence $S(T_0)$ are known and fixed</li>
-<li>The next day, we use the same formula but with $T_0$ being 11/20/2025, $T_1$ being 11/20/2026, etc.</li>
-<li>At EOD 11/20/2025, when we have a close curve, $S(T_0)$ is known and fixed to be a different number as 11/19's 10y swap rate close quote</li>
-<li>Thus we obtain a 10y swap rate every day, that's known as the 10y CMS rate</li>
-<li>Derivatives on 2y, 5y, 10y, and 30y CMS rates are more liquidly trading</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1377d80e-73c0-4640-8b45-8f5f791c6161">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8306,7 +8284,29 @@ $$</li>
 </div>
 </div>
 </div>
-</div></div></section></section>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=656180e6-e006-42f9-a639-a0085fab762c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Constant-Maturity-Swap-(CMS)">Constant Maturity Swap (CMS)<a class="anchor-link" href="#Constant-Maturity-Swap-(CMS)">¶</a></h2><ul>
+<li>Standard SOFR swaps are so liquid the swap rates itself is an index upon which people trade derivatives (CMS swaps, CMS options, etc.)</li>
+<li>Think of a fixed term, say 10y. We have $N=10$ and
+\begin{align*}
+A(T_0) = \sum_{n=0}^{N-1}\tau_n P(T_0, T_{n+1}), \qquad S(T_0) = \frac{1 - P(T_0, T_{N})}{A(T_0)}
+\end{align*}</li>
+<li>Think of all $T_n$ some calendar dates, say $T_0$ is 11/19/2025, $T_1$ is 11/19/2026, etc.</li>
+<li>At EOD 11/19/2025, when we have a close curve, all ZCBs, and hence $S(T_0)$ are known and fixed</li>
+<li>The next day, we use the same formula but with $T_0$ being 11/20/2025, $T_1$ being 11/20/2026, etc.</li>
+<li>At EOD 11/20/2025, when we have a close curve, $S(T_0)$ is known and fixed to be a different number as 11/19's 10y swap rate close quote</li>
+<li>Thus we obtain a 10y swap rate every day, that's known as the 10y CMS rate</li>
+<li>Derivatives on 2y, 5y, 10y, and 30y CMS rates are more liquidly trading</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section>
 </div>
 </div>
 </main>
