@@ -7440,7 +7440,7 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="13.-Volatility-and-Interest-Rate-Options">13. Volatility and Interest Rate Options<a class="anchor-link" href="#13.-Volatility-and-Interest-Rate-Options">¶</a></h1>
+<h1 id="13.-Volatility-and-IR-Options">13. Volatility and IR Options<a class="anchor-link" href="#13.-Volatility-and-IR-Options">¶</a></h1>
 </div>
 </div>
 </div>
@@ -7451,7 +7451,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Overview">Overview<a class="anchor-link" href="#Overview">¶</a></h2><ul>
-<li>The most liquid nonlinear OCT products are SOFR caps, floors and SOFR swaptions</li>
+<li>The most liquid nonlinear OCT rates products are SOFR caps, floors and SOFR swaptions</li>
 <li>This chapter is an overview of SOFR caps, floors and SOFR swaptions, and their pricing and heding</li>
 </ul>
 </div>
@@ -7464,11 +7464,17 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Motivation">Motivation<a class="anchor-link" href="#Motivation">¶</a></h2><ul>
-<li><p>In rates options business, there are exotic products of</p>
+<li>In rates options business, there are exotic products and vanilla products<ul>
+<li>Vanilla products: SOFR caps, floors and SOFR swaptions</li>
+<li>Examples of exotics: Bermudan swaptions, CMS swaps, CMS spread options, Range Accrual</li>
+</ul>
 </li>
-<li><p>More complicated models are calibrated to caps, floors and swaptions quotes in order to price or hedge more exotic products</p>
-</li>
-<li><p>Exotic option desk usually trade with the vanilla desk (which  )</p>
+<li>Exotic desk traders hedge their book by trading vanilla products</li>
+<li>Vanilla desk traders do so by trading underlying linear products (SOFR swaps, FRA or futures)</li>
+<li>More complicated models are needed for exotics pricing and hedging<ul>
+<li>Since exotics are hedged by vanillas, the pricing model has to give consistent pricing of both exotics and vanillas</li>
+<li>Thus, the models are calibrated to vanillas</li>
+</ul>
 </li>
 </ul>
 </div>
