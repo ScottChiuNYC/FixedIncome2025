@@ -8012,6 +8012,24 @@ A(t) = \sum_{n=0}^{N-1}\tau_n P(t, T_{n+1})
 </div>
 </div>
 </div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e58b3855-c67c-41c2-8737-57aae66d6a7d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Swap-PV01">Swap PV01<a class="anchor-link" href="#Swap-PV01">¶</a></h2><ul>
+<li><a href="https://fixedincome2025.readthedocs.io/en/latest/04_duration.html#DV01">Previously</a> we have mentioned PV01, the present value of 1bp, which is the PV change with 1 bp rates change</li>
+<li>To compute PV01 of a swap first write down its PV:<ul>
+<li>The time-$t$ PV of an $N$-year-long forward starting payer swap with fixed rate $K$ is $A(t)(S(t) - K)$</li>
+<li>Plug in $t=T_0$ we obtain the spot starting swap PV $A(T_0)(S(T_0) - K)$</li>
+<li>But market will quote $K=S(T_0)$ so that no cash flows happen initially</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a1d0bb9b-7d18-4534-8c5b-cc2c2b1917a0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
