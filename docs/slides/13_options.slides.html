@@ -7515,11 +7515,7 @@ main {
 $$
 T_0 &lt; T_1 &lt; T_2 &lt; \cdots &lt; T_N, \qquad \tau_n = T_{n+1} - T_n\quad \forall n=0, 1, 2, \ldots, N-1, 
 $$
-where
-$$
-T_{n+1} = T_n + 3M, \qquad \forall n=0, 1, 2, \ldots, N-1, 
-$$
-a 3M SOFR cap with strike $K$ pays the buyer a series of cash flows
+where $\tau_n$ is now fixed to be 3M. A 3M SOFR cap with strike $K$ pays the buyer a series of cash flows
 $$
 \tau_n(L(T_{n+1}, T_{n}, T_{n+1}) - K)^+ \quad\text{ at }\quad T_{n+1}, \quad \forall n=0, 1, 2, \ldots, N-1, 
 $$
@@ -7532,7 +7528,7 @@ $$</li>
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=94c45fab-79b4-4ede-84fc-37ce389edbf6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
