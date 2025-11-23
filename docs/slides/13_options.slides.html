@@ -7582,7 +7582,81 @@ hS_d + BM &amp;= C_d
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=fc800e28-b024-4e5e-8caf-668e9c693d48">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0c847640-0711-4ec8-8cea-af694c3f7507">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="BOPM">BOPM<a class="anchor-link" href="#BOPM">¶</a></h2><ul>
+<li>We have the system of equations
+\begin{align*}
+hS_u + BM &amp;= C_u, \\
+hS_d + BM &amp;= C_d, 
+\end{align*}
+which in matrix form is
+\begin{align*}
+\begin{pmatrix}
+S_u &amp; M\\
+S_d &amp; M
+\end{pmatrix}
+\begin{pmatrix}
+h \\ B
+\end{pmatrix}
+=
+\begin{pmatrix}
+C_u \\ C_d
+\end{pmatrix}
+\end{align*}</li>
+<li>The solution is
+\begin{align*}
+\begin{pmatrix}
+h \\ B
+\end{pmatrix} = 
+\frac{1}{M(S_u - S_d)}
+\begin{pmatrix}
+M &amp; -M\\
+-S_d &amp; S_u
+\end{pmatrix}
+\begin{pmatrix}
+C_u \\ C_d
+\end{pmatrix}
+\end{align*}</li>
+<li>The option price is
+\begin{align*}
+\begin{pmatrix}
+S &amp; 1
+\end{pmatrix}
+\begin{pmatrix}
+h \\ B
+\end{pmatrix} &amp;=
+\frac{1}{M(S_u - S_d)}
+\begin{pmatrix}
+S &amp; 1
+\end{pmatrix}
+\begin{pmatrix}
+M &amp; -M\\
+-S_d &amp; S_u
+\end{pmatrix}
+\begin{pmatrix}
+C_u \\ C_d
+\end{pmatrix}\\
+&amp;= \frac{1}{M}
+\begin{pmatrix}
+\frac{SM - S_d}{S_u - S_d} &amp; \frac{S_u - SM}{S_u - S_d}
+\end{pmatrix}
+\begin{pmatrix}
+C_u \\ C_d
+\end{pmatrix}\\
+&amp;= \frac{1}{M}
+\left(
+\frac{SM - S_d}{S_u - S_d} C_u + \frac{S_u - SM}{S_u - S_d} C_d
+\right)
+\end{align*}</li>
+</ul>
+</div>
+</div>
+</div>
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fb9b60c1-ffca-41bf-bd92-b1bb5cab9ae9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
