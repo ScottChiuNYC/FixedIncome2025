@@ -7539,7 +7539,11 @@ main {
 <h2 id="BOPM">BOPM<a class="anchor-link" href="#BOPM">¶</a></h2><ul>
 <li>Assume that<ul>
 <li>We want to price an option on a stock trading at $S$ currently</li>
-<li>There are only two discrete times (one time step): today at $t=0$ and the maturity of the option at $t=1$</li>
+<li>There are only two discrete times (one time step)<ul>
+<li>Today at $t=0$,</li>
+<li>Maturity of the option at $t=1$</li>
+</ul>
+</li>
 <li>At $t=1$, the stock price can either go up to $S_u$ or go down to $S_d$</li>
 <li>Option payoff at $t=1$ is $C_u$ if the stock goes up and $C_d$ if it goes down<ul>
 <li>If the option is a call option then $C_u = (S_u - K)^+$ and $C_d = (S_d - K)^+$</li>
