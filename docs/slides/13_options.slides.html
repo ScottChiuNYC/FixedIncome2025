@@ -7653,18 +7653,172 @@ C_u \\ C_d
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fb9b60c1-ffca-41bf-bd92-b1bb5cab9ae9">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2866e200-9750-43c6-9b4a-f96b788f0399">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="BOPM-Discussion">BOPM Discussion<a class="anchor-link" href="#BOPM-Discussion">¶</a></h2><ul>
-<li>The physical probability $(p, 1-p)$ doesn't go into the option price</li>
+<li>PV of the option at $t=0$:
+$$
+C = \frac{1}{M}
+\left(
+\frac{SM - S_d}{S_u - S_d} C_u + \frac{S_u - SM}{S_u - S_d} C_d
+\right), 
+$$
+where $1/M$ is the discount factor and
+$$
+\frac{SM - S_d}{S_u - S_d} + \frac{S_u - SM}{S_u - S_d} = 1, 
+$$
+which allows us to see $C$ as a discounted expectation of possible option payoff</li>
+<li>Weighted average with weights sum to 1 is an expectation</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=81ed0d97-87af-4996-8cc7-491a2ed5c896">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>We write
+$$
+\tilde p = \frac{SM - S_d}{S_u - S_d}, \qquad (1-\tilde p) = \frac{S_u - SM}{S_u - S_d}, 
+$$
+known as the risk neutral probability, different from the physical probability $(p, 1-p)$</li>
+<li>The precise statement is, $C$ is a discounted expectation of possible option payoff under the risk neutral probability</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fb9b60c1-ffca-41bf-bd92-b1bb5cab9ae9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="BOPM-Discussion-(Cont.)">BOPM Discussion (Cont.)<a class="anchor-link" href="#BOPM-Discussion-(Cont.)">¶</a></h2><ul>
+<li>The physical probability $(p, 1-p)$ doesn't go into option pricing<ul>
+<li>No matter how large $p$ is (how likely the stock price will go up), the call option price doesn't go up a bit in BOPM</li>
+<li>Remember the option price we obtained is by a no-arbitrage argument. Quoting a different price will lead to an arbitrage opportunity</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=46daf369-ebfa-47c5-95e2-e306c27c98f1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="BOPM:-Example">BOPM: Example<a class="anchor-link" href="#BOPM:-Example">¶</a></h2><ul>
+<li>Consider an ATM call option in BOPM with $S = K = 100$, $K$ the strike price, and $S_u = 105$, $S_d = 95$, $M=1.01$. Option payoff at $t=1$ is
+\begin{align*}
+C_u &amp;= (S_u - K)^+ = 5\\
+C_d &amp;= (S_d - K)^+ = 0
+\end{align*}</li>
+<li>PV of the option at $t=0$ is
+\begin{align*}
+C &amp;= \frac{1}{M}
+\left(
+\frac{SM - S_d}{S_u - S_d} C_u + \frac{S_u - SM}{S_u - S_d} C_d
+\right)\\
+&amp;= \frac{1}{1.01}\left(
+\frac{101 - 95}{105 - 95} \times 5 + \frac{105 - 101}{105 - 95} \times 0
+\right) = \$ 2.970297
+\end{align*}</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5da696ec-f002-43c9-84d5-d80fb659ed12">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="BOPM:-Example-(Cont.)">BOPM: Example (Cont.)<a class="anchor-link" href="#BOPM:-Example-(Cont.)">¶</a></h2><ul>
+<li>One can compute the replicating portfolio as follows
+\begin{align*}
+\begin{pmatrix}
+h \\ B
+\end{pmatrix} &amp;= 
+\frac{1}{M(S_u - S_d)}
+\begin{pmatrix}
+M &amp; -M\\
+-S_d &amp; S_u
+\end{pmatrix}
+\begin{pmatrix}
+C_u \\ C_d
+\end{pmatrix}\\
+&amp;= 
+\frac{1}{1.01\times (105 - 95)}
+\begin{pmatrix}
+1.01 &amp; -1.01\\
+-95 &amp; 105
+\end{pmatrix}
+\begin{pmatrix}
+5 \\ 0
+\end{pmatrix} =
+\begin{pmatrix}
+0.5 \\ -47.0297
+\end{pmatrix}
+\end{align*}</li>
+<li>Buy $0.5$ shares of the underlying and borrow $\$47.0297$ in MMA at $t=0$. The portfolio value at $t=1$, in the cases the stock goes up and down, are
+\begin{align*}
+0.5\times 105 - 47.0297\times 1.01 &amp;= \$5,\\
+0.5\times 95 - 47.0297\times 1.01 &amp;= \$0
+\end{align*}
+respctively, which equal $C_u$ and $C_d$</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d3040d0b-1bda-43fe-b455-6c865e289a6a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="BOPM:-Example-(Cont..)">BOPM: Example (Cont..)<a class="anchor-link" href="#BOPM:-Example-(Cont..)">¶</a></h2><ul>
+<li>So far in the example, there is no physical probability $p$ (because there is no need)</li>
+<li>If an agent is confident the stock will go up (meaning the belief is the option price at $t=1$ will be $\$5$ with high probability $p$), and quotes $C=\$4$ at today ($t=0$), how can you arbitrage?</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b669fc12-a1c0-449f-853d-c1fef67e2ded">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>Short sell the option to the agent to get $\$4$ and spend $\$2.970297$ to set up the replicating portfolio today. Your net cash inflow is $4-2.970297 = \$1.029703$ at $t=0$</li>
+<li>At $t=1$, your obligation as an option writer (seller) is to pay the agent $\$5$ if the stock goes up, and $\$0$ if the stock goes down</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=03ee4d41-71c5-4637-868a-ca4db91c2803">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>But at $t=1$, the replicating portfolio value is $\$5$ if stock goes up and $\$0$ if it goes down</li>
+<li>In either case, you can liquidate the portfolio to fullfill your obligation</li>
+<li>You are left with free cash inflow of $\$1.029703$ at $t=0$</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1fffa570-a2b5-4109-90ed-39e7c9e70f01">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
