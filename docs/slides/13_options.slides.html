@@ -7841,8 +7841,52 @@ respctively, which equal $C_u$ and $C_d$</li>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="BOPM:-Exercise">BOPM: Exercise<a class="anchor-link" href="#BOPM:-Exercise">¶</a></h2><ul>
-<li>What's the $t=0$ PV of an ATM call option in BOPM with $S = K = 100$, $K$ the strike price, and $S_u = 103$, $S_d = 97$, $M=1.01$?</li>
-<li>How many shares should you hold and how much money should you put in your MMA in order to set up a replicating portfolio?</li>
+<li>What's the time zero PV of an ATM call option in BOPM with $S = K = 100$, $K$ the strike price, and $S_u = 103$, $S_d = 97$, $M=1.01$?</li>
+<li>At $t=0$, how many shares should you hold and how much money should you put in your MMA in order to set up a replicating portfolio?</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=233bb43d-e042-4701-a728-4a97ff101cb7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Universal-Option-Pricing-Formula">Universal Option Pricing Formula<a class="anchor-link" href="#Universal-Option-Pricing-Formula">¶</a></h2><ul>
+<li>We've seen in BOPM that option price is a discounted expectation in the risk-neutral probability</li>
+<li>This is true in general, regardless of the model (assumptions) used for the option pricing</li>
+<li>Let $X$ be any European payoff, a function of the underlying. Then the option price $C$ is
+\begin{align*}
+C = M_0 \widetilde E[M_T^{-1} X]
+\end{align*}</li>
+<li>An option pricing model specifies a distribution of the underlying (among other things), in the risk-neutral probability $\widetilde P$</li>
+<li>Given the distribution, $C$ is simply an integral</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=20e5521e-eeef-4ada-9e2f-7555d50fbda1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Change-of-Numeraire">Change of Numeraire<a class="anchor-link" href="#Change-of-Numeraire">¶</a></h2><ul>
+<li>The universal pricing formula
+\begin{align*}
+C = M_0 \widetilde E[M_T^{-1} X]
+\end{align*}
+is a special case of an even more general result</li>
+<li>When we say $S=\$100$ that means $100$ USD, or $100$ units of MMA</li>
+<li>Any tradable asset can be used to denominate the underlying of the option<ul>
+<li>Examples are annuity and ZCB</li>
+<li>"The underlying is trading at how many units of the annuity?"</li>
+<li>The tradable asset used to denominate the underlying is known as the numeraire</li>
+<li>Each numeraire is associated with a so-called equivalent martingle probability measure</li>
+<li>The risk-neutral probability a special case when using MMA as the numeraire</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
