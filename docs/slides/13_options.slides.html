@@ -7860,7 +7860,7 @@ respctively, which equal $C_u$ and $C_d$</li>
 \begin{align*}
 C = M_0 \widetilde E[M_T^{-1} X]
 \end{align*}</li>
-<li>An option pricing model specifies a distribution of the underlying (among other things), in the risk-neutral probability $\widetilde P$</li>
+<li>An option pricing model specifies a distribution of the underlying (among other things) in the risk-neutral probability $\widetilde P$</li>
 <li>Given the distribution, $C$ is simply an integral</li>
 </ul>
 </div>
@@ -7906,18 +7906,87 @@ C &amp;= N_0 E^N[N_T^{-1} X]
 \begin{align*}
 C = M_0 E^M[M_T^{-1} X] = N_0 E^N[N_T^{-1} X]
 \end{align*}</li>
-<li>If you change a numeraire, you change a probability measure, and the distribution of the underlying<ul>
+<li>If you change a numeraire, you change the probability measure, and the distribution of the underlying<ul>
 <li>In fact, sometimes that's the reaosn we change the numeraire: In the risk-neutral measure the distribution under some model is not known in closed form, but the distribution is known in closed form in a different measure so we can write the expectation as an integral</li>
-<li>We will see example in SOFR caps and floors pricing</li>
+<li>We will see example in SOFR caps and floors and swaptions pricing</li>
 </ul>
 </li>
-<li>An option pricing model can also specify a distribution of the underlying (among other things), in any equivalent martingle measure</li>
+<li>An option pricing model can also specify a distribution of the underlying (among other things) in any equivalent martingle measure</li>
 </ul>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1fffa570-a2b5-4109-90ed-39e7c9e70f01">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="SOFR-Swaption">SOFR Swaption<a class="anchor-link" href="#SOFR-Swaption">¶</a></h2><ul>
+<li>A swaption gives the holder the right, but not the obligation, to enter into a swap with a predetermined fixed rate (the strike) in the future</li>
+<li>A 1y10y payer swaption with strike $4\%$ is the right to enter into a 10y payer swap, with fixed rate $4\%$, 1 year from now<ul>
+<li>1y is the expiry, or maturity, of the swaption</li>
+<li>10y is the tenor</li>
+</ul>
+</li>
+<li>The end date of a 1y10y swaption will be 11y from now</li>
+<li>Both parties are looking at the forward starting 10y swap with fixed rate $4\%$, which starts 1y from now</li>
+<li>If, at expiry, the spot starting 10y swap rate is higher than $4\%$, say it's $5\%$, then the holder will exercise the option and enter into the payer swap<ul>
+<li>The holder will recieve floating coupons and pay $4\%$ fixed coupons, at the end of every year, for the following 10 years</li>
+<li>The holder then can enter into a spot starting receiver swap at $5\%$, receiving $5\%$ fixed coupons while paying floating</li>
+<li>The net cash flow is a $1\%$ fixed coupons at the end of every year for the following 10 years</li>
+</ul>
+</li>
+<li>If, at expiry, the spot starting 10y swap rate is lower than $4\%$, then the option expires worthless</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2b2c64e8-bd34-44ea-bc04-b0a26201a733">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Forward-Starting-Swap-PV-Clean-Form-(Review)">Forward Starting Swap PV Clean Form (Review)<a class="anchor-link" href="#Forward-Starting-Swap-PV-Clean-Form-(Review)">¶</a></h2><ul>
+<li>Consider a tenor structure
+$$
+T_0 &lt; T_1 &lt; T_2 &lt; \cdots &lt; T_N, \qquad \tau_n = T_{n+1} - T_n\quad \forall n=0, 1, 2, \ldots, N-1, 
+$$
+where $\tau_n$ is fixed to be 1Y</li>
+<li>The time-$t$ PV of an $N$-year-long forward starting payer swap with fixed rate $K$ can be written as
+\begin{align*}
+&amp;\sum_{n=0}^{N-1}\left(\tau_n P(t, T_{n+1})L(t, T_n, T_{n+1}) - \tau_n P(t, T_{n+1})K\right)\\
+=&amp; \left[\sum_{n=0}^{N-1}\tau_n P(t, T_{n+1})L(t, T_n, T_{n+1})\right] - K\left[\sum_{n=0}^{N-1}\tau_n P(t, T_{n+1})\right] \\
+=&amp; \left(\sum_{n=0}^{N-1}\tau_n P(t, T_{n+1})\right)\left(\frac{\sum_{n=0}^{N-1}\tau_n P(t, T_{n+1})L(t, T_n, T_{n+1})}{\sum_{n=0}^{N-1}\tau_n P(t, T_{n+1})} - K\right) \\\\
+=&amp; A(t)(S(t) - K)
+\end{align*}</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f47c4428-0150-4846-8a4e-b103ea7e44aa">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<ul>
+<li>A 3M SOFR cap with strike $K$ pays the buyer a series of cash flows
+$$
+\tau_n(L(T_{n+1}, T_{n}, T_{n+1}) - K)^+ \quad\text{ at }\quad T_{n+1}, \quad \forall n=0, 1, 2, \ldots, N-1, 
+$$
+where $L(T_{n+1}, T_{n}, T_{n+1})$ is the SOFR term rate</li>
+<li>Similarly, a 3M SOFR floor with strike $K$ pays the buyer a series of cash flows
+$$
+\tau_n(K - L(T_{n+1}, T_{n}, T_{n+1}))^+ \quad\text{ at }\quad T_{n+1} \quad \forall n=0, 1, 2, \ldots, N-1
+$$</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5db941a3-fab4-42bd-8bf5-9aadc3a9fac9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
