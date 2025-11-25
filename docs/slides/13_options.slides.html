@@ -7954,13 +7954,14 @@ $$
 T_0 &lt; T_1 &lt; T_2 &lt; \cdots &lt; T_N, \qquad \tau_n = T_{n+1} - T_n\quad \forall n=0, 1, 2, \ldots, N-1, 
 $$
 where $\tau_n$ is fixed to be 1Y</li>
-<li>The time-$t$ PV of an $N$-year-long forward starting payer swap with fixed rate $K$ can be written as
+<li>The time-$t$ PV of an $N$-year-long forward starting payer swap with fixed rate $K$ (the strike $4\%$ in the previous example) can be written as
 \begin{align*}
 &amp;\sum_{n=0}^{N-1}\left(\tau_n P(t, T_{n+1})L(t, T_n, T_{n+1}) - \tau_n P(t, T_{n+1})K\right)\\
 =&amp; \left[\sum_{n=0}^{N-1}\tau_n P(t, T_{n+1})L(t, T_n, T_{n+1})\right] - K\left[\sum_{n=0}^{N-1}\tau_n P(t, T_{n+1})\right] \\
 =&amp; \left(\sum_{n=0}^{N-1}\tau_n P(t, T_{n+1})\right)\left(\frac{\sum_{n=0}^{N-1}\tau_n P(t, T_{n+1})L(t, T_n, T_{n+1})}{\sum_{n=0}^{N-1}\tau_n P(t, T_{n+1})} - K\right) \\\\
 =&amp; A(t)(S(t) - K)
 \end{align*}</li>
+<li>The forward starting swap rate $S(t)$ fixes at $S(T_0)$ to become the spot starting swap rate ($5\%$ in the previous example)</li>
 </ul>
 </div>
 </div>
