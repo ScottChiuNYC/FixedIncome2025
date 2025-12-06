@@ -44,9 +44,9 @@ Analysis of Fixed Income -- Fall 2025
 +--------+------------+-------------------------------------------------------------+
 | Week 13| 11/25/2025 | No Class                                                    |
 +--------+------------+-------------------------------------------------------------+
-| Week 14| 12/2/2025  | Volatility and Interest Rate Options I                      |
+| Week 14| 12/2/2025  | Volatility and Interest Rate Options                        |
 +--------+------------+-------------------------------------------------------------+
-| Week 15| 12/9/2025  | Volatility and Interest Rate Options II                     |
+| Week 15| 12/9/2025  | Study Day, No Class                                         |
 +--------+------------+-------------------------------------------------------------+
 | Week 16| 12/16/2025 | Final Exam                                                  |
 +--------+------------+-------------------------------------------------------------+
@@ -67,7 +67,7 @@ Analysis of Fixed Income -- Fall 2025
    10_futures
    11_swaps
    12_yc_construction
-   13_options
+   14_options
 
 
 .. toctree::
