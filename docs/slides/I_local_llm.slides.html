@@ -7628,7 +7628,7 @@ main {
 <span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">proxy_set_header Connection "";</span>
 <span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">proxy_set_header Host localhost;</span><span class="w"> </span><span class="c1"># tell Ollama the request is from Host Header so that Ollama won't reject it</span>
 <span class="w">        </span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">proxy_buffering off;</span><span class="w">             </span><span class="c1"># So that token stream will be sent out real time</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">proxy_buffering off;</span><span class="w">             </span><span class="c1"># So that token stream sends out real time</span>
 <span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">proxy_read_timeout 600s;</span><span class="w">         </span><span class="c1"># It takes time if output text is a lot</span>
 <span class="w">    </span><span class="err">}</span>
 <span class="err">}</span>
