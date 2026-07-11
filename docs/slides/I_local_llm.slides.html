@@ -7669,7 +7669,8 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<div class="highlight"><pre><span></span><span class="c1"># nginx.conf</span>
+<div class="highlight"><pre><span></span><span class="c1"># nginx.conf for both central and backup server, mirrored &amp; managed by Keepalived</span>
+
 <span class="l l-Scalar l-Scalar-Plain">upstream ollama_pool {</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">least_conn;</span><span class="w"> </span><span class="c1"># send requests to the least busy server</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">server 10.0.0.51:11434 max_fails=2 fail_timeout=30s;</span>
@@ -7698,6 +7699,42 @@ main {
 <span class="w">    </span><span class="err">}</span>
 <span class="err">}</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1973aaa8-8106-48fe-8705-07d2c9a6cc25">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Implementation-Roadmap">Implementation Roadmap<a class="anchor-link" href="#Implementation-Roadmap">¶</a></h2><ul>
+<li>Phase 1: Pilot &amp; Validation<ul>
+<li>Single-node deployment for latency/accuracy testing</li>
+<li>VS Code + Continue integration testing</li>
+<li>Access control (192.168.1.0/24) and egress filtering for security</li>
+</ul>
+</li>
+<li>Phase 2: High Availability &amp; Scaling<ul>
+<li>Expand to 4-node compute cluster</li>
+<li>Deploy redundant NGINX gateways</li>
+</ul>
+</li>
+<li>Phase 3: Production Hardening<ul>
+<li>Traffic mirroring and audit logging</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=207b9eee-43ed-4b57-8151-e46e9da77f8f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Q-&amp;-A">Q &amp; A<a class="anchor-link" href="#Q-&amp;-A">¶</a></h1>
 </div>
 </div>
 </div>
