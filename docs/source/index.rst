@@ -89,4 +89,5 @@ Analysis of Fixed Income -- Fall 2025
    F_mpca
    G_trapping_rain_water
    H_rates_vol_modeling_overview_nbsphinx
+   I_local_llm
 
