@@ -7483,23 +7483,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Ollama-Commands">Ollama Commands<a class="anchor-link" href="#Ollama-Commands">¶</a></h2><ul>
-<li>Pull model, but not run<ul>
-<li><code>ollama pull qwen2.5-coder:7b</code></li>
-<li><code>ollama pull qwen2.5-coder:1.5b</code></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c83e1c37-10b3-4b7f-9db3-3ca196d569ae">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ul>
-<li>Run model<ul>
+<li>Run a model<ul>
 <li><code>ollama run qwen2.5-coder:7b</code></li>
 <li>If it's the first time you use a specific model, it takes a few minutes to pull it</li>
 <li>When you see the <code>&gt;&gt;&gt;</code> prompt just say something like "code me a python quick sort"</li>
@@ -7510,13 +7494,18 @@ main {
 </div>
 </div>
 </div>
-</div></div><div class="fragment">
+</div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2ccaf65c-8b1d-49fb-9edd-7f51aa338cf1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
+<li>Pull model, but not run<ul>
+<li><code>ollama pull qwen2.5-coder:7b</code></li>
+<li><code>ollama pull qwen2.5-coder:1.5b</code></li>
+</ul>
+</li>
 <li>Delete downloaded models<ul>
 <li><code>ollama list</code>: Check existing models</li>
 <li><code>ollama rm &lt;YOUR_LLM&gt;</code></li>
