@@ -7534,10 +7534,12 @@ main {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Best-Open-Weights-LLMs-(July-2026)">Best Open-Weights LLMs (July 2026)<a class="anchor-link" href="#Best-Open-Weights-LLMs-(July-2026)">¶</a></h2><ul>
-<li><code>qwen3:30b</code>: Optimized for coding, repository-level reasoning and local debugging</li>
-<li><code>deepseek-r1:70b</code>: Math and logical reasoning; utilizes high-RAM capacity for complex chain-of-thought</li>
+<h2 id="Some-Open-Weight-LLMs-(July-2026)">Some Open-Weight LLMs (July 2026)<a class="anchor-link" href="#Some-Open-Weight-LLMs-(July-2026)">¶</a></h2><ul>
+<li>Coding: <code>qwen3.6:27b</code></li>
+<li>Math, logical reasoning: <code>deepseek-r1:70b</code>, <code>mightykatun/qwen2.5-math:72b</code></li>
 <li>Search models on the <a href="https://ollama.com/library?sort=newest">Ollama Library</a></li>
+<li>27B models require 24 GB RAM</li>
+<li>72B models require 64 GB RAM</li>
 </ul>
 </div>
 </div>
@@ -7616,10 +7618,8 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Local-Network-Deployment">Local Network Deployment<a class="anchor-link" href="#Local-Network-Deployment">¶</a></h2><ul>
 <li>Mac Studio server farm<ul>
-<li>Apple machines have CPU and GPU share RAM</li>
+<li>Mac has CPU and GPU share a single, coherent memory pool (Unified Memory Architecture, UMA)</li>
 <li><strong>Apple Mac Studio with M3 Ultra</strong>, which comes with 96, 256 or 516 GB RAMs</li>
-<li>80b models require 96 GB RAM</li>
-<li>120b models require 256 GB RAM</li>
 <li>4 server machines are enough for 25 people</li>
 </ul>
 </li>
