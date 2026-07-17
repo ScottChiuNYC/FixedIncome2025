@@ -7504,7 +7504,7 @@ main {
 <li>Pull model, but not run<ul>
 <li><code>ollama pull qwen2.5-coder:7b</code></li>
 <li><code>ollama pull qwen2.5-coder:1.5b</code></li>
-<li><code>ollama pull tinnyllama:latest</code></li>
+<li><code>ollama pull tinyllama:latest</code></li>
 </ul>
 </li>
 </ul>
@@ -7542,8 +7542,8 @@ main {
 <li>Find the ones tagged <code>thinking</code></li>
 </ul>
 </li>
-<li>27B models require 24 GB RAM</li>
-<li>70B models require 64 GB RAM</li>
+<li>27B models require 24 GB VRAM</li>
+<li>70B models require 64 GB VRAM</li>
 </ul>
 </div>
 </div>
@@ -7732,7 +7732,34 @@ Grants explicit permission to read/write files via local tools when requested.
 </div>
 </div>
 </div>
-</div></section></section><section><section>
+</div><aside class="notes">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1973aaa8-8106-48fe-8705-07d2c9a6cc25">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Implementation-Roadmap">Implementation Roadmap<a class="anchor-link" href="#Implementation-Roadmap">¶</a></h2><ul>
+<li>Phase 1: Pilot &amp; Validation<ul>
+<li>Single-node deployment for latency/accuracy testing</li>
+<li>VS Code + Continue integration testing</li>
+<li>Access control (192.168.1.0/24) and egress filtering for security</li>
+</ul>
+</li>
+<li>Phase 2: High Availability &amp; Scaling<ul>
+<li>Expand to 4-node compute cluster</li>
+<li>Deploy redundant NGINX gateways</li>
+</ul>
+</li>
+<li>Phase 3: Production Hardening<ul>
+<li>Traffic mirroring and audit logging</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</aside></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=207b9eee-43ed-4b57-8151-e46e9da77f8f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
