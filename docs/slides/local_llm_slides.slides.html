@@ -7747,7 +7747,20 @@ Grants explicit permission to read/write files via local tools when requested.
 <li>macOS might have firewall, in which case allow all incoming connections to Ollama</li>
 </ul>
 </li>
+<li>Optionally set up <a href="https://github.com/open-webui/open-webui">Open WebUI</a> on Mac Studio for teammates to chat on the browser, not IDE<ul>
+<li>Install <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a> and run</li>
 </ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span><span class="m">3000</span>:8080<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--add-host<span class="o">=</span>host.docker.internal:host-gateway<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-e<span class="w"> </span><span class="nv">OLLAMA_BASE_URL</span><span class="o">=</span>http://host.docker.internal:11434<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span>open-webui:/app/backend/data<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span>open-webui<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--restart<span class="w"> </span>always<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>ghcr.io/open-webui/open-webui:main
+</pre></div>
 </div>
 </div>
 </div>
