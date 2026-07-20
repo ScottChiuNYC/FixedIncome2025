@@ -7615,7 +7615,7 @@ main {
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Qwen 7B Coder</span>
 <span class="w">    </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ollama</span>
 <span class="w">    </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qwen2.5-coder:7b</span>
-<span class="w">    </span><span class="c1"># apiBase: "http://10.0.0.100"  # required for local network deployment</span>
+<span class="w">    </span><span class="c1"># apiBase: "http://10.0.0.100:11434"  # required for local network deployment</span>
 <span class="w">    </span><span class="nt">roles</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chat</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">edit</span>
@@ -7624,7 +7624,7 @@ main {
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Qwen 1.5B Autocomplete</span>
 <span class="w">    </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ollama</span>
 <span class="w">    </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qwen2.5-coder:1.5b</span>
-<span class="w">    </span><span class="c1"># apiBase: "http://10.0.0.100"  # required for local network deployment</span>
+<span class="w">    </span><span class="c1"># apiBase: "http://10.0.0.100:11434"  # required for local network deployment</span>
 <span class="w">    </span><span class="nt">roles</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">autocomplete</span>
 </pre></div>
@@ -7733,34 +7733,25 @@ Grants explicit permission to read/write files via local tools when requested.
 </div>
 </div>
 </div>
-</div><aside class="notes">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1973aaa8-8106-48fe-8705-07d2c9a6cc25">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1bbc2db1-5548-4a36-9da4-d886587fd497">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Implementation-Roadmap">Implementation Roadmap<a class="anchor-link" href="#Implementation-Roadmap">¶</a></h2><ul>
-<li>Phase 1: Pilot &amp; Validation<ul>
-<li>Single-node deployment for latency/accuracy testing</li>
-<li>VS Code + Continue integration testing</li>
-<li>Access control (192.168.1.0/24) and egress filtering for security</li>
-</ul>
-</li>
-<li>Phase 2: High Availability &amp; Scaling<ul>
-<li>Expand to 4-node compute cluster</li>
-<li>Deploy redundant NGINX gateways</li>
-</ul>
-</li>
-<li>Phase 3: Production Hardening<ul>
-<li>Traffic mirroring and audit logging</li>
+<h2 id="Local-Network-Deployment:-Single-Node-Starter-Setup">Local Network Deployment: Single-Node Starter Setup<a class="anchor-link" href="#Local-Network-Deployment:-Single-Node-Starter-Setup">¶</a></h2><ul>
+<li>Simpler, no NGINX needed, optimal for ~5 Users</li>
+<li>One single Apple Mac Studio acts as a centralized API server over the secure local network/VPN<ul>
+<li>Install Ollama</li>
+<li>Run <code>launchctl setenv OLLAMA_HOST "0.0.0.0:11434"</code> and reboot</li>
+<li>macOS might have firewall, in which case allow all incoming connections to Ollama</li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 </div>
-</div>
-</aside></section></section><section><section>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=207b9eee-43ed-4b57-8151-e46e9da77f8f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7770,6 +7761,7 @@ Grants explicit permission to read/write files via local tools when requested.
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=33aa300d-8d08-46bc-a614-c4c9ad76843d">
 </div></section></section>
 </div>
 </div>
